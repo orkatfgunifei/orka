@@ -26,4 +26,6 @@ Monografia | Edição dos arquivos em LaTeX
   fabmanager run
   ```
   
+  - Abrir navegador em localhost:8080  
+
 ## Let's code !
