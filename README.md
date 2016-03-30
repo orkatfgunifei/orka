@@ -11,7 +11,6 @@ Monografia | Edição dos arquivos em LaTeX
   - Criar ambiente virtual
   
   > Necessário pacote python-virtualenv
-  > sudo apt-get install python-virtualenv
 
   ```bash
   git clone https://github.com/diogoamatos/orka.git
