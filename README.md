@@ -6,7 +6,13 @@ Branches | Conteúdo
 Master | Default code tree
 Monografia | Edição dos arquivos em LaTeX
 
-## Instalação:
+## Webhost Dev:
+    
+    - Alocado no pythonanywhere
+    
+    * http://rlimaeco.pythonanywhere.com
+        
+## Instalação Dev:
 
   - Criar ambiente virtual
   
