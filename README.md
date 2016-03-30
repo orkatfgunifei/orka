@@ -25,6 +25,13 @@ Monografia | Edição dos arquivos em LaTeX
   . venv/bin/activate
   pip install -r requirements.txt
   ```
+  
+  > Caso encontre algum erro na instalação do Pillow , no Ubuntu instalar os seguintes pacotes:
+  
+  ```bash
+  sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+  ```
+  
 
   - Executar servidor
   
