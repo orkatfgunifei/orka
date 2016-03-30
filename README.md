@@ -1,28 +1,30 @@
 # orka
 Projeto de TCC 2016 Engenharia da Computação - UNIFEI
 
-## Branches:
-  - Master: Default code tree
-  - Monografia: Edição dos arquivos em LaTeX
+Branches | Tipo
+-------- | --------
+Master | Default code tree
+Monografia | Edição dos arquivos em LaTeX
 
 ## Instalação:
 
   - Criar ambiente virtual
   
-  > Necessário python-virtualenv
+  > Necessário pacote python-virtualenv
+  > sudo apt-get install python-virtualenv
 
-  '''bash
+  ```bash
   git clone https://github.com/diogoamatos/orka.git
   cd orka  
   virtualenv venv
   . venv/bin/activate
   pip install -r requirements.txt
-  '''
+  ```
 
   - Executar servidor
   
-  '''bash
+  ```bash
   fabmanager run
-  '''
+  ```
   
-  Let's code !
+## Let's code !
