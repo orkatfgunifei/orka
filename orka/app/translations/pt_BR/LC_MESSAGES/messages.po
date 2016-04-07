@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-04-06 19:19-0300\n"
+"POT-Creation-Date: 2016-04-06 23:50-0300\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -18,6 +18,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.2.0\n"
+
+#: app/views.py:102
+msgid "Users"
+msgstr "Usuários"
+
+#: app/views.py:103
+msgid "Nodes"
+msgstr "Nós"
+
+#: app/views.py:104
+msgid "Images"
+msgstr "Imagens"
+
+#: app/views.py:105
+msgid "Containers"
+msgstr "Conteineres"
 
 #: app/templates/404.html:4
 msgid "Page not found"
@@ -30,6 +46,4 @@ msgstr "Orka rodando no Flask"
 #: app/templates/index.html:6
 msgid "Let's code !"
 msgstr "Bora Codar !"
-
-
 

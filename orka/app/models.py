@@ -1,46 +1,68 @@
 import datetime
-from sqlalchemy import Column, Integer, String, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from flask.ext.appbuilder import Model
-
-mindate = datetime.date(datetime.MINYEAR, 1, 1)
-
-
-class ContactGroup(Model):
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), unique=True, nullable=False)
-
-    def __repr__(self):
-        return self.name
+from flask.ext.babelpkg import lazy_gettext as _
 
 
-class Gender(Model):
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), unique = True, nullable=False)
-
-    def __repr__(self):
-        return self.name
-
-
-class Contact(Model):
+class User(Model):
+    __tablename__ = "user"
     id = Column(Integer, primary_key=True)
     name =  Column(String(150), unique = True, nullable=False)
-    address = Column(String(564))
-    birthday = Column(Date, nullable=True)
+    username = Column(String(60), unique = True, nullable=False)
+    email = Column(String(60), unique = True, nullable=False)
     personal_phone = Column(String(20))
-    personal_celphone = Column(String(20))
-    contact_group_id = Column(Integer, ForeignKey('contact_group.id'), nullable=False)
-    contact_group = relationship("ContactGroup")
-    gender_id = Column(Integer, ForeignKey('gender.id'), nullable=False)
-    gender = relationship("Gender")
 
     def __repr__(self):
         return self.name
+    
+class Node(Model):
+    __tablename__ = "node"
+    id = Column(Integer, primary_key=True)
+    name =  Column(String(150), unique = True, nullable=False)
+    node_id = Column(String(32), unique = True, nullable=False)
+    ip = Column(String(64), unique = True, nullable=True)
+    port = Column(Integer, unique = True, nullable=False)
+    
+    def __repr__(self):
+        return self.name
 
-    def month_year(self):
-        date = self.birthday or mindate
-        return datetime.datetime(date.year, date.month, 1) or mindate
+class Image(Model):
+    __tablename__ = "image"
+    id = Column(Integer, primary_key=True)
+    name =  Column(String(150), unique = True, nullable=False)    
+    virtual_size = Column(Integer)
+    
+    def __repr__(self):
+        return self.name
+    
+#class Container_enum(Enum):
+#    storage = "Storage"
+#    application = "Application"
 
-    def year(self):
-        date = self.birthday or mindate
-        return datetime.datetime(date.year, 1, 1)
+class Container(Model):
+    __tablename__ = "container"
+    id = Column(Integer, primary_key=True)
+    name =  Column(String(150), unique = True, nullable=False)
+    container_id = Column(String(32), unique = True, nullable=False)
+    port = Column(Integer, unique = True, nullable=False)
+    host = Column(String(32), unique = True, nullable=False)
+    hostname = Column(String(32), unique = True, nullable=False)
+    domain_name = Column(String(32), unique = True, nullable=False)
+    cpu_reserved = Column(Integer, unique = True, nullable=False)
+    storage_reserved = Column(Integer, unique = True, nullable=False)
+    environment = Column(String(164), unique = True, nullable=False)
+    docker_file = Column(Text, nullable=True)
+    image_id = Column(Integer, ForeignKey('image.id'))
+    image = relationship("Image")
+    node_id = Column(Integer, ForeignKey('node.id'))
+    node = relationship("Node")
+    #container_type = Column('Type', Enum(Container_enum))
+    
+    def __repr__(self):
+        return self.name
+
+
+    
+    
+    
