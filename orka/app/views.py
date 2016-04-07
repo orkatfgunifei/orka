@@ -7,101 +7,101 @@ from flask.ext.babelpkg import lazy_gettext as _
 
 
 from app import db, appbuilder
-from .models import ContactGroup, Gender, Contact
+from .models import User, Image, Node, Container
 
+class UserModelView(ModelView):
+    datamodel = SQLAInterface(User)
 
-def fill_gender():
-    try:
-        db.session.add(Gender(name='Male'))
-        db.session.add(Gender(name='Female'))
-        db.session.commit()
-    except:
-        db.session.rollback()
-
-
-class ContactModelView(ModelView):
-    datamodel = SQLAInterface(Contact)
-
-    list_columns = ['name', 'personal_celphone', 'birthday', 'contact_group.name']
+    list_columns = ['name', 'username', 'email']
 
     base_order = ('name', 'asc')
 
     show_fieldsets = [
-        ('Summary', {'fields': ['name', 'gender', 'contact_group']}),
+        ('Summary', {'fields': ['name']}),
         (
             'Personal Info',
-            {'fields': ['address', 'birthday', 'personal_phone', 'personal_celphone'], 'expanded': False}),
+            {'fields': ['email', 'personal_phone'], 'expanded': False}),
     ]
 
     add_fieldsets = [
-        ('Summary', {'fields': ['name', 'gender', 'contact_group']}),
+        ('Summary', {'fields': ['name', 'username', 'email']}),
         (
             'Personal Info',
-            {'fields': ['address', 'birthday', 'personal_phone', 'personal_celphone'], 'expanded': False}),
+            {'fields': ['personal_phone'], 'expanded': False}),
     ]
 
     edit_fieldsets = [
-        ('Summary', {'fields': ['name', 'gender', 'contact_group']}),
+        ('Summary', {'fields': ['name']}),
         (
             'Personal Info',
-            {'fields': ['address', 'birthday', 'personal_phone', 'personal_celphone'], 'expanded': False}),
+            {'fields': ['email', 'personal_phone'], 'expanded': False}),
     ]
 
+class ContainerModelView(ModelView):
+    datamodel = SQLAInterface(Container)
 
-class GroupModelView(ModelView):
-    datamodel = SQLAInterface(ContactGroup)
-    related_views = [ContactModelView]
+    list_columns = ['name', 
+                    'hostname', 
+                    'port',
+                    'host', 
+                    'domain_name', 
+                    'cpu_reserved',
+                    'storage_reserved', 
+                    'environment', 
+                    'image',
+                    'node',
+                    'container_type',
+                    'docker_file']
 
+    base_order = ('name', 'asc')
 
-class ContactChartView(GroupByChartView):
-    datamodel = SQLAInterface(Contact)
-    chart_title = 'Grouped contacts'
-    label_columns = ContactModelView.label_columns
-    chart_type = 'PieChart'
-
-    definitions = [
-        {
-            'group' : 'contact_group',
-            'series' : [(aggregate_count,'contact_group')]
-        },
-        {
-            'group' : 'gender',
-            'series' : [(aggregate_count,'contact_group')]
-        }
+    show_fieldsets = [
+        ('Summary', {'fields': [
+                        'name', 
+                        'hostname', 
+                        'container_type'
+                               ]}),
+        (
+            'Advanced Info',
+            {'fields': [     
+                        'port',
+                        'host', 
+                        'domain_name', 
+                        'cpu_reserved',
+                        'storage_reserved', 
+                        'environment', 
+                        'image',
+                        'node',
+                        'docker_file'], 'expanded': False}),
     ]
 
+    #add_fieldsets = show_fieldsets
 
-def pretty_month_year(value):
-    return calendar.month_name[value.month] + ' ' + str(value.year)
+    #edit_fieldsets = show_fieldsets
 
-def pretty_year(value):
-    return str(value.year)
+class NodeModelView(ModelView):
+    datamodel = SQLAInterface(Node)
+    related_views = [ContainerModelView]
+    
+class ImageModelView(ModelView):
+    datamodel = SQLAInterface(Image)
 
+    list_columns = ['name', 'virtual_size']
 
-class ContactTimeChartView(GroupByChartView):
-    datamodel = SQLAInterface(Contact)
+    base_order = ('name', 'asc')
 
-    chart_title = 'Grouped Birth contacts'
-    chart_type = 'AreaChart'
-    label_columns = ContactModelView.label_columns
-    definitions = [
-        {
-            'group' : 'month_year',
-            'formatter': pretty_month_year,
-            'series': [(aggregate_count, 'group')]
-        },
-        {
-            'group': 'year',
-            'formatter': pretty_year,
-            'series': [(aggregate_count, 'group')]
-        }
-    ]
+#    show_fieldsets = list_columns
+#
+#    add_fieldsets = list_columns
+#
+#    edit_fieldsets = list_columns
+#    
 
 
 db.create_all()
-fill_gender()
-appbuilder.add_view(GroupModelView, "List Groups", icon="fa-folder-open-o", category="Contacts", category_icon='fa-envelope')
-appbuilder.add_view(ContactModelView, "List Contacts", icon="fa-envelope", category="Contacts")
-appbuilder.add_separator("Contacts")
-appbuilder.add_view(ContactChartView, "Contacts Chart", icon="fa-dashboard", category="Contacts")
-appbuilder.add_view(ContactTimeChartView, "Contacts Birth Chart", icon="fa-dashboard", category="Contacts")
+appbuilder.add_view(UserModelView, "List User", icon="fa-user", label=_('Users'))
+appbuilder.add_view(NodeModelView, "List Node", icon='fa-sitemap', label=_('Nodes'))
+appbuilder.add_view(ImageModelView, "List Images", icon="fa-hdd-o", label=_('Images'))
+appbuilder.add_view(ContainerModelView, "List Container", icon="fa-database", label=_('Containers'))
+
+
