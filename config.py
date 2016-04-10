@@ -20,7 +20,7 @@ CSRF_ENABLED = True
 APP_NAME = "Orka"
 
 # Uncomment to setup Setup an App icon
-#APP_ICON = "static/img/logo.jpg"
+APP_ICON = "/static/img/orka.png"
 
 #----------------------------------------------------
 # AUTHENTICATION CONFIG
@@ -39,10 +39,10 @@ AUTH_TYPE = AUTH_DB
 #AUTH_ROLE_PUBLIC = 'Public'
 
 # Will allow user self registration
-#AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = True
 
 # The default user self registration role
-#AUTH_USER_REGISTRATION_ROLE = "Public"
+AUTH_USER_REGISTRATION_ROLE = "Public"
 
 # When using LDAP Auth, setup the ldap server
 #AUTH_LDAP_SERVER = "ldap://ldapserver.new"
@@ -63,13 +63,9 @@ BABEL_DEFAULT_FOLDER = 'translations'
 # The allowed translation for you app
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
-    'pt': {'flag':'pt', 'name':'Portuguese'},
     'pt_BR': {'flag':'br', 'name': 'Pt Brazil'},
     'es': {'flag':'es', 'name':'Spanish'},
     'de': {'flag':'de', 'name':'German'},
-    'zh': {'flag':'cn', 'name':'Chinese'},
-    'ru': {'flag':'ru', 'name':'Russian'},
-    'pl': {'flag':'pl', 'name':'Polish'}
 }
 #---------------------------------------------------
 # Image and file configuration
@@ -85,15 +81,30 @@ IMG_UPLOAD_URL = '/static/uploads/'
 # Setup image size default is (300, 200, True)
 #IMG_SIZE = (300, 200, True)
 
+
+# Config for Flask-WTF Recaptcha necessary for user registration
+RECAPTCHA_PUBLIC_KEY = '6LedRP0SAAAAAOF03Nsv_ny2NzOF_Dthe_Xn269v'
+RECAPTCHA_PRIVATE_KEY = '6LedRP0SAAAAAPnsdEKgj5VU1QbFcPv7mO8cW0So'
+
+# Config for Flask-Mail necessary for user registration
+MAIL_PORT=465
+MAIL_USE_SSL=False
+MAIL_SERVER = 'mailtrap.io'
+MAIL_USE_TLS = False
+MAIL_USERNAME = '2b0ada28fba708'
+MAIL_PASSWORD = '20246fe241c3ea'
+MAIL_DEFAULT_SENDER = 'orka-95f195@inbox.mailtrap.io'
+#--------------------------------------
+
 # Theme configuration
 # these are located on static/appbuilder/css/themes
 # you can create your own and easily use them placing them on the same dir structure to override
 #APP_THEME = "bootstrap-theme.css"  # default bootstrap
-APP_THEME = "cerulean.css"
+#APP_THEME = "cerulean.css"
 #APP_THEME = "amelia.css"
 #APP_THEME = "cosmo.css"
 #APP_THEME = "cyborg.css"  
-#APP_THEME = "flatly.css"
+APP_THEME = "flatly.css"
 #APP_THEME = "journal.css"
 #APP_THEME = "readable.css"
 #APP_THEME = "simplex.css"
