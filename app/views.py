@@ -25,11 +25,11 @@ def fill_gender():
         db.session.commit()
     except:
         db.session.rollback()
-        
+
 
 
 class ContactModelView(ModelView):
-    
+
     datamodel = SQLAInterface(Contact)
 
     label_columns = {'contact_group': 'Contacts Group'}
@@ -108,37 +108,37 @@ class ContactTimeChartView(GroupByChartView):
         }
     ]
 class ContainerModelView(ModelView):
-    
+
     datamodel = SQLAInterface(Container)
 
-    list_columns = ['name', 
-                    'hostname', 
-                    'host', 
-                    'domain_name', 
+    list_columns = ['name',
+                    'hostname',
+                    'host',
+                    'domain_name',
                     'cpu_reserved',
-                    'storage_reserved', 
-                    'environment', 
+                    'storage_reserved',
+                    'environment',
                     'image',
                     'node',
                     'container_type',
                     'docker_file']
 
-   
+
     show_fieldsets = [
         ('Summary', {'fields': [
-                        'name', 
-                        'domain_name', 
+                        'name',
+                        'domain_name',
                         'container_type'
                                ]}),
         (
             'Advanced Info',
-            {'fields': [     
+            {'fields': [
                         'hostname',
-                        'host', 
-                        'domain_name', 
+                        'host',
+                        'domain_name',
                         'cpu_reserved',
-                        'storage_reserved', 
-                        'environment', 
+                        'storage_reserved',
+                        'environment',
                         'image',
                         'node',
                         'docker_file'], 'expanded': False}),
@@ -146,19 +146,19 @@ class ContainerModelView(ModelView):
 
     add_fieldsets = [
         ('Summary', {'fields': [
-                        'name', 
-                        'domain_name', 
+                        'name',
+                        'domain_name',
                         'container_type'
                                ]}),
         (
             'Advanced Info',
-            {'fields': [     
+            {'fields': [
                         'hostname',
-                        'host', 
-                        'domain_name', 
+                        'host',
+                        'domain_name',
                         'cpu_reserved',
-                        'storage_reserved', 
-                        'environment', 
+                        'storage_reserved',
+                        'environment',
                         'image',
                         'node',
                         'docker_file'], 'expanded': True}),
@@ -166,39 +166,39 @@ class ContainerModelView(ModelView):
 
     edit_fieldsets = [
         ('Summary', {'fields': [
-                        'name', 
-                        'domain_name', 
+                        'name',
+                        'domain_name',
                         'container_type'
                                ]}),
         (
             'Advanced Info',
-            {'fields': [     
+            {'fields': [
                         'hostname',
-                        'host', 
-                        'domain_name', 
+                        'host',
+                        'domain_name',
                         'cpu_reserved',
-                        'storage_reserved', 
-                        'environment', 
+                        'storage_reserved',
+                        'environment',
                         'image',
                         'node',
                         'docker_file'], 'expanded': False}),
     ]
-    
+
     search_fieldsets = [
         ('Summary', {'fields': [
-                        'name', 
-                        'domain_name', 
+                        'name',
+                        'domain_name',
                         'container_type'
                                ]}),
         (
             'Advanced Info',
-            {'fields': [     
+            {'fields': [
                         'hostname',
-                        'host', 
-                        'domain_name', 
+                        'host',
+                        'domain_name',
                         'cpu_reserved',
-                        'storage_reserved', 
-                        'environment', 
+                        'storage_reserved',
+                        'environment',
                         'image',
                         'node',
                         'docker_file'], 'expanded': False}),
@@ -207,10 +207,10 @@ class ContainerModelView(ModelView):
 class NodeModelView(ModelView):
     datamodel = SQLAInterface(Node)
     related_views = [ContainerModelView]
-    
+
     list_columns = ['name', 'ip']
-    
-    
+
+
 class ImageModelView(ModelView):
     datamodel = SQLAInterface(Image)
 
@@ -219,18 +219,18 @@ class ImageModelView(ModelView):
     base_order = ('name', 'asc')
 
 
-class TerminalView(TerminalForm):
-    form = Terminal
-    form_title = 'Terminal'
-    message = 'Terminal exit'
-
-    def form_get(self, form):
-        form.bash.data = 'Bem vindo ao terminal'
-
-    def form_post(self, form):
-        # post process form
-        #form.bash.data = form.comando.data 
-        print "Post Terminal"
+# class TerminalView(TerminalForm):
+#     form = Terminal
+#     form_title = 'Terminal'
+#     message = 'Terminal exit'
+#
+#     def form_get(self, form):
+#         form.bash.data = 'Bem vindo ao terminal'
+#
+#     def form_post(self, form):
+#         # post process form
+#         #form.bash.data = form.comando.data
+#         print "Post Terminal"
 
 
 
@@ -244,8 +244,8 @@ def page_not_found(e):
 db.create_all()
 
 fill_gender()
-appbuilder.add_view(TerminalView, "Terminal View", icon="fa-group", label=_('Open console terminal'),
-                     category="Terminal", category_icon="fa-cogs")
+# appbuilder.add_view(TerminalView, "Terminal View", icon="fa-group", label=_('Open console terminal'),
+#                      category="Terminal", category_icon="fa-cogs")
 appbuilder.add_view(GroupModelView, "List Groups", icon="fa-folder-open-o", category="Contacts", category_icon='fa-envelope')
 appbuilder.add_view(ContactModelView, "List Contacts", icon="fa-envelope", category="Contacts")
 appbuilder.add_separator("Contacts")
@@ -258,4 +258,3 @@ appbuilder.add_view(NodeModelView, "List Node", icon='fa-sitemap', label=_('Node
 
 log.info("F.A.B. Version: {0}".format(appbuilder.version))
 log.info("User extension class {0}".format(UserExtensionMixin.__subclasses__()[0]))
-

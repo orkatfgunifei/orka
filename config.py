@@ -3,7 +3,7 @@ from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_D
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Your App secret key
-SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
+SECRET_KEY = '\2\tfgunifeirules\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
@@ -14,7 +14,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 CSRF_ENABLED = True
 
 #------------------------------
-# GLOBALS FOR APP Builder 
+# GLOBALS FOR APP Builder
 #------------------------------
 # Uncomment to setup Your App name
 APP_NAME = "Orka"
@@ -64,7 +64,6 @@ BABEL_DEFAULT_FOLDER = 'translations'
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
     'pt_BR': {'flag':'br', 'name': 'Pt Brazil'},
-    'es': {'flag':'es', 'name':'Spanish'},
     'de': {'flag':'de', 'name':'German'},
 }
 #---------------------------------------------------
@@ -87,13 +86,13 @@ RECAPTCHA_PUBLIC_KEY = '6LedRP0SAAAAAOF03Nsv_ny2NzOF_Dthe_Xn269v'
 RECAPTCHA_PRIVATE_KEY = '6LedRP0SAAAAAPnsdEKgj5VU1QbFcPv7mO8cW0So'
 
 # Config for Flask-Mail necessary for user registration
-MAIL_PORT=465
+MAIL_PORT=2525
 MAIL_USE_SSL=False
 MAIL_SERVER = 'mailtrap.io'
 MAIL_USE_TLS = False
-MAIL_USERNAME = '2b0ada28fba708'
-MAIL_PASSWORD = '20246fe241c3ea'
-MAIL_DEFAULT_SENDER = 'orka-95f195@inbox.mailtrap.io'
+MAIL_USERNAME = '2cffba9d2d92fd'
+MAIL_PASSWORD = '3cbdfc811f9313'
+MAIL_DEFAULT_SENDER = 'rafael.liverpool@gmail.com'
 #--------------------------------------
 
 # Theme configuration
@@ -103,13 +102,12 @@ MAIL_DEFAULT_SENDER = 'orka-95f195@inbox.mailtrap.io'
 #APP_THEME = "cerulean.css"
 #APP_THEME = "amelia.css"
 #APP_THEME = "cosmo.css"
-#APP_THEME = "cyborg.css"  
-#APP_THEME = "flatly.css"
+#APP_THEME = "cyborg.css"
+APP_THEME = "flatly.css"
 #APP_THEME = "journal.css"
 #APP_THEME = "readable.css"
 #APP_THEME = "simplex.css"
-#APP_THEME = "slate.css"   
-APP_THEME = "spacelab.css"
+#APP_THEME = "slate.css"
+#APP_THEME = "spacelab.css"
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
-

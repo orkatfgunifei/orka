@@ -19,13 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.2.0\n"
 
+
 #: app/views.py:102
 msgid "Users"
 msgstr "Usuários"
 
 #: app/views.py:103
 msgid "Nodes"
-msgstr "Nós"
+msgstr "Rede"
 
 #: app/views.py:104
 msgid "Images"
@@ -46,4 +47,3 @@ msgstr "Orka rodando no Flask"
 #: app/templates/index.html:6
 msgid "Let's code !"
 msgstr "Bora Codar !"
-
