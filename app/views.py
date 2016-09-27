@@ -34,7 +34,7 @@ class ContactModelView(ModelView):
 
     datamodel = SQLAInterface(Contact)
 
-    label_columns = {'contact_group': 'Contacts Group'}
+    label_columns = {'contact_group': _('Contacts Group')}
     list_columns = ['name', 'personal_celphone', 'birthday', 'contact_group']
 
     base_order = ('name', 'asc')
