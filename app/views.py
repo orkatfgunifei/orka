@@ -11,9 +11,11 @@ from flask_appbuilder.models.mixins import UserExtensionMixin
 from flask_appbuilder import SimpleFormView
 
 from app import db, appbuilder
-from .models import Contact, ContactGroup, Gender, Image, Node, Container
-from .forms import Terminal
-from .index import TerminalForm
+from models.contact import Contact, ContactGroup, Gender
+from models.image import Image
+from models.node import Node
+from models.container import Container
+
 
 log = logging.getLogger(__name__)
 
@@ -244,8 +246,7 @@ def page_not_found(e):
 db.create_all()
 
 fill_gender()
-# appbuilder.add_view(TerminalView, "Terminal View", icon="fa-group", label=_('Open console terminal'),
-#                      category="Terminal", category_icon="fa-cogs")
+
 appbuilder.add_view(GroupModelView, "List Groups", icon="fa-folder-open-o", category="Contacts", category_icon='fa-envelope')
 appbuilder.add_view(ContactModelView, "List Contacts", icon="fa-envelope", category="Contacts")
 appbuilder.add_separator("Contacts")
