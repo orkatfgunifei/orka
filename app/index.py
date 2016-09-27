@@ -10,10 +10,10 @@ from .bash import Bash
 
 class IndexView(IndexView):
     index_template = 'index.html'
-    
+
 
 class RegisterUserDBView(RegisterUserDBView):
-    email_template = 'register_mail.html'
+    email_template = 'security/register_mail.html'
     email_subject = _('Your Account activation')
     activation_template = 'activation.html'
     form_title = _('Fill out the registration form')
