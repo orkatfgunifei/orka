@@ -46,10 +46,6 @@ coverage.xml
 *,cover
 .hypothesis/
 
-# Translations
-*.mo
-*.pot
-
 # Django stuff:
 *.log
 
@@ -240,3 +236,6 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Pycharm
+.idea/
