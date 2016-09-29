@@ -7,8 +7,14 @@
 ----------------------------------
 Branches | Conteúdo
 -------- | --------
-Master | Default code tree
+Master | Versão Estável
+Develop | Versão em Desenvolvimento
 Monografia | Edição dos arquivos em LaTeX
+Revisao_Bibliografica | Pesquisa e embasamento teórico
+Workshop | Apresentação e Documentação
+Eng_Soft | Modelagem e Estruturação
+
+
 
 
 ## Instalação Dev:
