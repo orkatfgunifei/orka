@@ -37,20 +37,22 @@ Monografia | Edição dos arquivos em LaTeX
   
   - Abrir navegador em localhost:8080
 
-### Criar Admin
 
-    '''bash
-    fabmanager create-admin
-    '''
+## Configurações Finais
+   
+  > Criar Admin
 
-    Complete os dados e isto irá criar o usuário administrador
+  ```bash
+  fabmanager create-admin
+  ```
+  Complete os dados e isto irá criar o usuário administrador
 
-### Internacionalização
-
-    Execute ao menos uma vez este comando para sincronizar os idiomas
-
-    '''bash
-    fabmanager babel-compile
-    '''
+  > Internacionalização
+  
+  Execute ao menos uma vez este comando para sincronizar os idiomas
+  
+  ```bash
+  fabmanager babel-compile
+  ```
 
 ## Let's code !
