@@ -1,0 +1,873 @@
+# Translations template for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-09-27 19:50-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: app/index.py:17
+msgid "Your Account activation"
+msgstr ""
+
+#: app/index.py:19
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
+msgid "Fill out the registration form"
+msgstr ""
+
+#: app/index.py:20
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
+msgid "Not possible to register you at the moment, try again later"
+msgstr ""
+
+#: app/index.py:21
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
+msgid "Registration sent to your email"
+msgstr ""
+
+#: app/views.py:37
+msgid "Contacts Group"
+msgstr ""
+
+#: app/views.py:255
+msgid "Images"
+msgstr ""
+
+#: app/views.py:256
+msgid "Containers"
+msgstr ""
+
+#: app/views.py:257
+msgid "Nodes"
+msgstr ""
+
+#: app/templates/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: app/templates/index.html:7
+msgid "Orka running on Flask"
+msgstr ""
+
+#: app/templates/index.html:8
+msgid "Let's code !"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/const.py:108
+msgid "Access is Denied"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:77
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:79
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:131
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:138
+#: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:87
+#: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:164
+#: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:166
+#: env/lib/python2.7/site-packages/wtforms/ext/django/fields.py:95
+#: env/lib/python2.7/site-packages/wtforms/ext/sqlalchemy/fields.py:125
+#: env/lib/python2.7/site-packages/wtforms/ext/sqlalchemy/fields.py:127
+#: env/lib/python2.7/site-packages/wtforms/ext/sqlalchemy/fields.py:180
+#: env/lib/python2.7/site-packages/wtforms/ext/sqlalchemy/fields.py:185
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:472
+msgid "Not a valid choice"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:9
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:305
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/jsonchart.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/model/list.html:8
+msgid "Search"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:312
+msgid "Back"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:11
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:265
+msgid "Save"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:12
+#: env/lib/python2.7/site-packages/flask_wtf/file.py:36
+#: env/lib/python2.7/site-packages/wtforms/validators.py:203
+#: env/lib/python2.7/site-packages/wtforms/validators.py:243
+msgid "This field is required."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:13
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:759
+msgid "Not a valid date value"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:14
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/base_list.html:36
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_carousel.html:50
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_master.html:17
+msgid "No records found"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/upload.py:136
+#: env/lib/python2.7/site-packages/flask_appbuilder/upload.py:182
+msgid "Invalid file extension"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/validators.py:31
+msgid "Already exists."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/charts/views.py:32
+msgid "Group by"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:21
+msgid "Added Row"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:22
+msgid "Changed Row"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:23
+msgid "Deleted Row"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:24
+msgid "Associated data exists, please delete them first"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:25
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:26
+msgid "Integrity error, probably unique constraint"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:27
+msgid "General Error"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:25
+msgid "Count of"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:34
+msgid "Sum of"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:42
+msgid "Avg. of"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:66
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:62
+msgid "Contains"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:19
+msgid "Contains (insensitive)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:25
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:74
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:70
+msgid "Not Contains"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:31
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:12
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:78
+msgid "Equal to"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:37
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:23
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:89
+msgid "Not Equal to"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:43
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:34
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:100
+msgid "Greater than"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:49
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:42
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:108
+msgid "Smaller than"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:55
+msgid "Start with"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:50
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:30
+msgid "Starts with"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:58
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:38
+msgid "Not Starts with"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:82
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:116
+msgid "Relation"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:91
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:134
+msgid "Relation as Many"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:46
+msgid "Ends with"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:54
+msgid "Not Ends with"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:125
+msgid "No Relation"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:10
+msgid "OpenID"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:11
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:16
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:40
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:57
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:124
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:298
+msgid "User Name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:12
+msgid "Remember me"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:17
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:28
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:44
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:125
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:232
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:31
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:27
+msgid "Password"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:21
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:41
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:58
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:122
+msgid "First Name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:22
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:137
+msgid "Write the user first name or names"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:23
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:42
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:59
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:123
+msgid "Last Name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:24
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:138
+msgid "Write the user last name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:29
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:45
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:141
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:233
+msgid ""
+"Please use a good password policy, this application does not check this "
+"for you"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:33
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:49
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:237
+msgid "Confirm Password"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:34
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:50
+msgid "Please rewrite the password to confirm"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:35
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:51
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:240
+msgid "Passwords must match"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:43
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:60
+msgid "Email"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:421
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:116
+msgid "List Users"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:423
+msgid "Security"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:426
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:323
+msgid "List Roles"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:432
+msgid "User's Statistics"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:438
+msgid "User Registrations"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:444
+msgid "Base Permissions"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:447
+msgid "Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:450
+msgid "Permission on Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:55
+msgid "Account activation"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:63
+msgid "Registration not found"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:28
+msgid "List Base Permissions"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:29
+msgid "Show Base Permission"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:30
+msgid "Add Base Permission"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:31
+msgid "Edit Base Permission"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:33
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:45
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
+msgid "Name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:40
+msgid "List View Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:41
+msgid "Show View Menu"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:42
+msgid "Add View Menu"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:43
+msgid "Edit View Menu"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:52
+msgid "List Permissions on Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:53
+msgid "Show Permission on Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:54
+msgid "Add Permission on Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:55
+msgid "Edit Permission on Views/Menus"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:57
+msgid "Permission"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:57
+msgid "View/Menu"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:67
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:82
+msgid "Reset Password Form"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:69
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:84
+msgid "Password Changed"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:94
+msgid "Edit User Information"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:96
+msgid "User information changed"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:117
+msgid "Show User"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:118
+msgid "Add User"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:119
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:186
+msgid "Edit User"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:121
+msgid "Full Name"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:126
+msgid "Is Active?"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:127
+msgid "EMail"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:128
+msgid "Role"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:129
+msgid "Last login"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:130
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:299
+msgid "Login count"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:131
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:300
+msgid "Failed login count"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
+msgid "Created on"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:133
+msgid "Created by"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:134
+msgid "Changed on"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:135
+msgid "Changed by"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:139
+msgid "Username valid for authentication on DB or LDAP, unused for OID auth"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:143
+msgid "It's not a good policy to remove a user, just make it inactive"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:144
+msgid "The user's email, this will also be used for OID auth"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:145
+msgid ""
+"The user role on the application, this will associate with a list of "
+"permissions"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:147
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:238
+msgid "Please rewrite the user's password to confirm"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:152
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:162
+msgid "User info"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:154
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:164
+msgid "Personal Info"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:156
+msgid "Audit Info"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:172
+msgid "Your user information"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:280
+msgid "Reset my password"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:284
+msgid "Reset Password"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:297
+msgid "User Statistics"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:324
+msgid "Show Role"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
+msgid "Add Role"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:326
+msgid "Edit Role"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
+msgid "Permissions"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
+msgid "Copy Role"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
+msgid "Copy the selected roles?"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:347
+msgid "List of Registration Requests"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:348
+msgid "Show Registration"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:357
+msgid "Invalid login. Please try again."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:359
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:40
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:118
+msgid "Sign In"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:37
+msgid "Profile"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
+msgid "Logout"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
+msgid "Login"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
+msgid "Welcome"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
+msgid "User confirmation needed"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:40
+msgid "Actions"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:65
+msgid "Page size"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:83
+msgid "Order by"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:282
+msgid "Record Count"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:320
+msgid "Add a new record"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:327
+msgid "Edit record"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:334
+msgid "Show record"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:340
+msgid "You sure you want to delete this item?"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:341
+msgid "Delete record"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
+msgid "Group by fields"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
+msgid "Your user is activated you can now proceed to login"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:19
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:16
+msgid "Enter your login and password below"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:21
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:18
+msgid "Username"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:49
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:59
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:121
+msgid "If your not already a user, please register"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:50
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:60
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:122
+msgid "Register"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:44
+msgid "Please choose one of the following providers:"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:89
+msgid "Click on your OpenID provider below"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:101
+msgid "Or enter your OpenID here"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:105
+msgid "Please choose a provider"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:107
+msgid "Enter your OpenID Username"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/register_oauth.html:15
+msgid "Sign in using:"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/search.html:7
+msgid "Add Filter"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/flask_wtf/form.py:110
+#: env/lib/python2.7/site-packages/wtforms/csrf/session.py:61
+#: env/lib/python2.7/site-packages/wtforms/ext/csrf/session.py:58
+msgid "CSRF token missing"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:56
+#, python-format
+msgid "Invalid field name '%s'."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:64
+#, python-format
+msgid "Field must be equal to %(other_name)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:97
+#, python-format
+msgid "Field must be at least %(min)d character long."
+msgid_plural "Field must be at least %(min)d characters long."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:100
+#, python-format
+msgid "Field cannot be longer than %(max)d character."
+msgid_plural "Field cannot be longer than %(max)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:103
+#, python-format
+msgid "Field must be between %(min)d and %(max)d characters long."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:139
+#, python-format
+msgid "Number must be at least %(min)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:141
+#, python-format
+msgid "Number must be at most %(max)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:143
+#, python-format
+msgid "Number must be between %(min)s and %(max)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:275
+msgid "Invalid input."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:301
+msgid "Invalid email address."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:335
+msgid "Invalid IP address."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:386
+msgid "Invalid Mac address."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:415
+msgid "Invalid URL."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:436
+msgid "Invalid UUID."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:464
+#, python-format
+msgid "Invalid value, must be one of: %(values)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/validators.py:496
+#, python-format
+msgid "Invalid value, can't be any of: %(values)s."
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/csrf/core.py:98
+#: env/lib/python2.7/site-packages/wtforms/ext/csrf/form.py:47
+msgid "Invalid CSRF Token"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/csrf/session.py:69
+#: env/lib/python2.7/site-packages/wtforms/ext/csrf/session.py:66
+msgid "CSRF failed"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/csrf/session.py:74
+#: env/lib/python2.7/site-packages/wtforms/ext/csrf/session.py:71
+msgid "CSRF token expired"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:185
+msgid "Not a valid list"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:204
+msgid "Not a valid integer list"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/ext/dateutil/fields.py:63
+msgid "Please input a date/time value"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/ext/dateutil/fields.py:75
+#: env/lib/python2.7/site-packages/wtforms/ext/dateutil/fields.py:83
+msgid "Invalid date/time input"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:465
+msgid "Invalid Choice: could not coerce"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:498
+msgid "Invalid choice(s): one or more data inputs could not be coerced"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:505
+#, python-format
+msgid "'%(value)s' is not a valid choice for this field"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:588
+msgid "Not a valid integer value"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:654
+msgid "Not a valid decimal value"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:681
+msgid "Not a valid float value"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/wtforms/fields/core.py:742
+msgid "Not a valid datetime value"
+msgstr ""
+

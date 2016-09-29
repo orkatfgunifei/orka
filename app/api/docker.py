@@ -89,6 +89,14 @@ class Docker():
         """
         return self.execute('docker images')
 
+    def search(self, name):
+        """
+        Busca por imagens no Docker Hub
+        :param name: Nome da imagem requisitada
+        :return: retorna a lista dos containeres encontrados
+        """
+        return self.execute('docker search ' + name)
+
     def execute(self, command):
         """
         Executa comando dinamicamente
@@ -99,6 +107,14 @@ class Docker():
         out = p.stdout.read()
 
         return out
+
+    def top(self, name):
+        """
+        Exibe a lista dos principais processos em um container
+        :param name: nome do container
+        :return: string com a lista dos processos
+        """
+        return self.execute('docker top ' + name)
 
     def kill_and_remove(self, name):
         """
@@ -119,17 +135,20 @@ class Docker():
         return self.execute("docker version")
 
 
-# if __name__ == '__main__':
-#     a = Docker()
-#     print a
-#     comando = "-p 3000:3000 --name some-redmine redmine"
-#     imagem = a.run(comando)
-#     print a.list_containers()
-#
-#     #a.rm(imagem[1])
-#
-#     print a.list_containers()
-#
-#     #Necessário uso de thread para attach !
-#     # if imagem:
-#     #     a.attach(imagem[:8])
+if __name__ == '__main__':
+    a = Docker()
+    print a
+    comando = "-p 3000:3000 --name some-redmine redmine"
+    imagem = a.run(comando)
+    #print a.list_containers()
+
+
+    #a.rm(imagem[1])
+
+    #print a.inspect(imagem[1])
+
+    #print a.search('odoo')
+
+    #Necessário uso de thread para attach !
+    # if imagem:
+    #     a.attach(imagem[:8])

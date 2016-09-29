@@ -6,12 +6,7 @@ Branches | Conteúdo
 Master | Default code tree
 Monografia | Edição dos arquivos em LaTeX
 
-## Webhost Dev:
-    
-    - Alocado no pythonanywhere
-    
-    * http://rlimaeco.pythonanywhere.com
-        
+
 ## Instalação Dev:
 
   - Criar ambiente virtual
@@ -40,6 +35,22 @@ Monografia | Edição dos arquivos em LaTeX
   fabmanager run
   ```
   
-  - Abrir navegador em localhost:8080  
+  - Abrir navegador em localhost:8080
+
+### Criar Admin
+
+    '''bash
+    fabmanager create-admin
+    '''
+
+    Complete os dados e isto irá criar o usuário administrador
+
+### Internacionalização
+
+    Execute ao menos uma vez este comando para sincronizar os idiomas
+
+    '''bash
+    fabmanager babel-compile
+    '''
 
 ## Let's code !
