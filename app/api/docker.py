@@ -2,34 +2,62 @@
 from subprocess import Popen, PIPE
 
 
-def execute(*parameters):
-    """
-    Executa comando dinamicamente
-    :param parameters:
-    :return: Saida da execução    """
-
-    p = Popen(parameters[0], stdout=PIPE)
-    out = p.stdout.read()
-
-    return out
-
-
-def kill_and_remove(ctr_name):
-    for action in ('kill', 'rm'):
-        p = Popen('docker %s %s' % (action, ctr_name), shell=True,
-                  stdout=PIPE, stderr=PIPE)
-        if p.wait() != 0:
-            raise RuntimeError(p.stderr.read())
-
-#docker run --rm ubuntu:14.04 python3 -c "print('aee python333333')"
+"""
+    API Docker - Python
+    Orka
+"""
 
 class Docker():
 
+    def run(self, name):
+        self.execute('docker run ' + name)
+
+    def rm(self, name):
+        self.kill_and_remove(name)
+
+    def start(self, name):
+        self.execute('docker start ' + name)
+
+    def stop(self, name):
+        self.execute('docker stop ' + name)
+
+    def list(self, all=False):
+        command = "docker ps"
+
+        if all:
+            command += " -a"
+
+        self.execute(command)
+
+
+    def execute(self, command):
+        """
+        Executa comando dinamicamente
+        :param parameters:
+        :return: Saida da execução    """
+
+        p = Popen(command.split(), stdout=PIPE)
+        out = p.stdout.read()
+
+        return out
+
+    def kill_and_remove(self, name):
+        """
+        Mata o processo do container e remove-o
+        :param name:
+        :return:
+        """
+        for action in ('kill', 'rm'):
+            p = Popen('docker %s %s' % (action, name), shell=True,
+                      stdout=PIPE, stderr=PIPE)
+            if p.wait() != 0:
+                raise RuntimeError(p.stderr.read())
+
+
     def __repr__(self):
-        parameters = ['docker', 'ps']
-        ola = execute(parameters)
-        return ola
+        return self.execute("docker ps -a")
 
 
-a = Docker()
-print a
+if __name__ == '__main__':
+    a = Docker()
+    print a
