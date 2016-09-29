@@ -9,6 +9,9 @@ import json
 
 class Docker():
 
+    def info(self):
+        return self.execute('docker info')
+
     def run(self, name):
         """
         Executa uma imagem em um novo container
@@ -16,14 +19,14 @@ class Docker():
         :param name: Nome da imagem requisitada
         :return: (True ou False, hash_nome ou nome) --> Tupla de retorno
         """
-        resp = self.execute('docker run -d ' + name)
+        resp = self.execute('docker run -d %s' % (name))
 
         if resp != "":
             return  True, resp
         else:
             cmd = name.split().index('--name') + 1
             name = name.split()[cmd]
-            print "[INFO] Container com nome: " + name + " já existente, modifique o nome.\n"
+            print "[INFO] Container com nome: %s já existente, modifique o nome.\n" % (name)
             return False, name
 
 
@@ -33,7 +36,7 @@ class Docker():
         :param name: nome do container
         :return: Retorna um dicionário com todas as informações do container
         """
-        resp_json = self.execute('docker inspect ' + name)
+        resp_json = self.execute('docker inspect %s' % (name))
         if resp_json:
             resp = json.loads(resp_json)[0]
             return resp
@@ -42,8 +45,39 @@ class Docker():
 
     def attach(self, name):
         # TODO: Criar Tratamento de threads !
-        resp = self.execute('docker attach ' + name)
+        resp = self.execute('docker attach %s' % (name))
         print resp
+
+    def logs(self, name):
+        """
+        Recebe a saída do console de um container
+        :param name: nome do container
+        :return: string com o log se houver
+        """
+
+        log = self.execute('docker logs %s' % (name))
+
+        if log:
+            return log
+        else:
+            return False
+
+    def push(self, name):
+        """
+        Envia uma imagem ou um repositório para o registro (Docker Hub)
+        :param name: nome ou hash na imagem
+        :return:
+        """
+        self.execute('docker push %s' % (name))
+
+
+    def pull(self, name):
+        """
+        Recebe uma imagem ou repositório do registro (Docker Hub)
+        :param name: nome ou hash da imagem
+        :return:
+        """
+        self.execute(('docker pull %s' % (name)))
 
     def rm(self, name):
         """
@@ -53,13 +87,21 @@ class Docker():
         """
         return self.kill_and_remove(name)
 
+    def rmi(self, name):
+        """
+        Remoção de imagem
+        :param name: nome da imagem
+        :return:
+        """
+        return self.execute("docker rmi %s" % (name))
+
     def start(self, name):
         """
         Inícia container
         :param name: nome do container
         :return: nome ou hash do container
         """
-        return self.execute('docker start ' + name)
+        return self.execute('docker start %s' % (name))
 
     def stop(self, name):
         """
@@ -67,7 +109,24 @@ class Docker():
         :param name: nome do container
         :return: nome ou hash do container
         """
-        return self.execute('docker stop ' + name)
+        return self.execute('docker stop %s' % (name))
+
+    def restart(self, name):
+        """
+        Reinicia um container
+        :param name: nome do container
+        :return: retorna o nome do container reiniciado
+        """
+        return self.execute('docker restart %s' % (name))
+
+    def port(self, name):
+        """
+        Lista o mapeamento de portas de um container
+        :param name: nome do container
+        :return: string com as portas
+        """
+        return self.execute('docker port %s' % (name))
+
 
     def list_containers(self, all=False):
         """
@@ -95,7 +154,7 @@ class Docker():
         :param name: Nome da imagem requisitada
         :return: retorna a lista dos containeres encontrados
         """
-        return self.execute('docker search ' + name)
+        return self.execute('docker search %s' % (name))
 
     def execute(self, command):
         """
@@ -114,7 +173,18 @@ class Docker():
         :param name: nome do container
         :return: string com a lista dos processos
         """
-        return self.execute('docker top ' + name)
+        return self.execute('docker top %s' % (name))
+
+
+    def rename(self, name, new_name):
+        """
+        Renomeia o container
+        :param name: nome do container
+        :param new_name: novo nome do container
+        :return: True se tudo ocorrer bem
+        """
+        self.execute('docker rename %s %s' % (name, new_name))
+        return True
 
     def kill_and_remove(self, name):
         """
@@ -135,20 +205,20 @@ class Docker():
         return self.execute("docker version")
 
 
-if __name__ == '__main__':
-    a = Docker()
-    print a
-    comando = "-p 3000:3000 --name some-redmine redmine"
-    imagem = a.run(comando)
-    #print a.list_containers()
-
-
-    #a.rm(imagem[1])
-
-    #print a.inspect(imagem[1])
-
-    #print a.search('odoo')
-
-    #Necessário uso de thread para attach !
-    # if imagem:
-    #     a.attach(imagem[:8])
+# if __name__ == '__main__':
+#     a = Docker()
+#     print a
+#     comando = "-p 3000:3000 --name some-redmine redmine"
+#     imagem = a.run(comando)
+#     #print a.list_containers()
+#
+#
+#     #a.rm(imagem[1])
+#
+#     #print a.inspect(imagem[1])
+#
+#     #print a.search('odoo')
+#
+#     #Necessário uso de thread para attach !
+#     # if imagem:
+#     #     a.attach(imagem[:8])
