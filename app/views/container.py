@@ -1,9 +1,10 @@
 #coding: utf-8
-
+from sqlalchemy.orm.attributes import get_history
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from app.models.container import Container
 from app import cli
+from . import db
 
 class ContainerModelView(ModelView):
 
@@ -130,11 +131,13 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_delete(item)
 
-        if item.name:
-            resp = cli.rm(item.name)
+        if item.hostname:
+            resp = cli.rm(item.hostname)
 
             if not resp:
-                raise RuntimeError("Não foi possível remover o container [%s]" % (item.name))
+                raise RuntimeError("Não foi possível remover o container [%s]" % (item.hostname))
+
+
 
     def pre_update(self, item):
         """
@@ -145,5 +148,12 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_update(item)
 
-        if item.name:
-            print item.name
+        if item.id and item.hostname:
+            container = db.session.query(Container).get(item.id)
+            old_name = get_history(container, 'hostname')
+
+            if item.hostname != old_name[2][0]:
+                cli.rename(old_name[2][0], item.hostname)
+            else:
+                raise RuntimeError("Não foi possível editar o container [%s]" % (item.hostname))
+

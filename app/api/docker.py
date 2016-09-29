@@ -20,7 +20,7 @@ class Docker():
         :return: (True ou False, hash_nome ou nome) --> Tupla de retorno -p 3000:3000 --name some-redmine redmine
         """
         command = 'docker run -d '
-
+        #TODO: Parametro name deverá ser do objeto image
         if item.port:
             command += "-p %s:%s " %(item.port, item.port)
         if item.name and item.hostname:
