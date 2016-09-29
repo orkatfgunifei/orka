@@ -21,22 +21,22 @@ msgstr ""
 
 #: app/index.py:17
 msgid "Your Account activation"
-msgstr ""
+msgstr "Sua ativação da conta"
 
 #: app/index.py:19
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
-msgstr ""
+msgstr "Preencha o formulário de registro"
 
 #: app/index.py:20
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
-msgstr ""
+msgstr "Não foi possível registrá-lo no momento, tente novamente"
 
 #: app/index.py:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
-msgstr ""
+msgstr "Um email de ativação da conta foi envia para você"
 
 #: app/views.py:37
 msgid "Contacts Group"
@@ -68,7 +68,7 @@ msgstr "Vamos codar !"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/const.py:108
 msgid "Access is Denied"
-msgstr ""
+msgstr "Acesso não permitido"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:77
 #: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:79
@@ -84,7 +84,7 @@ msgstr ""
 #: env/lib/python2.7/site-packages/wtforms/ext/sqlalchemy/fields.py:185
 #: env/lib/python2.7/site-packages/wtforms/fields/core.py:472
 msgid "Not a valid choice"
-msgstr ""
+msgstr "Opção inválida"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:9
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:305
@@ -93,166 +93,166 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/jsonchart.html:8
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/model/list.html:8
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:312
 msgid "Back"
-msgstr ""
+msgstr "Voltar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:11
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:265
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:12
 #: env/lib/python2.7/site-packages/flask_wtf/file.py:36
 #: env/lib/python2.7/site-packages/wtforms/validators.py:203
 #: env/lib/python2.7/site-packages/wtforms/validators.py:243
 msgid "This field is required."
-msgstr ""
+msgstr "Este campo é obrigatório"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:13
 #: env/lib/python2.7/site-packages/wtforms/fields/core.py:759
 msgid "Not a valid date value"
-msgstr ""
+msgstr "Data inválida"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:14
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/base_list.html:36
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_carousel.html:50
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_master.html:17
 msgid "No records found"
-msgstr ""
+msgstr "Nenhum registro encontrado"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/upload.py:136
 #: env/lib/python2.7/site-packages/flask_appbuilder/upload.py:182
 msgid "Invalid file extension"
-msgstr ""
+msgstr "Extensão de arquivo inválida"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/validators.py:31
 msgid "Already exists."
-msgstr ""
+msgstr "Já existe."
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/charts/views.py:32
 msgid "Group by"
-msgstr ""
+msgstr "Agrupado por"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:21
 msgid "Added Row"
-msgstr ""
+msgstr "Registro adicionado"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:22
 msgid "Changed Row"
-msgstr ""
+msgstr "Registro editado"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:23
 msgid "Deleted Row"
-msgstr ""
+msgstr "Registro removido"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:24
 msgid "Associated data exists, please delete them first"
-msgstr ""
+msgstr "Dados associados existentes, favor remova-os primeiro"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:25
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:26
 msgid "Integrity error, probably unique constraint"
-msgstr ""
+msgstr "Erro de integridade, provável parâmetro único"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/base.py:27
 msgid "General Error"
-msgstr ""
+msgstr "Erro Geral"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:25
 msgid "Count of"
-msgstr ""
+msgstr "Qtd de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:34
 msgid "Sum of"
-msgstr ""
+msgstr "Total de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/group.py:42
 msgid "Avg. of"
-msgstr ""
+msgstr "Média de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:10
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:66
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:62
 msgid "Contains"
-msgstr ""
+msgstr "Contém"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:19
 msgid "Contains (insensitive)"
-msgstr ""
+msgstr "Contém (indiferente)"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:25
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:74
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:70
 msgid "Not Contains"
-msgstr ""
+msgstr "Não Contém"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:31
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:12
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:78
 msgid "Equal to"
-msgstr ""
+msgstr "Igual à"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:37
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:23
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:89
 msgid "Not Equal to"
-msgstr ""
+msgstr "Diferente de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:43
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:34
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:100
 msgid "Greater than"
-msgstr ""
+msgstr "Maior que"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:42
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:108
 msgid "Smaller than"
-msgstr ""
+msgstr "Menor que"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:55
 msgid "Start with"
-msgstr ""
+msgstr "Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:50
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:30
 msgid "Starts with"
-msgstr ""
+msgstr "Iniciando com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:58
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:38
 msgid "Not Starts with"
-msgstr ""
+msgstr "Não Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:82
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:116
 msgid "Relation"
-msgstr ""
+msgstr "Relação"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:91
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:134
 msgid "Relation as Many"
-msgstr ""
+msgstr "Múltiplas Relações"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:46
 msgid "Ends with"
-msgstr ""
+msgstr "Terminado com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:54
 msgid "Not Ends with"
-msgstr ""
+msgstr "Não Terminado em"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:125
 msgid "No Relation"
-msgstr ""
+msgstr "Não Relacionado"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:10
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:11
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:16
@@ -261,11 +261,11 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:124
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:298
 msgid "User Name"
-msgstr ""
+msgstr "Nome de Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:12
 msgid "Remember me"
-msgstr ""
+msgstr "Lembre-me"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:17
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:28
@@ -275,31 +275,31 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:31
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:27
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:41
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:58
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:122
 msgid "First Name"
-msgstr ""
+msgstr "Primeiro Nome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:22
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:137
 msgid "Write the user first name or names"
-msgstr ""
+msgstr "Escreva seu primeiro nome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:23
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:42
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:59
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:123
 msgid "Last Name"
-msgstr ""
+msgstr "Sobrenome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:24
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:138
 msgid "Write the user last name"
-msgstr ""
+msgstr "Escreva seu sobrenome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:45
