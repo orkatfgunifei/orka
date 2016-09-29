@@ -12,22 +12,29 @@ class Docker():
     def info(self):
         return self.execute('docker info')
 
-    def run(self, name):
+    def run(self, item):
         """
         Executa uma imagem em um novo container
         Caso já exista ele retorna o nome do container
         :param name: Nome da imagem requisitada
-        :return: (True ou False, hash_nome ou nome) --> Tupla de retorno
+        :return: (True ou False, hash_nome ou nome) --> Tupla de retorno -p 3000:3000 --name some-redmine redmine
         """
-        resp = self.execute('docker run -d %s' % (name))
+        command = 'docker run -d '
+
+        if item.port:
+            command += "-p %s:%s " %(item.port, item.port)
+        if item.name and item.hostname:
+            command += "--name %s %s" %(item.hostname, item.name)
+        elif item.name:
+            command += "--name %s" %(item.name)
+
+
+        resp = self.execute(command)
 
         if resp != "":
             return  True, resp
         else:
-            cmd = name.split().index('--name') + 1
-            name = name.split()[cmd]
-            print "[INFO] Container com nome: %s já existente, modifique o nome.\n" % (name)
-            return False, name
+            return False, resp
 
 
     def inspect(self, name):
@@ -202,7 +209,7 @@ class Docker():
 
 
     def __repr__(self):
-        return self.execute("docker version")
+        return "Docker API Urubu"
 
 
 # if __name__ == '__main__':

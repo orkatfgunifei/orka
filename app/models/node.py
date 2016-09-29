@@ -9,4 +9,4 @@ class Node(Model):
     ip = Column(String(64))
 
     def __repr__(self):
-        return self.name
+        return "[%s] " % (self.id) + self.name

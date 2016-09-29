@@ -10,7 +10,7 @@ class ContactGroup(Model):
     name = Column(String(50), unique = True, nullable=False)
 
     def __repr__(self):
-        return self.name
+        return "[%s] " % (self.id) + self.name
 
 
 class Gender(Model):
@@ -18,7 +18,7 @@ class Gender(Model):
     name = Column(String(50), unique = True, nullable=False)
 
     def __repr__(self):
-        return self.name
+        return "[%s] " % (self.id) + self.name
 
 class UserExtended(Model, UserExtensionMixin):
     contact_group_id = Column(Integer, ForeignKey('contact_group.id'), nullable=True)
@@ -37,7 +37,7 @@ class Contact(Model):
     gender = relationship("Gender")
 
     def __repr__(self):
-        return self.name
+        return "[%s] " % (self.id) + self.name
 
     def month_year(self):
         date = self.birthday or mindate

@@ -15,6 +15,7 @@ class Container(Model):
     container_id = Column(String(32))
     host = Column(String(32))
     hostname = Column(String(32))
+    port = Column(String(6))
     domain_name = Column(String(32))
     cpu_reserved = Column(Integer)
     storage_reserved = Column(Integer)
@@ -27,4 +28,4 @@ class Container(Model):
     container_type = Column(Integer)
 
     def __repr__(self):
-        return self.name
+        return "[%s] " % (self.id) + self.name

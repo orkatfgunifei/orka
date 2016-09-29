@@ -40,31 +40,31 @@ msgstr ""
 
 #: app/views.py:37
 msgid "Contacts Group"
-msgstr ""
+msgstr "Grupo de Contatos"
 
 #: app/views.py:255
 msgid "Images"
-msgstr ""
+msgstr "Imagens"
 
 #: app/views.py:256
 msgid "Containers"
-msgstr ""
+msgstr "Conteineres"
 
 #: app/views.py:257
 msgid "Nodes"
-msgstr ""
+msgstr "Rede"
 
 #: app/templates/404.html:4
 msgid "Page not found"
-msgstr ""
+msgstr "Página não encontrada"
 
 #: app/templates/index.html:7
 msgid "Orka running on Flask"
-msgstr ""
+msgstr "Orka flutuando via Flask"
 
 #: app/templates/index.html:8
 msgid "Let's code !"
-msgstr ""
+msgstr "Vamos codar !"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/const.py:108
 msgid "Access is Denied"

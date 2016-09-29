@@ -1,14 +1,20 @@
+#coding: utf-8
+
 import logging
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
 from app.index import IndexView
+from app.api.docker import Docker
 
 """
- Logging configuration
+ Configuração de log
 """
 
 logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
+
+# Instância do cliente Docker
+cli = Docker()
 
 app = Flask(__name__)
 app.config.from_object('config')
