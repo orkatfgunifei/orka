@@ -600,7 +600,7 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:357
 msgid "Invalid login. Please try again."
-msgstr ""
+msgstr "Login inválido. Por favor tente novamente"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:359
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
@@ -608,27 +608,27 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:118
 msgid "Sign In"
-msgstr ""
+msgstr "Entrar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:37
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
 msgid "Logout"
-msgstr ""
+msgstr "Sair"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
 msgid "Login"
-msgstr ""
+msgstr "Entrar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
 msgid "Welcome"
-msgstr ""
+msgstr "Bem Vindo"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
 msgid "User confirmation needed"
@@ -686,7 +686,7 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:18
 msgid "Username"
-msgstr ""
+msgstr "Nome de Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:59
@@ -698,7 +698,7 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:60
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:122
 msgid "Register"
-msgstr ""
+msgstr "Entrar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:44
 msgid "Please choose one of the following providers:"
@@ -873,24 +873,4 @@ msgstr ""
 msgid "Not a valid datetime value"
 msgstr ""
 
-#~ msgid "Users"
-#~ msgstr "Usuários"
-
-#~ msgid "Nodes"
-#~ msgstr "Rede"
-
-#~ msgid "Images"
-#~ msgstr "Imagens"
-
-#~ msgid "Containers"
-#~ msgstr "Conteineres"
-
-#~ msgid "Page not found"
-#~ msgstr "Página não encontrada"
-
-#~ msgid "Orka running on Flask"
-#~ msgstr "Orka rodando no Flask"
-
-#~ msgid "Let's code !"
-#~ msgstr "Bora Codar !"
 
