@@ -1,10 +1,12 @@
 #coding: utf-8
-from sqlalchemy.orm.attributes import get_history
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from app.models.container import Container
+from sqlalchemy.orm.attributes import get_history
+
 from app import cli
+from app.models.container import Container
 from . import db
+
 
 class ContainerModelView(ModelView):
 
@@ -118,11 +120,11 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_delete(item)
 
-        if item.hostname:
-            resp = cli.rm(item.hostname)
+        if item.name:
+            resp = cli.rm(item.name)
 
             if not resp:
-                raise RuntimeError("Não foi possível remover o container [%s]" % (item.hostname))
+                raise RuntimeError("Não foi possível remover o container [%s]" % (item.name))
 
 
 

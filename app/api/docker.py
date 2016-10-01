@@ -1,6 +1,6 @@
 #coding: utf-8
-from subprocess import Popen, PIPE
 import json
+from subprocess import Popen, PIPE
 
 """
     API Docker - Python
@@ -9,6 +9,8 @@ import json
 
 class Docker():
 
+
+
     def info(self):
         return self.execute('docker info')
 
@@ -16,18 +18,19 @@ class Docker():
         """
         Executa uma imagem em um novo container
         Caso já exista ele retorna o nome do container
-        :param name: Nome da imagem requisitada
+        :param item: objeto Container
         :return: (True ou False, hash_nome ou nome) --> Tupla de retorno -p 3000:3000 --name some-redmine redmine
         """
         command = 'docker run -d '
-        #TODO: Parametro name deverá ser do objeto image
+
+
         if item.port:
             command += "-p %s:%s " %(item.port, item.port)
         if item.name and item.image:
             command += "--name %s %s" %(item.name, item.image.name)
 
-
         resp = self.execute(command)
+
 
         if resp != "":
             return  True, resp
@@ -164,12 +167,11 @@ class Docker():
     def execute(self, command):
         """
         Executa comando dinamicamente
-        :param parameters:
+        :param command: String com o comando a ser executado
         :return: Saida da execução    """
 
         p = Popen(command.split(), stdout=PIPE)
         out = p.stdout.read()
-
         return out
 
     def top(self, name):
@@ -198,10 +200,21 @@ class Docker():
         :return:
         """
         for action in ('kill', 'rm'):
-            p = Popen('docker %s %s' % (action, name), shell=True,
+            if action == 'kill':
+                try:
+                    p = Popen('docker %s %s' % (action, name), shell=True,
                       stdout=PIPE, stderr=PIPE)
-            if p.wait() != 0:
-                raise RuntimeError(p.stderr.read())
+
+                    if p.wait() != 0:
+                        raise RuntimeError(p.stderr.read())
+                except:
+                    print "Não executando, apenas irá remover"
+            else:
+                p = Popen('docker %s %s' % (action, name), shell=True,
+                          stdout=PIPE, stderr=PIPE)
+
+                if p.wait() != 0:
+                    raise RuntimeError(p.stderr.read())
 
         return True
 
@@ -210,20 +223,3 @@ class Docker():
         return "Docker API Urubu"
 
 
-# if __name__ == '__main__':
-#     a = Docker()
-#     print a
-#     comando = "-p 3000:3000 --name some-redmine redmine"
-#     imagem = a.run(comando)
-#     #print a.list_containers()
-#
-#
-#     #a.rm(imagem[1])
-#
-#     #print a.inspect(imagem[1])
-#
-#     #print a.search('odoo')
-#
-#     #Necessário uso de thread para attach !
-#     # if imagem:
-#     #     a.attach(imagem[:8])

@@ -560,7 +560,7 @@ msgstr "Altere minha senha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:284
 msgid "Reset Password"
-msgstr "Alterar Senhar"
+msgstr "Alterar Senha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:297
 msgid "User Statistics"
@@ -568,15 +568,15 @@ msgstr "Estatísticas do Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:324
 msgid "Show Role"
-msgstr "Exibir Linha"
+msgstr "Exibir Papel"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
 msgid "Add Role"
-msgstr "Adicionar Linha"
+msgstr "Adicionar Papel"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:326
 msgid "Edit Role"
-msgstr "Editar Linha"
+msgstr "Editar Papel"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
 msgid "Permissions"
@@ -584,7 +584,7 @@ msgstr "Permissões"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
 msgid "Copy Role"
-msgstr "Copiar Linha"
+msgstr "Copiar Papel"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
 msgid "Copy the selected roles?"
@@ -726,7 +726,7 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/search.html:7
 msgid "Add Filter"
-msgstr ""
+msgstr "Adicionar Filtro"
 
 #: env/lib/python2.7/site-packages/flask_wtf/form.py:110
 #: env/lib/python2.7/site-packages/wtforms/csrf/session.py:61
