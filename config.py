@@ -1,6 +1,12 @@
+#coding: utf-8
 import os
 from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_DB, AUTH_LDAP, AUTH_OAUTH
 basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+# Modo de execução do servidor
+RUN_MODE = ["PROD", "TEST", "DEV"][2]
+# TODO: Se modo PROD utilizar postgresql, Se DEV ou TEST utilizar sqllite
 
 # Your App secret key
 SECRET_KEY = '\2\tfgunifeirules\1\2\e\y\y\h'
@@ -16,8 +22,10 @@ CSRF_ENABLED = True
 #------------------------------
 # GLOBALS FOR APP Builder
 #------------------------------
-# Uncomment to setup Your App name
 APP_NAME = "Orka"
+
+if RUN_MODE != "PROD":
+    APP_NAME += " [%s]" % RUN_MODE
 
 # Uncomment to setup Setup an App icon
 APP_ICON = "/static/img/whale.png"

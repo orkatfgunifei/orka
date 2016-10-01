@@ -539,64 +539,64 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:152
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:162
 msgid "User info"
-msgstr ""
+msgstr "Informações Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:154
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:164
 msgid "Personal Info"
-msgstr ""
+msgstr "Informações Pessoais"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:156
 msgid "Audit Info"
-msgstr ""
+msgstr "Extra Info."
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:172
 msgid "Your user information"
-msgstr ""
+msgstr "Suas informações"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:280
 msgid "Reset my password"
-msgstr ""
+msgstr "Altere minha senha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:284
 msgid "Reset Password"
-msgstr ""
+msgstr "Alterar Senhar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:297
 msgid "User Statistics"
-msgstr ""
+msgstr "Estatísticas do Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:324
 msgid "Show Role"
-msgstr ""
+msgstr "Exibir Linha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
 msgid "Add Role"
-msgstr ""
+msgstr "Adicionar Linha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:326
 msgid "Edit Role"
-msgstr ""
+msgstr "Editar Linha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
 msgid "Permissions"
-msgstr ""
+msgstr "Permissões"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
 msgid "Copy Role"
-msgstr ""
+msgstr "Copiar Linha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
 msgid "Copy the selected roles?"
-msgstr ""
+msgstr "Copiar as linhas selecionadas?"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:347
 msgid "List of Registration Requests"
-msgstr ""
+msgstr "Lista de Requerimentos"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:348
 msgid "Show Registration"
-msgstr ""
+msgstr "Exibir Cadastro"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:357
 msgid "Invalid login. Please try again."
@@ -632,56 +632,56 @@ msgstr "Bem Vindo"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
 msgid "User confirmation needed"
-msgstr ""
+msgstr "Confirmação do usuário necessária"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:40
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:65
 msgid "Page size"
-msgstr ""
+msgstr "Páginas"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:83
 msgid "Order by"
-msgstr ""
+msgstr "Ordenado por"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:282
 msgid "Record Count"
-msgstr ""
+msgstr "Qtd. de Registros"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:320
 msgid "Add a new record"
-msgstr ""
+msgstr "Adicionar novo"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:327
 msgid "Edit record"
-msgstr ""
+msgstr "Editar registro"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:334
 msgid "Show record"
-msgstr ""
+msgstr "Exibir registro"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:340
 msgid "You sure you want to delete this item?"
-msgstr ""
+msgstr "Você realmente desejar deletar?"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:341
 msgid "Delete record"
-msgstr ""
+msgstr "Remover registro"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
 msgid "Group by fields"
-msgstr ""
+msgstr "Agrupado por campos"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
 msgid "Your user is activated you can now proceed to login"
-msgstr ""
+msgstr "Sua conta está ativada, bem vindo ao Orka"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:19
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:16
 msgid "Enter your login and password below"
-msgstr ""
+msgstr "Insira seu nome de usuário e senha abaixo"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:18
@@ -692,7 +692,7 @@ msgstr "Nome de Usuário"
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:59
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:121
 msgid "If your not already a user, please register"
-msgstr ""
+msgstr "Se não possuir cadastro, por favor registre-se"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:50
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:60

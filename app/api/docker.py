@@ -23,10 +23,8 @@ class Docker():
         #TODO: Parametro name deverá ser do objeto image
         if item.port:
             command += "-p %s:%s " %(item.port, item.port)
-        if item.name and item.hostname:
-            command += "--name %s %s" %(item.hostname, item.name)
-        elif item.name:
-            command += "--name %s" %(item.name)
+        if item.name and item.image:
+            command += "--name %s %s" %(item.name, item.image.name)
 
 
         resp = self.execute(command)

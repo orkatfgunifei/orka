@@ -7,6 +7,7 @@ from container import ContainerModelView
 
 class NodeModelView(ModelView):
     datamodel = SQLAInterface(Node)
+
     related_views = [ContainerModelView]
 
     list_columns = ['name', 'ip']

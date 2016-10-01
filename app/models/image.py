@@ -8,4 +8,4 @@ class Image(Model):
     virtual_size = Column(Integer)
 
     def __repr__(self):
-        return "[%s] " % (self.id) + self.name
+        return  self.name

@@ -10,37 +10,30 @@ class ContainerModelView(ModelView):
 
     datamodel = SQLAInterface(Container)
 
+
+
     list_columns = ['name',
-                    'hostname',
-                    'host',
-                    'port',
-                    'domain_name',
-                    'cpu_reserved',
-                    'storage_reserved',
-                    'environment',
                     'image',
                     'node',
-                    'container_type',
-                    'docker_file']
+                    'port',
+                    'status',
+                    ]
 
 
     show_fieldsets = [
         ('Summary', {'fields': [
                         'name',
-                        'domain_name',
-                        'container_type'
+                        'image',
+                        'port',
+                        'status'
                                ]}),
         (
             'Advanced Info',
             {'fields': [
-                        'hostname',
-                        'host',
-                        'port',
+                        'hash_id',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'environment',
-                        'image',
                         'node',
                         'docker_file'], 'expanded': False}),
     ]
@@ -48,20 +41,15 @@ class ContainerModelView(ModelView):
     add_fieldsets = [
         ('Summary', {'fields': [
                         'name',
-                        'domain_name',
-                        'container_type'
+                        'image',
+                        'port'
                                ]}),
         (
             'Advanced Info',
             {'fields': [
-                        'hostname',
-                        'host',
-                        'port',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'environment',
-                        'image',
                         'node',
                         'docker_file'], 'expanded': True}),
     ]
@@ -69,20 +57,17 @@ class ContainerModelView(ModelView):
     edit_fieldsets = [
         ('Summary', {'fields': [
                         'name',
-                        'domain_name',
-                        'container_type'
+                        'image',
+                        'port',
+                        'status'
                                ]}),
         (
             'Advanced Info',
             {'fields': [
-                        'hostname',
-                        'host',
-                        'port',
+                        'hash_id',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'environment',
-                        'image',
                         'node',
                         'docker_file'], 'expanded': False}),
     ]
@@ -90,20 +75,17 @@ class ContainerModelView(ModelView):
     search_fieldsets = [
         ('Summary', {'fields': [
                         'name',
-                        'domain_name',
-                        'container_type'
+                        'image',
+                        'port',
+                        'status'
                                ]}),
         (
             'Advanced Info',
             {'fields': [
-                        'hostname',
-                        'host',
-                        'port',
+                        'hash_id',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'environment',
-                        'image',
                         'node',
                         'docker_file'], 'expanded': False}),
     ]
@@ -121,6 +103,11 @@ class ContainerModelView(ModelView):
             resp = cli.run(item)
             if not resp[0] or "Error" in resp or "error" in resp:
                 raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
+            elif resp[0]:
+                item.hash_id = resp[1]
+                item.status = True
+
+
 
     def pre_delete(self, item):
         """
@@ -147,13 +134,23 @@ class ContainerModelView(ModelView):
         :return:
         """
         super(ContainerModelView, self).pre_update(item)
+        #len(old_name.unchanged)
+        container = db.session.query(Container).get(item.id)
 
-        if item.id and item.hostname:
-            container = db.session.query(Container).get(item.id)
-            old_name = get_history(container, 'hostname')
+        # Verfica cada parâmetro por mudanças
+        name = get_history(container, 'name')
 
-            if item.hostname != old_name[2][0]:
-                cli.rename(old_name[2][0], item.hostname)
+        if not len(name.unchanged) > 0:
+            cli.rename(name.deleted[0], name.added[0])
+
+        status = get_history(container, 'status')
+
+        if not len(status.unchanged) > 0:
+            if status.added[0]:
+                cli.start(item.name)
             else:
-                raise RuntimeError("Não foi possível editar o container [%s]" % (item.hostname))
+                cli.stop(item.name)
+
+
+
 
