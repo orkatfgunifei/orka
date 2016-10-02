@@ -1,0 +1,46 @@
+{% extends 'orka/init.html' %}
+{% import 'orka/baselib.html' as baselib %}
+
+{% block body %}
+        {% include 'orka/general/confirm.html' %}
+        {% include 'orka/general/alert.html' %}
+
+    {% block navbar %}
+        {% include 'orka/navbar.html' %}
+    {% endblock %}
+
+
+    <div class="row">
+        {% if not current_user.is_anonymous() %}
+            {% include 'orka/sidebar.html' %}
+        {% else %}
+            {% include 'orka/index.html' %}
+        {% endif %}
+        <div class=" main {% if not current_user.is_anonymous() %} col-sm-9  col-lg-10 col-sm-offset-3 col-lg-offset-2 main {% else %} {% endif %}">
+            {% if not current_user.is_anonymous() %}
+            <div class="row" style="padding: 15px !important;">
+                <ol class="breadcrumb">
+                    <li><a href="/"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+                    <li class="active">{{ title }}</li>
+                </ol>
+            </div><!--/.row-->
+            {% block messages %}
+                {% include 'orka/flash.html' %}
+            {% endblock %}
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+        </div>
+  </div>
+
+    {% block footer %}
+        <footer>
+        <div class="img-rounded nav-fixed-bottom">
+            <div class="container">
+                {% include 'orka/footer.html' %}
+            </div>
+        </div>
+        </footer>
+    {% endblock %}
+{% endblock %}
+

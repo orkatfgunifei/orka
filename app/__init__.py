@@ -19,8 +19,8 @@ cli = Docker()
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLA(app)
-appbuilder = AppBuilder(app, db.session, indexview=IndexView)
-
+appbuilder = AppBuilder(app, db.session, base_template='orkabase.html')
+# appbuilder = AppBuilder(app, db.session, indexview=IndexView)
 
 
 
