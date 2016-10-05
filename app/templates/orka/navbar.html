@@ -11,9 +11,9 @@
                 <span class="icon-bar"></span>
             </button>
             {% if appbuilder.app_icon %}
-{#                <a class="navbar-brand" href="{{appbuilder.get_url_for_index}}">#}
-{#                <img src="{{appbuilder.app_icon}}" >#}
-{#                </a>#}
+                  <a class="" style="position: absolute" href="{{appbuilder.get_url_for_index}}">
+                  <img style="max-height: 44px; padding-top:6px;" src="{{appbuilder.app_icon}}" >
+                  </a>
             {% else %}
                 <span class="navbar-brand">
                 <a href="{{appbuilder.get_url_for_index}}">
@@ -32,4 +32,3 @@
         </div>
    </div>
 </nav>
-

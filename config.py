@@ -28,7 +28,7 @@ if RUN_MODE != "PROD":
     APP_NAME += " [%s]" % RUN_MODE
 
 # Uncomment to setup Setup an App icon
-APP_ICON = "/static/img/whale.png"
+APP_ICON = "/static/img/logo.png"
 
 #----------------------------------------------------
 # AUTHENTICATION CONFIG
