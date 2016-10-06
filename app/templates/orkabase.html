@@ -1,15 +1,15 @@
-{% extends 'orka/baselayout.html' %}
-
-{% block content %}
 {% if not current_user.is_anonymous() %}
+    {% extends 'orka/baselayout.html' %}
+    {% block content %}
     {% include 'orka/dashboard.html' %}
+    {% endblock %}
 {% else %}
-    <div class="jumbotron">
-        <div class="container">
-            <h1>{{_("Orka running on Flask")}}</h1>
-            <p>{{_("Let's code !")}}<a href="{{appbuilder.get_url_for_login}}">
-            <i class="fa fa-fw fa-sign-in"></i>{{_("Login")}}</a></p>
-        </div>
-    </div>
+    {% include 'orka/index.html' %}
+{#    <div class="jumbotron">#}
+{#        <div class="container">#}
+{#            <h1>{{_("Orka running on Flask")}}</h1>#}
+{#            <p>{{_("Let's code !")}}<a href="{{appbuilder.get_url_for_login}}">#}
+{#            <i class="fa fa-fw fa-sign-in"></i>{{_("Login")}}</a></p>#}
+{#        </div>#}
+{#    </div>#}
 {% endif %}
-{% endblock %}

@@ -1,9 +1,0 @@
-{% extends 'orka/baselayout.html' %}
-
-{% block content %}
-{% if not current_user.is_anonymous() %}
-    {% include 'orka/dashboard.html' %}
-{% else %}
-{% include "orka/index.html" %}
-{% endif %}
-{% endblock %}
