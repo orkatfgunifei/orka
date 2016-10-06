@@ -7,8 +7,11 @@
             <input type="text" class="form-control" placeholder={{_("Search")}}>
         </div>
     </form>
-    <ul class="nav menu">
-        {% include 'appbuilder/navbar_menu.html' %}
+
+    <ul class="menu nav">
+    {% include 'orka/sidebar_menu.html' %}
+    <li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><span class="fa fa-fw fa-user"></span>{{_("Profile")}}</a></li>
+    <li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><span class="fa fa-fw fa-sign-out"></span>{{_("Logout")}}</a></li>
     </ul>
 {#    <ul class="nav menu">#}
 {#        <li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>#}
@@ -43,5 +46,6 @@
 {#        <li role="presentation" class="divider"></li>#}
 {#        <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>#}
 {#    </ul>#}
+
 
 </div><!--/.sidebar-->

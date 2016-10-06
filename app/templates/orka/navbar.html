@@ -12,7 +12,7 @@
             </button>
             {% if appbuilder.app_icon %}
                   <a class="" style="position: absolute" href="{{appbuilder.get_url_for_index}}">
-                  <img style="max-height: 44px; padding-top:6px;" src="{{appbuilder.app_icon}}" >
+                  <img style="max-height: 44px; padding-top:6px;padding-left: 28%;" src="{{appbuilder.app_icon}}" >
                   </a>
             {% else %}
                 <span class="navbar-brand">
@@ -23,9 +23,6 @@
             {% endif %}
         </div>
         <div class="navbar-collapse collapse">
-{#            <ul class="nav navbar-nav">#}
-{#                {% include 'orka/navbar_menu.html' %}#}
-{#            </ul>#}
             <ul class="nav navbar-nav navbar-right">
                 {% include 'orka/navbar_right.html' %}
             </ul>
