@@ -1,12 +1,9 @@
-{% extends "appbuilder/base.html" %}
+{% extends 'orka/baselayout.html' %}
 
 {% block content %}
-<!-- <h2><center>{{_('Welcome')}}<center></h2>
-<div class="jumbotron">
-        <center>
-        <a class="" style="position: relative" href="{{appbuilder.get_url_for_login}}">
-            <img style="padding-top:6px;" src="{{url_for('static',filename='img/Orka-text.png')}}" >
-        </a>
-        </center>
-</div> -->
+{% if not current_user.is_anonymous() %}
+    {% include 'orka/dashboard.html' %}
+{% else %}
+{% include "landing_page.html" %}
+{% endif %}
 {% endblock %}
