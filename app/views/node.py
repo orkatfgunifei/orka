@@ -22,6 +22,18 @@ class NodeModelView(ModelView):
         """
         super(NodeModelView, self).pre_add(item)
 
-        # TODO: https://docker-py.readthedocs.io/en/latest/swarm/ Estudar
         if item.name:
-            cli.create_network
+
+            endpoint_config = cli.create_endpoint_config(
+                aliases=[item.name],
+                ipv4_address=item.ip
+            )
+
+            node_id = cli.create_network(item.name)
+
+            if node_id.get('Id'):
+                item.node_id = node_id['Id']
+
+            item.networking_config = cli.create_networking_config({
+                item.name: endpoint_config
+            })

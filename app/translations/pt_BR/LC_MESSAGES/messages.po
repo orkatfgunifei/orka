@@ -261,15 +261,15 @@ msgstr "Contatos"
 
 #: app/views/__init__.py:36
 msgid "List Contacts"
-msgstr ""
+msgstr "Listar Contatos"
 
 #: app/views/__init__.py:38
 msgid "Contacts Chart"
-msgstr ""
+msgstr "Gráfico de Contatos"
 
 #: app/views/__init__.py:39
 msgid "Contacts Birth Chart"
-msgstr ""
+msgstr "Contatos por Nascimento"
 
 #: app/views/__init__.py:40
 msgid "Images"
@@ -277,7 +277,7 @@ msgstr "Imagens"
 
 #: app/views/__init__.py:41
 msgid "Containers"
-msgstr "Conteineres"
+msgstr "Contêineres"
 
 #: app/views/__init__.py:42
 msgid "Nodes"
