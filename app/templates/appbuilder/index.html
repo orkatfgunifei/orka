@@ -4,6 +4,6 @@
 {% if not current_user.is_anonymous() %}
     {% include 'orka/dashboard.html' %}
 {% else %}
-{% include "landing_page.html" %}
+{% include "orka/index.html" %}
 {% endif %}
 {% endblock %}
