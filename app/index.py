@@ -4,7 +4,7 @@ from flask.ext.babelpkg import lazy_gettext as _
 
 
 class IndexView(IndexView):
-    index_template = 'index.html'
+    index_template = 'orkabase.html'
 
 
 class RegisterUserDBView(RegisterUserDBView):
