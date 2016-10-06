@@ -101,13 +101,32 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_add(item)
 
-        if item.name:
-            resp = cli.run(item)
-            if not resp[0] or "Error" in resp or "error" in resp:
-                raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
-            elif resp[0]:
-                item.hash_id = resp[1]
-                item.status = True
+        ports = []
+
+        if item.port:
+            p = item.port.split(':')
+            ports = [int(porta) for porta in p]
+
+        if item.image.name:
+            if not item.image.version:
+                item.image.version = "latest"
+
+            image = "%s:%s" % (item.image.name, item.image.version)
+        else:
+            image = False
+
+        container = cli.create_container(
+            name= item.name or None,
+            ports= ports or None,
+            image= image or None
+            )
+
+        if not container.get('Id'):
+            raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
+        else:
+            item.hash_id = container.get('Id')
+            cli.start(item.hash_id)
+            item.status = True
 
 
 
@@ -120,12 +139,8 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_delete(item)
 
-        if item.name:
-            resp = cli.rm(item.name)
-
-            if not resp:
-                raise RuntimeError("Não foi possível remover o container [%s]" % (item.name))
-
+        if item.hash_id:
+            cli.remove_container(item.hash_id)
 
 
     def pre_update(self, item):
@@ -143,15 +158,17 @@ class ContainerModelView(ModelView):
         name = get_history(container, 'name')
 
         if not len(name.unchanged) > 0:
-            cli.rename(name.deleted[0], name.added[0])
+            cli.rename(item.hash_id, name.added[0])
+
 
         status = get_history(container, 'status')
 
         if not len(status.unchanged) > 0:
             if status.added[0]:
-                cli.start(item.name)
+                cli.start(item.hash_id)
+
             else:
-                cli.stop(item.name)
+                cli.stop(item.hash_id)
 
 
 

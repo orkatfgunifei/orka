@@ -4,7 +4,7 @@ import logging
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
 from app.index import IndexView
-from app.api.docker import Docker
+from docker import Client
 
 """
  Configuração de log
@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
 
 # Instância do cliente Docker
-cli = Docker()
+cli = Client(base_url='unix://var/run/docker.sock')
 
 app = Flask(__name__)
 app.config.from_object('config')

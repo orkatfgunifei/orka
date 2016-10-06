@@ -4,8 +4,9 @@ from . import Model, Column, Integer, String
 class Image(Model):
     __tablename__ = "image"
     id = Column(Integer, primary_key=True)
-    name = Column(String(150), unique=True, nullable=False)
-    virtual_size = Column(Integer)
+    digest = Column(String(256))
+    name = Column(String(64), unique=True, nullable=False)
+    version = Column(String(20))
 
     def __repr__(self):
         return  self.name

@@ -14,7 +14,7 @@ from container import ContainerModelView
 from contact import ContactModelView, ContactChartView, ContactTimeChartView, GroupModelView, fill_gender
 from images import ImageModelView
 from node import NodeModelView
-
+#from logs import LogsView
 
 # Início Log
 log = logging.getLogger(__name__)
@@ -40,7 +40,7 @@ appbuilder.add_view(ContactTimeChartView, "Contacts Birth Chart", icon="fa-dashb
 appbuilder.add_view(ImageModelView, "List Images", icon="fa-hdd-o", label=_('Images'))
 appbuilder.add_view(ContainerModelView, "List Container", icon="fa-database", label=_('Containers'))
 appbuilder.add_view(NodeModelView, "List Node", icon='fa-sitemap', label=_('Nodes'))
-
+#appbuilder.add_view(LogsView, "Logs", icon='fa-align-left ', label=_('Logs'))
 
 log.info("Flask Appbuilder Versão: {0}".format(appbuilder.version))
 log.info("Classe de extensão usuário {0}".format(UserExtensionMixin.__subclasses__()[0]))
