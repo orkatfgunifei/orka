@@ -16,10 +16,10 @@
         <meta name="author" content="">
     {% endblock %}
     {% block head_css %}
-        {# {% if appbuilder.app_theme %} #}
-        {#           <link href="{{url_for('appbuilder.static',filename='css/themes/'+ appbuilder.app_theme )}}"  rel="stylesheet"> #}
-        {# {% endif %} #}
-        {# {{ super() }} #}
+{#         {% if appbuilder.app_theme %}#}
+{#               <link href="{{url_for('appbuilder.static',filename='css/themes/'+ appbuilder.app_theme )}}"  rel="stylesheet">#}
+{#         {% endif %}#}
+{#         {{ super() }}#}
         <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
 
         <link href="{{url_for('static',filename='css/datepicker3.css')}}" rel="stylesheet">

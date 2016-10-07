@@ -1,1 +1,4 @@
-<h1>hahaha</h1>
+{% if not current_user.is_anonymous() %}
+    {% extends 'orka/baselayout.html' %}
+{% else %}
+{% endif %}

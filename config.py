@@ -119,3 +119,4 @@ MAIL_DEFAULT_SENDER = 'rafael.liverpool@gmail.com'
 #APP_THEME = "spacelab.css"
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
+APP_THEME = "styles.css"

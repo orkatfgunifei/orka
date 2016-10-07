@@ -22,6 +22,7 @@ db = SQLA(app)
 # appbuilder = AppBuilder(app, db.session, base_template='orkabase.html')
 appbuilder = AppBuilder(app, db.session, indexview=IndexView)
 
+appbuilder.base_template='orka/baselayout.html'
 
 
 """
