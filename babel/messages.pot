@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-06 21:39-0300\n"
+"POT-Creation-Date: 2016-10-07 01:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,21 +38,6 @@ msgstr ""
 
 #: app/templates/404.html:4
 msgid "Page not found"
-msgstr ""
-
-#: app/templates/index.html:7
-msgid "Orka running on Flask"
-msgstr ""
-
-#: app/templates/index.html:8
-msgid "Let's code !"
-msgstr ""
-
-#: app/templates/index.html:9 app/templates/orka/baselib.html:122
-#: app/templates/orka/navbar_right.html:43
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
-msgid "Login"
 msgstr ""
 
 #: app/templates/appbuilder/general/confirm.html:6
@@ -164,15 +149,7 @@ msgid "Password"
 msgstr ""
 
 #: app/templates/appbuilder/general/security/login_db.html:46
-#: app/templates/appbuilder/general/security/login_ldap.html:40
-#: app/templates/appbuilder/general/security/login_oauth.html:56
-#: app/templates/appbuilder/general/security/login_oid.html:118
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:359
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:40
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:118
-msgid "Sign In"
+msgid "Log In"
 msgstr ""
 
 #: app/templates/appbuilder/general/security/login_db.html:49
@@ -185,17 +162,31 @@ msgid "If your not already a user, please register"
 msgstr ""
 
 #: app/templates/appbuilder/general/security/login_db.html:50
+msgid "Sign Up"
+msgstr ""
+
+#: app/templates/appbuilder/general/security/login_ldap.html:40
+#: app/templates/appbuilder/general/security/login_oauth.html:56
+#: app/templates/appbuilder/general/security/login_oid.html:118
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:359
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:40
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:118
+msgid "Sign In"
+msgstr ""
+
+#: app/templates/appbuilder/general/security/login_oauth.html:44
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:44
+msgid "Please choose one of the following providers:"
+msgstr ""
+
 #: app/templates/appbuilder/general/security/login_oauth.html:60
 #: app/templates/appbuilder/general/security/login_oid.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:50
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:60
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:122
 msgid "Register"
-msgstr ""
-
-#: app/templates/appbuilder/general/security/login_oauth.html:44
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:44
-msgid "Please choose one of the following providers:"
 msgstr ""
 
 #: app/templates/appbuilder/general/security/login_oid.html:89
@@ -250,6 +241,13 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
 msgid "Logout"
+msgstr ""
+
+#: app/templates/orka/baselib.html:122 app/templates/orka/landing.html:48
+#: app/templates/orka/navbar_right.html:43
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
+msgid "Login"
 msgstr ""
 
 #: app/views/__init__.py:35
