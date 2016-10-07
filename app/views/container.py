@@ -2,7 +2,7 @@
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
-
+from flask.ext.babelpkg import lazy_gettext as _
 from app import cli
 from app.models.container import Container
 from . import db
@@ -12,6 +12,11 @@ class ContainerModelView(ModelView):
 
     datamodel = SQLAInterface(Container)
 
+    label_columns = {'name': _('Name'),
+                     'image': _('Image'),
+                     'node': _('Node'),
+                     'port': _('Ports'),
+                     'status': _('Status')}
 
 
     list_columns = ['name',
@@ -169,7 +174,3 @@ class ContainerModelView(ModelView):
 
             else:
                 cli.stop(item.hash_id)
-
-
-
-

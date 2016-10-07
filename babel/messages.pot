@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-07 01:31-0300\n"
+"POT-Creation-Date: 2016-10-07 02:01-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -280,6 +280,29 @@ msgstr ""
 
 #: app/views/contact.py:29
 msgid "Contacts Group"
+msgstr ""
+
+#: app/views/container.py:15
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:33
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:45
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
+msgid "Name"
+msgstr ""
+
+#: app/views/container.py:16
+msgid "Image"
+msgstr ""
+
+#: app/views/container.py:17
+msgid "Node"
+msgstr ""
+
+#: app/views/container.py:18
+msgid "Ports"
+msgstr ""
+
+#: app/views/container.py:19
+msgid "Status"
 msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/const.py:108
@@ -568,12 +591,6 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:31
 msgid "Edit Base Permission"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:33
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:45
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
-msgid "Name"
 msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:40
