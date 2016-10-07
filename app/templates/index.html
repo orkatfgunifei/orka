@@ -1,12 +1,5 @@
 {% if not current_user.is_anonymous() %}
     {% extends 'orka/index.html' %}
 {% else %}
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Index Landing Page</h1>
-            <h1>{{_("Orka running on Flask")}}</h1>
-            <p>{{_("Let's code !")}}<a href="{{appbuilder.get_url_for_login}}">
-            <i class="fa fa-fw fa-sign-in"></i>{{_("Login")}}</a></p>
-        </div>
-    </div>
+    {% include 'orka/landing.html' %}
 {% endif %}

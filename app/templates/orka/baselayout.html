@@ -2,13 +2,12 @@
 {% import 'orka/baselib.html' as baselib %}
 
 {% block body %}
-        {% include 'appbuilder/general/confirm.html' %}
-        {% include 'appbuilder/general/alert.html' %}
+    {% include 'appbuilder/general/confirm.html' %}
+    {% include 'appbuilder/general/alert.html' %}
 
     {% block navbar %}
         {% include 'orka/navbar.html' %}
     {% endblock %}
-
 
     <div class="row">
         {% if not current_user.is_anonymous() %}
@@ -31,15 +30,15 @@
             {% block content %}
             {% endblock %}
         </div>
-  </div>
+    </div>
 
     {% block footer %}
         <footer>
-        <div class="img-rounded nav-fixed-bottom">
-            <div class="container">
-                {% include 'orka/footer.html' %}
+            <div class="img-rounded nav-fixed-bottom">
+                <div class="container">
+                    {% include 'orka/footer.html' %}
+                </div>
             </div>
-        </div>
         </footer>
     {% endblock %}
 {% endblock %}
