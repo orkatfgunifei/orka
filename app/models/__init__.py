@@ -6,4 +6,4 @@ from flask.ext.babelpkg import lazy_gettext as _
 from flask_appbuilder.security.sqla.models import User
 from flask_appbuilder.models.mixins import UserExtensionMixin
 
-from . import contact, container, image, node
+from . import container, image, node

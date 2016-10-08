@@ -7,14 +7,14 @@
 import logging
 from flask import render_template
 from flask.ext.babelpkg import lazy_gettext as _
-from flask_appbuilder.models.mixins import UserExtensionMixin
+from flask.ext.appbuilder import BaseView, expose, has_access
+
+from service import ServiceView
+from container import ContainerView
+from image import ImageView
+
 from app import db, appbuilder
 
-from container import ContainerModelView
-from contact import ContactModelView, ContactChartView, ContactTimeChartView, GroupModelView, fill_gender
-from images import ImageModelView
-from node import NodeModelView
-#from logs import LogsView
 
 # Início Log
 log = logging.getLogger(__name__)
@@ -30,17 +30,41 @@ def page_not_found(e):
 
 db.create_all()
 
-fill_gender()
 
-appbuilder.add_view(GroupModelView, "List Groups", icon="fa-folder-open-o", category="Contacts", category_icon='fa-envelope', label=_("Contacts"))
-appbuilder.add_view(ContactModelView, "List Contacts", icon="fa-envelope", category="Contacts", label=_("List Contacts"))
-appbuilder.add_separator("Contacts")
-appbuilder.add_view(ContactChartView, "Contacts Chart", icon="fa-dashboard", category="Contacts", label=_("Contacts Chart"))
-appbuilder.add_view(ContactTimeChartView, "Contacts Birth Chart", icon="fa-dashboard", category="Contacts", label=_("Contacts Birth Chart"))
-appbuilder.add_view(ImageModelView, "List Images", icon="fa-hdd-o", label=_('Images'))
-appbuilder.add_view(ContainerModelView, "List Container", icon="fa-database", label=_('Containers'))
-appbuilder.add_view(NodeModelView, "List Node", icon='fa-sitemap', label=_('Nodes'))
-#appbuilder.add_view(LogsView, "Logs", icon='fa-align-left ', label=_('Logs'))
 
-log.info("Flask Appbuilder Versão: {0}".format(appbuilder.version))
-log.info("Classe de extensão usuário {0}".format(UserExtensionMixin.__subclasses__()[0]))
+appbuilder.add_link("Dashboard", label=_("Dashboard"), href='/', icon='fa-home')
+appbuilder.add_view(ServiceView(), "Services", label=_('Services'), icon='fa-server')
+appbuilder.add_view(ContainerView(), "Container", label=_('Container'), icon='fa-database')
+appbuilder.add_view(ImageView(), "Images", label=_('Images'), icon='fa-hdd-o')
+
+security = appbuilder.sm
+
+active_views = [
+    "Service",
+    "Container",
+    "Image",
+    "Images",
+    "Dashboard",
+    "UserInfoEditView",
+    "ResetPasswordView",
+    "ResetMyPasswordView",
+    "OrkaUserDBView"
+]
+
+allroles = security.get_all_roles()
+roles = [str(x) for x in allroles]
+admin_role = allroles[0]
+
+if not "User" in roles:
+    user_role = security.add_role("User")
+
+    for perm in admin_role.permissions:
+        for view in active_views:
+            if (view in str(perm)):
+                security.add_permission_role(user_role, perm)
+                print "[Security] Permissão de Usuário: ", perm
+
+
+
+log.info("Flask-Appbuilder Versão: {0}".format(appbuilder.version))
+

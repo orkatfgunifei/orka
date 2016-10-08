@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-07 02:01-0300\n"
+"POT-Creation-Date: 2016-10-08 02:18-0300\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -17,23 +17,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.2.0\n"
+"Generated-By: Babel 2.3.4\n"
 
-#: app/index.py:12
+#: app/index.py:15
 msgid "Your Account activation"
 msgstr "Sua ativação da conta"
 
-#: app/index.py:14
+#: app/index.py:17
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
 msgstr "Preencha o formulário de registro"
 
-#: app/index.py:15
+#: app/index.py:18
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
 msgstr "Não foi possível registrá-lo no momento, tente novamente"
 
-#: app/index.py:16
+#: app/index.py:19
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
 msgstr "Um email de ativação da conta foi envia para você"
@@ -64,58 +64,58 @@ msgstr "Ordenado por"
 
 #: app/templates/appbuilder/general/lib.html:265
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:11
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:265
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:263
 msgid "Save"
 msgstr "Salvar"
 
 #: app/templates/appbuilder/general/lib.html:282
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:282
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:280
 msgid "Record Count"
 msgstr "Qtd. de Registros"
 
-#: app/templates/appbuilder/general/lib.html:305
 #: app/templates/appbuilder/general/charts/chart.html:8
 #: app/templates/appbuilder/general/charts/chart_time.html:10
 #: app/templates/appbuilder/general/charts/jsonchart.html:8
+#: app/templates/appbuilder/general/lib.html:305
 #: app/templates/appbuilder/general/model/list.html:8
 #: app/templates/orka/sidebar.html:7
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:9
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:305
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart.html:8
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:10
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/jsonchart.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:303
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/model/list.html:8
 msgid "Search"
 msgstr "Pesquisar"
 
 #: app/templates/appbuilder/general/lib.html:312
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:312
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
 msgid "Back"
 msgstr "Voltar"
 
 #: app/templates/appbuilder/general/lib.html:320
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:320
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:318
 msgid "Add a new record"
 msgstr "Adicionar novo"
 
 #: app/templates/appbuilder/general/lib.html:327
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:327
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:325
 msgid "Edit record"
 msgstr "Editar registro"
 
 #: app/templates/appbuilder/general/lib.html:334
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:334
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:332
 msgid "Show record"
 msgstr "Exibir registro"
 
 #: app/templates/appbuilder/general/lib.html:340
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:340
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:338
 msgid "You sure you want to delete this item?"
 msgstr "Você realmente desejar deletar?"
 
 #: app/templates/appbuilder/general/lib.html:341
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:341
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:339
 msgid "Delete record"
 msgstr "Remover registro"
 
@@ -123,6 +123,25 @@ msgstr "Remover registro"
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
 msgid "Group by fields"
 msgstr "Agrupado por campos"
+
+#: app/templates/appbuilder/general/security/activation.html:5
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
+msgid "Welcome"
+msgstr "Bem Vindo"
+
+#: app/templates/appbuilder/general/security/activation.html:7
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
+msgid "Your user is activated you can now proceed to login"
+msgstr "Sua conta está ativada, bem vindo ao Orka"
+
+#: app/templates/appbuilder/general/security/activation.html:10
+msgid "If you want to connect, click here"
+msgstr "Se deseja conectar, clique aqui"
+
+#: app/templates/appbuilder/general/security/activation.html:11
+msgid "Enter"
+msgstr "Entrar"
 
 #: app/templates/appbuilder/general/security/login_db.html:19
 #: app/templates/appbuilder/general/security/login_ldap.html:16
@@ -143,8 +162,8 @@ msgstr "Nome de Usuário"
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:17
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:28
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:44
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:125
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:232
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:124
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:230
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:31
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:27
 msgid "Password"
@@ -170,7 +189,7 @@ msgstr "Registrar"
 #: app/templates/appbuilder/general/security/login_ldap.html:40
 #: app/templates/appbuilder/general/security/login_oauth.html:56
 #: app/templates/appbuilder/general/security/login_oid.html:118
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:359
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:356
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
@@ -253,68 +272,29 @@ msgid "Login"
 msgstr "Entrar"
 
 #: app/views/__init__.py:35
-msgid "Contacts"
-msgstr "Contatos"
+msgid "Dashboard"
+msgstr "Painel"
 
 #: app/views/__init__.py:36
-msgid "List Contacts"
-msgstr "Listar Contatos"
+msgid "Services"
+msgstr "Serviços"
+
+#: app/views/__init__.py:37
+msgid "Container"
+msgstr "Contêiner"
 
 #: app/views/__init__.py:38
-msgid "Contacts Chart"
-msgstr "Gráfico de Contatos"
-
-#: app/views/__init__.py:39
-msgid "Contacts Birth Chart"
-msgstr "Contatos por Nascimento"
-
-#: app/views/__init__.py:40
 msgid "Images"
 msgstr "Imagens"
 
-#: app/views/__init__.py:41
-msgid "Containers"
-msgstr "Contêineres"
-
-#: app/views/__init__.py:42
-msgid "Nodes"
-msgstr "Rede"
-
-#: app/views/contact.py:29
-msgid "Contacts Group"
-msgstr "Grupo de Contatos"
-
-#: app/views/container.py:15
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:33
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:45
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
-msgid "Name"
-msgstr "Nome"
-
-#: app/views/container.py:16
-msgid "Image"
-msgstr "Imagem"
-
-#: app/views/container.py:17
-msgid "Node"
-msgstr "Rede"
-
-#: app/views/container.py:18
-msgid "Ports"
-msgstr "Portas"
-
-#: app/views/container.py:19
-msgid "Status"
-msgstr "Estado"
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/const.py:108
+#: env/lib/python2.7/site-packages/flask_appbuilder/const.py:109
 msgid "Access is Denied"
 msgstr "Acesso não permitido"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:77
-#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:79
 #: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:131
-#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:138
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:133
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:185
+#: env/lib/python2.7/site-packages/flask_appbuilder/fields.py:192
 #: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:87
 #: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:164
 #: env/lib/python2.7/site-packages/wtforms/ext/appengine/fields.py:166
@@ -391,7 +371,7 @@ msgstr "Média de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:10
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:66
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:62
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:80
 msgid "Contains"
 msgstr "Contém"
 
@@ -401,31 +381,31 @@ msgstr "Contém (indiferente)"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:25
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:74
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:70
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:88
 msgid "Not Contains"
 msgstr "Não Contém"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:31
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:12
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:78
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:96
 msgid "Equal to"
 msgstr "Igual à"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:37
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:23
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:89
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:105
 msgid "Not Equal to"
 msgstr "Diferente de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:43
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:34
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:100
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:114
 msgid "Greater than"
 msgstr "Maior que"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:42
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:108
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:123
 msgid "Smaller than"
 msgstr "Menor que"
 
@@ -434,34 +414,34 @@ msgid "Start with"
 msgstr "Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:50
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:30
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:48
 msgid "Starts with"
 msgstr "Iniciando com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:58
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:38
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:56
 msgid "Not Starts with"
 msgstr "Não Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:82
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:116
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:132
 msgid "Relation"
 msgstr "Relação"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:91
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:134
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:150
 msgid "Relation as Many"
 msgstr "Múltiplas Relações"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:46
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:64
 msgid "Ends with"
 msgstr "Terminado com"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:54
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:72
 msgid "Not Ends with"
 msgstr "Não Terminado em"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:125
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:141
 msgid "No Relation"
 msgstr "Não Relacionado"
 
@@ -473,8 +453,8 @@ msgstr "OpenID"
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:16
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:57
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:124
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:298
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:123
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:295
 msgid "User Name"
 msgstr "Nome de Usuário"
 
@@ -485,31 +465,31 @@ msgstr "Lembre-me"
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:41
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:58
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:122
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:121
 msgid "First Name"
 msgstr "Primeiro Nome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:22
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:137
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:136
 msgid "Write the user first name or names"
 msgstr "Escreva seu primeiro nome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:23
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:42
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:59
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:123
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:122
 msgid "Last Name"
 msgstr "Sobrenome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:24
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:138
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:137
 msgid "Write the user last name"
 msgstr "Escreva seu sobrenome"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:45
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:141
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:233
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:140
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:231
 msgid ""
 "Please use a good password policy, this application does not check this "
 "for you"
@@ -517,7 +497,7 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:33
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:49
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:237
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:235
 msgid "Confirm Password"
 msgstr ""
 
@@ -528,7 +508,7 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:35
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:51
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:240
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:238
 msgid "Passwords must match"
 msgstr ""
 
@@ -537,37 +517,37 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:421
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:116
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:427
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:115
 msgid "List Users"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:423
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:429
 msgid "Security"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:426
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:323
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:432
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:320
 msgid "List Roles"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:432
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:438
 msgid "User's Statistics"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:438
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:444
 msgid "User Registrations"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:444
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:450
 msgid "Base Permissions"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:447
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:453
 msgid "Views/Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:450
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:456
 msgid "Permission on Views/Menus"
 msgstr ""
 
@@ -579,236 +559,233 @@ msgstr ""
 msgid "Registration not found"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:28
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:27
 msgid "List Base Permissions"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:29
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:28
 msgid "Show Base Permission"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:30
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:29
 msgid "Add Base Permission"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:31
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:30
 msgid "Edit Base Permission"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:40
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
+msgid "Name"
+msgstr "Nome"
+
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:39
 msgid "List View Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:41
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:40
 msgid "Show View Menu"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:42
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:41
 msgid "Add View Menu"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:43
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:42
 msgid "Edit View Menu"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:52
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:51
 msgid "List Permissions on Views/Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:53
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:52
 msgid "Show Permission on Views/Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:54
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:53
 msgid "Add Permission on Views/Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:55
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:54
 msgid "Edit Permission on Views/Menus"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:57
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:56
 msgid "Permission"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:57
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:56
 msgid "View/Menu"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:67
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:82
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:66
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:81
 msgid "Reset Password Form"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:69
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:84
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:68
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:83
 msgid "Password Changed"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:94
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:93
 msgid "Edit User Information"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:96
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:95
 msgid "User information changed"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:117
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:116
 msgid "Show User"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:118
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:117
 msgid "Add User"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:119
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:186
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:118
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:184
 msgid "Edit User"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:121
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:120
 msgid "Full Name"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:126
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:125
 msgid "Is Active?"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:127
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:126
 msgid "EMail"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:128
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:127
 msgid "Role"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:129
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:128
 msgid "Last login"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:130
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:299
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:129
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:296
 msgid "Login count"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:131
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:300
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:130
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:297
 msgid "Failed login count"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:131
 msgid "Created on"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:133
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
 msgid "Created by"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:134
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:133
 msgid "Changed on"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:135
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:134
 msgid "Changed by"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:139
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:138
 msgid "Username valid for authentication on DB or LDAP, unused for OID auth"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:143
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:142
 msgid "It's not a good policy to remove a user, just make it inactive"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:144
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:143
 msgid "The user's email, this will also be used for OID auth"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:145
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:144
 msgid ""
 "The user role on the application, this will associate with a list of "
 "permissions"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:147
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:238
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:146
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:236
 msgid "Please rewrite the user's password to confirm"
 msgstr ""
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:152
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:162
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
 msgid "User info"
 msgstr "Informações Usuário"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:154
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:164
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
 msgid "Personal Info"
 msgstr "Informações Pessoais"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:156
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
 msgid "Audit Info"
 msgstr "Extra Info."
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:172
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:171
 msgid "Your user information"
 msgstr "Suas informações"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:280
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:277
 msgid "Reset my password"
 msgstr "Altere minha senha"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:284
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:281
 msgid "Reset Password"
 msgstr "Alterar Senha"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:297
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:294
 msgid "User Statistics"
 msgstr "Estatísticas do Usuário"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:324
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:321
 msgid "Show Role"
 msgstr "Exibir Papel"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:322
 msgid "Add Role"
 msgstr "Adicionar Papel"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:326
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:323
 msgid "Edit Role"
 msgstr "Editar Papel"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:328
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
 msgid "Permissions"
 msgstr "Permissões"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:329
 msgid "Copy Role"
 msgstr "Copiar Papel"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:332
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:329
 msgid "Copy the selected roles?"
 msgstr "Copiar as linhas selecionadas?"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:347
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:344
 msgid "List of Registration Requests"
 msgstr "Lista de Requerimentos"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:348
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:345
 msgid "Show Registration"
 msgstr "Exibir Cadastro"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:357
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:354
 msgid "Invalid login. Please try again."
 msgstr "Login inválido. Por favor tente novamente"
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
-msgid "Welcome"
-msgstr "Bem Vindo"
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
-msgid "Your user is activated you can now proceed to login"
-msgstr "Sua conta está ativada, bem vindo ao Orka"
 
 #: env/lib/python2.7/site-packages/flask_wtf/form.py:110
 #: env/lib/python2.7/site-packages/wtforms/csrf/session.py:61
@@ -963,3 +940,37 @@ msgstr ""
 
 #~ msgid "Let's code !"
 #~ msgstr "Vamos codar !"
+
+#~ msgid "Contacts"
+#~ msgstr "Contatos"
+
+#~ msgid "List Contacts"
+#~ msgstr "Listar Contatos"
+
+#~ msgid "Contacts Chart"
+#~ msgstr "Gráfico de Contatos"
+
+#~ msgid "Contacts Birth Chart"
+#~ msgstr "Contatos por Nascimento"
+
+#~ msgid "Containers"
+#~ msgstr "Contêineres"
+
+#~ msgid "Nodes"
+#~ msgstr "Rede"
+
+#~ msgid "Contacts Group"
+#~ msgstr "Grupo de Contatos"
+
+#~ msgid "Image"
+#~ msgstr "Imagem"
+
+#~ msgid "Node"
+#~ msgstr "Rede"
+
+#~ msgid "Ports"
+#~ msgstr "Portas"
+
+#~ msgid "Status"
+#~ msgstr "Estado"
+
