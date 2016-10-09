@@ -21,7 +21,7 @@ setup(
     #url = "http://packages.python.org/orka",
     packages=['orka'],
     long_description=read('README.md'),
-    scripts=['orka/run.pý', 'scripts/xmlproc_val']
+    scripts=['orka/run.py'],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
