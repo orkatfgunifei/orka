@@ -6,7 +6,7 @@
 
 import logging
 from flask import render_template
-from flask.ext.babelpkg import lazy_gettext as _
+from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access
 
 from service import ServiceView
@@ -29,8 +29,6 @@ def page_not_found(e):
     return render_template('404.html', base_template=appbuilder.base_template, appbuilder=appbuilder), 404
 
 db.create_all()
-
-
 
 appbuilder.add_link("Dashboard", label=_("Dashboard"), href='/', icon='fa-home')
 appbuilder.add_view(ServiceView(), "Services", label=_('Services'), icon='fa-server')
@@ -67,4 +65,3 @@ if not "User" in roles:
 
 
 log.info("Flask-Appbuilder Versão: {0}".format(appbuilder.version))
-

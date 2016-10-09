@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-08 02:18-0300\n"
+"POT-Creation-Date: 2016-10-09 19:33-0300\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -271,19 +271,19 @@ msgstr "Sair"
 msgid "Login"
 msgstr "Entrar"
 
-#: app/views/__init__.py:35
+#: app/views/__init__.py:33
 msgid "Dashboard"
 msgstr "Painel"
 
-#: app/views/__init__.py:36
+#: app/views/__init__.py:34
 msgid "Services"
 msgstr "Serviços"
 
-#: app/views/__init__.py:37
+#: app/views/__init__.py:35
 msgid "Container"
 msgstr "Contêiner"
 
-#: app/views/__init__.py:38
+#: app/views/__init__.py:36
 msgid "Images"
 msgstr "Imagens"
 
@@ -493,63 +493,63 @@ msgstr "Escreva seu sobrenome"
 msgid ""
 "Please use a good password policy, this application does not check this "
 "for you"
-msgstr ""
+msgstr "Por favor utilize uma senha segura, poir a aplicação não irá checar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:33
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:235
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirme a Senha"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:34
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:50
 msgid "Please rewrite the password to confirm"
-msgstr ""
+msgstr "Por favor reescreva a senha para confirmar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:35
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:51
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:238
 msgid "Passwords must match"
-msgstr ""
+msgstr "Senhas devem ser iguais"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:43
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:60
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:427
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:115
 msgid "List Users"
-msgstr ""
+msgstr "Lista Usuários"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:429
 msgid "Security"
-msgstr ""
+msgstr "Segurança"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:432
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:320
 msgid "List Roles"
-msgstr ""
+msgstr "Permissões"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:438
 msgid "User's Statistics"
-msgstr ""
+msgstr "Estátiscas de Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:444
 msgid "User Registrations"
-msgstr ""
+msgstr "Registros de Usuário"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:450
 msgid "Base Permissions"
-msgstr ""
+msgstr "Modelo de Permissões"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:453
 msgid "Views/Menus"
-msgstr ""
+msgstr "Visões/Menus"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:456
 msgid "Permission on Views/Menus"
-msgstr ""
+msgstr "Permissões em Visõpes/Menus"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:55
 msgid "Account activation"

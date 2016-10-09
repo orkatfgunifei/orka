@@ -1,10 +1,6 @@
-from flask import redirect
-from flask_appbuilder.security.views import UserDBModelView
-from flask_appbuilder.security.sqla.manager import SecurityManager
-from flask.ext.appbuilder.actions import action
 from flask.ext.appbuilder.security.registerviews import RegisterUserDBView
 from flask.ext.appbuilder import IndexView
-from flask.ext.babelpkg import lazy_gettext as _
+from flask.ext.babel import lazy_gettext as _
 
 class IndexView(IndexView):
     index_template = 'index.html'
