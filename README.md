@@ -23,8 +23,8 @@ Eng_Soft | Modelagem e Estruturação
   
   > Necessário pacote python-virtualenv
 
-  ```bash
-  git clone https://github.com/diogoamatos/orka.git
+  ```
+  git clone https://rlimaeco@bitbucket.org/tfgorka/orka.git
   cd orka  
   virtualenv venv
   . venv/bin/activate
@@ -33,7 +33,7 @@ Eng_Soft | Modelagem e Estruturação
   
   > Caso encontre algum erro na instalação do Pillow , no Ubuntu instalar os seguintes pacotes:
   
-  ```bash
+  ```
   sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
   sudo apt-get build-dep python-imaging
   ```
@@ -41,7 +41,7 @@ Eng_Soft | Modelagem e Estruturação
 
   - Executar servidor
   
-  ```bash
+  ```
   fabmanager run
   ```
   
@@ -52,7 +52,7 @@ Eng_Soft | Modelagem e Estruturação
    
   * Criar usuário administrador
 
-  ```bash
+  ```
   fabmanager create-admin
   ```
   Complete os dados e isto irá criar o usuário administrador
@@ -61,7 +61,7 @@ Eng_Soft | Modelagem e Estruturação
   
   Execute ao menos uma vez este comando para sincronizar os idiomas
   
-  ```bash
+  ```
   fabmanager babel-compile
   ```
 
