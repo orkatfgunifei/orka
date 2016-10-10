@@ -1,9 +1,15 @@
+#coding: utf-8
 import os
 from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_DB, AUTH_LDAP, AUTH_OAUTH
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
+# Modo de execução do servidor
+RUN_MODE = ["PROD", "TEST", "DEV"][2]
+# TODO: Se modo PROD utilizar postgresql, Se DEV ou TEST utilizar sqllite
+
 # Your App secret key
-SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
+SECRET_KEY = '\2\tfgunifeirules\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
@@ -14,13 +20,15 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 CSRF_ENABLED = True
 
 #------------------------------
-# GLOBALS FOR APP Builder 
+# GLOBALS FOR APP Builder
 #------------------------------
-# Uncomment to setup Your App name
 APP_NAME = "Orka"
 
+if RUN_MODE != "PROD":
+    APP_NAME += " [%s]" % RUN_MODE
+
 # Uncomment to setup Setup an App icon
-#APP_ICON = "static/img/logo.jpg"
+APP_ICON = "/static/img/logo.png"
 
 #----------------------------------------------------
 # AUTHENTICATION CONFIG
@@ -39,10 +47,10 @@ AUTH_TYPE = AUTH_DB
 #AUTH_ROLE_PUBLIC = 'Public'
 
 # Will allow user self registration
-#AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = True
 
 # The default user self registration role
-#AUTH_USER_REGISTRATION_ROLE = "Public"
+AUTH_USER_REGISTRATION_ROLE = "User"
 
 # When using LDAP Auth, setup the ldap server
 #AUTH_LDAP_SERVER = "ldap://ldapserver.new"
@@ -64,7 +72,6 @@ BABEL_DEFAULT_FOLDER = 'translations'
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
     'pt_BR': {'flag':'br', 'name': 'Pt Brazil'},
-    'es': {'flag':'es', 'name':'Spanish'},
     'de': {'flag':'de', 'name':'German'},
 }
 #---------------------------------------------------
@@ -81,6 +88,21 @@ IMG_UPLOAD_URL = '/static/uploads/'
 # Setup image size default is (300, 200, True)
 #IMG_SIZE = (300, 200, True)
 
+
+# Config for Flask-WTF Recaptcha necessary for user registration
+RECAPTCHA_PUBLIC_KEY = '6LedRP0SAAAAAOF03Nsv_ny2NzOF_Dthe_Xn269v'
+RECAPTCHA_PRIVATE_KEY = '6LedRP0SAAAAAPnsdEKgj5VU1QbFcPv7mO8cW0So'
+
+# Config for Flask-Mail necessary for user registration
+MAIL_PORT=2525
+MAIL_USE_SSL=False
+MAIL_SERVER = 'mailtrap.io'
+MAIL_USE_TLS = False
+MAIL_USERNAME = '2cffba9d2d92fd'
+MAIL_PASSWORD = '3cbdfc811f9313'
+MAIL_DEFAULT_SENDER = 'rafael.liverpool@gmail.com'
+#--------------------------------------
+
 # Theme configuration
 # these are located on static/appbuilder/css/themes
 # you can create your own and easily use them placing them on the same dir structure to override
@@ -88,13 +110,13 @@ IMG_UPLOAD_URL = '/static/uploads/'
 #APP_THEME = "cerulean.css"
 #APP_THEME = "amelia.css"
 #APP_THEME = "cosmo.css"
-#APP_THEME = "cyborg.css"  
-#APP_THEME = "flatly.css"
+#APP_THEME = "cyborg.css"
+# APP_THEME = "flatly.css"
 #APP_THEME = "journal.css"
 #APP_THEME = "readable.css"
 #APP_THEME = "simplex.css"
-APP_THEME = "slate.css"   
+#APP_THEME = "slate.css"
 #APP_THEME = "spacelab.css"
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
-
+APP_THEME = "styles.css"

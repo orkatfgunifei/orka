@@ -1,0 +1,16 @@
+{% set menu = appbuilder.menu %}
+{% set languages = appbuilder.languages %}
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder={{_("Search")}}>
+        </div>
+    </form>
+
+    <ul class="menu nav">
+    {% include 'orka/sidebar_menu.html' %}
+    <li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><span class="fa fa-fw fa-user"></span>{{_("Profile")}}</a></li>
+    <li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><span class="fa fa-fw fa-sign-out"></span>{{_("Logout")}}</a></li>
+    </ul>
+</div><!--/.sidebar-->

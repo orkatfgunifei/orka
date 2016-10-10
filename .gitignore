@@ -23,6 +23,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+app.db
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -44,10 +45,6 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
-
-# Translations
-*.mo
-*.pot
 
 # Django stuff:
 *.log
@@ -239,3 +236,6 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Pycharm
+.idea/

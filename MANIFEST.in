@@ -1,0 +1,3 @@
+recursive-include orka/app/templates *
+recursive-include orka/app/static *
+recursive-include orka/app/translations *

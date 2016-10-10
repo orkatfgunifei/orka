@@ -1,17 +1,22 @@
-# orka
-Projeto de TCC 2016 Engenharia da Computação - UNIFEI
+# Orka
 
+##Projeto de TFG 2016 
+###**UNIFEI** - Engenharia da Computação 
+
+
+----------------------------------
 Branches | Conteúdo
 -------- | --------
-Master | Default code tree
+Master | Versão Estável
+Develop | Versão em Desenvolvimento
 Monografia | Edição dos arquivos em LaTeX
+Revisao_Bibliografica | Pesquisa e embasamento teórico
+Workshop | Apresentação e Documentação
+Eng_Soft | Modelagem e Estruturação
 
-## Webhost Dev:
-    
-    - Alocado no pythonanywhere
-    
-    * http://rlimaeco.pythonanywhere.com
-        
+
+
+
 ## Instalação Dev:
 
   - Criar ambiente virtual
@@ -40,6 +45,24 @@ Monografia | Edição dos arquivos em LaTeX
   fabmanager run
   ```
   
-  - Abrir navegador em localhost:8080  
+  - Abrir navegador em localhost:8080
+
+
+## Configurações Finais
+   
+  * Criar usuário administrador
+
+  ```bash
+  fabmanager create-admin
+  ```
+  Complete os dados e isto irá criar o usuário administrador
+
+   * Internacionalização
+  
+  Execute ao menos uma vez este comando para sincronizar os idiomas
+  
+  ```bash
+  fabmanager babel-compile
+  ```
 
 ## Let's code !
