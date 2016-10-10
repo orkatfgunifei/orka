@@ -1,16 +1,41 @@
 {% set menu = appbuilder.menu %}
 {% set languages = appbuilder.languages %}
 
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <form role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder={{_("Search")}}>
+<aside class="main-sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="" class="img-circle" alt="User Image">
         </div>
-    </form>
-
-    <ul class="menu nav">
-    {% include 'orka/sidebar_menu.html' %}
-    <li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><span class="fa fa-fw fa-user"></span>{{_("Profile")}}</a></li>
-    <li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><span class="fa fa-fw fa-sign-out"></span>{{_("Logout")}}</a></li>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+    <ul class="sidebar-menu">
+        {% include 'orka/sidebar_menu.html' %}
     </ul>
-</div><!--/.sidebar-->
+</aside>
+{#<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">#}
+{#    <form role="search">#}
+{#        <div class="form-group">#}
+{#            <input type="text" class="form-control" placeholder={{_("Search")}}>#}
+{#        </div>#}
+{#    </form>#}
+{##}
+{#    <ul class="menu nav">#}
+{#    {% include 'orka/sidebar_menu.html' %}#}
+{#    <li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><span class="fa fa-fw fa-user"></span>{{_("Profile")}}</a></li>#}
+{#    <li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><span class="fa fa-fw fa-sign-out"></span>{{_("Logout")}}</a></li>#}
+{#    </ul>#}
+{#</div><!--/.sidebar-->#}

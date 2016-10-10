@@ -6,7 +6,7 @@
     {{_(item.label)}}</a>
 {% endmacro %}
 
-
+<li class="header">Main Navigation</li>
 {% for item1 in menu.get_list() %}
     {% if item1 | is_menu_visible %}
         {% if item1.childs %}

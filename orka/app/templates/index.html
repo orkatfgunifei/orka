@@ -1,5 +1,5 @@
 {% if not current_user.is_anonymous() %}
     {% extends 'orka/index.html' %}
 {% else %}
-    {% include 'orka/landing.html' %}
+    {% extends 'orka/landing.html' %}
 {% endif %}
