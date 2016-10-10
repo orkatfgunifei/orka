@@ -1,4 +1,25 @@
+
 {% extends 'orka/baselayout.html' %}
 {% block content %}
     <h1>Conteiner</h1>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Ações</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="/container/create">Criar</a></li>
+      </ul>
+    </div>
+<div class="row" >
+{% for container in container_ids %}
+
+    <div class="block" style="max-width: 160px;">
+        <b>ID:</b> {{ container }}
+    </div>
+{% endfor %}
+</div>
+
 {% endblock %}

@@ -5,7 +5,7 @@
 """
 
 import logging
-from flask import render_template
+from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access
 
@@ -31,7 +31,7 @@ def page_not_found(e):
 db.create_all()
 
 appbuilder.add_link("Dashboard", label=_("Dashboard"), href='/', icon='fa-home')
-appbuilder.add_view(ServiceView(), "Services", label=_('Services'), icon='fa-server')
+appbuilder.add_view(ServiceView(), "Servidbces", label=_('Services'), icon='fa-server')
 appbuilder.add_view(ContainerView(), "Container", label=_('Container'), icon='fa-database')
 appbuilder.add_view(ImageView(), "Images", label=_('Images'), icon='fa-hdd-o')
 
