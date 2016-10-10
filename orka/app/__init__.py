@@ -3,8 +3,8 @@
 import logging
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
-from app.index import IndexView
-from app.security import OrkaSecurityManager
+from index import IndexView
+from security import OrkaSecurityManager
 from docker import Client
 
 
@@ -19,7 +19,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 cli = Client(base_url='unix://var/run/docker.sock')
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_object('orka.config')
 db = SQLA(app)
 
 appbuilder = AppBuilder(app, db.session, indexview=IndexView, security_manager_class=OrkaSecurityManager)
@@ -42,5 +42,5 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
     cursor.execute("PRAGMA foreign_keys=ON")
     cursor.close()
 
-from app import models, views
+from . import models, views
 
