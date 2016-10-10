@@ -6,7 +6,7 @@ from service import cli, _
 from app.models.node import Node
 
 
-class NodeModelView(ModelView):
+class NodeModelView(OrkaModelView):
     datamodel = SQLAInterface(Node)
 
     related_views = [ContainerModelView]
