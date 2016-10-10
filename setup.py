@@ -32,9 +32,9 @@ setup(
         "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
     ],
-    entry_points = {
-                       'console_scripts': [
-                           'orka = orka.__main__:main'
-                       ]
-                   },
+    # entry_points = {
+    #                    'console_scripts': [
+    #                        'orka = orka.__main__:main'
+    #                    ]
+    #                },
 )
