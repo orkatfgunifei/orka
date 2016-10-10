@@ -65,4 +65,19 @@ Eng_Soft | Modelagem e Estruturação
   fabmanager babel-compile
   ```
 
+## Executar Redis
+
+   * Para o funcionamento do Celery é necessário iniciar o redis
+   
+   ```
+   ./run-redis.sh
+   ```
+   
+   * Iniciar pelo menos um worker com:
+   
+   ```
+   cd orka
+   celery worker --app=app.celery --loglevel=DEBUG
+   ```
+   
 ## Let's code !
