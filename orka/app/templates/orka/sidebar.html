@@ -1,6 +1,7 @@
 {% set menu = appbuilder.menu %}
 {% set languages = appbuilder.languages %}
 
+{% if not current_user.is_anonymous() %}
 <aside class="main-sidebar">
     <!-- Sidebar user panel -->
     <section class="sidebar">
@@ -9,7 +10,7 @@
                 <img src="{{ url_for('static', filename='img/avatar5.png') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>{{g.user.get_full_name()}}</p>
+                <p>{{current_user.get_full_name()}}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -28,6 +29,7 @@
         </ul>
     </section>
 </aside>
+{% endif %}
 {#<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">#}
 {#    <form role="search">#}
 {#        <div class="form-group">#}

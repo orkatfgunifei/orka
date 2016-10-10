@@ -1,6 +1,10 @@
+amqp==1.4.9
+anyjson==0.3.3
 Babel==2.3.4
 backports.ssl-match-hostname==3.5.0.1
+billiard==3.3.0.23
 blinker==1.4
+celery==3.1.24
 click==6.4
 colorama==0.3.7
 DateTime==4.0.1
@@ -19,10 +23,12 @@ Flask-WTF==0.12
 ipaddress==1.0.17
 itsdangerous==0.24
 Jinja2==2.8
+kombu==3.0.37
 MarkupSafe==0.23
 Pillow==3.1.1
 python-openid==2.2.5
 pytz==2016.3
+redis==2.10.5
 requests==2.10.0
 six==1.10.0
 speaklater==1.3

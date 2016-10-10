@@ -239,3 +239,6 @@ TSWLatexianTemp*
 
 # Pycharm
 .idea/
+
+# Redis
+redis-stable/

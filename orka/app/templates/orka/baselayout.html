@@ -1,11 +1,11 @@
 {% extends 'orka/init.html' %}
 {#{% import 'orka/baselib.html' as baselib %}#}
 
-{% if not current_user.is_anonymous() %}
     {% block head_css %}
         {{ super() }}
         <link rel="stylesheet" href="{{url_for('static',filename='css/flags.css')}}" >
     {% endblock %}
+
 {% block body %}
 <body class="skin-blue sidebar-mini wysihtml5-supported ">
     {% include 'appbuilder/general/confirm.html' %}
@@ -14,6 +14,8 @@
 
     {% set menu = appbuilder.menu %}
     {% set languages = appbuilder.languages %}
+
+{% if not current_user.is_anonymous() %}
     <header class="main-header">
         <!-- Logo -->
         <a href="#" class="logo">
@@ -124,9 +126,6 @@
             </div>
         </nav>
     </header>
-
-
-
     {% include 'orka/sidebar.html' %}
     <div class="content-wrapper">
         <section class="content-header">
@@ -151,10 +150,13 @@
         {% include 'orka/footer.html' %}
     {% endblock %}
     {% include 'orka/controlsidebar.html' %}
+{#{% else %}#}
+{#    {% include '' %}#}
+{% endif %}
 </div>
 {% block tail_js %}
     {{ super() }}
 {% endblock %}
 </body>
 {% endblock %}
-{% endif %}
+

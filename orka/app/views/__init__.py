@@ -13,7 +13,7 @@ from service import ServiceView
 from container import ContainerView
 from image import ImageView
 
-from .. import db, appbuilder
+from app import db, appbuilder
 
 
 # Início Log
