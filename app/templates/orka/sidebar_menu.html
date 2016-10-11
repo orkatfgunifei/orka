@@ -1,23 +1,26 @@
 {% macro menu_item(item) %}
     <a tabindex="-1" href="{{item.get_url()}}">
        {% if item.icon %}
-        <i class="fa fa-fw {{item.icon}}"></i>&nbsp;
+        <i class="fa {{item.icon}}"></i>&nbsp;
     {% endif %}
-    {{_(item.label)}}</a>
+    <span>{{_(item.label)}}</span></a>
 {% endmacro %}
+
+
 
 <li class="header">{{ _("Main Navigation") }}</li>
 {% for item1 in menu.get_list() %}
     {% if item1 | is_menu_visible %}
         {% if item1.childs %}
-            <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-                {% if item1.icon %}
-                    <i class="fa {{item1.icon}}"></i>&nbsp;
-                {% endif %}
-                {{_(item1.label)}}<b class="caret"></b>
+            <li class="treeview">
+                <a class="#" style="display:block;" href="javascript:void(0)">
+                    {% if item1.icon %}
+                        <i class="fa {{item1.icon}}"></i>&nbsp;
+                    {% endif %}
+                    <span>{{_(item1.label)}}</span>
+                    {# <b class="caret"></b> #}
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="treeview-menu" style="display:block;">
                 {% set divider = False %}
                 {% for item2 in item1.childs %}
                     {% if item2.name == '-' %}
@@ -40,4 +43,7 @@
             </li>
         {% endif %}
     {% endif %}
+
 {% endfor %}
+<li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><i class="fa fa-user"></i><span>{{_("Profile")}}</span></a></li>
+<li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><i class="fa fa-sign-out"></i><span>{{_("Logout")}}</span></a></li>
