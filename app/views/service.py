@@ -19,7 +19,7 @@ class ServiceView(BaseView):
     @expose('/')
     def service(self):
         self.update_redirect()
-        return self.render_template(self.index_template,
+        return self.render_template(self.base_template,
                                     appbuilder=self.appbuilder)
 
 
