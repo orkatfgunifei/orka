@@ -10,37 +10,66 @@
         <!-- /.login-logo -->
         <div class="login-box-body" >
 {#            <div class="login-box-msg">{{ title }}</div>#}
+            <p class="login-box-msg">{{_("Enter your login and password below")}}:</p>
+
+
             <form class="form" action="" method="post" name="login">
-            {{form.hidden_tag()}}
-                <div class="login-box-msg">{{_("Enter your login and password below")}}:</div>
-                <div class="control-group{% if form.errors.openid %} error{% endif %}">
-                <label class="control-label" for="openid">{{_("Username")}}:</label>
-                <div class="controls">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        {{ form.username(size = 80, class = "form-control") }}
-                    </div>
-                    <label class="control-label" for="openid">{{_("Password")}}:</label>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                        {{ form.password(size = 80, class = "form-control") }}
-                    </div>
+                {{form.hidden_tag()}}
+                <div class="form-group has-feedback {% if form.errors.openid %} error{% endif %}">
+                    {{ form.username(size = 80, class = "form-control") }}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
-            </div>
-                <div class="control-group">
-                <div class="controls">
-                    <br>
-                    <div>
-                        <input class="btn btn-primary btn-block" type="submit" value="{{_('Log In')}}">
-                        {% if appbuilder.sm.auth_user_registration %}
-                            <a href="{{appbuilder.sm.get_url_for_registeruser}}" class="btn btn-block btn-primary" data-toggle="tooltip" rel="tooltip" title="{{_('If your not already a user, please register')}}">
-                            {{_('Sign Up')}}
-                            </a>
-                        {% endif %}
-                    </div>
+                <div class="form-group has-feedback">
+                    {{ form.password(size = 80, class = "form-control") }}
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
             </form>
+
+{#            <form class="form" action="" method="post" name="login">#}
+{#            {{form.hidden_tag()}}#}
+{##}
+{#                <div class="control-group{% if form.errors.openid %} error{% endif %}">#}
+{#                <label class="control-label" for="openid">{{_("Username")}}:</label>#}
+{#                <div class="controls">#}
+{#                    <div class="input-group">#}
+{#                        <span class="input-group-addon"><i class="fa fa-user"></i></span>#}
+{#                        {{ form.username(size = 80, class = "form-control") }}#}
+{#                    </div>#}
+{#                    <label class="control-label" for="openid">{{_("Password")}}:</label>#}
+{#                    <div class="input-group">#}
+{#                        <span class="input-group-addon"><i class="fa fa-key"></i></span>#}
+{#                        {{ form.password(size = 80, class = "form-control") }}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#                <div class="control-group">#}
+{#                <div class="controls">#}
+{#                    <br>#}
+{#                    <div>#}
+{#                        <input class="btn btn-primary btn-block" type="submit" value="{{_('Log In')}}">#}
+{#                        {% if appbuilder.sm.auth_user_registration %}#}
+{#                            <a href="{{appbuilder.sm.get_url_for_registeruser}}" class="btn btn-block btn-primary" data-toggle="tooltip" rel="tooltip" title="{{_('If your not already a user, please register')}}">#}
+{#                            {{_('Sign Up')}}#}
+{#                            </a>#}
+{#                        {% endif %}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            </form>#}
         </div>
     </div>
 {% block tail_js %}
