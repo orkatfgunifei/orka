@@ -5,7 +5,7 @@
 <div class="register-box">
     <div class="row">
         <div class="register-logo">
-            <a href="/"><b>O</b>rka</a>
+            <a href="#"><b>O</b>rka</a>
         </div>
         <div class="register-box-body">
             {% block edit_form %}
@@ -15,9 +15,9 @@
             {% endblock %}
         </div>
 
-    {% if related_views %}
-    {% endif %}
-    <a href="" class="text-center">{{ _("I already have a membership") }}I already have a membership</a>
+        {% if related_views %}
+        {% endif %}
+        <a href="{{appbuilder.get_url_for_login}}" class="text-center">{{ _("I already have a membership") }}</a>
     </div>
 </div>
 </body>
