@@ -17,7 +17,7 @@
 
     {% if related_views %}
     {% endif %}
-    <a href="#" class="text-center">I already have a membership</a>
+    <a href="" class="text-center">{{ _("I already have a membership") }}I already have a membership</a>
     </div>
 </div>
 </body>
@@ -25,8 +25,4 @@
 
 {% block tail_js %}
 {{ super() }}
-{% endblock %}
-
-{% block add_tail_js %}
-<script src="{{url_for('appbuilder.static',filename='js/ab_keep_tab.js')}}"></script>
 {% endblock %}
