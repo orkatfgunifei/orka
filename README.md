@@ -86,19 +86,24 @@ Defesa do Trabalho | 16-18/11
 Entrega da Monografia Versão Corrigida | Defesa em Novembro: 30/11
 
 
-- Algumas observações Importantes:
+### Algumas observações Importantes:
 Os trabalhos devem ser desenvolvidos em grupos de até TRÊS alunos.
+
 Um aluno de outros cursos pode fazer parte de um grupo. No entanto, deve ser apresentada ao coordenador de TFG da ECO uma carta do orientador de TFG do curso do aluno, demonstrando que está de acordo. Além disso, o aluno deverá se sujeitar a todos os passos e avaliações do TFG de ECO.
+
 Cada fase receberá uma nota proporcional à sua importância:
-Revisão bibliográfica: 15 pontos
-Workshop: 15 pontos
-Parecer do orientador: 10 pontos
-Monografia e defesa: 60 pontos
+- Revisão bibliográfica: 15 pontos
+- Workshop: 15 pontos
+- Parecer do orientador: 10 pontos
+- Monografia e defesa: 60 pontos
+
 O aluno deverá se matricular na disciplina de TFG apenas no semestre em que pretende se matricular.
+
 Os documentos devem ser, OBRIGATORIAMENTE, escritos utilizando LaTeX, exceto pela apresentação do workshop, que pode ser feita com qualquer editor de apresentações e exportada em PDF.
+
 Alunos que já cumpriram etapas durante o ano de 2015 terão suas notas aproveitadas - mas apenas se continuarem com o mesmo trabalho, com o mesmo orientador e equipe.
 
---Contato com a Coordenação:
+### Contato com a Coordenação:
 Coordenador TFG-ECO: Prof. Dr. Edmilson Marmo Moreira
 E-mail: edmarmo@unifei.edu.br
 Sala: I 4.2.11 (Segundo andar do bloco da elétrica, bloco novo)
