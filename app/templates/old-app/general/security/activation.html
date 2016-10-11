@@ -1,0 +1,14 @@
+{% extends "orka/base.html" %}
+
+{% block content %}
+
+<div align="center"> <h2>{{_('Welcome')}} {{first_name}} {{last_name}}</h2>
+
+{{_('Your user is activated you can now proceed to login')}} <br>
+
+<a href="/login" class="btn btn-block btn-primary" data-toggle="tooltip" rel="tooltip"
+                       title="{{_('If you want to connect, click here')}}">
+                        {{_('Enter')}}
+                    </a>
+</div>
+{% endblock %}
