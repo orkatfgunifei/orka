@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-10 20:15-0300\n"
+"POT-Creation-Date: 2016-10-10 21:31-0300\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -18,26 +18,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
-
-#: app/views/container.py:19
-msgid "ID Container"
-msgstr "ID Contêiner"
-
-#: app/views/container.py:20
-msgid "Domain Name"
-msgstr "Domínio"
-
-#: app/views/container.py:21
-msgid "CPU Reserved"
-msgstr "CPU Reservado"
-
-#: app/views/container.py:22
-msgid "Storage Reserved"
-msgstr "Armazenamento Reservado"
-
-#: app/views/container.py:24
-msgid "Docker File"
-msgstr "DockerFile"
 
 #: app/security.py:19
 msgid "Your Account activation"
@@ -62,253 +42,259 @@ msgstr "Um email de ativação da conta foi envia para você"
 msgid "Page not found"
 msgstr "Página não encontrada"
 
-#: app/templates/appbuilder/general/confirm.html:6
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
-msgid "User confirmation needed"
-msgstr "Confirmação do usuário necessária"
-
-#: app/templates/appbuilder/general/lib.html:40
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:40
-msgid "Actions"
-msgstr "Ações"
-
-#: app/templates/appbuilder/general/lib.html:65
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:65
-msgid "Page size"
-msgstr "Páginas"
-
-#: app/templates/appbuilder/general/lib.html:83
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:83
-msgid "Order by"
-msgstr "Ordenado por"
-
-#: app/templates/appbuilder/general/lib.html:265
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:11
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:263
-msgid "Save"
-msgstr "Salvar"
-
-#: app/templates/appbuilder/general/lib.html:282
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:280
-msgid "Record Count"
-msgstr "Qtd. de Registros"
-
-#: app/templates/appbuilder/general/charts/chart.html:8
-#: app/templates/appbuilder/general/charts/chart_time.html:10
-#: app/templates/appbuilder/general/charts/jsonchart.html:8
-#: app/templates/appbuilder/general/lib.html:305
-#: app/templates/appbuilder/general/model/list.html:8
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:9
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart.html:8
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:10
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/jsonchart.html:8
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:303
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/model/list.html:8
-msgid "Search"
-msgstr "Pesquisar"
-
-#: app/templates/appbuilder/general/lib.html:312
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
-msgid "Back"
-msgstr "Voltar"
-
-#: app/templates/appbuilder/general/lib.html:320
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:318
-msgid "Add a new record"
-msgstr "Adicionar novo"
-
-#: app/templates/appbuilder/general/lib.html:327
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:325
-msgid "Edit record"
-msgstr "Editar registro"
-
-#: app/templates/appbuilder/general/lib.html:334
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:332
-msgid "Show record"
-msgstr "Exibir registro"
-
-#: app/templates/appbuilder/general/lib.html:340
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:338
-msgid "You sure you want to delete this item?"
-msgstr "Você realmente desejar deletar?"
-
-#: app/templates/appbuilder/general/lib.html:341
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:339
-msgid "Delete record"
-msgstr "Remover registro"
-
-#: app/templates/appbuilder/general/charts/chart_time.html:17
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
-msgid "Group by fields"
-msgstr "Agrupado por campos"
-
-#: app/templates/appbuilder/general/security/activation.html:5
+#: app/templates/old-app/general/security/activation.html:5
+#: app/templates/orka/general/security/activation.html:5
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
 msgid "Welcome"
 msgstr "Bem Vindo"
 
-#: app/templates/appbuilder/general/security/activation.html:7
+#: app/templates/old-app/general/security/activation.html:7
+#: app/templates/orka/general/security/activation.html:7
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
 msgid "Your user is activated you can now proceed to login"
 msgstr "Sua conta está ativada, bem vindo ao Orka"
 
-#: app/templates/appbuilder/general/security/activation.html:10
+#: app/templates/old-app/general/security/activation.html:10
+#: app/templates/orka/general/security/activation.html:10
 msgid "If you want to connect, click here"
 msgstr "Se deseja conectar, clique aqui"
 
-#: app/templates/appbuilder/general/security/activation.html:11
+#: app/templates/old-app/general/security/activation.html:11
+#: app/templates/orka/general/security/activation.html:11
 msgid "Enter"
 msgstr "Entrar"
 
-#: app/templates/appbuilder/general/security/login_db.html:15
-#: app/templates/appbuilder/general/security/login_ldap.html:16
+#: app/templates/old-app/general/security/login_db.html:15
+#: app/templates/old-app/general/security/login_ldap.html:16
+#: app/templates/orka/general/security/login_db.html:15
+#: app/templates/orka/general/security/login_ldap.html:16
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:19
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:16
 msgid "Enter your login and password below"
 msgstr "Insira seu nome de usuário e senha abaixo"
 
-#: app/templates/appbuilder/general/security/login_db.html:17
-#: app/templates/appbuilder/general/security/login_ldap.html:18
+#: app/templates/old-app/general/security/login_db.html:17
+#: app/templates/old-app/general/security/login_ldap.html:18
+#: app/templates/orka/general/security/login_db.html:17
+#: app/templates/orka/general/security/login_ldap.html:18
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:21
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:18
 msgid "Username"
 msgstr "Nome de Usuário"
 
-#: app/templates/appbuilder/general/security/login_db.html:23
-#: app/templates/appbuilder/general/security/login_ldap.html:27
+#: app/templates/old-app/general/security/login_db.html:23
+#: app/templates/old-app/general/security/login_ldap.html:27
+#: app/templates/orka/general/security/login_db.html:23
+#: app/templates/orka/general/security/login_ldap.html:27
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:17
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:28
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:124
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:230
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:31
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:27
 msgid "Password"
 msgstr "Senha"
 
-#: app/templates/appbuilder/general/security/login_db.html:34
+#: app/templates/old-app/general/security/login_db.html:34
+#: app/templates/orka/general/security/login_db.html:34
 msgid "Log In"
 msgstr "Entrar"
 
-#: app/templates/appbuilder/general/security/login_db.html:36
-#: app/templates/appbuilder/general/security/login_oauth.html:59
-#: app/templates/appbuilder/general/security/login_oid.html:121
+#: app/templates/old-app/general/security/login_db.html:36
+#: app/templates/old-app/general/security/login_oauth.html:59
+#: app/templates/old-app/general/security/login_oid.html:121
+#: app/templates/orka/general/security/login_db.html:36
+#: app/templates/orka/general/security/login_oauth.html:59
+#: app/templates/orka/general/security/login_oid.html:121
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:49
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:59
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:121
 msgid "If your not already a user, please register"
 msgstr "Se não possuir cadastro, por favor registre-se"
 
-#: app/templates/appbuilder/general/security/login_db.html:37
+#: app/templates/old-app/general/security/login_db.html:37
+#: app/templates/orka/general/security/login_db.html:37
 msgid "Sign Up"
 msgstr "Registrar"
 
-#: app/templates/appbuilder/general/security/login_ldap.html:40
-#: app/templates/appbuilder/general/security/login_oauth.html:56
-#: app/templates/appbuilder/general/security/login_oid.html:118
+#: app/templates/old-app/general/security/login_ldap.html:40
+#: app/templates/old-app/general/security/login_oauth.html:56
+#: app/templates/old-app/general/security/login_oid.html:118
+#: app/templates/orka/general/security/login_ldap.html:40
+#: app/templates/orka/general/security/login_oauth.html:56
+#: app/templates/orka/general/security/login_oid.html:118
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:356
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:46
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:40
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:56
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:118
 msgid "Sign In"
 msgstr "Entrar"
 
-#: app/templates/appbuilder/general/security/login_oauth.html:44
+#: app/templates/old-app/general/security/login_oauth.html:44
+#: app/templates/orka/general/security/login_oauth.html:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:44
 msgid "Please choose one of the following providers:"
 msgstr "Favor escolher um dos seguintes provedores:"
 
-#: app/templates/appbuilder/general/security/login_oauth.html:60
-#: app/templates/appbuilder/general/security/login_oid.html:122
+#: app/templates/old-app/general/security/login_oauth.html:60
+#: app/templates/old-app/general/security/login_oid.html:122
+#: app/templates/orka/general/security/login_oauth.html:60
+#: app/templates/orka/general/security/login_oid.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:50
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oauth.html:60
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:122
 msgid "Register"
 msgstr "Entrar"
 
-#: app/templates/appbuilder/general/security/login_oid.html:89
+#: app/templates/old-app/general/security/login_oid.html:89
+#: app/templates/orka/general/security/login_oid.html:89
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:89
 msgid "Click on your OpenID provider below"
 msgstr "Clique em seu provedor OpenID abaixo"
 
-#: app/templates/appbuilder/general/security/login_oid.html:101
+#: app/templates/old-app/general/security/login_oid.html:101
+#: app/templates/orka/general/security/login_oid.html:101
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:101
 msgid "Or enter your OpenID here"
 msgstr "Ou insira sua OpenID aqui"
 
-#: app/templates/appbuilder/general/security/login_oid.html:105
+#: app/templates/old-app/general/security/login_oid.html:105
+#: app/templates/orka/general/security/login_oid.html:105
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:105
 msgid "Please choose a provider"
 msgstr "Favor escolha um provedor"
 
-#: app/templates/appbuilder/general/security/login_oid.html:107
+#: app/templates/old-app/general/security/login_oid.html:107
+#: app/templates/orka/general/security/login_oid.html:107
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_oid.html:107
 msgid "Enter your OpenID Username"
 msgstr "Insira sua OpenID"
 
-#: app/templates/appbuilder/general/security/register_oauth.html:15
+#: app/templates/old-app/general/security/register_oauth.html:15
+#: app/templates/orka/general/security/register_oauth.html:15
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/register_oauth.html:15
 msgid "Sign in using:"
 msgstr "Entre utilizando:"
 
-#: app/templates/appbuilder/general/widgets/base_list.html:36
-#: app/templates/appbuilder/general/widgets/list_carousel.html:50
-#: app/templates/appbuilder/general/widgets/list_master.html:17
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:14
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/base_list.html:36
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_carousel.html:50
-#:
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_master.html:17
-msgid "No records found"
-msgstr "Nenhum registro encontrado"
-
-#: app/templates/appbuilder/general/widgets/search.html:7
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/search.html:7
-msgid "Add Filter"
-msgstr "Adicionar Filtro"
-
-#: app/templates/orka/baselayout.html:96
-#: app/templates/orka/baselayout.html:107 app/templates/orka/baselib.html:115
+#: app/templates/orka/baselayout.html:97 app/templates/orka/baselayout.html:108
+#: app/templates/orka/baselib.html:115
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:37
 msgid "Profile"
 msgstr "Perfil"
 
-#: app/templates/orka/baselayout.html:99
-#: app/templates/orka/baselayout.html:110 app/templates/orka/baselib.html:116
+#: app/templates/orka/baselayout.html:100
+#: app/templates/orka/baselayout.html:111 app/templates/orka/baselib.html:116
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
 msgid "Logout"
 msgstr "Sair"
 
-#: app/templates/orka/baselayout.html:118 app/templates/orka/baselib.html:122
+#: app/templates/orka/baselayout.html:119 app/templates/orka/baselib.html:122
 #: app/templates/orka/landing.html:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
 msgid "Login"
 msgstr "Entrar"
+
+#: app/templates/orka/general/confirm.html:6
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
+msgid "User confirmation needed"
+msgstr "Confirmação do usuário necessária"
+
+#: app/templates/orka/general/lib.html:40
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:40
+msgid "Actions"
+msgstr "Ações"
+
+#: app/templates/orka/general/lib.html:65
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:65
+msgid "Page size"
+msgstr "Páginas"
+
+#: app/templates/orka/general/lib.html:83
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:83
+msgid "Order by"
+msgstr "Ordenado por"
+
+#: app/templates/orka/general/lib.html:265
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:11
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:263
+msgid "Save"
+msgstr "Salvar"
+
+#: app/templates/orka/general/lib.html:282
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:280
+msgid "Record Count"
+msgstr "Qtd. de Registros"
+
+#: app/templates/orka/general/charts/chart.html:8
+#: app/templates/orka/general/charts/chart_time.html:10
+#: app/templates/orka/general/charts/jsonchart.html:8
+#: app/templates/orka/general/lib.html:305
+#: app/templates/orka/general/model/list.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:9
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/jsonchart.html:8
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:303
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/model/list.html:8
+msgid "Search"
+msgstr "Pesquisar"
+
+#: app/templates/orka/general/lib.html:312
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
+msgid "Back"
+msgstr "Voltar"
+
+#: app/templates/orka/general/lib.html:320
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:318
+msgid "Add a new record"
+msgstr "Adicionar novo"
+
+#: app/templates/orka/general/lib.html:327
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:325
+msgid "Edit record"
+msgstr "Editar registro"
+
+#: app/templates/orka/general/lib.html:334
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:332
+msgid "Show record"
+msgstr "Exibir registro"
+
+#: app/templates/orka/general/lib.html:340
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:338
+msgid "You sure you want to delete this item?"
+msgstr "Você realmente desejar deletar?"
+
+#: app/templates/orka/general/lib.html:341
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:339
+msgid "Delete record"
+msgstr "Remover registro"
+
+#: app/templates/orka/general/charts/chart_time.html:17
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
+msgid "Group by fields"
+msgstr "Agrupado por campos"
+
+#: app/templates/orka/general/widgets/base_list.html:36
+#: app/templates/orka/general/widgets/list_carousel.html:50
+#: app/templates/orka/general/widgets/list_master.html:17
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:14
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/base_list.html:36
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_carousel.html:50
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/list_master.html:17
+msgid "No records found"
+msgstr "Nenhum registro encontrado"
+
+#: app/templates/orka/general/widgets/search.html:7
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/widgets/search.html:7
+msgid "Add Filter"
+msgstr "Adicionar Filtro"
 
 #: app/views/__init__.py:34
 msgid "Dashboard"
@@ -330,46 +316,127 @@ msgstr "Imagens"
 msgid "Nodes"
 msgstr "Nós"
 
-#: app/views/container.py:15 app/views/image.py:15 app/views/node.py:15
+#: app/views/container.py:13
+msgid "List Container"
+msgstr "Listar Contêineres"
+
+#: app/views/container.py:15
+msgid "Show Container"
+msgstr "Exibir Contêiner"
+
+#: app/views/container.py:17
+msgid "Add Container"
+msgstr "Adicionar Contêiner"
+
+#: app/views/container.py:19
+msgid "Edit Container"
+msgstr "Editar Contêiner"
+
+#: app/views/container.py:21 app/views/image.py:22 app/views/node.py:22
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
 msgid "Name"
 msgstr "Nome"
 
-#: app/views/container.py:16
+#: app/views/container.py:22
 msgid "Image"
 msgstr "Imagem"
 
-#: app/views/container.py:17 app/views/container.py:23
+#: app/views/container.py:23 app/views/container.py:29
 msgid "Node"
 msgstr "Nó"
 
-#: app/views/container.py:18
+#: app/views/container.py:24
 msgid "Port"
 msgstr "Porta"
 
 #: app/views/container.py:25
+msgid "ID Container"
+msgstr "ID Contêiner"
+
+#: app/views/container.py:26
+msgid "Domain Name"
+msgstr "Domínio"
+
+#: app/views/container.py:27
+msgid "CPU Reserved"
+msgstr "CPU Reservado"
+
+#: app/views/container.py:28
+msgid "Storage Reserved"
+msgstr "Armazenamento Reservado"
+
+#: app/views/container.py:30
+msgid "Docker File"
+msgstr "DockerFile"
+
+#: app/views/container.py:31
 msgid "Status"
 msgstr "Estado"
 
+#: app/views/container.py:43 app/views/container.py:61
+#: app/views/container.py:77 app/views/container.py:95 app/views/image.py:30
+#: app/views/image.py:38 app/views/image.py:45 app/views/image.py:52
+#: app/views/node.py:31 app/views/node.py:40 app/views/node.py:47
+#: app/views/node.py:56
+msgid "Summary"
+msgstr "Principal"
+
+#: app/views/container.py:50 app/views/container.py:67
+#: app/views/container.py:84 app/views/container.py:102
+msgid "Advanced Info"
+msgstr "Avançado"
+
+#: app/views/image.py:14
+msgid "List Image"
+msgstr "Listar Imagens"
+
 #: app/views/image.py:16
+msgid "Show Image"
+msgstr "Exibir Imagem"
+
+#: app/views/image.py:18
+msgid "Add Image"
+msgstr "Adicionar Imagem"
+
+#: app/views/image.py:20
+msgid "Edit Image"
+msgstr "Editar Imagem"
+
+#: app/views/image.py:23
 msgid "Version"
 msgstr "Versão"
 
-#: app/views/image.py:17
+#: app/views/image.py:24
 msgid "Digest"
 msgstr "Sumário"
 
+#: app/views/node.py:14
+msgid "List Node"
+msgstr "Listar Nós"
+
 #: app/views/node.py:16
+msgid "Show Node"
+msgstr "Exibir Nó"
+
+#: app/views/node.py:18
+msgid "Add Node"
+msgstr "Adicionar Nó"
+
+#: app/views/node.py:20
+msgid "Edit Node"
+msgstr "Editar Nó"
+
+#: app/views/node.py:23
 msgid "Node ID"
 msgstr "ID Nó"
 
-#: app/views/node.py:17
+#: app/views/node.py:24
 msgid "IP Address"
 msgstr "Endereço de IP"
 
-#: app/views/node.py:18
+#: app/views/node.py:25
 msgid "Network Configuration"
 msgstr "Configurações de Rede"
 
@@ -456,9 +523,8 @@ msgid "Avg. of"
 msgstr "Média de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:10
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:66
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:80
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:80
 msgid "Contains"
 msgstr "Contém"
 
@@ -467,37 +533,32 @@ msgid "Contains (insensitive)"
 msgstr "Contém (indiferente)"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:25
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:74
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:88
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:88
 msgid "Not Contains"
 msgstr "Não Contém"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:31
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:12
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:96
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:96
 msgid "Equal to"
 msgstr "Igual à"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:37
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:23
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:105
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:105
 msgid "Not Equal to"
 msgstr "Diferente de"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:43
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:34
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:114
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:114
 msgid "Greater than"
 msgstr "Maior que"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/generic/filters.py:49
-#:
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:42
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:123
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:123
 msgid "Smaller than"
 msgstr "Menor que"
 
@@ -506,22 +567,22 @@ msgid "Start with"
 msgstr "Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:50
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:48
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:48
 msgid "Starts with"
 msgstr "Iniciando com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:58
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:56
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:56
 msgid "Not Starts with"
 msgstr "Não Inicia com"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:82
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:132
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:132
 msgid "Relation"
 msgstr "Relação"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/models/mongoengine/filters.py:91
-#:  env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:150
+#: env/lib/python2.7/site-packages/flask_appbuilder/models/sqla/filters.py:150
 msgid "Relation as Many"
 msgstr "Múltiplas Relações"
 
@@ -583,8 +644,8 @@ msgstr "Escreva seu sobrenome"
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:140
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:231
 msgid ""
-"Please use a good password policy, this application does not check this for "
-"you"
+"Please use a good password policy, this application does not check this "
+"for you"
 msgstr "Por favor utilize uma senha segura, poir a aplicação não irá checar"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:33
@@ -787,8 +848,8 @@ msgstr "Alterado por"
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:138
 msgid "Username valid for authentication on DB or LDAP, unused for OID auth"
 msgstr ""
-"Nome de usuário válido para autenticação em DB ou LDAP, não utilizado para "
-"autenticação OID"
+"Nome de usuário válido para autenticação em DB ou LDAP, não utilizado "
+"para autenticação OID"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:142
 msgid "It's not a good policy to remove a user, just make it inactive"
@@ -1021,3 +1082,4 @@ msgstr "Não é um valor real válido"
 #: env/lib/python2.7/site-packages/wtforms/fields/core.py:742
 msgid "Not a valid datetime value"
 msgstr "Não é um valor de tempo válido"
+

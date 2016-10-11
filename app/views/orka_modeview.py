@@ -10,3 +10,4 @@ class OrkaModelView(ModelView):
     add_template = 'orka/general/model/add.html'
 
     show_template = 'orka/general/model/show.html'
+

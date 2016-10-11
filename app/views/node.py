@@ -11,6 +11,14 @@ class NodeModelView(OrkaModelView):
 
     related_views = [ContainerModelView]
 
+    list_title = _("List Node")
+
+    show_title = _("Show Node")
+
+    add_title = _("Add Node")
+
+    edit_title = _("Edit Node")
+
     label_columns = {'name': _('Name'),
                      'node_id': _('Node ID'),
                      'ip': _('IP Address'),

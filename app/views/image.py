@@ -11,6 +11,14 @@ class ImageModelView(OrkaModelView):
 
     related_views = [ContainerModelView]
 
+    list_title = _("List Image")
+
+    show_title = _("Show Image")
+
+    add_title = _("Add Image")
+
+    edit_title = _("Edit Image")
+
     label_columns = {'name': _('Name'),
                      'version': _('Version'),
                      'digest': _('Digest')

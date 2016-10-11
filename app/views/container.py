@@ -10,6 +10,13 @@ class ContainerModelView(OrkaModelView):
 
     datamodel = SQLAInterface(Container)
 
+    list_title = _("List Container")
+
+    show_title = _("Show Container")
+
+    add_title = _("Add Container")
+
+    edit_title = _("Edit Container")
 
     label_columns = {'name': _('Name'),
                      'image': _('Image'),
