@@ -1,8 +1,7 @@
 #coding: utf-8
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from container import ContainerModelView
-from service import cli, _
+from container import ContainerModelView, cli, _
 from app.models.image import Image
 import json
 

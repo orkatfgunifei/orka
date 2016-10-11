@@ -9,13 +9,10 @@ from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access
 
-from service import ServiceView, db, appbuilder
-from container import ContainerModelView
+from container import ContainerModelView, db, appbuilder
 from image import ImageModelView
 from node import NodeModelView
-
-
-
+from service import ServiceView
 
 # Início Log
 log = logging.getLogger(__name__)
@@ -31,7 +28,7 @@ def page_not_found(e):
 db.create_all()
 
 appbuilder.add_link("Dashboard", label=_("Dashboard"), href='/', icon='fa-home')
-appbuilder.add_view(ServiceView, "Servidbces", label=_('Services'), icon='fa-server')
+appbuilder.add_view(ServiceView, "Services", label=_('Services'), icon='fa-server')
 appbuilder.add_view(ContainerModelView, "Container", label=_('Container'), icon='fa-database')
 appbuilder.add_view(ImageModelView, "Images", label=_('Images'), icon='fa-hdd-o')
 appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap', label=_('Nodes'))
@@ -39,7 +36,6 @@ appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap', label=_('Nodes'))
 security = appbuilder.sm
 
 active_views = [
-    "Service",
     "Container",
     "Image",
     "Images",
@@ -47,7 +43,9 @@ active_views = [
     "UserInfoEditView",
     "ResetPasswordView",
     "ResetMyPasswordView",
-    "OrkaUserDBView"
+    "OrkaUserDBView",
+    "Service",
+    "Services"
 ]
 
 allroles = security.get_all_roles()

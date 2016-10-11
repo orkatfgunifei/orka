@@ -1,10 +1,11 @@
 #coding: utf-8
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
-
+from flask import g
 from flask.ext.appbuilder import ModelView
 from app.models.container import Container
-from service import db, cli, _
+from app.views import _, BaseView, expose, has_access
+from app import db, appbuilder, cli
 
 class ContainerModelView(ModelView):
 
@@ -118,32 +119,39 @@ class ContainerModelView(ModelView):
         """
         super(ContainerModelView, self).pre_add(item)
 
-        ports = []
+        if g.user.is_authenticated():
+            item.user_id = g.user.id
 
-        if item.port:
-            p = item.port.split(':')
-            ports = [int(porta) for porta in p]
+            ports = []
 
-        if item.image.name:
-            if not item.image.version:
-                item.image.version = "latest"
+            if item.port:
+                p = item.port.split(':')
+                ports = [int(porta) for porta in p]
 
-            image = "%s:%s" % (item.image.name, item.image.version)
-        else:
-            image = False
+            if item.image.name:
+                if not item.image.version:
+                    item.image.version = "latest"
 
-        container = cli.create_container(
-            name= item.name or None,
-            ports= ports or None,
-            image= image or None
-            )
+                image = "%s:%s" % (item.image.name, item.image.version)
+            else:
+                image = False
 
-        if not container.get('Id'):
-            raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
-        else:
-            item.hash_id = container.get('Id')
-            cli.start(item.hash_id)
-            item.status = True
+
+            container = cli.create_container(
+                name= item.name or None,
+                ports= ports or None,
+                image= image or None
+                )
+
+            if not container.get('Id'):
+                raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
+            else:
+
+                item.hash_id = container.get('Id')
+                #TODO: Checar size do container
+                #cs = cli.inspect_container(item.hash_id)
+                cli.start(item.hash_id)
+                item.status = True
 
 
 
@@ -157,6 +165,7 @@ class ContainerModelView(ModelView):
         super(ContainerModelView, self).pre_delete(item)
 
         if item.hash_id:
+            cli.stop(item.hash_id)
             cli.remove_container(item.hash_id)
 
 
