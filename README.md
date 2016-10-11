@@ -70,32 +70,30 @@ Eng_Soft | Modelagem e Estruturação
 
 ## TFG Infos:
 
-Entre em nosso grupo no Facebook e fique sabendo mais rápido das novidades:
-https://www.facebook.com/groups/1516143168644693/
+    Entre em nosso grupo no Facebook e fique sabendo mais rápido das novidades:
+    https://www.facebook.com/groups/1516143168644693/
 
-Seguem as datas importantes para o desenvolvimento do Trabalho Final de Graduação do curso de Engenharia da Computação da Universidade Federal de Itajubá para os alunos que pretendem defender suas monografias no ano de 2016:
+    Seguem as datas importantes para o desenvolvimento do Trabalho Final de Graduação do curso de Engenharia da Computação da Universidade Federal de Itajubá para os alunos que pretendem defender suas monografias no ano de 2016:
 
-----------------------------------
-Etapa    | Prazo Máximo
--------- | --------
-Entrega da Proposta de Trabalho (Impressa. Baixar modelo em Modelos) |  15/08/2016 (PRORROGADO)
-Entrega da Revisão Bibliográfica (por e-mail edmarmo@unifei.edu.br) |  05/09
-Workshop - Apresentação de Seminários | 07/10
-Entrega da Monografia - Primeira Versão | 07/11
-Defesa do Trabalho | 16-18/11
-Entrega da Monografia Versão Corrigida | Defesa em Novembro: 30/11
+    ----------------------------------
+    Etapa    | Prazo Máximo
+    -------- | --------
+    Entrega da Proposta de Trabalho (Impressa. Baixar modelo em Modelos) |  15/08/2016 (PRORROGADO)
+    Entrega da Revisão Bibliográfica (por e-mail edmarmo@unifei.edu.br) |  05/09
+    Workshop - Apresentação de Seminários | 07/10
+    Entrega da Monografia - Primeira Versão | 07/11
+    Defesa do Trabalho | 16-18/11
+    Entrega da Monografia Versão Corrigida | Defesa em Novembro: 30/11
 
 
 ### Algumas observações Importantes:
-Os trabalhos devem ser desenvolvidos em grupos de até TRÊS alunos.
+Os trabalhos devem ser desenvolvidos em grupos de até TRÊS alunos. Um aluno de outros cursos pode fazer parte de um grupo. No entanto, deve ser apresentada ao coordenador de TFG da ECO uma carta do orientador de TFG do curso do aluno, demonstrando que está de acordo. Além disso, o aluno deverá se sujeitar a todos os passos e avaliações do TFG de ECO.
 
-Um aluno de outros cursos pode fazer parte de um grupo. No entanto, deve ser apresentada ao coordenador de TFG da ECO uma carta do orientador de TFG do curso do aluno, demonstrando que está de acordo. Além disso, o aluno deverá se sujeitar a todos os passos e avaliações do TFG de ECO.
-
-Cada fase receberá uma nota proporcional à sua importância:
-- Revisão bibliográfica: 15 pontos
-- Workshop: 15 pontos
-- Parecer do orientador: 10 pontos
-- Monografia e defesa: 60 pontos
+####Cada fase receberá uma nota proporcional à sua importância:
+    - Revisão bibliográfica: 15 pontos
+    - Workshop: 15 pontos
+    - Parecer do orientador: 10 pontos
+    - Monografia e defesa: 60 pontos
 
 O aluno deverá se matricular na disciplina de TFG apenas no semestre em que pretende se matricular.
 
