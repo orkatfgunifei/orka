@@ -1,12 +1,12 @@
 #coding: utf-8
-from orka_modeview import OrkaModelView
+from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from container import ContainerModelView
 from service import cli, _
 from app.models.node import Node
 
 
-class NodeModelView(OrkaModelView):
+class NodeModelView(ModelView):
     datamodel = SQLAInterface(Node)
 
     related_views = [ContainerModelView]

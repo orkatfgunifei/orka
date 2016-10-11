@@ -19,7 +19,6 @@ from node import NodeModelView
 
 # Início Log
 log = logging.getLogger(__name__)
-appbuilder.base_template='orka/baselayout.html'
 
 
 """

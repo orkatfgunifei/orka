@@ -2,11 +2,11 @@
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 
-from orka_modeview import OrkaModelView
+from flask.ext.appbuilder import ModelView
 from app.models.container import Container
 from service import db, cli, _
 
-class ContainerModelView(OrkaModelView):
+class ContainerModelView(ModelView):
 
     datamodel = SQLAInterface(Container)
 

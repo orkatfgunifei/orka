@@ -11,7 +11,7 @@ class ServiceView(BaseView):
     route_base = '/service'
     default_view = 'service'
     index_template = 'orka/services.html'
-
+    base_template = 'orka/services.html'
     base_permissions = ['can_edit', 'can_delete',
                         'can_download', 'can_list',
                         'can_add', 'can_show']
