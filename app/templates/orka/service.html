@@ -1,0 +1,6 @@
+{% extends 'orka/baselayout.html' %}
+{% import 'orka/general/lib.html' as lib %}
+{% block content %}
+    <a href="/service/create"><button type="submit">{{ _("Create") }}</button></a>
+    {{ lib.render_services(services) }}
+{% endblock %}

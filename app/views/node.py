@@ -19,44 +19,55 @@ class NodeModelView(ModelView):
     edit_title = _("Edit Node")
 
     label_columns = {'name': _('Name'),
-                     'node_id': _('Node ID'),
-                     'ip': _('IP Address'),
-                     'network_config': _('Network Configuration')
+                     'remote_addr': _('Remote IP'),
+                     'remote_port': _('Remote Port'),
+                     'listen_addr': _('Listen IP'),
+                     'listen_port': _('Listen Port'),
+                     'join_token': _('Join Token')
                      }
 
-    list_columns = ['name', 'ip']
+    list_columns = ['name', 'remote_addr', 'remote_port', 'listen_addr', 'listen_port']
 
     show_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Node Options'), {'fields': [
                         'name',
-                        'node_id',
-                        'ip',
-                        'network_config'
+                        'remote_addr',
+                        'remote_port',
+                        'listen_addr',
+                        'listen_port'
                                ]}),
     ]
 
     add_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Node Options'), {'fields': [
                         'name',
-                        'ip',
+                        'remote_addr',
+                        'remote_port',
+                        'listen_addr',
+                        'listen_port',
+                        'join_token'
                                ]}),
     ]
 
     edit_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Node Options'), {'fields': [
                         'name',
-                        'node_id',
-                        'ip',
-                        'network_config'
+                        'remote_addr',
+                        'remote_port',
+                        'listen_addr',
+                        'listen_port',
+                        'join_token'
                                ]}),
     ]
 
     search_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Node Options'), {'fields': [
                         'name',
-                        'node_id',
-                        'ip',
-                        'network_config'
+                        'remote_addr',
+                        'remote_port',
+                        'listen_addr',
+                        'listen_port',
+                        'join_token'
                                ]}),
     ]
 
@@ -71,4 +82,4 @@ class NodeModelView(ModelView):
 
         # TODO: https://docker-py.readthedocs.io/en/latest/swarm/ Estudar
         if item.name:
-            cli.create_network
+            print "Implemente o criar !"

@@ -21,20 +21,17 @@ class ContainerModelView(ModelView):
 
     label_columns = {'name': _('Name'),
                      'image': _('Image'),
-                     'node': _('Node'),
                      'port': _('Port'),
                      'hash_id': _('ID Container'),
                      'domain_name': _('Domain Name'),
                      'cpu_reserved': _('CPU Reserved'),
                      'storage_reserved': _('Storage Reserved'),
-                     'node': _('Node'),
                      'docker_file': _('Docker File'),
                      'status': _('Status')
                      }
 
     list_columns = ['name',
                     'image',
-                    'node',
                     'port',
                     'status',
                     ]
@@ -54,7 +51,6 @@ class ContainerModelView(ModelView):
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'node',
                         'docker_file'], 'expanded': False}),
     ]
 
@@ -70,7 +66,6 @@ class ContainerModelView(ModelView):
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'node',
                         'docker_file'], 'expanded': True}),
     ]
 
@@ -88,7 +83,6 @@ class ContainerModelView(ModelView):
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'node',
                         'docker_file'], 'expanded': False}),
     ]
 
@@ -106,7 +100,6 @@ class ContainerModelView(ModelView):
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved',
-                        'node',
                         'docker_file'], 'expanded': False}),
     ]
 

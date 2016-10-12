@@ -17,7 +17,6 @@ from service import ServiceView
 # Início Log
 log = logging.getLogger(__name__)
 
-
 """
     Controlador de erro 404
 """
@@ -27,11 +26,22 @@ def page_not_found(e):
 
 db.create_all()
 
-appbuilder.add_link("Dashboard", label=_("Dashboard"), href='/', icon='fa-home')
-appbuilder.add_view(ServiceView, "Services", label=_('Services'), icon='fa-server')
-appbuilder.add_view(ContainerModelView, "Container", label=_('Container'), icon='fa-database')
-appbuilder.add_view(ImageModelView, "Images", label=_('Images'), icon='fa-hdd-o')
-appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap', label=_('Nodes'))
+appbuilder.add_link("Index", label=_("Index"), href='/', icon='fa-home')
+
+
+appbuilder.add_view(ServiceView, "Dashboard", label=_('Dashboard'),
+                     category="Services", icon="fa-tachometer", category_icon='fa-server')
+
+appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap',
+                    label=_('Nodes'), category="Services",
+                    category_icon='fa-server', category_label=_('Services'))
+
+appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
+                    icon='fa-database')
+
+appbuilder.add_view(ImageModelView, "Images", label=_('Images'),
+                    icon='fa-hdd-o')
+
 
 security = appbuilder.sm
 

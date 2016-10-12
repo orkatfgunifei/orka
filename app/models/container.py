@@ -1,10 +1,10 @@
 #coding: utf-8
-
-from . import  Model, Column, Integer,\
+from flask.ext.appbuilder.models.mixins import AuditMixin
+from . import Model, Column, Integer,\
     String, relationship, Text, ForeignKey, Boolean
 
 
-class Container(Model):
+class Container(AuditMixin, Model):
     '''
         Definição container_type
         0: Storage
@@ -21,8 +21,6 @@ class Container(Model):
     docker_file = Column(Text)
     image_id = Column(Integer, ForeignKey('image.id'))
     image = relationship("Image")
-    node_id = Column(Integer, ForeignKey('node.id'))
-    node = relationship("Node")
     status = Column(Boolean, default=False)
 
     def __repr__(self):

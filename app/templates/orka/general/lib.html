@@ -358,20 +358,20 @@
 {#    {% endif %}#}
 {#{% endmacro %}#}
 
-{% macro render_services(containers) %}
-    {% for container in containers %}
+{% macro render_services(services) %}
+    {% for service in services %}
         <div class="info-box bg-green">
             <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">{{ container.name }}</span>
-              <span class="info-box-number">{{ container.hash_id[:8] }}</span>
+              <span class="info-box-text">{{ service.name }}</span>
+              <span class="info-box-number">{{ service.image.name }}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
               </div>
                   <span class="progress-description">
-                    {{ container.image.name }}
+                    {{ service.status }}
                   </span>
             </div>
             <!-- /.info-box-content -->
