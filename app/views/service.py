@@ -1,11 +1,12 @@
 #coding: utf-8
 from app.models.service import Service
-from app.views import BaseView, expose, ModelView
+from app.views import BaseView, expose, ModelView, MultipleView
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 from container import cli, db
 from flask import url_for, redirect
+from app.views.node import NodeModelView
 
 class ServiceModelView(ModelView):
 
@@ -80,38 +81,38 @@ class ServiceModelView(ModelView):
         """
         super(ServiceModelView, self).pre_add(item)
 
-        if g.user.is_authenticated():
-            item.user_id = g.user.id
-
-            ports = []
-
-            if item.port:
-                p = item.port.split(':')
-                ports = [int(porta) for porta in p]
-
-            if item.image.name:
-                if not item.image.version:
-                    item.image.version = "latest"
-
-                image = "%s:%s" % (item.image.name, item.image.version)
-            else:
-                image = False
-
-            container = cli.create_container(
-                name=item.name or None,
-                ports=ports or None,
-                image=image or None
-            )
-
-            if not container.get('Id'):
-                raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
-            else:
-
-                item.hash_id = container.get('Id')
-                # TODO: Checar size do container
-                # cs = cli.inspect_container(item.hash_id)
-                cli.start(item.hash_id)
-                item.status = True
+        # if g.user.is_authenticated():
+        #     item.user_id = g.user.id
+        #
+        #     ports = []
+        #
+        #     if item.port:
+        #         p = item.port.split(':')
+        #         ports = [int(porta) for porta in p]
+        #
+        #     if item.image.name:
+        #         if not item.image.version:
+        #             item.image.version = "latest"
+        #
+        #         image = "%s:%s" % (item.image.name, item.image.version)
+        #     else:
+        #         image = False
+        #
+        #     container = cli.create_container(
+        #         name=item.name or None,
+        #         ports=ports or None,
+        #         image=image or None
+        #     )
+        #
+        #     if not container.get('Id'):
+        #         raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
+        #     else:
+        #
+        #         item.hash_id = container.get('Id')
+        #         # TODO: Checar size do container
+        #         # cs = cli.inspect_container(item.hash_id)
+        #         cli.start(item.hash_id)
+        #         item.status = True
 
 
     def pre_delete(self, item):
@@ -155,37 +156,25 @@ class ServiceModelView(ModelView):
         #         cli.stop(item.hash_id)
 
 
-class ServiceView(BaseView):
+class ServiceView(MultipleView):
 
     """
         A simple view that implements the index for the site
     """
+    views = [ServiceModelView, NodeModelView]
     route_base = '/service'
-    default_view = 'service'
+    #default_view = 'service'
 
-    base_template = 'orka/service/base.html'
-
-    base_permissions = ['can_edit', 'can_delete',
-                        'can_download', 'can_list',
-                        'can_add', 'can_show']
-
-    @expose('/')
+    @expose('/list')
     def service(self):
         self.update_redirect()
 
         services = db.session.query(Service).all()
 
-        return self.render_template(self.base_template,
+        return self.render_template('orka/service/base.html',
                                     appbuilder=self.appbuilder,
                                     services=services
                                     )
-
-    @expose('/create')
-    def create(self):
-        return redirect(url_for("NodeModelView.add"))
-        # return self.render_template('orka/service/create.html',
-        #                             appbuilder=self.appbuilder
-        #                             )
 
 
 

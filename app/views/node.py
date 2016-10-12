@@ -3,7 +3,7 @@ from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 
 from app.models.node import Node
-from container import ContainerModelView, _
+from container import ContainerModelView, _, cli
 
 
 class NodeModelView(ModelView):
@@ -86,4 +86,13 @@ class NodeModelView(ModelView):
 
         # TODO: https://docker-py.readthedocs.io/en/latest/swarm/ Estudar
         if item.name:
-            print "Implemente o criar !"
+
+            spec = cli.create_swarm_spec(
+                snapshot_interval=5000, log_entries_for_slow_followers=1200
+            )
+            listen_addr = '%s:%s' % (item.listen_addr, item.listen_port)
+            a = cli.init_swarm(
+                advertise_addr='eth0', listen_addr=listen_addr, force_new_cluster=False,
+                swarm_spec=spec
+            )
+            print a
