@@ -21,6 +21,7 @@ log = logging.getLogger(__name__)
 """
     Controlador de erro 404
 """
+appbuilder.base_template='orka/baselayout.html'
 @appbuilder.app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', base_template=appbuilder.base_template, appbuilder=appbuilder), 404

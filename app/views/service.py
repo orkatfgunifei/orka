@@ -1,6 +1,6 @@
 #coding: utf-8
 from app.models.service import Service
-from app.views import BaseView, expose, ModelView, MultipleView
+from app.views import BaseView, expose, ModelView, MultipleView, has_access
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
@@ -10,6 +10,11 @@ from app.views.node import NodeModelView
 
 
 class ServiceModelView(ModelView):
+    datamodel = SQLAInterface(Service)
+    route_base = "/service"
+    # related_views = []
+    base_template = ''
+    default_view = 'service'
 
     related_views = [NodeModelView]
 
@@ -72,6 +77,19 @@ class ServiceModelView(ModelView):
             'status',
         ]})
     ]
+
+    @expose('/')
+    @has_access
+    def service(self):
+        print "passo aqui na rota de service"
+        self.update_redirect()
+        self.base_template = 'orka/service.html'
+        services = db.session.query(Service).all()
+
+        return self.render_template(self.base_template,
+                                    appbuilder=self.appbuilder,
+                                    service=services
+                                    )
 
 
     def pre_add(self, item):

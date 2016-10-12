@@ -1,19 +1,71 @@
 #coding: utf-8
 from flask import g
-from flask.ext.appbuilder import ModelView
+from flask.ext.appbuilder import ModelView, expose, has_access, widgets
+
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 
-
+from app import db, cli, appbuilder, app
 from app.models.container import Container
-from app.views import _, cli, db
+from app.views import _
 
 
 class ContainerModelView(ModelView):
-
-    route_base = "/container"
-
     datamodel = SQLAInterface(Container)
+    route_base = "/container"
+    # related_views = []
+    base_template = ''
+    default_view = 'container'
+    db
+    list_widget = widgets.ListWidget
+    """ List widget override """
+    # edit_widget = FormWidget.template = 'orka/general/widgets/form.html'
+    # """ Edit widget override """
+    # add_widget = FormWidget
+    # """ Add widget override """
+    # show_widget = ShowWidget
+    # """ Show widget override """
+
+    @expose('/')
+    @has_access
+    def container(self):
+
+        print "passo aqui"
+        self.update_redirect()
+        self.base_template='orka/container.html'
+        containers = db.session.query(Container).all()
+
+        return self.render_template(self.base_template,
+                                    appbuilder=self.appbuilder,
+                                    container=containers
+                                    )
+    #
+    # @expose('/ContainerWizard')
+    # @has_access
+    # def create(self):
+    #     list_widget.template='appbuilder/general/widget/list.html'
+    #     return self.render_template(self.base_template,
+    #                                 widget=list_widget,
+    #                                 title=self.add_title,
+    #                                 appbuilder=self.appbuilder,
+    #                                 )
+
+
+    # @expose('/add', methods=['GET', 'POST'])
+    # @has_access
+    # def add(self):
+    #     widget = self._add()
+    #     if not widget:
+    #         return redirect(self.get_redirect())
+    #     else:
+    #         return self.render_template(self.add_template,
+    #                                     title=self.add_title,
+    #                                     widgets=widget)
+
+#
+#     route_base = "/container"
+#
+
 
     list_title = _("List Container")
 
