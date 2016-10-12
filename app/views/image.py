@@ -33,7 +33,7 @@ class ImageModelView(ModelView):
     list_columns = ['name', 'version']
 
     show_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
                         'version',
                         'digest'
@@ -41,21 +41,21 @@ class ImageModelView(ModelView):
     ]
 
     add_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
                         'version',
                                ]}),
     ]
 
     edit_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
                         'version'
                                ]}),
     ]
 
     search_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
                         'version',
                         'digest'

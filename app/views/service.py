@@ -12,7 +12,7 @@ class ServiceModelView(ModelView):
 
     datamodel = SQLAInterface(Service)
 
-    route_base = "/servicemodel"
+    route_base = "/service"
 
     list_title = _("List Service")
 
@@ -25,7 +25,9 @@ class ServiceModelView(ModelView):
     label_columns = {'name': _('Name'),
                      'image': _('Image'),
                      'node': _('Node'),
-                     'status': _('Status')
+                     'command': _('Command'),
+                     'status': _('Status'),
+                     'service_id': _('ID Service')
                      }
 
     list_columns = [
@@ -36,53 +38,67 @@ class ServiceModelView(ModelView):
                     ]
 
     show_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
             'name',
             'image',
-            'node',
             'status',
-        ]})
+        ]}),
+        (_('Advanced'), {'fields': [
+            'command',
+            'node',
+            'service_id'
+        ], 'expanded': False})
     ]
 
     add_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
             'name',
             'image',
+        ]}),
+        (_('Advanced'), {'fields': [
+            'command',
             'node',
-        ]})
+        ], 'expanded': True})
     ]
 
     edit_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
             'name',
             'image',
-            'node',
             'status',
-        ]})
+        ]}),
+        (_('Advanced'), {'fields': [
+            'command',
+            'node',
+            'service_id'
+        ], 'expanded': False})
     ]
 
     search_fieldsets = [
-        (_('Summary'), {'fields': [
+        (_('Options'), {'fields': [
             'name',
             'image',
-            'node',
             'status',
-        ]})
+        ]}),
+        (_('Advanced'), {'fields': [
+            'command',
+            'node',
+            'service_id'
+        ], 'expanded': False})
     ]
 
-    @expose('/')
+    @expose('/dashboard')
     @has_access
     def service(self):
-        print "passo aqui na rota de service"
+
         self.update_redirect()
-        self.base_template = 'orka/service.html'
+
         services = db.session.query(Service).all()
 
-        return self.render_template(self.base_template,
+        return self.render_template('orka/service/base.html',
                                     appbuilder=self.appbuilder,
-                                    service=services
+                                    services=services
                                     )
-
 
     def pre_add(self, item):
         """
@@ -93,16 +109,29 @@ class ServiceModelView(ModelView):
         """
         super(ServiceModelView, self).pre_add(item)
 
-        container_spec = docker.types.ContainerSpec(
-            image='busybox', command=['echo', 'hello']
-        )
-        task_tmpl = docker.types.TaskTemplate(container_spec)
-        service_id = cli.create_service(task_tmpl, name=item.name)
+        if item.image:
 
-        if service_id:
-            item.service_id = service_id['ID']
+            command = []
+            if item.command:
+                command = item.command.split()
 
+            container_spec = docker.types.ContainerSpec(
+                image=item.image.name, command=command
+            )
+            task_tmpl = docker.types.TaskTemplate(container_spec)
 
+            try:
+                service_id = cli.create_service(task_tmpl, name=item.name)
+
+                if service_id:
+                    item.service_id = service_id['ID']
+            except Exception as e:
+                if "docker swarm init" in str(e):
+                    raise Exception(_("Please create the node first."))
+                else:
+                    raise e
+        else:
+            raise Exception(_("Please select an image to create the service."))
 
     def pre_delete(self, item):
         """
@@ -113,10 +142,10 @@ class ServiceModelView(ModelView):
         """
         super(ServiceModelView, self).pre_delete(item)
 
-        # if item.hash_id:
-        #     cli.stop(item.hash_id)
-        #     cli.remove_container(item.hash_id)
-
+        try:
+            cli.remove_service(item.name)
+        except:
+            print "Registro não encontrado, porém será removido"
 
     def pre_update(self, item):
         """
@@ -145,26 +174,26 @@ class ServiceModelView(ModelView):
         #         cli.stop(item.hash_id)
 
 
-class ServiceView(BaseView):
-
-    """
-        A simple view that implements the index for the site
-    """
-
-    route_base = '/service'
-    default_view = 'service'
-
-    @expose('/service')
-    def service(self):
-        self.update_redirect()
-
-        services = db.session.query(Service).all()
-
-        return self.render_template('orka/service/base.html',
-                                    appbuilder=self.appbuilder,
-                                    services=services
-                                    )
-
+# class ServiceView(BaseView):
+#
+#     """
+#         A simple view that implements the index for the site
+#     """
+#
+#     route_base = '/service'
+#     default_view = 'service'
+#
+#     @expose('/service')
+#     def service(self):
+#         self.update_redirect()
+#
+#         services = db.session.query(Service).all()
+#
+#         return self.render_template('orka/service/base.html',
+#                                     appbuilder=self.appbuilder,
+#                                     services=services
+#                                     )
+#
 
 
 

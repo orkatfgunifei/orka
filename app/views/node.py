@@ -6,6 +6,7 @@ from app.models.node import Node
 from app.views import _, cli
 from service import ServiceModelView
 
+
 class NodeModelView(ModelView):
 
     datamodel = SQLAInterface(Node)
@@ -23,56 +24,78 @@ class NodeModelView(ModelView):
     related_views = [ServiceModelView]
 
     label_columns = {'name': _('Name'),
+                     'advertise_addr': _('IP Host Docker'),
                      'remote_addr': _('Remote IP'),
                      'remote_port': _('Remote Port'),
                      'listen_addr': _('Listen IP'),
                      'listen_port': _('Listen Port'),
-                     'join_token': _('Join Token')
+                     'join_token': _('Join Token'),
+                     'snapshot_interval': _('Snapshot Interval'),
+                     'log_entries_for_slow_followers': _('Logs Slow Followers')
                      }
 
     list_columns = ['name', 'remote_addr', 'remote_port', 'listen_addr', 'listen_port']
 
     show_fieldsets = [
-        (_('Node Options'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
-                        'remote_addr',
-                        'remote_port',
+                        'advertise_addr',
                         'listen_addr',
                         'listen_port'
                                ]}),
+        (_('Advanced'), {'fields': [
+            'join_token',
+            'snapshot_interval',
+            'log_entries_for_slow_followers',
+            'remote_addr',
+            'remote_port',
+        ], 'expanded': False})
     ]
 
     add_fieldsets = [
-        (_('Node Options'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
-                        'remote_addr',
-                        'remote_port',
+                        'advertise_addr',
                         'listen_addr',
-                        'listen_port',
-                        'join_token'
+                        'listen_port'
                                ]}),
+        (_('Advanced'), {'fields': [
+            'snapshot_interval',
+            'log_entries_for_slow_followers',
+            'remote_addr',
+            'remote_port',
+        ]})
     ]
 
     edit_fieldsets = [
-        (_('Node Options'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
-                        'remote_addr',
-                        'remote_port',
+                        'advertise_addr',
                         'listen_addr',
-                        'listen_port',
-                        'join_token'
+                        'listen_port'
                                ]}),
+        (_('Advanced'), {'fields': [
+            'snapshot_interval',
+            'log_entries_for_slow_followers',
+            'remote_addr',
+            'remote_port',
+        ], 'expanded': False})
     ]
 
     search_fieldsets = [
-        (_('Node Options'), {'fields': [
+        (_('Options'), {'fields': [
                         'name',
-                        'remote_addr',
-                        'remote_port',
+                        'advertise_addr',
                         'listen_addr',
-                        'listen_port',
-                        'join_token'
+                        'listen_port'
                                ]}),
+        (_('Advanced'), {'fields': [
+            'join_token',
+            'snapshot_interval',
+            'log_entries_for_slow_followers',
+            'remote_addr',
+            'remote_port',
+        ]})
     ]
 
     def pre_add(self, item):
@@ -84,7 +107,7 @@ class NodeModelView(ModelView):
         """
         super(NodeModelView, self).pre_add(item)
 
-        if item.name:
+        if item.listen_addr and item.advertise_addr:
 
             spec = cli.create_swarm_spec(
                 snapshot_interval=5000, log_entries_for_slow_followers=1200
@@ -92,20 +115,26 @@ class NodeModelView(ModelView):
             listen_addr = '%s:%s' % (item.listen_addr, item.listen_port)
 
             try:
-                ok = cli.init_swarm(
-                    advertise_addr='127.0.0.1', listen_addr=listen_addr, force_new_cluster=False,
-                    swarm_spec=spec
+                resp = cli.init_swarm(
+                    advertise_addr=item.advertise_addr, listen_addr=listen_addr,
+                    force_new_cluster=False, swarm_spec=spec
                 )
-                if ok:
-                    flash(_("Node Created!"), "info")
-            except:
-                print "No ja criado... TODO Resolver isso"
+                print resp
+            except Exception as e:
+                message = str(e)
+
+                if "docker swarm leave" in message:
+                    raise Exception(_("Node already initializated, use join instead."))
+                elif "listen address must" in message:
+                    raise Exception(_("Please insert the listen IP address and Port, e.g  0.0.0.0:5000"))
+                else:
+                    raise e
 
     def pre_delete(self, item):
 
         super(NodeModelView, self).pre_delete(item)
 
         try:
-            cli.leave_swarm()
+            cli.leave_swarm(force=True)
         except:
-            print "nao eh swarm"
+            print "Não é um objeto Swarm"

@@ -8,13 +8,14 @@ class Service(AuditMixin, Model):
 
     __tablename__ = "service"
     id = Column(Integer, primary_key=True)
-    name = Column(String(150))
-    image_id = Column(Integer, ForeignKey('image.id'))
+    name = Column(String(150), nullable=False)
+    image_id = Column(Integer, ForeignKey('image.id'), nullable=False)
     image = relationship("Image")
-    node_id = Column(Integer, ForeignKey('node.id'))
+    node_id = Column(Integer, ForeignKey('node.id'), nullable=False)
     node = relationship("Node")
     status = Column(Boolean, default=False)
     service_id = Column(String(64))
+    command = Column(String(256))
 
     def __repr__(self):
         return self.name

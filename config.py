@@ -27,7 +27,6 @@ APP_NAME = "Orka"
 if RUN_MODE != "PROD":
     APP_NAME += " [%s]" % RUN_MODE
 
-ADDON_MANAGERS = ['fab_addon_services.manager.ServiceManager']
 
 # Uncomment to setup Setup an App icon
 APP_ICON = "/static/img/logo.png"
