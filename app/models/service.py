@@ -14,6 +14,7 @@ class Service(AuditMixin, Model):
     node_id = Column(Integer, ForeignKey('node.id'))
     node = relationship("Node")
     status = Column(Boolean, default=False)
+    service_id = Column(String(64))
 
     def __repr__(self):
         return self.name
