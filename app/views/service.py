@@ -5,9 +5,8 @@ from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 from container import cli, db
-from flask import url_for, redirect
-from app.views.node import NodeModelView
-
+from flask import redirect, url_for, flash
+import docker
 
 class ServiceModelView(ModelView):
     datamodel = SQLAInterface(Service)
@@ -15,8 +14,6 @@ class ServiceModelView(ModelView):
     # related_views = []
     base_template = ''
     default_view = 'service'
-
-    related_views = [NodeModelView]
 
     datamodel = SQLAInterface(Service)
 
@@ -101,38 +98,15 @@ class ServiceModelView(ModelView):
         """
         super(ServiceModelView, self).pre_add(item)
 
-        # if g.user.is_authenticated():
-        #     item.user_id = g.user.id
-        #
-        #     ports = []
-        #
-        #     if item.port:
-        #         p = item.port.split(':')
-        #         ports = [int(porta) for porta in p]
-        #
-        #     if item.image.name:
-        #         if not item.image.version:
-        #             item.image.version = "latest"
-        #
-        #         image = "%s:%s" % (item.image.name, item.image.version)
-        #     else:
-        #         image = False
-        #
-        #     container = cli.create_container(
-        #         name=item.name or None,
-        #         ports=ports or None,
-        #         image=image or None
-        #     )
-        #
-        #     if not container.get('Id'):
-        #         raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
-        #     else:
-        #
-        #         item.hash_id = container.get('Id')
-        #         # TODO: Checar size do container
-        #         # cs = cli.inspect_container(item.hash_id)
-        #         cli.start(item.hash_id)
-        #         item.status = True
+        container_spec = docker.types.ContainerSpec(
+            image='busybox', command=['echo', 'hello']
+        )
+        task_tmpl = docker.types.TaskTemplate(container_spec)
+        service_id = cli.create_service(task_tmpl, name=item.name)
+
+        if service_id:
+            item.service_id = service_id['ID']
+
 
 
     def pre_delete(self, item):

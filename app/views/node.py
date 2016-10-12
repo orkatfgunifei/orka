@@ -4,7 +4,7 @@ from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from flask import flash
 from app.models.node import Node
 from app.views import _, cli
-
+from service import ServiceModelView
 
 class NodeModelView(ModelView):
 
@@ -19,6 +19,8 @@ class NodeModelView(ModelView):
     add_title = _("Add Node")
 
     edit_title = _("Edit Node")
+
+    related_views = [ServiceModelView]
 
     label_columns = {'name': _('Name'),
                      'remote_addr': _('Remote IP'),
@@ -88,12 +90,16 @@ class NodeModelView(ModelView):
                 snapshot_interval=5000, log_entries_for_slow_followers=1200
             )
             listen_addr = '%s:%s' % (item.listen_addr, item.listen_port)
-            ok = cli.init_swarm(
-                advertise_addr='127.0.0.1', listen_addr=listen_addr, force_new_cluster=False,
-                swarm_spec=spec
-            )
-            if ok:
-                flash(_("Node Created!"), "info")
+
+            try:
+                ok = cli.init_swarm(
+                    advertise_addr='127.0.0.1', listen_addr=listen_addr, force_new_cluster=False,
+                    swarm_spec=spec
+                )
+                if ok:
+                    flash(_("Node Created!"), "info")
+            except:
+                print "No ja criado... TODO Resolver isso"
 
     def pre_delete(self, item):
 
