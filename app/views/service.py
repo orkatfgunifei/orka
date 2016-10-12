@@ -9,11 +9,6 @@ from flask import redirect, url_for, flash
 import docker
 
 class ServiceModelView(ModelView):
-    datamodel = SQLAInterface(Service)
-    route_base = "/service"
-    # related_views = []
-    base_template = ''
-    default_view = 'service'
 
     datamodel = SQLAInterface(Service)
 

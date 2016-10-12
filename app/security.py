@@ -7,11 +7,12 @@ from flask.ext.babel import lazy_gettext as _
 
 
 class OrkaUserDBView(UserDBModelView):
-    @action("muldelete", "Delete", "Delete all Really?", "fa-rocket", single=False)
-    def muldelete(self, items):
-        self.datamodel.delete_all(items)
-        self.update_redirect()
-        return redirect(self.get_redirect())
+    # @action("muldelete", "Delete", "Delete all Really?", "fa-rocket", single=False)
+    # def muldelete(self, items):
+    #     self.datamodel.delete_all(items)
+    #     self.update_redirect()
+    #     return redirect(self.get_redirect())
+    pass
 
 
 class RegisterUserDBView(RegisterUserDBView):
