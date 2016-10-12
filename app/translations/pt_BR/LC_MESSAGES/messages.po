@@ -757,7 +757,7 @@ msgstr "Visões/Menus"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/manager.py:456
 msgid "Permission on Views/Menus"
-msgstr "Permissões em Visõpes/Menus"
+msgstr "Permissões em Visões/Menus"
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:55
 msgid "Account activation"

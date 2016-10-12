@@ -8,8 +8,8 @@ import logging
 from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access, ModelView, MultipleView
-
-from container import ContainerModelView, db, appbuilder
+from app import db, cli, appbuilder
+from container import ContainerModelView
 from image import ImageModelView
 from node import NodeModelView
 from service import ServiceView, ServiceModelView
@@ -39,8 +39,8 @@ appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap',
                     category_icon='fa-server', category_label=_('Services'))
 
 
-appbuilder.add_view(ServiceModelView, "Services Model", label=_("Model"),
-                    category="Services")
+appbuilder.add_view(ServiceModelView, "Create", label=_("Create"),
+                    category="Services", icon="fa-pencil")
 
 appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
                     icon='fa-database')

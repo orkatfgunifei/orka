@@ -6,6 +6,7 @@ from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 
 from app.models.image import Image
 from container import ContainerModelView, cli, _
+from service import ServiceModelView
 
 
 class ImageModelView(ModelView):
@@ -14,7 +15,7 @@ class ImageModelView(ModelView):
 
     route_base = "/image"
 
-    related_views = [ContainerModelView]
+    related_views = [ContainerModelView, ServiceModelView]
 
     list_title = _("List Image")
 

@@ -8,7 +8,10 @@ from container import cli, db
 from flask import url_for, redirect
 from app.views.node import NodeModelView
 
+
 class ServiceModelView(ModelView):
+
+    related_views = [NodeModelView]
 
     datamodel = SQLAInterface(Service)
 
@@ -21,7 +24,6 @@ class ServiceModelView(ModelView):
     add_title = _("Add Service")
 
     edit_title = _("Edit Service")
-
 
     label_columns = {'name': _('Name'),
                      'image': _('Image'),
@@ -156,16 +158,16 @@ class ServiceModelView(ModelView):
         #         cli.stop(item.hash_id)
 
 
-class ServiceView(MultipleView):
+class ServiceView(BaseView):
 
     """
         A simple view that implements the index for the site
     """
-    views = [ServiceModelView, NodeModelView]
-    route_base = '/service'
-    #default_view = 'service'
 
-    @expose('/list')
+    route_base = '/service'
+    default_view = 'service'
+
+    @expose('/service')
     def service(self):
         self.update_redirect()
 

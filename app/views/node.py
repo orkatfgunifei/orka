@@ -1,9 +1,9 @@
 #coding: utf-8
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-
+from flask import flash
 from app.models.node import Node
-from container import ContainerModelView, _, cli
+from app.views import _, cli
 
 
 class NodeModelView(ModelView):
@@ -11,8 +11,6 @@ class NodeModelView(ModelView):
     datamodel = SQLAInterface(Node)
 
     route_base = "/node"
-
-    related_views = [ContainerModelView]
 
     list_title = _("List Node")
 
@@ -84,15 +82,21 @@ class NodeModelView(ModelView):
         """
         super(NodeModelView, self).pre_add(item)
 
-        # TODO: https://docker-py.readthedocs.io/en/latest/swarm/ Estudar
         if item.name:
 
             spec = cli.create_swarm_spec(
                 snapshot_interval=5000, log_entries_for_slow_followers=1200
             )
             listen_addr = '%s:%s' % (item.listen_addr, item.listen_port)
-            a = cli.init_swarm(
-                advertise_addr='eth0', listen_addr=listen_addr, force_new_cluster=False,
+            ok = cli.init_swarm(
+                advertise_addr='127.0.0.1', listen_addr=listen_addr, force_new_cluster=False,
                 swarm_spec=spec
             )
-            print a
+            if ok:
+                flash(_("Node Created!"), "info")
+
+    def pre_delete(self, item):
+
+        super(NodeModelView, self).pre_delete(item)
+
+        cli.leave_swarm()
