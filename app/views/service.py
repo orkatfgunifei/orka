@@ -1,7 +1,8 @@
 #coding: utf-8
-from app import db, appbuilder, cli
-from app.views import _, BaseView, expose, has_access
+from app import db
 from app.models.service import Service
+from app.views import BaseView, expose
+
 
 class ServiceView(BaseView):
 
@@ -10,8 +11,9 @@ class ServiceView(BaseView):
     """
     route_base = '/service'
     default_view = 'service'
-    index_template = 'orka/service.html'
-    base_template = 'orka/service.html'
+
+    base_template = 'orka/service/base.html'
+
     base_permissions = ['can_edit', 'can_delete',
                         'can_download', 'can_list',
                         'can_add', 'can_show']
@@ -31,7 +33,7 @@ class ServiceView(BaseView):
     def create(self):
 
         print "aeeeeeeee"
-        return self.render_template(self.base_template,
+        return self.render_template('orka/service/create.html',
                                     appbuilder=self.appbuilder,
                                     )
 
