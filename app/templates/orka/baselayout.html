@@ -168,12 +168,14 @@
         {% include 'orka/controlsidebar.html' %}
     {% endif %}
     </div>
+    {% if not current_user.is_anonymous() %}
     {% block tail_js %}
         {{ super() }}
     {% endblock %}
     {% block add_tail_js %}
         {{ super() }}
     {% endblock %}
+    {% endif %}
 </body>
 {% endblock %}
 
