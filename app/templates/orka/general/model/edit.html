@@ -1,0 +1,26 @@
+{% extends "orka/baselayout.html" %}
+{% import 'orka/general/lib.html' as lib %}
+{% block body %}
+<body class="hold-transition register-page">
+<div class="register-box" style="min-width: 42%;">
+        <div class="register-logo">
+            <a href="{{appbuilder.get_url_for_index}}"><b>O</b>rka</a>
+        </div>
+        <div class="register-box-body">
+            {% block edit_form %}
+                <div class="login-box-msg">
+                    {{ widgets.get('edit')(form_action=form_action)|safe }}
+                </div>
+            {% endblock %}
+        </div>
+
+        {% if related_views %}
+        {% endif %}
+        <a href="{{appbuilder.get_url_for_login}}" class="text-center">{{ _("I already have a membership") }}</a>
+</div>
+</body>
+{% endblock %}
+
+{% block tail_js %}
+{{ super() }}
+{% endblock %}
