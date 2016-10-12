@@ -4,7 +4,7 @@ from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 
-from app import db, cli
+from app import db, cli, appbuilder
 from app.models.container import Container
 from app.views import _
 
