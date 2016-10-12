@@ -2,10 +2,9 @@
 {% import 'orka/general/lib.html' as lib %}
 {% block body %}
 <body class="hold-transition register-page">
-<div class="register-box">
-    <div class="row">
+<div class="register-box" style="min-width: 42%;">
         <div class="register-logo">
-            <a href="#"><b>O</b>rka</a>
+            <a href="{{appbuilder.get_url_for_index}}"><b>O</b>rka</a>
         </div>
         <div class="register-box-body">
             {% block edit_form %}
@@ -18,7 +17,6 @@
         {% if related_views %}
         {% endif %}
         <a href="{{appbuilder.get_url_for_login}}" class="text-center">{{ _("I already have a membership") }}</a>
-    </div>
 </div>
 </body>
 {% endblock %}

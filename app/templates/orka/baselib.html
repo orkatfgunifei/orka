@@ -68,7 +68,7 @@
 		{% for lang in languages %}
 			{% if lang != locale %}
         		<a tabindex="-1" href="{{appbuilder.get_url_for_locale(lang)}}">
-        		  <div class="f16"><i class="flag {{languages[lang].get('flag')}}"></i> - {{languages[lang].get('name')}}
+        		  <div class="f16"><i class="flag flag-{{languages[lang].get('flag')}}"></i> - {{languages[lang].get('name')}}
         		</div></a>
         		{% endif %}
         	{% endfor %}
@@ -102,7 +102,7 @@
         </div>
         <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                        {{ menu_block(menu)}}
+                    {{ menu_block(menu)}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 {{ locale_menu(languages) }}
@@ -126,3 +126,4 @@
    </div>
 </div>
 {% endmacro %}
+
