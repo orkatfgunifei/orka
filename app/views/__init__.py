@@ -7,12 +7,13 @@
 import logging
 from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
-from flask.ext.appbuilder import BaseView, expose, has_access
+from flask.ext.appbuilder import BaseView, expose, has_access, ModelView
 
 from container import ContainerModelView, db, appbuilder
 from image import ImageModelView
 from node import NodeModelView
 from service import ServiceView
+
 
 # Início Log
 log = logging.getLogger(__name__)
@@ -31,6 +32,7 @@ appbuilder.add_link("Index", label=_("Index"), href='/', icon='fa-home')
 
 appbuilder.add_view(ServiceView, "Dashboard", label=_('Dashboard'),
                      category="Services", icon="fa-tachometer", category_icon='fa-server')
+
 
 appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap',
                     label=_('Nodes'), category="Services",

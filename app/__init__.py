@@ -30,7 +30,6 @@ appbuilder = AppBuilder(app, db.session, indexview=IndexView, security_manager_c
 
 appbuilder.base_template='orka/baselayout.html'
 
-
 #appbuilder.security_cleanup()
 
 from sqlalchemy.engine import Engine
