@@ -105,4 +105,7 @@ class NodeModelView(ModelView):
 
         super(NodeModelView, self).pre_delete(item)
 
-        cli.leave_swarm()
+        try:
+            cli.leave_swarm()
+        except:
+            print "nao eh swarm"

@@ -16,7 +16,7 @@ class ContainerModelView(ModelView):
     # related_views = []
     base_template = ''
     default_view = 'container'
-    db
+    #db
     list_widget = widgets.ListWidget
     """ List widget override """
     # edit_widget = FormWidget.template = 'orka/general/widgets/form.html'
