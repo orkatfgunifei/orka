@@ -1,12 +1,18 @@
 #coding: utf-8
-from flask.ext.appbuilder import ModelView
-from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from container import ContainerModelView, cli, _
-from app.models.image import Image
 import json
 
+from flask.ext.appbuilder import ModelView
+from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
+
+from app.models.image import Image
+from container import ContainerModelView, cli, _
+
+
 class ImageModelView(ModelView):
+
     datamodel = SQLAInterface(Image)
+
+    route_base = "/image"
 
     related_views = [ContainerModelView]
 

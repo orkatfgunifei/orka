@@ -1,12 +1,16 @@
 #coding: utf-8
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from container import ContainerModelView, cli, _
+
 from app.models.node import Node
+from container import ContainerModelView, _
 
 
 class NodeModelView(ModelView):
+
     datamodel = SQLAInterface(Node)
+
+    route_base = "/node"
 
     related_views = [ContainerModelView]
 

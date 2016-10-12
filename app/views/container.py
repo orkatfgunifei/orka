@@ -1,13 +1,17 @@
 #coding: utf-8
-from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from sqlalchemy.orm.attributes import get_history
 from flask import g
 from flask.ext.appbuilder import ModelView
+from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
+from sqlalchemy.orm.attributes import get_history
+
+from app import db, cli
 from app.models.container import Container
-from app.views import _, BaseView, expose, has_access
-from app import db, appbuilder, cli
+from app.views import _
+
 
 class ContainerModelView(ModelView):
+
+    route_base = "/container"
 
     datamodel = SQLAInterface(Container)
 

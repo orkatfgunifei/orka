@@ -31,8 +31,12 @@ class ServiceView(BaseView):
 
     @expose('/create')
     def create(self):
-
-        print "aeeeeeeee"
+        # form.username.data = resp.email
+        # first_name, last_name = get_first_last_name(resp.fullname)
+        # form.first_name.data = first_name
+        # form.last_name.data = last_name
+        # form.email.data = resp.email
+        # widgets = self._get_edit_widget(form=form)
         return self.render_template('orka/service/create.html',
                                     appbuilder=self.appbuilder,
                                     )
