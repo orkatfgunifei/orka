@@ -48,7 +48,6 @@ appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
 appbuilder.add_view(ImageModelView, "Images", label=_('Images'),
                     icon='fa-hdd-o')
 
-
 security = appbuilder.sm
 
 active_views = [

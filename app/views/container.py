@@ -1,65 +1,35 @@
 #coding: utf-8
 from flask import g, redirect, url_for
-from flask.ext.appbuilder import ModelView, expose, has_access, widgets
-
+from flask.ext.appbuilder import ModelView, expose, has_access
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from flask.ext.appbuilder.widgets import ShowWidget
 from sqlalchemy.orm.attributes import get_history
 
-from app import db, cli, appbuilder, app
+from app import db, cli
 from app.models.container import Container
 from app.views import _
 
 
-class ShowCascadeOrkaWidget(ShowWidget):
-    template = ''
-    def __init__(self):
-        template = 'appbuilder/general/widgets/base_list.html'
-
-
 class ContainerModelView(ModelView):
+
     datamodel = SQLAInterface(Container)
     route_base = '/container'
-    # related_views = []
-    base_template = ''
     default_view = 'container'
-    #db
-    # list_widget = widgets.ListWidget
-    """ List widget override """
-    # edit_widget = FormWidget.template = 'orka/general/widgets/form.html'
-    # """ Edit widget override """
-    # add_widget = FormWidget
-    # """ Add widget override """
-    # show_widget.show_template = "appbuilder/general/widgets/show.html"
-    # """ Show widget override """
 
-    #
-    # @expose('/ContainerWizard')
-    # @has_access
-    # def create(self):
-    #     list_widget.template='appbuilder/general/widget/list.html'
-    #     return self.render_template(self.base_template,
-    #                                 widget=list_widget,
-    #                                 title=self.add_title,
-    #                                 appbuilder=self.appbuilder,
-    #                                 )
+    @expose('/dashboard')
+    @has_access
+    def container(self):
 
+        self.update_redirect()
 
-    # @expose('/add', methods=['GET', 'POST'])
-    # @has_access
-    # def add(self):
-    #     widget = self._add()
-    #     if not widget:
-    #         return redirect(self.get_redirect())
-    #     else:
-    #         return self.render_template(self.add_template,
-    #                                     title=self.add_title,
-    #                                     widgets=widget)
+        containers = db.session.query(Container).all()
 
-#
-#     route_base = "/container"
-#
+        if not len(containers) > 0:
+            return redirect(url_for('ContainerModelView.add'))
 
+        return self.render_template('orka/container/base.html',
+                                    appbuilder=self.appbuilder,
+                                    container=containers
+                                    )
 
     list_title = _("List Container")
 
@@ -240,18 +210,4 @@ class ContainerModelView(ModelView):
                 cli.stop(item.hash_id)
 
 
-    @expose('/dashboard')
-    @has_access
-    def container(self):
 
-        self.update_redirect()
-
-        containers = db.session.query(Container).all()
-
-        if not len(containers>0):
-            return redirect(url_for('ContainerModelView.add'))
-
-        return self.render_template('orka/container.html',
-                                    appbuilder=self.appbuilder,
-                                    container=containers
-                                    )

@@ -9,6 +9,7 @@ from index import IndexView
 from security import OrkaSecurityManager
 from docker import Client
 
+
 """
  Configuração de log
 """
@@ -23,6 +24,8 @@ app = Flask(__name__)
 app.config.from_object('config')
 
 #mail = Mail(app)
+
+
 
 db = SQLA(app)
 

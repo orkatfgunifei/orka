@@ -1,12 +1,13 @@
 #coding: utf-8
 from app.models.service import Service
-from app.views import BaseView, expose, ModelView, MultipleView, has_access
+from app.views import expose, ModelView, has_access
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from sqlalchemy.orm.attributes import get_history
-from container import cli, db
+#from sqlalchemy.orm.attributes import get_history
+from app.views import cli, db
 from flask import redirect, url_for, flash
 import docker
+
 
 class ServiceModelView(ModelView):
 
@@ -95,10 +96,13 @@ class ServiceModelView(ModelView):
 
         services = db.session.query(Service).all()
 
+        if not len(services) > 0:
+            return redirect(url_for('ServiceModelView.add'))
+
         return self.render_template('orka/service/base.html',
                                     appbuilder=self.appbuilder,
-                                    services=services
-                                    )
+                                        services=services
+                                        )
 
     def pre_add(self, item):
         """
@@ -173,27 +177,6 @@ class ServiceModelView(ModelView):
         #     else:
         #         cli.stop(item.hash_id)
 
-
-# class ServiceView(BaseView):
-#
-#     """
-#         A simple view that implements the index for the site
-#     """
-#
-#     route_base = '/service'
-#     default_view = 'service'
-#
-#     @expose('/service')
-#     def service(self):
-#         self.update_redirect()
-#
-#         services = db.session.query(Service).all()
-#
-#         return self.render_template('orka/service/base.html',
-#                                     appbuilder=self.appbuilder,
-#                                     services=services
-#                                     )
-#
 
 
 
