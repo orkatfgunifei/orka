@@ -2,6 +2,23 @@
 {% import 'orka/general/lib.html' as lib %}
 
 {% block content %}
-    <a href="/container/add"><button type="submit">{{ _("Add") }}</button></a>
-    {{ lib.render_services(container) }}
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Conteiners</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class=" ion-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            {% for item in containers %}
+                {{ lib.render_list_container(item) }}
+            {% endfor %}
+        </div>
+        <!-- ./box-body -->
+        <div class="box-footer" style="display: block;">
+            <a class="btn btn-default pull-right" href="/container/add">{{ _("Add") }}</a>
+        </div>
+    </div>
 {% endblock %}

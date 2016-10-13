@@ -358,24 +358,41 @@
 {#    {% endif %}#}
 {#{% endmacro %}#}
 
-{% macro render_services(services) %}
+{% macro render_list_service(item) %}
+    <div class="info-box bg-green">
+        <span class="info-box-icon"><a href="/service/show/{{ item.id }}"><i class="ion ion-log-in"></i></a></span>
 
-    {% for service in services %}
-        <div class="info-box bg-green">
-            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">{{ item.name }}</span>
+          <span class="info-box-number">{{ item.image.name }}</span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">{{ service.name }}</span>
-              <span class="info-box-number">{{ service.image.name }}</span>
-
-              <div class="progress">
-                <div class="progress-bar" style="width: 70%"></div>
-              </div>
-                  <span class="progress-description">
-                    {{ service.status }}
-                  </span>
-            </div>
-            <!-- /.info-box-content -->
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
           </div>
-    {% endfor %}
+              <span class="progress-description">
+                {{ item.status }}
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+{% endmacro %}
+
+
+{% macro render_list_container(item) %}
+    <div class="info-box bg-green">
+        <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in"></i></a></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">{{ item.name }}</span>
+          <span class="info-box-number">{{ item.image.name }}</span>
+
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
+          </div>
+              <span class="progress-description">
+                {{ item.status }}
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
 {% endmacro %}

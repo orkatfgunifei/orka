@@ -28,7 +28,7 @@ class ContainerModelView(ModelView):
 
         return self.render_template('orka/container/base.html',
                                     appbuilder=self.appbuilder,
-                                    container=containers
+                                    containers=containers
                                     )
 
     list_title = _("List Container")
