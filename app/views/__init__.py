@@ -1,7 +1,7 @@
 #coding: utf-8
 
 """
-    Inicializador da montagem das visões
+    Visões e suas Rotas...
 """
 
 import logging
@@ -18,15 +18,22 @@ from service import ServiceModelView
 # Início Log
 log = logging.getLogger(__name__)
 
-"""
-    Controlador de erro 404
-"""
+
+# ~~ Controlador de erro 404 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 appbuilder.base_template='orka/baselayout.html'
 @appbuilder.app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', base_template=appbuilder.base_template, appbuilder=appbuilder), 404
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+
+# Cria todas as tabelas de acordo com seus modelos
 db.create_all()
+
+
+# ~~ Itens do Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 appbuilder.add_link("Index", label=_("Index"), href='/', icon='fa-home')
 
@@ -47,7 +54,9 @@ appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
 
 appbuilder.add_view(ImageModelView, "Images", label=_('Images'),
                     icon='fa-hdd-o')
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# ~~ Permissões do Usuário ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 security = appbuilder.sm
 
 active_views = [
@@ -75,7 +84,13 @@ if not "User" in roles:
             if (view in str(perm)):
                 security.add_permission_role(user_role, perm)
                 print "[Security] Permissão de Usuário: ", perm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+from config import APP_VERSION
 
 
 
-log.info("Flask-Appbuilder Versão: {0}".format(appbuilder.version))
+log.info(10*" " + " ~~~~~~~~~~/---------- ORKA v{0} --------------\~~~~~~~~~~            ".format(APP_VERSION))
+
+log.info(10*" " + " ~~~~~~~~~~\_______Flask APPBUILDER v{0}_______/~~~~~~~~~~            ".format(appbuilder.version))
+

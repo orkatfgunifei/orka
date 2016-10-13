@@ -15,9 +15,11 @@ with open('requirements.txt') as f:
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+from config import APP_VERSION
+
 setup(
     name = "orka",
-    version = "0.2.1",
+    version = APP_VERSION,
     author = "TFG Orka Equipe",
     author_email = "rafael@orka.odoo.com, diogo@orka.odoo.com, felipe@orka.odoo.com",
     description = ("Plataforma de Gerenciamento de Contêineres Docker"),
