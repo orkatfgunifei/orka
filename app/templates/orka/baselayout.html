@@ -16,7 +16,7 @@
     {% if not current_user.is_anonymous() %}
         <header class="main-header ">
             <!-- Logo -->
-            <a href="#" class="logo navbar-fixed-top">
+            <a href="/" class="logo navbar-fixed-top">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>O</b>rka</span>
                 <!-- logo for regular state and mobile devices -->
@@ -39,10 +39,8 @@
                 <li class="dropdown tasks-menu">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                         <img class="flag flag-{{languages[locale].get('flag')}}" />
+                        <b class="caret"></b>
                     </a>
-                    {#       <div class="f16"><i class="flag {{languages[locale].get('flag')}}"></i><b class="caret"></b>#}
-                    {#       </div>#}
-                    {#    </a>#}
                     {% if languages.keys()|length > 1 %}
                         <ul class="dropdown-menu">
                             <li>
@@ -69,9 +67,6 @@
                 </li>
             {% endmacro %}
 
-
-
-            {% if not current_user.is_anonymous()  %}
             {{ locale_menu(languages) }}
             <li class="dropdown user user-menu" >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -89,39 +84,34 @@
                         </p>
                     </li>
                     <!-- Menu Body -->
-                    <li class="user-body">
-                        <div class="row">
-                            <div class="col-xs-6 text-center">
-                                <a href="{{appbuilder.get_url_for_userinfo}}">{{_("Profile")}}</a>
-                            </div>
-                            <div class="col-xs-6 text-center">
-                                <a href="{{appbuilder.get_url_for_logout}}">{{_("Logout")}}</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    </li>
+                    {# TODO: Conteudo abaixo do perfil do usuário... #}
+{# -- Caso queira inserir Links abaixo do poup-up do perfil (foto) -- #}
+{#                    <li class="user-body">#}
+{#                        <div class="row">#}
+{#                            <div class="col-xs-6 text-center">#}
+{#                                <a href="{{appbuilder.get_url_for_userinfo}}">{{_("Profile")}}</a>#}
+{#                            </div>#}
+{#                            <div class="col-xs-6 text-center">#}
+{#                                <a href="{{appbuilder.get_url_for_logout}}">{{_("Logout")}}</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <!-- /.row -->#}
+{#                    </li>#}
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">{{_("Profile")}}</a>
+                            <a href="{{appbuilder.get_url_for_userinfo}}" class="btn btn-default btn-flat">{{_("Profile")}}</a>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">{{_("Logout")}}</a>
+                            <a href="{{appbuilder.get_url_for_logout}}" class="btn btn-default btn-flat">{{_("Logout")}}</a>
                         </div>
                     </li>
                 </ul>
             </li>
-            {% if current_user.is_anonymous() %}
-            <li>
-                <a href="{{appbuilder.get_url_for_login}}" class="btn btn-default btn-flat">
-                    <i class="fa fa-fw fa-sign-in"></i>{{_("Login")}}</a>
-            </li>
-            {% endif %}
-            {% endif  %}
         <!-- Control Sidebar Toggle Button -->
-        <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-        </li>
+{#        <li>#}
+{#            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>#}
+{#        </li>#}
         </ul>
         </div>
         </nav>
@@ -130,43 +120,37 @@
         {% if not current_user.is_anonymous() %}
             {% include 'orka/sidebar.html' %}
         {% endif %}
-        <div class="{% if not current_user.is_anonymous() %}content-wrapper {% endif %}" style="padding-top:40px;">
-        {% if not current_user.is_anonymous() %}
-            <section class="content-header" style="">
-
-                <ol class="breadcrumb">
-                {%- for breadcrumb in breadcrumbs -%}
-                    <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>
-{#                    {{ '/' if not loop.last }}#}
-                {%- endfor -%}
-                </ol>
-
-            </section>
-        {% endif %}
-            <section class="content">
-                console.log({{ appbuilder }})
-                {% block messages %}
-                    {% include 'orka/flash.html' %}
-                {% endblock %}
-                {% include 'orka/general/confirm.html' %}
-                {% include 'orka/general/alert.html' %}
-                {% block content %}
-                {% endblock %}
-            </section>
-
-        </div>
-{#    {% else %}#}
-{#    <div class="content-wrapper"}>#}
-{#        #}
-{#    </div>#}
-{#    {% endif %}#}
+            <div class="{% if not current_user.is_anonymous() %}content-wrapper {% endif %}" >
+                {% if not current_user.is_anonymous() %}
+                    <section class="content-header" style="margin-top: 50px; min-height: 40px;">
+                        <ol class="breadcrumb">
+                            <li><a href="{{ session.get_url_for_index }}"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li><a href="/">TO DO: Breadcrumbs</a></li>
+                            {# TODO: inserir breadcrumbs #}
+{#                            {% for breadcrumb in breadcrumbs %}#}
+{#                                <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>#}
+{#                                {{ '/' if not loop.last }}#}
+{#                            {% endfor %}#}
+                        </ol>
+                    </section>
+                {% endif %}
+                <section class="content" style="padding-top: -10px;">
+                    {% block messages %}
+                        {% include 'orka/flash.html' %}
+                    {% endblock %}
+                    {% include 'orka/general/confirm.html' %}
+                    {% include 'orka/general/alert.html' %}
+                    {% block content %}
+                    {% endblock %}
+                </section>
+            </div>
     {% if not current_user.is_anonymous() %}
         {% block footer %}
             {% include 'orka/footer.html' %}
         {% endblock %}
         {% include 'orka/controlsidebar.html' %}
     {% endif %}
-    </div>
+    </div><!-- end block wrapper -->
     {% if not current_user.is_anonymous() %}
     {% block tail_js %}
         {{ super() }}

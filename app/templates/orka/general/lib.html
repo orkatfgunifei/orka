@@ -358,64 +358,41 @@
 {#    {% endif %}#}
 {#{% endmacro %}#}
 
-{% macro render_services(services) %}
+{% macro render_list_service(item) %}
+    <div class="info-box bg-green">
+        <span class="info-box-icon"><a href="/service/show/{{ item.id }}"><i class="ion ion-log-in"></i></a></span>
 
-    {% for service in services %}
-        <div class="info-box bg-green">
-            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">{{ item.name }}</span>
+          <span class="info-box-number">{{ item.image.name }}</span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">{{ service.name }}</span>
-              <span class="info-box-number">{{ service.image.name }}</span>
-
-              <div class="progress">
-                <div class="progress-bar" style="width: 70%"></div>
-              </div>
-                  <span class="progress-description">
-                    {{ service.status }}
-                  </span>
-            </div>
-            <!-- /.info-box-content -->
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
           </div>
-    {% endfor %}
+              <span class="progress-description">
+                {{ item.status }}
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
 {% endmacro %}
 
-{# locaclidade do menu #}
-{#{% macro locale_menu(languages) %}#}
-{#    {% set locale = session['locale'] %}#}
-{#    {% if not locale %}#}
-{#        {% set locale = 'en' %}#}
-{#    {% endif %}#}
-{#    <li class="dropdown tasks-menu">#}
-{#        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">#}
-{#            <img class="flag flag-{{languages[locale].get('flag')}}" >#}
-{#        </a>#}
-        {#       <div class="f16"><i class="flag {{languages[locale].get('flag')}}"></i><b class="caret"></b>#}
-        {#       </div>#}
-        {#    </a>#}
-{#        {% if languages.keys()|length > 1 %}#}
-{#            <ul class="dropdown-menu">#}
-{#                <li class="header">Selected: {{languages[locale].get('name')}} - {{languages[locale].get('flag')}}</li>#}
-{#                <li>#}
-                    {#<!-- inner menu: contains the actual data -->#}
-{#                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;" >#}
-{#                        <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">#}
-{#                            {% for lang in languages %}#}
-{#                                <li>#}
-{#                                    {% if lang != locale %}#}
-{#                                        <a tabindex="-1" href="{{appbuilder.get_url_for_locale(lang)}}">#}
-{#                                            <div class="f16"><i class="flag {{languages[lang].get('flag')}}"></i> - {{languages[lang].get('name')}}#}
-{#                                            </div>#}
-{#                                        </a>#}
-{#                                    {% endif %}#}
-{#                                </li>#}
-{#                            {% endfor %}#}
-{#                        </ul>#}
-{#                        <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>#}
-{#                        <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>#}
-{#                    </div>#}
-{#                </li>#}
-{#            </ul>#}
-{#        {% endif %}#}
-{#    </li>#}
-{#{% endmacro %}#}
+
+{% macro render_list_container(item) %}
+    <div class="info-box bg-green">
+        <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in"></i></a></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">{{ item.name }}</span>
+          <span class="info-box-number">{{ item.image.name }}</span>
+
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
+          </div>
+              <span class="progress-description">
+                {{ item.status }}
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+{% endmacro %}
