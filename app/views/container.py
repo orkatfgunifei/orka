@@ -1,12 +1,12 @@
 #coding: utf-8
-from flask import g, redirect, url_for
+from flask import g, redirect, url_for, request
 from flask.ext.appbuilder import ModelView, expose, has_access
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 
 from app import db, cli
 from app.models.container import Container
-from app.views import _
+from flask.ext.babel import lazy_gettext as _
 
 
 class ContainerModelView(ModelView):

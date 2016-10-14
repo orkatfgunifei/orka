@@ -26,7 +26,6 @@ app.config.from_object('config')
 #mail = Mail(app)
 
 
-
 db = SQLA(app)
 
 appbuilder = AppBuilder(app, db.session, indexview=IndexView, security_manager_class=OrkaSecurityManager)
