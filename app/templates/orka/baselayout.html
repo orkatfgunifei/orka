@@ -124,8 +124,8 @@
                 {% if not current_user.is_anonymous() %}
                     <section class="content-header" style="margin-top: 50px; min-height: 40px;">
                         <ol class="breadcrumb">
-                            <li><a href="{{ session.get_url_for_index }}"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li><a href="/">TO DO: Breadcrumbs</a></li>
+                            <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li><a href="{{ session.get_current_url }}">TO DO: Breadcrumbs</a></li>
                             {# TODO: inserir breadcrumbs #}
 {#                            {% for breadcrumb in breadcrumbs %}#}
 {#                                <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>#}
@@ -133,15 +133,70 @@
 {#                            {% endfor %}#}
                         </ol>
                     </section>
+                    <p>{{ session.get_current_url }}</p>
                 {% endif %}
                 <section class="content" style="padding-top: -10px;">
                     {% block messages %}
                         {% include 'orka/flash.html' %}
                     {% endblock %}
-                    {% include 'orka/general/confirm.html' %}
-                    {% include 'orka/general/alert.html' %}
-                    {% block content %}
-                    {% endblock %}
+                    <div class="row">
+                        <div class="col-md-8">
+                        {% include 'orka/general/confirm.html' %}
+                        {% include 'orka/general/alert.html' %}
+                        {% block content %}
+                        {% endblock %}
+                        </div>
+
+                    <div class="col-md-4">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Browser Usage</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="ion-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="chart-responsive">
+                                            <canvas id="pieChart" height="160" width="206" style="width: 206px; height: 160px;"></canvas>
+                                        </div>
+                                        <!-- ./chart-responsive -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-4">
+                                        <ul class="chart-legend clearfix">
+                                            <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
+                                            <li><i class="fa fa-circle-o text-green"></i> IE</li>
+                                            <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
+                                            <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
+                                            <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
+                                            <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer no-padding">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">United States of America
+                                        <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span></a></li>
+                                    <li><a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
+                                    </li>
+                                    <li><a href="#">China
+                                        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- /.footer -->
+                        </div>
+                    </div>
+                    </div>
                 </section>
             </div>
     {% if not current_user.is_anonymous() %}
