@@ -13,7 +13,7 @@ from container import ContainerModelView
 from image import ImageModelView
 from node import NodeModelView
 from service import ServiceModelView
-
+# from dashboard import DashboardModelView
 
 # Início Log
 log = logging.getLogger(__name__)
