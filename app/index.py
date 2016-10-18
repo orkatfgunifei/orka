@@ -5,7 +5,7 @@ from flask import g, redirect, url_for, request, redirect, make_response, sessio
 from models.service import Service
 from models.container import Container
 from models.node import Node
-
+from random import randint
 class IndexView(IndexView):
     index_template = 'index.html'
 
@@ -32,7 +32,7 @@ class IndexView(IndexView):
     @has_access
     def usage(self):
         dados_dict = {
-            'cpu': {'total': 100, 'used': 32, 'available': 68},
+            'cpu': {'total': 100, 'used': randint(0,100), 'available': 68},
             'disk': {'total': 100, 'used': 55, 'available': 34},
             'ram': {'total': 100, 'used': 62, 'available': 48}
         }
