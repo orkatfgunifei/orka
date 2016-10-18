@@ -1,4 +1,5 @@
 #coding: utf-8
+import requests
 
 class RouteBase(object):
 
@@ -15,10 +16,18 @@ def get_current_url(current_request):
 
         try:
             for route in current_request.url_rule.rule.split('/'):
+
+                url = current_request.base_url
+                r = requests.get(url)
+                status = r.status_code
+
+                if status in [404, 400]:
+                    url = False
+
                 if route:
                     route_list.append(
                         RouteBase(
-                            url=route,
+                            url=url or "#",
                             name=route.capitalize(),
                             index=index)
                     )
