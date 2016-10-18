@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-18 04:53-0200\n"
+"POT-Creation-Date: 2016-10-18 05:53-0200\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -264,6 +264,20 @@ msgstr "Início"
 msgid "Login"
 msgstr "Entrar"
 
+#: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
+#: app/views/__init__.py:50
+msgid "Services"
+msgstr "Serviços"
+
+#: app/templates/orka/container/base.html:7
+#: app/templates/orka/dashboard.html:39
+msgid "Containers"
+msgstr "Conteineres"
+
+#: app/templates/orka/dashboard.html:72 app/views/__init__.py:49
+msgid "Nodes"
+msgstr "Nós"
+
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
 msgstr "Pesquisar"
@@ -274,11 +288,7 @@ msgstr "Menu Principal"
 
 #: app/templates/orka/usage.html:3
 msgid "System Consumption"
-msgstr ""
-
-#: app/templates/orka/container/base.html:7
-msgid "Conteiners"
-msgstr ""
+msgstr "Consumo do Sistema"
 
 #: app/templates/orka/container/base.html:21
 #: app/templates/orka/service/base.html:21
@@ -359,6 +369,7 @@ msgstr ""
 
 #: app/templates/orka/general/lib.html:379
 #: app/templates/orka/general/lib.html:404
+#: app/templates/orka/general/lib.html:424
 msgid "Edit"
 msgstr ""
 
@@ -373,14 +384,6 @@ msgstr "Painel"
 #: app/views/__init__.py:45
 msgid "Management"
 msgstr "Gerenciamento"
-
-#: app/views/__init__.py:49
-msgid "Nodes"
-msgstr "Nós"
-
-#: app/views/__init__.py:50
-msgid "Services"
-msgstr "Serviços"
 
 #: app/views/__init__.py:52
 msgid "Container"
@@ -577,11 +580,11 @@ msgstr "Comando"
 msgid "ID Service"
 msgstr "ID Serviço"
 
-#: app/views/service.py:151
+#: app/views/service.py:148
 msgid "Please create the node first."
 msgstr "Favor criar o nó de acesso primeiro."
 
-#: app/views/service.py:155
+#: app/views/service.py:152
 msgid "Please select an image to create the service."
 msgstr "Favor seleciionar uma imagem para criar o serviço."
 
@@ -1242,4 +1245,7 @@ msgstr "Não é um valor de tempo válido"
 
 #~ msgid "Create"
 #~ msgstr "Criar"
+
+#~ msgid "Conteiners"
+#~ msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-18 04:53-0200\n"
+"POT-Creation-Date: 2016-10-18 05:53-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -20,55 +20,55 @@ msgstr ""
 
 #: app/helpers.py:8
 msgid "list"
-msgstr ""
+msgstr "liste"
 
 #: app/helpers.py:9
 msgid "add"
-msgstr ""
+msgstr "hinzufügen"
 
 #: app/helpers.py:10
 msgid "show"
-msgstr ""
+msgstr "anzeigen"
 
 #: app/helpers.py:11
 msgid "service"
-msgstr ""
+msgstr "service"
 
 #: app/helpers.py:12
 msgid "container"
-msgstr ""
+msgstr "container"
 
 #: app/helpers.py:13
 msgid "image"
-msgstr ""
+msgstr "bild"
 
 #: app/helpers.py:14
 msgid "node"
-msgstr ""
+msgstr "node"
 
 #: app/helpers.py:15
 msgid "dashboard"
-msgstr ""
+msgstr "armaturenbrett"
 
 #: app/helpers.py:16
 msgid "index"
-msgstr ""
+msgstr "index"
 
 #: app/helpers.py:17
 msgid "user"
-msgstr ""
+msgstr "benutzer"
 
 #: app/helpers.py:18
 msgid "users"
-msgstr ""
+msgstr "benutzer"
 
 #: app/helpers.py:19
 msgid "userinfo"
-msgstr ""
+msgstr "informationen"
 
 #: app/helpers.py:20
 msgid "home"
-msgstr ""
+msgstr "startseite"
 
 #: app/security.py:20
 msgid "Your Account activation"
@@ -257,13 +257,27 @@ msgstr "Logout"
 
 #: app/templates/orka/baselayout.html:127
 msgid "Home"
-msgstr ""
+msgstr "Startseite"
 
 #: app/templates/orka/baselib.html:122 app/templates/orka/landing.html:36
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
 msgid "Login"
 msgstr "Login"
+
+#: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
+#: app/views/__init__.py:50
+msgid "Services"
+msgstr "Services"
+
+#: app/templates/orka/container/base.html:7
+#: app/templates/orka/dashboard.html:39
+msgid "Containers"
+msgstr "Container"
+
+#: app/templates/orka/dashboard.html:72 app/views/__init__.py:49
+msgid "Nodes"
+msgstr "Nodes"
 
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
@@ -275,16 +289,12 @@ msgstr "Hauptnavigation"
 
 #: app/templates/orka/usage.html:3
 msgid "System Consumption"
-msgstr ""
-
-#: app/templates/orka/container/base.html:7
-msgid "Conteiners"
-msgstr ""
+msgstr "Systemverbrauch"
 
 #: app/templates/orka/container/base.html:21
 #: app/templates/orka/service/base.html:21
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: app/templates/orka/general/confirm.html:6
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/confirm.html:6
@@ -315,7 +325,7 @@ msgstr "Speichern"
 #: app/templates/orka/general/lib.html:282
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:280
 msgid "Record Count"
-msgstr "Record Count"
+msgstr "Datensatzanzahl"
 
 #: app/templates/orka/general/lib.html:312
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
@@ -351,21 +361,22 @@ msgstr "Datensatz löschen"
 #: app/templates/orka/general/lib.html:375
 #: app/templates/orka/general/lib.html:400
 msgid "Online"
-msgstr ""
+msgstr "Online"
 
 #: app/templates/orka/general/lib.html:377
 #: app/templates/orka/general/lib.html:402
 msgid "Offline"
-msgstr ""
+msgstr "Offline"
 
 #: app/templates/orka/general/lib.html:379
 #: app/templates/orka/general/lib.html:404
+#: app/templates/orka/general/lib.html:424
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: app/views/__init__.py:38
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: app/views/__init__.py:41
 msgid "Dashboard"
@@ -373,15 +384,7 @@ msgstr "Armaturenbrett"
 
 #: app/views/__init__.py:45
 msgid "Management"
-msgstr ""
-
-#: app/views/__init__.py:49
-msgid "Nodes"
-msgstr "Nodes"
-
-#: app/views/__init__.py:50
-msgid "Services"
-msgstr "Services"
+msgstr "Verwaltung"
 
 #: app/views/__init__.py:52
 msgid "Container"
@@ -486,7 +489,7 @@ msgstr "Digest"
 #: app/views/node.py:71 app/views/node.py:86 app/views/service.py:42
 #: app/views/service.py:55 app/views/service.py:66 app/views/service.py:79
 msgid "Options"
-msgstr ""
+msgstr "Einstellungen"
 
 #: app/views/node.py:16
 msgid "List Node"
@@ -506,65 +509,65 @@ msgstr "Node bearbeiten"
 
 #: app/views/node.py:27
 msgid "IP Host Docker"
-msgstr ""
+msgstr "IP-Host-Docker"
 
 #: app/views/node.py:28
 msgid "Remote IP"
-msgstr ""
+msgstr "Remote-IP"
 
 #: app/views/node.py:29
 msgid "Remote Port"
-msgstr ""
+msgstr "Remote-Port"
 
 #: app/views/node.py:30
 msgid "Listen IP"
-msgstr ""
+msgstr "Hören-IP"
 
 #: app/views/node.py:31
 msgid "Listen Port"
-msgstr ""
+msgstr "Hören-Port"
 
 #: app/views/node.py:32
 msgid "Join Token"
-msgstr ""
+msgstr "Beitreten Token"
 
 #: app/views/node.py:33
 msgid "Snapshot Interval"
-msgstr ""
+msgstr "Schnappschussintervall"
 
 #: app/views/node.py:34
 msgid "Logs Slow Followers"
-msgstr ""
+msgstr "Langsame Verfolger protokollieren"
 
 #: app/views/node.py:46 app/views/node.py:62 app/views/node.py:77
 #: app/views/node.py:92 app/views/service.py:47 app/views/service.py:59
 #: app/views/service.py:71 app/views/service.py:84
 msgid "Advanced"
-msgstr ""
+msgstr "Fortgeschritten"
 
 #: app/views/node.py:127
 msgid "Node already initializated, use join instead."
-msgstr ""
+msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
 
 #: app/views/node.py:129
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
-msgstr ""
+msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
 
 #: app/views/service.py:18
 msgid "List Service"
-msgstr ""
+msgstr "Liste Service"
 
 #: app/views/service.py:20
 msgid "Show Service"
-msgstr ""
+msgstr "Service anzeigen"
 
 #: app/views/service.py:22
 msgid "Add Service"
-msgstr ""
+msgstr "Service hinzufügen"
 
 #: app/views/service.py:24
 msgid "Edit Service"
-msgstr ""
+msgstr "Service bearbeiten"
 
 #: app/views/service.py:28
 msgid "Node"
@@ -572,19 +575,19 @@ msgstr "Node"
 
 #: app/views/service.py:29
 msgid "Command"
-msgstr ""
+msgstr "Befehl"
 
 #: app/views/service.py:31
 msgid "ID Service"
-msgstr ""
+msgstr "ID Service"
 
-#: app/views/service.py:151
+#: app/views/service.py:148
 msgid "Please create the node first."
-msgstr ""
+msgstr "Bitte erstellen Sie den Knoten zuerst."
 
-#: app/views/service.py:155
+#: app/views/service.py:152
 msgid "Please select an image to create the service."
-msgstr ""
+msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/const.py:109
 msgid "Access is Denied"
@@ -1248,5 +1251,8 @@ msgstr "Kein gültiges Datetime-Wert"
 #~ msgstr "Netzwerkkonfigurationen"
 
 #~ msgid "Create"
+#~ msgstr ""
+
+#~ msgid "Conteiners"
 #~ msgstr ""
 
