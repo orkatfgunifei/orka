@@ -21,7 +21,7 @@ class ContainerModelView(ModelView):
 
         self.update_redirect()
 
-        containers = db.session.query(Container).all()
+        containers = db.session.query(Container).filter_by(status=True).all()
 
         if not len(containers) > 0:
             return redirect(url_for('ContainerModelView.add'))

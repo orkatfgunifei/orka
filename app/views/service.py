@@ -94,7 +94,7 @@ class ServiceModelView(ModelView):
 
         self.update_redirect()
 
-        services = db.session.query(Service).all()
+        services = db.session.query(Service).filter_by(status=True).all()
 
         if not len(services) > 0:
             return redirect(url_for('ServiceModelView.add'))

@@ -6,6 +6,14 @@ from flask import g, redirect, url_for, request, redirect, make_response, sessio
 class IndexView(IndexView):
     index_template = 'index.html'
 
+    @expose('/')
+    @has_access
+    def index(self):
+
+        return self.render_template(self.index_template,
+                                    appbuilder=self.appbuilder
+                                    )
+
     # TODO: Informações do sistema para o json, requisição se repete a cada 2,5 segundos no FrontEnd##
     @expose('/usage', methods=['GET'])
     @has_access
