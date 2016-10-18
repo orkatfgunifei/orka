@@ -10,19 +10,22 @@ class IndexView(IndexView):
     index_template = 'index.html'
 
     @expose('/')
-    @has_access
     def index(self):
-        containers = self.appbuilder.session.query(Container).filter_by(created_by=g.user).all()
-        services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
-        nodes = self.appbuilder.session.query(Node).all()
-        self.update_redirect()
+        if g.user.is_authenticated():
+            containers = self.appbuilder.session.query(Container).filter_by(created_by=g.user).all()
+            services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
+            nodes = self.appbuilder.session.query(Node).all()
+            self.update_redirect()
 
-        return self.render_template(self.index_template,
+            return self.render_template(self.index_template,
                                     appbuilder=self.appbuilder,
                                     containers=containers,
                                     services=services,
                                     nodes=nodes
                                     )
+        else:
+            return self.render_template('orka/landing.html',
+                                        appbuilder=self.appbuilder)
 
     # TODO: Informações do sistema para o json, requisição se repete a cada 2,5 segundos no FrontEnd##
     @expose('/usage', methods=['GET'])
