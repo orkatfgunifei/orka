@@ -5,7 +5,8 @@ from flask import g, redirect, url_for, request, redirect, make_response, sessio
 from models.service import Service
 from models.container import Container
 from models.node import Node
-from random import randint
+import psutil
+
 class IndexView(IndexView):
     index_template = 'index.html'
 
@@ -31,10 +32,15 @@ class IndexView(IndexView):
     @expose('/usage', methods=['GET'])
     @has_access
     def usage(self):
+
+        cpu = psutil.cpu_percent()
+        disk = psutil.disk_usage('/')[3]
+        mem = psutil.virtual_memory()[2]
+
         dados_dict = {
-            'cpu': {'total': 100, 'used': randint(0,100), 'available': 68},
-            'disk': {'total': 100, 'used': 55, 'available': 34},
-            'ram': {'total': 100, 'used': 62, 'available': 48}
+            'cpu': cpu,
+            'disk': disk,
+            'ram': mem
         }
         return jsonify(dados_dict)
 

@@ -9,7 +9,7 @@ from io import BytesIO
 from app.models.image import Image
 
 class BuildModelView(ModelView):
-
+    # TODO: Upload DockerFile
     datamodel = SQLAInterface(Build)
 
     route_base = "/build"
