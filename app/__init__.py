@@ -10,6 +10,9 @@ from security import OrkaSecurityManager
 from docker import Client
 from helpers import get_current_url
 
+# -- WSGI Gunicorn Server ProxyFix ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from werkzeug.contrib.fixers import ProxyFix
+
 # ~~ Configuração de Log ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
@@ -23,6 +26,7 @@ cli = Client(base_url='unix://var/run/docker.sock')
 # ~~ Instância Flask Core e Banco de Dados ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app = Flask(__name__)
 app.config.from_object('config')
+app.wsgi_app = ProxyFix(app.wsgi_app)
 db = SQLA(app)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -7,167 +7,212 @@
 {% endblock %}
 
 {% block body %}
-<body class="skin-blue sidebar-mini wysihtml5-supported ">
+    <body class="skin-blue sidebar-mini wysihtml5-supported ">
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    {% set menu = appbuilder.menu %}
-    {% set languages = appbuilder.languages %}
-    {% if not current_user.is_anonymous() %}
-        <header class="main-header ">
-            <!-- Logo -->
-            <a href="/" class="logo navbar-fixed-top">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>O</b>rka</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Orka</b></span>
-            </a>
-
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top navbar-fixed-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-            <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-            {% macro locale_menu(languages) %}
-                {% set locale = session['locale'] %}
-                {% if not locale %}
-                    {% set locale = 'en' %}
-                {% endif %}
-                <li class="dropdown tasks-menu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                        <img class="flag flag-{{languages[locale].get('flag')}}" />
-                        <b class="caret"></b>
-                    </a>
-                    {% if languages.keys()|length > 1 %}
-                        <ul class="dropdown-menu">
-                            <li>
-                                {#<!-- inner menu: contains the actual data -->#}
-                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;" >
-                                    <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-                                        {% for lang in languages %}
-                                            <li>
-                                                {% if lang != locale %}
-                                                    <a tabindex="-1" href="{{appbuilder.get_url_for_locale(lang)}}">
-                                                        <div class="f16"><i class="flag flag-{{languages[lang].get('flag')}}"></i> - {{languages[lang].get('name')}}
-                                                        </div>
-                                                    </a>
-                                                {% endif %}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
-                                    <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    {% endif %}
-                </li>
-            {% endmacro %}
-
-            {{ locale_menu(languages) }}
-            <li class="dropdown user user-menu" >
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="" class="user-image" alt="User Image">
-                    <span class="hidden-xs">{{g.user.get_full_name()}}</span>
+        {% set menu = appbuilder.menu %}
+        {% set languages = appbuilder.languages %}
+        {% if not current_user.is_anonymous() %}
+            <header class="main-header ">
+                <!-- Logo -->
+                <a href="/" class="logo navbar-fixed-top">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>O</b>rka</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Orka</b></span>
                 </a>
-                <ul class="dropdown-menu">
-                    <!-- User image -->
-                    <li class="user-header">
-                        <img src="{{ url_for('static', filename='img/avatar5.png' )}}" class="img-circle" alt="User Image">
-                        {#dist/img/user2-160x160.jpg#}
-                        <p>
-                            {{g.user.get_full_name()}} - Web Developer
-                            <small>Member since Nov. 2016</small>
-                        </p>
-                    </li>
-                    <!-- Menu Body -->
-                    {# TODO: Conteudo abaixo do perfil do usuário... #}
-{# -- Caso queira inserir Links abaixo do poup-up do perfil (foto) -- #}
-{#                    <li class="user-body">#}
-{#                        <div class="row">#}
-{#                            <div class="col-xs-6 text-center">#}
-{#                                <a href="{{appbuilder.get_url_for_userinfo}}">{{_("Profile")}}</a>#}
-{#                            </div>#}
-{#                            <div class="col-xs-6 text-center">#}
-{#                                <a href="{{appbuilder.get_url_for_logout}}">{{_("Logout")}}</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <!-- /.row -->#}
-{#                    </li>#}
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-left">
-                            <a href="{{appbuilder.get_url_for_userinfo}}" class="btn btn-default btn-flat">{{_("Profile")}}</a>
-                        </div>
-                        <div class="pull-right">
-                            <a href="{{appbuilder.get_url_for_logout}}" class="btn btn-default btn-flat">{{_("Logout")}}</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        <!-- Control Sidebar Toggle Button -->
-{#        <li>#}
-{#            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>#}
-{#        </li>#}
-        </ul>
-        </div>
-        </nav>
-        </header>
-    {% endif %}
+
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top navbar-fixed-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            {% macro locale_menu(languages) %}
+                                {% set locale = session['locale'] %}
+                                {% if not locale %}
+                                    {% set locale = 'en' %}
+                                {% endif %}
+                                <li class="dropdown tasks-menu">
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img class="flag flag-{{languages[locale].get('flag')}}" />
+                                        <b class="caret"></b>
+                                    </a>
+                                    {% if languages.keys()|length > 1 %}
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                {#<!-- inner menu: contains the actual data -->#}
+                                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;" >
+                                                    <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                                        {% for lang in languages %}
+                                                            <li>
+                                                                {% if lang != locale %}
+                                                                    <a tabindex="-1" href="{{appbuilder.get_url_for_locale(lang)}}">
+                                                                        <div class="f16"><i class="flag flag-{{languages[lang].get('flag')}}"></i> - {{languages[lang].get('name')}}
+                                                                        </div>
+                                                                    </a>
+                                                                {% endif %}
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+                                                    <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endmacro %}
+
+                            {{ locale_menu(languages) }}
+                            <li class="dropdown user user-menu" >
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">{{g.user.get_full_name()}}</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="{{ url_for('static', filename='img/avatar5.png' )}}" class="img-circle" alt="User Image">
+                                        {#dist/img/user2-160x160.jpg#}
+                                        <p>
+                                            {{g.user.get_full_name()}} - Web Developer
+                                            <small>Member since Nov. 2016</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    {# TODO: Conteudo abaixo do perfil do usuário... #}
+                                    {# -- Caso queira inserir Links abaixo do poup-up do perfil (foto) -- #}
+                                    {#                    <li class="user-body">#}
+                                    {#                        <div class="row">#}
+                                    {#                            <div class="col-xs-6 text-center">#}
+                                    {#                                <a href="{{appbuilder.get_url_for_userinfo}}">{{_("Profile")}}</a>#}
+                                    {#                            </div>#}
+                                    {#                            <div class="col-xs-6 text-center">#}
+                                    {#                                <a href="{{appbuilder.get_url_for_logout}}">{{_("Logout")}}</a>#}
+                                    {#                            </div>#}
+                                    {#                        </div>#}
+                                    {#                        <!-- /.row -->#}
+                                    {#                    </li>#}
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="{{appbuilder.get_url_for_userinfo}}" class="btn btn-default btn-flat">{{_("Profile")}}</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="{{appbuilder.get_url_for_logout}}" class="btn btn-default btn-flat">{{_("Logout")}}</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            {#        <li>#}
+                            {#            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>#}
+                            {#        </li>#}
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        {% endif %}
         {% if not current_user.is_anonymous() %}
             {% include 'orka/sidebar.html' %}
         {% endif %}
-            <div class="{% if not current_user.is_anonymous() %}content-wrapper {% endif %}" >
-                {% if not current_user.is_anonymous() %}
-                    <section class="content-header" style="margin-top: 50px; min-height: 40px;">
-                        <ol class="breadcrumb">
-                            <li><a href="/"><i class="fa fa-dashboard"></i> {{ _('Home') }}</a></li>
-                            {% for bread in url_agora(request) %}
-                                <li><a href="{{ bread.url }}">{{ bread.name }}</a></li>
-                            {% endfor %}
-{#                            {% for breadcrumb in breadcrumbs %}#}
-{#                                <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>#}
-{#                                {{ '/' if not loop.last }}#}
-{#                            {% endfor %}#}
-                        </ol>
-                    </section>
-                    <p>{{ session.get_current_url }}</p>
-                {% endif %}
-                <section class="content" style="padding-top: -10px;">
-                    {% block messages %}
-                        {% include 'orka/flash.html' %}
-                    {% endblock %}
-                    <div class="row">
-                        <div class="col-md-8">
+        <div class="{% if not current_user.is_anonymous() %}content-wrapper {% endif %}" >
+            {% if not current_user.is_anonymous() %}
+                <section class="content-header" style="margin-top: 50px; min-height: 40px;">
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        {#                            <li><a href="{{ session.get_current_url }}">TO DO: Breadcrumbs</a></li>#}
+                        {# TODO: inserir breadcrumbs #}
+                        {% for bread in url_agora(request) %}
+                            <li><a href="{{ bread.url }}">{{ bread.name }}</a></li>
+                        {% endfor %}
+                        {#                            {% for breadcrumb in breadcrumbs %}#}
+                        {#                                <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>#}
+                        {#                                {{ '/' if not loop.last }}#}
+                        {#                            {% endfor %}#}
+                    </ol>
+                </section>
+                <p>{{ session.get_current_url }}</p>
+            {% endif %}
+            <section class="content" style="padding-top: -10px;">
+                {% block messages %}
+                    {% include 'orka/flash.html' %}
+                {% endblock %}
+                <div class="row">
+                    <div class="col-md-8">
                         {% include 'orka/general/confirm.html' %}
                         {% include 'orka/general/alert.html' %}
                         {% block content %}
                         {% endblock %}
-                        </div>
-
+                    </div>
                     <div class="col-md-4">
                         {% include 'orka/usage.html' %}
                     </div>
-                    </div>
-                </section>
-            </div>
-    {% if not current_user.is_anonymous() %}
-        {% block footer %}
-            {% include 'orka/footer.html' %}
-        {% endblock %}
-        {% include 'orka/controlsidebar.html' %}
-    {% endif %}
+                </div>
+            </section>
+        </div>
+        {% if not current_user.is_anonymous() %}
+            {% block footer %}
+                {% include 'orka/footer.html' %}
+            {% endblock %}
+            {% include 'orka/controlsidebar.html' %}
+        {% endif %}
     </div><!-- end block wrapper -->
     {% if not current_user.is_anonymous() %}
-    {% block tail_js %}
-        {{ super() }}
-    {% endblock %}
-    {% block add_tail_js %}
-        {{ super() }}
-    {% endblock %}
+        {% block tail_js %}
+            {{ super() }}
+        {% endblock %}
+        {% block add_tail_js %}
+            {{ super() }}
+
+            <script>
+                $(function () {
+                    //-------------
+                    //- BAR CHART -
+                    //-------------
+                    var barChartCanvas = $("#usageChart").get(0).getContext("2d");
+                    var barChart = new Chart(barChartCanvas);
+                    var barChartData = areaChartData;
+                    barChartData.datasets[1].fillColor = "#00a65a";
+                    barChartData.datasets[1].strokeColor = "#00a65a";
+                    barChartData.datasets[1].pointColor = "#00a65a";
+                    var barChartOptions = {
+                        //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+                        scaleBeginAtZero: true,
+                        //Boolean - Whether grid lines are shown across the chart
+                        scaleShowGridLines: true,
+                        //String - Colour of the grid lines
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        //Number - Width of the grid lines
+                        scaleGridLineWidth: 1,
+                        //Boolean - Whether to show horizontal lines (except X axis)
+                        scaleShowHorizontalLines: true,
+                        //Boolean - Whether to show vertical lines (except Y axis)
+                        scaleShowVerticalLines: true,
+                        //Boolean - If there is a stroke on each bar
+                        barShowStroke: true,
+                        //Number - Pixel width of the bar stroke
+                        barStrokeWidth: 2,
+                        //Number - Spacing between each of the X value sets
+                        barValueSpacing: 5,
+                        //Number - Spacing between data sets within X values
+                        barDatasetSpacing: 1,
+                        //String - A legend template
+                        {#        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",#}
+                        //Boolean - whether to make the chart responsive
+                        responsive: true,
+                        maintainAspectRatio: true
+                    };
+
+                    barChartOptions.datasetFill = false;
+                    barChart.Bar(barChartData, barChartOptions);
+                })
+            </script>
+        {% endblock %}
     {% endif %}
 </body>
 {% endblock %}

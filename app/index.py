@@ -28,6 +28,10 @@ class IndexView(IndexView):
     @expose('/usage', methods=['GET'])
     @has_access
     def usage(self):
-        dados_dict = {'chave': 'diogao, envio oq aqui pra vc ?'}
+        dados_dict = {
+            'cpu': {'total': 100, 'used': 32, 'available': 68},
+            'disk': {'total': 100, 'used': 55, 'available': 34},
+            'ram': {'total': 100, 'used': 62, 'available': 48}
+        }
         return jsonify(dados_dict)
 
