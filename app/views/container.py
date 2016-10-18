@@ -66,7 +66,6 @@ class ContainerModelView(ModelView):
                      'domain_name': _('Domain Name'),
                      'cpu_reserved': _('CPU Reserved'),
                      'storage_reserved': _('Storage Reserved'),
-                     'docker_file': _('Docker File'),
                      'status': _('Status')
                      }
 
@@ -90,8 +89,7 @@ class ContainerModelView(ModelView):
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',
-                        'storage_reserved',
-                        'docker_file'], 'expanded': False}),
+                        'storage_reserved'], 'expanded': False}),
     ]
 
     add_fieldsets = [
@@ -105,8 +103,7 @@ class ContainerModelView(ModelView):
             {'fields': [
                         'domain_name',
                         'cpu_reserved',
-                        'storage_reserved',
-                        'docker_file'], 'expanded': True}),
+                        'storage_reserved'], 'expanded': True}),
     ]
 
     edit_fieldsets = [
@@ -114,16 +111,14 @@ class ContainerModelView(ModelView):
                         'name',
                         'image',
                         'port',
-                        'status'
-                               ]}),
+                        'status']}),
         (
             _('Advanced Info'),
             {'fields': [
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',
-                        'storage_reserved',
-                        'docker_file'], 'expanded': False}),
+                        'storage_reserved'], 'expanded': False}),
     ]
 
     search_fieldsets = [
@@ -139,8 +134,7 @@ class ContainerModelView(ModelView):
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',
-                        'storage_reserved',
-                        'docker_file'], 'expanded': False}),
+                        'storage_reserved'], 'expanded': False}),
     ]
 
     def pre_add(self, item):

@@ -11,6 +11,7 @@ from flask.ext.appbuilder import BaseView, expose, has_access, ModelView, Multip
 from app import db, cli, appbuilder
 from container import ContainerModelView
 from image import ImageModelView
+from build import BuildModelView
 from node import NodeModelView
 from service import ServiceModelView
 # from dashboard import DashboardModelView
@@ -52,8 +53,13 @@ appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap',
 appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
                     icon='fa-database')
 
+
+appbuilder.add_view(BuildModelView, "Create", icon='fa-code',
+                    label=_('Compose'), category="Compose",
+                    category_label=_('Compose'), category_icon="fa-book")
+
 appbuilder.add_view(ImageModelView, "Images", label=_('Images'),
-                    icon='fa-hdd-o')
+                    icon='fa-hdd-o', category="Compose")
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~ Permissões do Usuário ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,13 +69,15 @@ active_views = [
     "Container",
     "Image",
     "Images",
+    "Build",
+    "Compose",
     "Dashboard",
     "UserInfoEditView",
     "ResetPasswordView",
     "ResetMyPasswordView",
     "OrkaUserDBView",
-    "Service",
-    "Services"
+    #"Service",
+    #"Services"
 ]
 
 allroles = security.get_all_roles()

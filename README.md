@@ -17,8 +17,15 @@ Eng_Soft | Modelagem e Estruturação
 
 
 
-## Instalação Dev:
+## Instalação Pré-Requisitos:
 
+  - Docker
+  
+  ```
+  sudo apt install docker.io
+  sudo usermod -aG docker $USER
+  ```
+  
   - Criar ambiente virtual
   
   > Necessário pacote python-virtualenv
