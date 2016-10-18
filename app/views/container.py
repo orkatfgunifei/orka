@@ -21,7 +21,27 @@ class ContainerModelView(ModelView):
 
         self.update_redirect()
 
-        containers = db.session.query(Container).filter_by(status=True).all()
+        containers = db.session.query(Container).all()
+
+        for container in containers:
+
+            try:
+
+                info_container = cli.inspect_container(container.hash_id)
+
+                status = info_container.get('State')
+
+                if not status['Running'] and container.status:
+                    #containers.pop(index_container)
+                    container.status = False
+                elif status['Running'] and not container.status:
+                    container.status = True
+
+            except:
+                container.status = False
+
+        if db.session.dirty:
+            db.session.commit()
 
         if not len(containers) > 0:
             return redirect(url_for('ContainerModelView.add'))

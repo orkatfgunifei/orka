@@ -3,7 +3,7 @@
 {% if not current_user.is_anonymous() %}
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Seviços</h3>
+            <h3 class="box-title">{{ _('Services') }}</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class=" ion-chevron-down"></i>
@@ -36,7 +36,7 @@
     </div>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Conteineres</h3>
+            <h3 class="box-title">{{ _('Containers') }}</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="ion-chevron-down"></i>
@@ -69,7 +69,7 @@
     </div>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Nós</h3>
+            <h3 class="box-title">{{ _('Nodes') }}</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="ion-chevron-down"></i>
@@ -77,64 +77,70 @@
             </div>
         </div>
         <!-- /.box-header -->
+
         <div class="box-body">
-            <div class="info-box bg-green">
-                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Container_NAME</span>
-                    <span class="info-box-number">92,050</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
-                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <div class="info-box bg-green">
-                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Container_NAME</span>
-                    <span class="info-box-number">92,050</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
-                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <div class="info-box bg-green">
-                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Container_NAME</span>
-                    <span class="info-box-number">92,050</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
-                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <div class="info-box bg-green">
-                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Container_NAME</span>
-                    <span class="info-box-number">92,050</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
-                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
+            {% for item in nodes %}
+                {{ lib.render_list_node(item) }}
+            {% endfor %}
         </div>
+{#        <div class="box-body">#}
+{#            <div class="info-box bg-green">#}
+{#                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>#}
+{#                <div class="info-box-content">#}
+{#                    <span class="info-box-text">Container_NAME</span>#}
+{#                    <span class="info-box-number">92,050</span>#}
+{#                    <div class="progress">#}
+{#                        <div class="progress-bar" style="width: 20%"></div>#}
+{#                    </div>#}
+{#                  <span class="progress-description">#}
+{#                    20% Increase in 30 Days#}
+{#                  </span>#}
+{#                </div>#}
+{#                <!-- /.info-box-content -->#}
+{#            </div>#}
+{#            <div class="info-box bg-green">#}
+{#                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>#}
+{#                <div class="info-box-content">#}
+{#                    <span class="info-box-text">Container_NAME</span>#}
+{#                    <span class="info-box-number">92,050</span>#}
+{#                    <div class="progress">#}
+{#                        <div class="progress-bar" style="width: 20%"></div>#}
+{#                    </div>#}
+{#                  <span class="progress-description">#}
+{#                    20% Increase in 30 Days#}
+{#                  </span>#}
+{#                </div>#}
+{#                <!-- /.info-box-content -->#}
+{#            </div>#}
+{#            <div class="info-box bg-green">#}
+{#                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>#}
+{#                <div class="info-box-content">#}
+{#                    <span class="info-box-text">Container_NAME</span>#}
+{#                    <span class="info-box-number">92,050</span>#}
+{#                    <div class="progress">#}
+{#                        <div class="progress-bar" style="width: 20%"></div>#}
+{#                    </div>#}
+{#                  <span class="progress-description">#}
+{#                    20% Increase in 30 Days#}
+{#                  </span>#}
+{#                </div>#}
+{#                <!-- /.info-box-content -->#}
+{#            </div>#}
+{#            <div class="info-box bg-green">#}
+{#                <span class="info-box-icon"><i class="ion ion-log-in"></i></span>#}
+{#                <div class="info-box-content">#}
+{#                    <span class="info-box-text">Container_NAME</span>#}
+{#                    <span class="info-box-number">92,050</span>#}
+{#                    <div class="progress">#}
+{#                        <div class="progress-bar" style="width: 20%"></div>#}
+{#                    </div>#}
+{#                  <span class="progress-description">#}
+{#                    20% Increase in 30 Days#}
+{#                  </span>#}
+{#                </div>#}
+{#                <!-- /.info-box-content -->#}
+{#            </div>#}
+{#        </div>#}
         <!-- ./box-body -->
         <div class="box-footer" style="display: block;">
             {#                <div class="row">#}

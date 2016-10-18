@@ -94,7 +94,20 @@ class ServiceModelView(ModelView):
 
         self.update_redirect()
 
-        services = db.session.query(Service).filter_by(status=True).all()
+        services = db.session.query(Service).all()
+
+        for service in services:
+
+            try:
+                info_service = cli.inspect_service(service.service_id)
+
+                if info_service and not service.status:
+                    service.status = True
+            except:
+                service.status = False
+
+        if db.session.dirty:
+            db.session.commit()
 
         if not len(services) > 0:
             return redirect(url_for('ServiceModelView.add'))
@@ -129,6 +142,7 @@ class ServiceModelView(ModelView):
 
                 if service_id:
                     item.service_id = service_id['ID']
+                    item.status = True
             except Exception as e:
                 if "docker swarm init" in str(e):
                     raise Exception(_("Please create the node first."))

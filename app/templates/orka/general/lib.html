@@ -376,7 +376,7 @@
                 {% else %}
                     <span class="ion-close-circled" style="color:red;"></span><span style="padding-left: 4px; color: red;">{{ _("Offline") }}</span>
                 {% endif %}
-                <span><a class="pull-right" href="/container/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
+                <span><a class="pull-right" href="/service/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
             </span>
         </div>
         <!-- /.info-box-content -->
@@ -402,6 +402,26 @@
                     <span class="ion-close-circled" style="color:red;"></span><span style="padding-left: 4px; color: red;">{{ _("Offline") }}</span>
                 {% endif %}
                 <span><a class="pull-right" href="/container/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
+            </span>
+        </div>
+        <!-- /.info-box-content -->
+    </div>
+    <div></div>
+{% endmacro %}
+
+{% macro render_list_node(item) %}
+    <div class="info-box bg-aqua">
+        <span class="info-box-icon"><a href="/node/show/{{ item.id }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+
+        <div class="info-box-content">
+            <span class="info-box-text">{{ item.name }}</span>
+            <span class="info-box-number">{{ item.advertise_addr }}</span>
+
+            <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <span class="progress-description">
+                <span><a class="pull-right" href="/node/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
             </span>
         </div>
         <!-- /.info-box-content -->
