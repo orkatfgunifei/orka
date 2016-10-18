@@ -2,7 +2,6 @@
 import requests
 from flask.ext.babel import lazy_gettext as _
 
-black_list = ['usage']
 
 route_labels = {
     'list': _('list'),
@@ -21,27 +20,29 @@ route_labels = {
 
 class RouteBase(object):
 
-    def __init__(self, url, name, index):
+    def __init__(self, url, name):
         self.url = url
         self.name = name
-        self.index = index
 
 
 def get_current_url(current_request):
-    if current_request:
+
+    if current_request and current_request.url_rule:
+        route_url = current_request.host_url
         route_list = []
-        index = 0
 
-        try:
-            for route in current_request.url_rule.rule.split('/'):
+        if not current_request.url_rule.rule == '/':
+            url_list = [x for x in current_request.url_rule.rule.split('/') if x]
 
-                if not route in black_list:
-                    url = current_request.base_url
-                    r = requests.get(url)
+            try:
+                for route in url_list:
+
+                    route_url += route
+                    if url_list.index(route) < (len(url_list)-1):
+                        route_url += '/'
+
+                    r = requests.get(route_url)
                     status = r.status_code
-
-                    if status in [404, 400]:
-                        url = False
 
                     if route:
 
@@ -52,16 +53,21 @@ def get_current_url(current_request):
                         else:
                             route_name = route_name.capitalize()
 
-                        route_list.append(
-                            RouteBase(
-                                url=url or "#",
-                                name=route_name,
-                                index=index)
-                        )
-                        index += 1
+                        if status in [404, 400]:
+                            base = RouteBase(
+                                url="#",
+                                name=route_name)
+                        else:
+                            base = RouteBase(
+                                url=route_url,
+                                name=route_name)
 
-            return route_list
-        except:
+                        route_list.append(base)
+
+                return route_list
+            except:
+                return []
+        else:
             return []
     else:
         return []
