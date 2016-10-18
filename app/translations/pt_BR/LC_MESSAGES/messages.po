@@ -272,7 +272,7 @@ msgstr "Serviços"
 #: app/templates/orka/container/base.html:7
 #: app/templates/orka/dashboard.html:39
 msgid "Containers"
-msgstr "Conteineres"
+msgstr "Contêineres"
 
 #: app/templates/orka/dashboard.html:72 app/views/__init__.py:49
 msgid "Nodes"
