@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-18 05:53-0200\n"
+"POT-Creation-Date: 2016-10-18 21:27-0200\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -19,55 +19,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: app/helpers.py:8
+#: app/helpers.py:7
 msgid "list"
 msgstr "lista"
 
-#: app/helpers.py:9
+#: app/helpers.py:8
 msgid "add"
 msgstr "adicionar"
 
-#: app/helpers.py:10
+#: app/helpers.py:9
 msgid "show"
 msgstr "exibir"
 
-#: app/helpers.py:11
+#: app/helpers.py:10
 msgid "service"
 msgstr "serviço"
 
-#: app/helpers.py:12
+#: app/helpers.py:11
 msgid "container"
 msgstr "contêiner"
 
-#: app/helpers.py:13
+#: app/helpers.py:12
 msgid "image"
 msgstr "imagem"
 
-#: app/helpers.py:14
+#: app/helpers.py:13
 msgid "node"
 msgstr "nó"
 
-#: app/helpers.py:15
+#: app/helpers.py:14
 msgid "dashboard"
 msgstr "painel"
 
-#: app/helpers.py:16
+#: app/helpers.py:15
 msgid "index"
 msgstr "principal"
 
-#: app/helpers.py:17
+#: app/helpers.py:16
 msgid "user"
 msgstr "usuário"
 
-#: app/helpers.py:18
+#: app/helpers.py:17
 msgid "users"
 msgstr "usuários"
 
-#: app/helpers.py:19
+#: app/helpers.py:18
 msgid "userinfo"
 msgstr "informações"
 
-#: app/helpers.py:20
+#: app/helpers.py:19
 msgid "home"
 msgstr "início"
 
@@ -117,7 +117,7 @@ msgstr "Agrupado por campos"
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/index.html:4
 msgid "Welcome"
-msgstr "Bem Vindo"
+msgstr "Bem-vindo"
 
 #: app/templates/appbuilder/general/security/activation.html:7
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:7
@@ -254,10 +254,6 @@ msgstr "Perfil"
 msgid "Logout"
 msgstr "Sair"
 
-#: app/templates/orka/baselayout.html:127
-msgid "Home"
-msgstr "Início"
-
 #: app/templates/orka/baselib.html:122 app/templates/orka/landing.html:36
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
@@ -265,7 +261,7 @@ msgid "Login"
 msgstr "Entrar"
 
 #: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
-#: app/views/__init__.py:50
+#: app/views/__init__.py:51
 msgid "Services"
 msgstr "Serviços"
 
@@ -274,7 +270,7 @@ msgstr "Serviços"
 msgid "Containers"
 msgstr "Contêineres"
 
-#: app/templates/orka/dashboard.html:72 app/views/__init__.py:49
+#: app/templates/orka/dashboard.html:72 app/views/__init__.py:50
 msgid "Nodes"
 msgstr "Nós"
 
@@ -287,7 +283,7 @@ msgid "Main Navigation"
 msgstr "Menu Principal"
 
 #: app/templates/orka/usage.html:3
-msgid "System Consumption"
+msgid "System Comsumption"
 msgstr "Consumo do Sistema"
 
 #: app/templates/orka/container/base.html:21
@@ -360,38 +356,79 @@ msgstr "Remover registro"
 #: app/templates/orka/general/lib.html:375
 #: app/templates/orka/general/lib.html:400
 msgid "Online"
-msgstr ""
+msgstr "Online"
 
 #: app/templates/orka/general/lib.html:377
 #: app/templates/orka/general/lib.html:402
 msgid "Offline"
-msgstr ""
+msgstr "Offline"
 
 #: app/templates/orka/general/lib.html:379
 #: app/templates/orka/general/lib.html:404
 #: app/templates/orka/general/lib.html:424
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
-#: app/views/__init__.py:38
+#: app/views/__init__.py:39
 msgid "Index"
 msgstr "Principal"
 
-#: app/views/__init__.py:41
+#: app/views/__init__.py:42
 msgid "Dashboard"
 msgstr "Painel"
 
-#: app/views/__init__.py:45
+#: app/views/__init__.py:46
 msgid "Management"
 msgstr "Gerenciamento"
 
-#: app/views/__init__.py:52
+#: app/views/__init__.py:53
 msgid "Container"
 msgstr "Contêiner"
 
-#: app/views/__init__.py:55
+#: app/views/__init__.py:58 app/views/__init__.py:59
+msgid "Compose"
+msgstr "Compor"
+
+#: app/views/__init__.py:61
 msgid "Images"
 msgstr "Imagens"
+
+#: app/views/build.py:19
+msgid "List Build"
+msgstr "Listar Composições"
+
+#: app/views/build.py:21
+msgid "Show Build"
+msgstr "Mostrar Composições"
+
+#: app/views/build.py:23
+msgid "Add Build"
+msgstr "Adicionar Composição"
+
+#: app/views/build.py:25
+msgid "Edit Build"
+msgstr "Editar Composição"
+
+#: app/views/build.py:27 app/views/container.py:62 app/views/image.py:28
+#: app/views/node.py:26 app/views/service.py:26
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
+msgid "Name"
+msgstr "Nome"
+
+#: app/views/build.py:28
+msgid "Dockerfile"
+msgstr "Dockerfile"
+
+#: app/views/build.py:34 app/views/build.py:40 app/views/build.py:47
+#: app/views/build.py:53 app/views/image.py:36 app/views/image.py:44
+#: app/views/image.py:51 app/views/image.py:58 app/views/node.py:40
+#: app/views/node.py:56 app/views/node.py:71 app/views/node.py:86
+#: app/views/service.py:42 app/views/service.py:55 app/views/service.py:66
+#: app/views/service.py:79
+msgid "Options"
+msgstr "Opção"
 
 #: app/views/container.py:54
 msgid "List Container"
@@ -408,14 +445,6 @@ msgstr "Adicionar Contêiner"
 #: app/views/container.py:60
 msgid "Edit Container"
 msgstr "Editar Contêiner"
-
-#: app/views/container.py:62 app/views/image.py:28 app/views/node.py:26
-#: app/views/service.py:26
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
-msgid "Name"
-msgstr "Nome"
 
 #: app/views/container.py:63 app/views/service.py:27
 msgid "Image"
@@ -441,21 +470,17 @@ msgstr "CPU Reservado"
 msgid "Storage Reserved"
 msgstr "Armazenamento Reservado"
 
-#: app/views/container.py:69
-msgid "Docker File"
-msgstr "DockerFile"
-
-#: app/views/container.py:70 app/views/service.py:30
+#: app/views/container.py:69 app/views/service.py:30
 msgid "Status"
 msgstr "Estado"
 
-#: app/views/container.py:81 app/views/container.py:98
-#: app/views/container.py:113 app/views/container.py:130
+#: app/views/container.py:80 app/views/container.py:96
+#: app/views/container.py:110 app/views/container.py:125
 msgid "Summary"
 msgstr "Principal"
 
-#: app/views/container.py:88 app/views/container.py:104
-#: app/views/container.py:120 app/views/container.py:137
+#: app/views/container.py:87 app/views/container.py:102
+#: app/views/container.py:116 app/views/container.py:132
 msgid "Advanced Info"
 msgstr "Avançado"
 
@@ -482,13 +507,6 @@ msgstr "Versão"
 #: app/views/image.py:30
 msgid "Digest"
 msgstr "Sumário"
-
-#: app/views/image.py:36 app/views/image.py:44 app/views/image.py:51
-#: app/views/image.py:58 app/views/node.py:40 app/views/node.py:56
-#: app/views/node.py:71 app/views/node.py:86 app/views/service.py:42
-#: app/views/service.py:55 app/views/service.py:66 app/views/service.py:79
-msgid "Options"
-msgstr "Opção"
 
 #: app/views/node.py:16
 msgid "List Node"
@@ -1092,6 +1110,154 @@ msgstr "Login inválido. Por favor tente novamente"
 msgid "CSRF token missing"
 msgstr "Token de Formulário faltando"
 
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:313
+msgid "usage: "
+msgstr "consumo: "
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:821
+msgid ".__call__() not defined"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1105
+#, python-format
+msgid "unknown parser %r (choices: %s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1146
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1349
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1387
+msgid "'required' is an invalid argument for positionals"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1407
+#, python-format
+msgid "invalid option string %r: must start with a character %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1428
+#, python-format
+msgid "dest= is required for options like %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1445
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1463
+#, python-format
+msgid "conflicting option string(s): %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1526
+msgid "mutually exclusive arguments must be optional"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1596
+msgid "positional arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1597
+msgid "optional arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1615
+msgid "show this help message and exit"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1621
+msgid "show program's version number and exit"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1653
+msgid "cannot have multiple subparser arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1705
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1802
+#, python-format
+msgid "not allowed with argument %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1848
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1862
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1952
+msgid "too few arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1959
+#, python-format
+msgid "argument %s is required"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1973
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2019
+msgid "expected one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2020
+msgid "expected at most one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2021
+msgid "expected at least one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2023
+#, python-format
+msgid "expected %s argument(s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2080
+#, python-format
+msgid "ambiguous option: %s could match %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2142
+#, python-format
+msgid "unexpected option string: %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2243
+#, python-format
+msgid "%r is not callable"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2259
+#, python-format
+msgid "invalid %s value: %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2269
+#, python-format
+msgid "invalid choice: %r (choose from %s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2362
+#, python-format
+msgid "%s: error: %s\n"
+msgstr ""
+
 #: env/lib/python2.7/site-packages/wtforms/validators.py:56
 #, python-format
 msgid "Invalid field name '%s'."
@@ -1247,5 +1413,14 @@ msgstr "Não é um valor de tempo válido"
 #~ msgstr "Criar"
 
 #~ msgid "Conteiners"
-#~ msgstr ""
+#~ msgstr "Contêineres"
+
+#~ msgid "Home"
+#~ msgstr "Início"
+
+#~ msgid "System Consumption"
+#~ msgstr "Consumo do Sistema"
+
+#~ msgid "Docker File"
+#~ msgstr "DockerFile"
 

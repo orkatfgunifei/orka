@@ -9,4 +9,4 @@ class Image(Model):
     version = Column(String(20), default='latest')
 
     def __repr__(self):
-        return  self.name
+        return self.name
