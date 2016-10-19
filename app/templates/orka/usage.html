@@ -25,10 +25,24 @@
         {#        </div>#}
         <div class="row">
             <div style="display:inline;width:120px;height:120px;">
+                <div class="knob-label"><strong>CPU</strong></div>
                 <canvas width="120" height="120"></canvas>
-                <input id="cpu-knob" type="text" class="knob" data-thickness="0.2" data-anglearc="250" data-angleoffset="-125" value="30" data-width="120" data-height="120" data-fgcolor="#00c0ef" style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 24px; line-height: normal; font-family: Arial; text-align: center; color: rgb(0, 192, 239); padding: 0px; -webkit-appearance: none;">
+                <input id="" type="text" class="knob knob-cpu" data-thickness="0.2" data-anglearc="250" data-angleoffset="-125" value="0" data-width="120" data-height="120" data-fgcolor="#00c0ef" style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 24px; line-height: normal; font-family: Arial; text-align: center; color: rgb(0, 192, 239); padding: 0px; -webkit-appearance: none;">
             </div>
-            <div class="knob-label">data-angleArc="250"</div>
+        </div>
+        <div class="row">
+            <div style="display:inline;width:120px;height:120px;">
+                <div class="knob-label"><strong>RAM</strong></div>
+                <canvas width="120" height="120"></canvas>
+                <input id="" type="text" class="knob knob-ram" data-thickness="0.2" data-anglearc="250" data-angleoffset="-125" value="0" data-width="120" data-height="120" data-fgcolor="#00c0ef" style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 24px; line-height: normal; font-family: Arial; text-align: center; color: rgb(0, 192, 239); padding: 0px; -webkit-appearance: none;">
+            </div>
+        </div>
+        <div class="row">
+            <div style="display:inline;width:120px;height:120px;">
+                <div class="knob-label"><strong>Disk</strong></div>
+                <canvas width="120" height="120"></canvas>
+                <input id="cpu-knob" type="text" class="knob knob-disk" data-thickness="0.2" data-anglearc="250" data-angleoffset="-125" value="0" data-width="120" data-height="120" data-fgcolor="#00c0ef" style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 24px; line-height: normal; font-family: Arial; text-align: center; color: rgb(0, 192, 239); padding: 0px; -webkit-appearance: none;">
+            </div>
         </div>
     </div>
     <!-- /.box-body -->
@@ -44,16 +58,14 @@
                 type: 'GET',
                 contentType: 'application/json',
                 success: function (data, textStatus, jqXHR) {
-                    chartData = data;
-                    value= chartData['cpu']['used'];
-                    console.log(value);
-                    $('input.knob').val(value)
-                    $("input.knob").trigger('change');
+                    $('input.knob-cpu').val(data['cpu']).trigger('change');
+                    $('input.knob-ram').val(data['ram']).trigger('change');
+                    $('input.knob-disk').val(data['disk']).trigger('change');
                 },error: function (jqXHR, textStatus, errorThrown) {
                     console.log(errorThrown)
                 }
             });
-        },2000);
+        },3000);
         $(".knob").knob({
             change : function (value) {
              console.log("change : " + value);
@@ -116,38 +128,38 @@
      ** and then updates the display a couple of times a second via
      ** setTimeout()
      **/
-    function drawMouseSpeedDemo() {
-        var mrefreshinterval = 500; // update display every 500ms
-        var lastmousex = -1;
-        var lastmousey = -1;
-        var lastmousetime;
-        var mousetravel = 0;
-        var mpoints = [];
-        var mpoints_max = 30;
-        $('html').mousemove(function (e) {
-            var mousex = e.pageX;
-            var mousey = e.pageY;
-            if (lastmousex > -1) {
-                mousetravel += Math.max(Math.abs(mousex - lastmousex), Math.abs(mousey - lastmousey));
-            }
-            lastmousex = mousex;
-            lastmousey = mousey;
-        });
-        var mdraw = function () {
-            var md = new Date();
-            var timenow = md.getTime();
-            if (lastmousetime && lastmousetime != timenow) {
-                var pps = Math.round(mousetravel / (timenow - lastmousetime) * 1000);
-                mpoints.push(pps);
-                if (mpoints.length > mpoints_max)
-                    mpoints.splice(0, 1);
-                mousetravel = 0;
-                $('#mousespeed').sparkline(mpoints, {width: mpoints.length * 2, tooltipSuffix: ' pixels per second'});
-            }
-            lastmousetime = timenow;
-            setTimeout(mdraw, mrefreshinterval);
-        };
-        // We could use setInterval instead, but I prefer to do it this way
-        setTimeout(mdraw, mrefreshinterval);
-    }
+{#    function drawMouseSpeedDemo() {#}
+{#        var mrefreshinterval = 500; // update display every 500ms#}
+{#        var lastmousex = -1;#}
+{#        var lastmousey = -1;#}
+{#        var lastmousetime;#}
+{#        var mousetravel = 0;#}
+{#        var mpoints = [];#}
+{#        var mpoints_max = 30;#}
+{#        $('html').mousemove(function (e) {#}
+{#            var mousex = e.pageX;#}
+{#            var mousey = e.pageY;#}
+{#            if (lastmousex > -1) {#}
+{#                mousetravel += Math.max(Math.abs(mousex - lastmousex), Math.abs(mousey - lastmousey));#}
+{#            }#}
+{#            lastmousex = mousex;#}
+{#            lastmousey = mousey;#}
+{#        });#}
+{#        var mdraw = function () {#}
+{#            var md = new Date();#}
+{#            var timenow = md.getTime();#}
+{#            if (lastmousetime && lastmousetime != timenow) {#}
+{#                var pps = Math.round(mousetravel / (timenow - lastmousetime) * 1000);#}
+{#                mpoints.push(pps);#}
+{#                if (mpoints.length > mpoints_max)#}
+{#                    mpoints.splice(0, 1);#}
+{#                mousetravel = 0;#}
+{#                $('#mousespeed').sparkline(mpoints, {width: mpoints.length * 2, tooltipSuffix: ' pixels per second'});#}
+{#            }#}
+{#            lastmousetime = timenow;#}
+{#            setTimeout(mdraw, mrefreshinterval);#}
+{#        };#}
+{#        // We could use setInterval instead, but I prefer to do it this way#}
+{#        setTimeout(mdraw, mrefreshinterval);#}
+{#    }#}
 </script>
