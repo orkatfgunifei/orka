@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-18 21:27-0200\n"
+"POT-Creation-Date: 2016-10-24 15:52-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -70,6 +70,14 @@ msgstr "informationen"
 msgid "home"
 msgstr "startseite"
 
+#: app/orka_docker.py:25
+msgid "Node already initializated, use join instead."
+msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
+
+#: app/orka_docker.py:27
+msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
+msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
+
 #: app/security.py:20
 msgid "Your Account activation"
 msgstr "Ihr Konto Aktivierung"
@@ -130,6 +138,7 @@ msgid "If you want to connect, click here"
 msgstr "Wenn Sie eine Verbindung herstellen möchten, klicken Sie hier"
 
 #: app/templates/appbuilder/general/security/activation.html:11
+#: app/templates/orka/landing.html:48
 msgid "Enter"
 msgstr "Enter"
 
@@ -285,7 +294,7 @@ msgstr "Hauptnavigation"
 
 #: app/templates/orka/usage.html:3
 msgid "System Comsumption"
-msgstr ""
+msgstr "Systemverbrauch"
 
 #: app/templates/orka/container/base.html:21
 #: app/templates/orka/service/base.html:21
@@ -388,7 +397,7 @@ msgstr "Container"
 
 #: app/views/__init__.py:58 app/views/__init__.py:59
 msgid "Compose"
-msgstr ""
+msgstr "Komponieren"
 
 #: app/views/__init__.py:61
 msgid "Images"
@@ -396,22 +405,22 @@ msgstr "Bilder"
 
 #: app/views/build.py:19
 msgid "List Build"
-msgstr ""
+msgstr "Liste erstellen"
 
 #: app/views/build.py:21
 msgid "Show Build"
-msgstr ""
+msgstr "Anzeigen Build"
 
 #: app/views/build.py:23
 msgid "Add Build"
-msgstr ""
+msgstr "Erstellen Sie Build"
 
 #: app/views/build.py:25
 msgid "Edit Build"
-msgstr ""
+msgstr "Bearbeiten Erstellen"
 
 #: app/views/build.py:27 app/views/container.py:62 app/views/image.py:28
-#: app/views/node.py:26 app/views/service.py:26
+#: app/views/node.py:26 app/views/service.py:28
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
@@ -420,14 +429,14 @@ msgstr "Name"
 
 #: app/views/build.py:28
 msgid "Dockerfile"
-msgstr ""
+msgstr "Dockerfile"
 
 #: app/views/build.py:34 app/views/build.py:40 app/views/build.py:47
 #: app/views/build.py:53 app/views/image.py:36 app/views/image.py:44
 #: app/views/image.py:51 app/views/image.py:58 app/views/node.py:40
 #: app/views/node.py:56 app/views/node.py:71 app/views/node.py:86
-#: app/views/service.py:42 app/views/service.py:55 app/views/service.py:66
-#: app/views/service.py:79
+#: app/views/service.py:44 app/views/service.py:57 app/views/service.py:68
+#: app/views/service.py:81
 msgid "Options"
 msgstr "Einstellungen"
 
@@ -447,7 +456,7 @@ msgstr "Hinzufügen Container"
 msgid "Edit Container"
 msgstr "Container bearbeiten"
 
-#: app/views/container.py:63 app/views/service.py:27
+#: app/views/container.py:63 app/views/service.py:29
 msgid "Image"
 msgstr "Bild"
 
@@ -471,7 +480,7 @@ msgstr "CPU Reserviert"
 msgid "Storage Reserved"
 msgstr "Storage Reserviert"
 
-#: app/views/container.py:69 app/views/service.py:30
+#: app/views/container.py:69 app/views/service.py:32
 msgid "Status"
 msgstr "Status"
 
@@ -558,52 +567,48 @@ msgid "Logs Slow Followers"
 msgstr "Langsame Verfolger protokollieren"
 
 #: app/views/node.py:46 app/views/node.py:62 app/views/node.py:77
-#: app/views/node.py:92 app/views/service.py:47 app/views/service.py:59
-#: app/views/service.py:71 app/views/service.py:84
+#: app/views/node.py:92 app/views/service.py:49 app/views/service.py:61
+#: app/views/service.py:73 app/views/service.py:86
 msgid "Advanced"
 msgstr "Fortgeschritten"
 
-#: app/views/node.py:127
-msgid "Node already initializated, use join instead."
-msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
-
-#: app/views/node.py:129
-msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
-msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
-
-#: app/views/service.py:18
+#: app/views/service.py:20
 msgid "List Service"
 msgstr "Liste Service"
 
-#: app/views/service.py:20
+#: app/views/service.py:22
 msgid "Show Service"
 msgstr "Service anzeigen"
 
-#: app/views/service.py:22
+#: app/views/service.py:24
 msgid "Add Service"
 msgstr "Service hinzufügen"
 
-#: app/views/service.py:24
+#: app/views/service.py:26
 msgid "Edit Service"
 msgstr "Service bearbeiten"
 
-#: app/views/service.py:28
+#: app/views/service.py:30
 msgid "Node"
 msgstr "Node"
 
-#: app/views/service.py:29
+#: app/views/service.py:31
 msgid "Command"
 msgstr "Befehl"
 
-#: app/views/service.py:31
+#: app/views/service.py:33
 msgid "ID Service"
 msgstr "ID Service"
 
-#: app/views/service.py:148
+#: app/views/service.py:144
+msgid "Please select a node for this service..."
+msgstr "Bitte wählen Sie einen Knoten für diesen Dienst..."
+
+#: app/views/service.py:170
 msgid "Please create the node first."
 msgstr "Bitte erstellen Sie den Knoten zuerst."
 
-#: app/views/service.py:152
+#: app/views/service.py:174
 msgid "Please select an image to create the service."
 msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
 
@@ -1115,153 +1120,6 @@ msgstr "Ungültiger Login. Bitte versuche es erneut."
 msgid "CSRF token missing"
 msgstr "CSRF-Token fehlt"
 
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:313
-msgid "usage: "
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:821
-msgid ".__call__() not defined"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1105
-#, python-format
-msgid "unknown parser %r (choices: %s)"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1146
-#, python-format
-msgid "argument \"-\" with mode %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1349
-#, python-format
-msgid "cannot merge actions - two groups are named %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1387
-msgid "'required' is an invalid argument for positionals"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1407
-#, python-format
-msgid "invalid option string %r: must start with a character %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1428
-#, python-format
-msgid "dest= is required for options like %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1445
-#, python-format
-msgid "invalid conflict_resolution value: %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1463
-#, python-format
-msgid "conflicting option string(s): %s"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1526
-msgid "mutually exclusive arguments must be optional"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1596
-msgid "positional arguments"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1597
-msgid "optional arguments"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1615
-msgid "show this help message and exit"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1621
-msgid "show program's version number and exit"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1653
-msgid "cannot have multiple subparser arguments"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1705
-#, python-format
-msgid "unrecognized arguments: %s"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1802
-#, python-format
-msgid "not allowed with argument %s"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1848
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1862
-#, python-format
-msgid "ignored explicit argument %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1952
-msgid "too few arguments"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1959
-#, python-format
-msgid "argument %s is required"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1973
-#, python-format
-msgid "one of the arguments %s is required"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2019
-msgid "expected one argument"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2020
-msgid "expected at most one argument"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2021
-msgid "expected at least one argument"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2023
-#, python-format
-msgid "expected %s argument(s)"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2080
-#, python-format
-msgid "ambiguous option: %s could match %s"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2142
-#, python-format
-msgid "unexpected option string: %s"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2243
-#, python-format
-msgid "%r is not callable"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2259
-#, python-format
-msgid "invalid %s value: %r"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2269
-#, python-format
-msgid "invalid choice: %r (choose from %s)"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2362
-#, python-format
-msgid "%s: error: %s\n"
-msgstr ""
 
 #: env/lib/python2.7/site-packages/wtforms/validators.py:56
 #, python-format

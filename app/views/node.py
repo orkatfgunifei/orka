@@ -5,7 +5,7 @@ from flask import flash
 from app.models.node import Node
 from app.views import _, cli
 from service import ServiceModelView
-
+from app.orka_docker import create_node
 
 class NodeModelView(ModelView):
 
@@ -107,28 +107,8 @@ class NodeModelView(ModelView):
         """
         super(NodeModelView, self).pre_add(item)
 
-        if item.listen_addr and item.advertise_addr:
+        create_node(item)
 
-            spec = cli.create_swarm_spec(
-                snapshot_interval=5000, log_entries_for_slow_followers=1200
-            )
-            listen_addr = '%s:%s' % (item.listen_addr, item.listen_port)
-
-            try:
-                resp = cli.init_swarm(
-                    advertise_addr=item.advertise_addr, listen_addr=listen_addr,
-                    force_new_cluster=False, swarm_spec=spec
-                )
-                print resp
-            except Exception as e:
-                message = str(e)
-
-                if "docker swarm leave" in message:
-                    raise Exception(_("Node already initializated, use join instead."))
-                elif "listen address must" in message:
-                    raise Exception(_("Please insert the listen IP address and Port, e.g  0.0.0.0:5000"))
-                else:
-                    raise e
 
     def pre_delete(self, item):
 

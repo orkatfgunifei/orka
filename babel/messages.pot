@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-18 21:27-0200\n"
+"POT-Creation-Date: 2016-10-24 15:52-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,14 @@ msgstr ""
 msgid "home"
 msgstr ""
 
+#: app/orka_docker.py:25
+msgid "Node already initializated, use join instead."
+msgstr ""
+
+#: app/orka_docker.py:27
+msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
+msgstr ""
+
 #: app/security.py:20
 msgid "Your Account activation"
 msgstr ""
@@ -127,6 +135,7 @@ msgid "If you want to connect, click here"
 msgstr ""
 
 #: app/templates/appbuilder/general/security/activation.html:11
+#: app/templates/orka/landing.html:48
 msgid "Enter"
 msgstr ""
 
@@ -408,7 +417,7 @@ msgid "Edit Build"
 msgstr ""
 
 #: app/views/build.py:27 app/views/container.py:62 app/views/image.py:28
-#: app/views/node.py:26 app/views/service.py:26
+#: app/views/node.py:26 app/views/service.py:28
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
@@ -423,8 +432,8 @@ msgstr ""
 #: app/views/build.py:53 app/views/image.py:36 app/views/image.py:44
 #: app/views/image.py:51 app/views/image.py:58 app/views/node.py:40
 #: app/views/node.py:56 app/views/node.py:71 app/views/node.py:86
-#: app/views/service.py:42 app/views/service.py:55 app/views/service.py:66
-#: app/views/service.py:79
+#: app/views/service.py:44 app/views/service.py:57 app/views/service.py:68
+#: app/views/service.py:81
 msgid "Options"
 msgstr ""
 
@@ -444,7 +453,7 @@ msgstr ""
 msgid "Edit Container"
 msgstr ""
 
-#: app/views/container.py:63 app/views/service.py:27
+#: app/views/container.py:63 app/views/service.py:29
 msgid "Image"
 msgstr ""
 
@@ -468,7 +477,7 @@ msgstr ""
 msgid "Storage Reserved"
 msgstr ""
 
-#: app/views/container.py:69 app/views/service.py:30
+#: app/views/container.py:69 app/views/service.py:32
 msgid "Status"
 msgstr ""
 
@@ -555,52 +564,48 @@ msgid "Logs Slow Followers"
 msgstr ""
 
 #: app/views/node.py:46 app/views/node.py:62 app/views/node.py:77
-#: app/views/node.py:92 app/views/service.py:47 app/views/service.py:59
-#: app/views/service.py:71 app/views/service.py:84
+#: app/views/node.py:92 app/views/service.py:49 app/views/service.py:61
+#: app/views/service.py:73 app/views/service.py:86
 msgid "Advanced"
 msgstr ""
 
-#: app/views/node.py:127
-msgid "Node already initializated, use join instead."
-msgstr ""
-
-#: app/views/node.py:129
-msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
-msgstr ""
-
-#: app/views/service.py:18
+#: app/views/service.py:20
 msgid "List Service"
 msgstr ""
 
-#: app/views/service.py:20
+#: app/views/service.py:22
 msgid "Show Service"
 msgstr ""
 
-#: app/views/service.py:22
+#: app/views/service.py:24
 msgid "Add Service"
 msgstr ""
 
-#: app/views/service.py:24
+#: app/views/service.py:26
 msgid "Edit Service"
 msgstr ""
 
-#: app/views/service.py:28
+#: app/views/service.py:30
 msgid "Node"
 msgstr ""
 
-#: app/views/service.py:29
+#: app/views/service.py:31
 msgid "Command"
 msgstr ""
 
-#: app/views/service.py:31
+#: app/views/service.py:33
 msgid "ID Service"
 msgstr ""
 
-#: app/views/service.py:148
+#: app/views/service.py:144
+msgid "Please select a node for this service..."
+msgstr ""
+
+#: app/views/service.py:170
 msgid "Please create the node first."
 msgstr ""
 
-#: app/views/service.py:152
+#: app/views/service.py:174
 msgid "Please select an image to create the service."
 msgstr ""
 

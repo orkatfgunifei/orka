@@ -11,7 +11,7 @@ class Service(AuditMixin, Model):
     name = Column(String(150), nullable=False)
     image_id = Column(Integer, ForeignKey('image.id'), nullable=False)
     image = relationship("Image")
-    node_id = Column(Integer, ForeignKey('node.id'), nullable=False)
+    node_id = Column(Integer, ForeignKey('node.id'))
     node = relationship("Node")
     status = Column(Boolean, default=False)
     service_id = Column(String(64))

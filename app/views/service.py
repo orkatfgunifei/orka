@@ -1,5 +1,7 @@
 #coding: utf-8
 from app.models.service import Service
+from app.models.node import Node
+from app.orka_docker import create_node
 from app.views import expose, ModelView, has_access
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
@@ -138,13 +140,33 @@ class ServiceModelView(ModelView):
             task_tmpl = docker.types.TaskTemplate(container_spec)
 
             try:
+                if not item.node:
+                    raise Exception(_("Please select a node for this service..."))
+
                 service_id = cli.create_service(task_tmpl, name=item.name)
 
                 if service_id:
                     item.service_id = service_id['ID']
                     item.status = True
+
+
             except Exception as e:
                 if "docker swarm init" in str(e):
+                    #TODO: Criar Node caso não exista, e join caso já exista
+                    node = Node()
+
+                    node.name = "orka-node"
+                    node.listen_addr = "0.0.0.0"
+                    node.listen_port = 5000
+                    node.advertise_addr = '127.0.0.1'
+
+                    create_node(node)
+
+                    db.session.add(node)
+
+                    db.session.commit()
+
+
                     raise Exception(_("Please create the node first."))
                 else:
                     raise e
