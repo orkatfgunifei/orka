@@ -3,9 +3,9 @@ import json
 
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-
+from app.orka_docker import image_pull, image_remove
 from app.models.image import Image
-from container import ContainerModelView, cli, _
+from container import ContainerModelView, _
 from service import ServiceModelView
 
 
@@ -77,7 +77,7 @@ class ImageModelView(ModelView):
             if not item.version:
                 item.version = "latest"
 
-            image_raw = cli.pull("%s:%s" % (item.name, item.version))
+            image_raw = image_pull(item.name, item.version)
             image_raw = image_raw.replace("\r\n","|")
             image_raw = image_raw.split("|")
 
@@ -104,7 +104,7 @@ class ImageModelView(ModelView):
 
         if item.name:
             try:
-                resp = cli.remove_image("%s:%s" % (item.name, item.version))
+                resp = image_remove(item.name, item.version)
                 if resp:
                     print resp
             except Exception as inst:

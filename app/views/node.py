@@ -3,9 +3,9 @@ from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from flask import flash
 from app.models.node import Node
-from app.views import _, cli
+from app.views import _
 from service import ServiceModelView
-from app.orka_docker import create_node
+from app.orka_docker import create_node, remove_node
 
 class NodeModelView(ModelView):
 
@@ -115,6 +115,6 @@ class NodeModelView(ModelView):
         super(NodeModelView, self).pre_delete(item)
 
         try:
-            cli.leave_swarm(force=True)
+            remove_node(force=True)
         except:
             print "Não é um objeto Swarm"

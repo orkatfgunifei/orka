@@ -8,7 +8,7 @@ import logging
 from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access, ModelView, MultipleView
-from app import db, cli, appbuilder
+from app import db, appbuilder
 from container import ContainerModelView
 from image import ImageModelView
 from build import BuildModelView

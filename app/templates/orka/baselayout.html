@@ -124,16 +124,12 @@
             {% if not current_user.is_anonymous() %}
                 <section class="content-header" style="margin-top: 50px; min-height: 40px;">
                     <ol class="breadcrumb">
-                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-                        {#                            <li><a href="{{ session.get_current_url }}">TO DO: Breadcrumbs</a></li>#}
-                        {# TODO: inserir breadcrumbs #}
+                        <li><a href="/"><i class="fa fa-dashboard"></i> {{ _('Home') }}</a></li>
+
                         {% for bread in url_agora(request) %}
                             <li><a href="{{ bread.url }}">{{ bread.name }}</a></li>
                         {% endfor %}
-                        {#                            {% for breadcrumb in breadcrumbs %}#}
-                        {#                                <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>#}
-                        {#                                {{ '/' if not loop.last }}#}
-                        {#                            {% endfor %}#}
+
                     </ol>
                 </section>
                 <p>{{ session.get_current_url }}</p>

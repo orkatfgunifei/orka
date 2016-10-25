@@ -1,7 +1,7 @@
 #coding: utf-8
 import requests
 from flask.ext.babel import lazy_gettext as _
-from config import APP_VERSION
+from orka_docker import read_log
 
 route_labels = {
     'list': _('list'),
@@ -25,7 +25,7 @@ class RouteBase(object):
         self.name = name
 
 
-def get_current_url(current_request):
+def url_agora(current_request):
 
     if current_request and current_request.url_rule:
         route_url = current_request.host_url
@@ -73,5 +73,7 @@ def get_current_url(current_request):
         return []
 
 
-def get_app_version():
-    return APP_VERSION
+
+def ler_logs(object_id, type, appbuilder):
+
+    return read_log(object_id, type, appbuilder)

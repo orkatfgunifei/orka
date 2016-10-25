@@ -7,8 +7,7 @@ from flask import (
 from flask.ext.appbuilder import SQLA, AppBuilder
 from index import IndexView
 from security import OrkaSecurityManager
-from docker import Client
-from helpers import get_current_url, get_app_version
+from helpers import url_agora, ler_logs
 
 # -- WSGI Gunicorn Server ProxyFix ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from werkzeug.contrib.fixers import ProxyFix
@@ -18,10 +17,6 @@ logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-# ~~ Instância do Cliente Docker ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-cli = Client(base_url='unix://var/run/docker.sock')
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~ Instância Flask Core e Banco de Dados ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app = Flask(__name__)
@@ -55,8 +50,8 @@ from sqlalchemy import event
 def utility_processor():
 
     helpers = {
-        'url_agora': get_current_url,
-        'app_versao': get_app_version
+        'url_agora': url_agora,
+        'ler_logs': ler_logs
     }
     return helpers
 # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

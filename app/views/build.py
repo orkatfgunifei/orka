@@ -4,9 +4,8 @@ from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from app.models.build import Build
 from flask.ext.babel import lazy_gettext as _
-from app.views import cli
-from io import BytesIO
 from app.models.image import Image
+from app.orka_docker import build
 
 class BuildModelView(ModelView):
     # TODO: Upload DockerFile
@@ -66,11 +65,8 @@ class BuildModelView(ModelView):
         super(BuildModelView, self).pre_add(item)
 
         if item.docker_file:
-            f = BytesIO(item.docker_file.encode('utf-8'))
 
-            response = [line for line in cli.build(
-                fileobj=f, rm=True,
-                tag=item.name)]
+            response = build(item)
 
             if response:
                 image_build = Image()
@@ -78,7 +74,6 @@ class BuildModelView(ModelView):
                 self.appbuilder.session.add(image_build)
                 self.appbuilder.session.commit()
 
-            print response
 
 
 

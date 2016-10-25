@@ -3,9 +3,8 @@ import flask
 from flask import g, redirect, url_for, request, redirect, make_response, session
 from flask.ext.appbuilder import BaseView, expose, has_access
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from sqlalchemy.orm.attributes import get_history
 
-from app import db, cli
+
 from app.models.container import Container
 from flask.ext.babel import lazy_gettext as _
 
