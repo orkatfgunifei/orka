@@ -1,7 +1,7 @@
 #coding: utf-8
 import requests
 from flask.ext.babel import lazy_gettext as _
-
+from config import APP_VERSION
 
 route_labels = {
     'list': _('list'),
@@ -73,4 +73,5 @@ def get_current_url(current_request):
         return []
 
 
-
+def get_app_version():
+    return APP_VERSION

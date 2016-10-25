@@ -7,14 +7,14 @@
     <section class="sidebar">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ url_for('static', filename='img/avatar5.png') }}" class="img-circle" alt="User Image">
+                <img src="{{ g.user.photo_url() }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{current_user.get_full_name()}}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
+        <!-- TODO: Tela de Busca de Containeres e etc -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder={{ _("Search...") }}>
@@ -30,16 +30,4 @@
     </section>
 </aside>
 {% endif %}
-{#<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">#}
-{#    <form role="search">#}
-{#        <div class="form-group">#}
-{#            <input type="text" class="form-control" placeholder={{_("Search")}}>#}
-{#        </div>#}
-{#    </form>#}
-{##}
-{#    <ul class="menu nav">#}
-{#    {% include 'orka/sidebar_menu.html' %}#}
-{#    <li class="nav menu"><a href="{{appbuilder.get_url_for_userinfo}}"><span class="fa fa-fw fa-user"></span>{{_("Profile")}}</a></li>#}
-{#    <li class="nav menu"><a href="{{appbuilder.get_url_for_logout}}"><span class="fa fa-fw fa-sign-out"></span>{{_("Logout")}}</a></li>#}
-{#    </ul>#}
-{#</div><!--/.sidebar-->#}
+

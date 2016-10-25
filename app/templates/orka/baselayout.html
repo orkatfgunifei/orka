@@ -70,17 +70,17 @@
                             {{ locale_menu(languages) }}
                             <li class="dropdown user user-menu" >
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="" class="user-image" alt="User Image">
+                                    <img src="{{ g.user.photo_url() }}" class="user-image" alt="User Image">
                                     <span class="hidden-xs">{{g.user.get_full_name()}}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="{{ url_for('static', filename='img/avatar5.png' )}}" class="img-circle" alt="User Image">
+                                        <img src="{{ g.user.photo_url() }}" class="img-circle" alt="User Image">
                                         {#dist/img/user2-160x160.jpg#}
                                         <p>
-                                            {{g.user.get_full_name()}} - Web Developer
-                                            <small>Member since Nov. 2016</small>
+                                            {{g.user.get_full_name()}}
+                                            <small>{{ _('Member since') }} {{ g.user.created_on.strftime('%d/%m/%Y') }}</small>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
@@ -143,15 +143,21 @@
                     {% include 'orka/flash.html' %}
                 {% endblock %}
                 <div class="row">
-                    <div class="col-md-8">
-                        {% include 'orka/general/confirm.html' %}
-                        {% include 'orka/general/alert.html' %}
-                        {% block content %}
-                        {% endblock %}
-                    </div>
-                    <div class="col-md-4">
-                        {% include 'orka/usage.html' %}
-                    </div>
+                    {% if  "IndexView.index" == request.endpoint  %}
+                        <div class="col-md-8">
+                    {% else %}
+                        <div class="col-md-12">
+                    {% endif %}
+                            {% include 'orka/general/confirm.html' %}
+                            {% include 'orka/general/alert.html' %}
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                    {% if  "IndexView.index" == request.endpoint  %}
+                        <div class="col-md-4">
+                            {% include 'orka/usage.html' %}
+                        </div>
+                    {% endif %}
                 </div>
             </section>
         </div>

@@ -152,7 +152,7 @@ class ServiceModelView(ModelView):
 
             except Exception as e:
                 if "docker swarm init" in str(e):
-                    #TODO: Criar Node caso não exista, e join caso já exista
+
                     node = Node()
 
                     node.name = "orka-node"

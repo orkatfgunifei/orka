@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-24 15:52-0200\n"
+"POT-Creation-Date: 2016-10-25 00:37-0200\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -79,21 +79,38 @@ msgstr "O nó já foi criado, acesse um existente."
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr "Favor inserir o IP e a Porta de acesso, por exemplo: 0.0.0.0:5000"
 
-#: app/security.py:20
+#: app/security.py:14 app/security.py:24
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
+msgid "User info"
+msgstr "Informações Usuário"
+
+#: app/security.py:16 app/security.py:26
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
+msgid "Personal Info"
+msgstr "Informações Pessoais"
+
+#: app/security.py:18
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
+msgid "Audit Info"
+msgstr "Extra Info."
+
+#: app/security.py:36
 msgid "Your Account activation"
 msgstr "Sua ativação da conta"
 
-#: app/security.py:22
+#: app/security.py:38
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
 msgstr "Preencha o formulário de registro"
 
-#: app/security.py:23
+#: app/security.py:39
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
 msgstr "Não foi possível registrá-lo no momento, tente novamente"
 
-#: app/security.py:24
+#: app/security.py:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
 msgstr "Um email de ativação da conta foi envia para você"
@@ -249,6 +266,10 @@ msgstr "Nenhum registro encontrado"
 msgid "Add Filter"
 msgstr "Adicionar Filtro"
 
+#: app/templates/orka/baselayout.html:83
+msgid "Member since"
+msgstr "Membro desde"
+
 #: app/templates/orka/baselayout.html:103 app/templates/orka/baselib.html:115
 #: app/templates/orka/sidebar_menu.html:48
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
@@ -270,7 +291,7 @@ msgid "Login"
 msgstr "Entrar"
 
 #: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
-#: app/views/__init__.py:51
+#: app/views/__init__.py:52
 msgid "Services"
 msgstr "Serviços"
 
@@ -279,9 +300,21 @@ msgstr "Serviços"
 msgid "Containers"
 msgstr "Contêineres"
 
-#: app/templates/orka/dashboard.html:72 app/views/__init__.py:50
+#: app/templates/orka/dashboard.html:72 app/views/__init__.py:51
 msgid "Nodes"
 msgstr "Nós"
+
+#: app/templates/orka/footer.html:3 app/views/image.py:29
+msgid "Version"
+msgstr "Versão"
+
+#: app/templates/orka/footer.html:5
+msgid "Orka Develop Team"
+msgstr "Equipe de Desenvolvimento Orka"
+
+#: app/templates/orka/footer.html:5
+msgid "All rights reserved."
+msgstr "Todos os direitos reservados."
 
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
@@ -378,27 +411,27 @@ msgstr "Offline"
 msgid "Edit"
 msgstr "Editar"
 
-#: app/views/__init__.py:39
+#: app/views/__init__.py:40
 msgid "Index"
 msgstr "Principal"
 
-#: app/views/__init__.py:42
+#: app/views/__init__.py:43
 msgid "Dashboard"
 msgstr "Painel"
 
-#: app/views/__init__.py:46
+#: app/views/__init__.py:47
 msgid "Management"
 msgstr "Gerenciamento"
 
-#: app/views/__init__.py:53
+#: app/views/__init__.py:54
 msgid "Container"
 msgstr "Contêiner"
 
-#: app/views/__init__.py:58 app/views/__init__.py:59
+#: app/views/__init__.py:59 app/views/__init__.py:60
 msgid "Compose"
 msgstr "Compor"
 
-#: app/views/__init__.py:61
+#: app/views/__init__.py:62
 msgid "Images"
 msgstr "Imagens"
 
@@ -508,10 +541,6 @@ msgstr "Adicionar Imagem"
 #: app/views/image.py:26
 msgid "Edit Image"
 msgstr "Editar Imagem"
-
-#: app/views/image.py:29
-msgid "Version"
-msgstr "Versão"
 
 #: app/views/image.py:30
 msgid "Digest"
@@ -1043,20 +1072,6 @@ msgstr ""
 msgid "Please rewrite the user's password to confirm"
 msgstr "Por favor insira a senha do usuário para confirmar"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
-msgid "User info"
-msgstr "Informações Usuário"
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
-msgid "Personal Info"
-msgstr "Informações Pessoais"
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
-msgid "Audit Info"
-msgstr "Extra Info."
-
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:171
 msgid "Your user information"
 msgstr "Suas informações"
@@ -1118,6 +1133,150 @@ msgstr "Token de Formulário faltando"
 #: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:313
 msgid "usage: "
 msgstr "consumo: "
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:821
+msgid ".__call__() not defined"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1105
+#, python-format
+msgid "unknown parser %r (choices: %s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1146
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1349
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1387
+msgid "'required' is an invalid argument for positionals"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1407
+#, python-format
+msgid "invalid option string %r: must start with a character %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1428
+#, python-format
+msgid "dest= is required for options like %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1445
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1463
+#, python-format
+msgid "conflicting option string(s): %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1526
+msgid "mutually exclusive arguments must be optional"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1596
+msgid "positional arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1597
+msgid "optional arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1615
+msgid "show this help message and exit"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1621
+msgid "show program's version number and exit"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1653
+msgid "cannot have multiple subparser arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1705
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1802
+#, python-format
+msgid "not allowed with argument %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1848
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1862
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1952
+msgid "too few arguments"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1959
+#, python-format
+msgid "argument %s is required"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:1973
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2019
+msgid "expected one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2020
+msgid "expected at most one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2021
+msgid "expected at least one argument"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2023
+#, python-format
+msgid "expected %s argument(s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2080
+#, python-format
+msgid "ambiguous option: %s could match %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2142
+#, python-format
+msgid "unexpected option string: %s"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2243
+#, python-format
+msgid "%r is not callable"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2259
+#, python-format
+msgid "invalid %s value: %r"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2269
+#, python-format
+msgid "invalid choice: %r (choose from %s)"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/gunicorn/argparse_compat.py:2362
+#, python-format
+msgid "%s: error: %s\n"
+msgstr ""
 
 #: env/lib/python2.7/site-packages/wtforms/validators.py:56
 #, python-format

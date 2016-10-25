@@ -12,9 +12,9 @@ RUN_MODE = ["PROD", "TEST", "DEV"][2]
 SECRET_KEY = '\2\tfgunifeirules\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+#SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
-#SQLALCHEMY_DATABASE_URI = 'postgresql://root:password@localhost/myapp'
+SQLALCHEMY_DATABASE_URI = 'postgresql://odoo:rmpa@localhost/orka'
 
 # Flask-WTF flag for CSRF
 CSRF_ENABLED = True
@@ -24,7 +24,7 @@ CSRF_ENABLED = True
 #------------------------------
 APP_NAME = "Orka"
 
-APP_VERSION = "0.3.5"
+APP_VERSION = "0.3.7"
 
 if RUN_MODE != "PROD":
     APP_NAME += " [%s]" % RUN_MODE

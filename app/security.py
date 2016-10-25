@@ -1,19 +1,35 @@
-from flask import redirect
+from flask.ext.appbuilder.widgets import ListThumbnail
 from flask_appbuilder.security.views import UserDBModelView
 from flask_appbuilder.security.sqla.manager import SecurityManager
-from flask.ext.appbuilder.actions import action
 from flask.ext.appbuilder.security.registerviews import RegisterUserDBView
 from flask.ext.babel import lazy_gettext as _
+from app.models.user import OrkaUser
 
 
-class OrkaUserDBView(UserDBModelView):
-    # @action("muldelete", "Delete", "Delete all Really?", "fa-rocket", single=False)
-    # def muldelete(self, items):
-    #     self.datamodel.delete_all(items)
-    #     self.update_redirect()
-    #     return redirect(self.get_redirect())
-    pass
+class OrkaUserDBModelView(UserDBModelView):
 
+    list_widget = ListThumbnail
+
+    show_fieldsets = [
+        (_('User info'),
+         {'fields': ['username', 'active', 'roles', 'login_count', 'photo_img']}),
+        (_('Personal Info'),
+         {'fields': ['first_name', 'last_name', 'email'], 'expanded': True}),
+        (_('Audit Info'),
+         {'fields': ['last_login', 'fail_login_count', 'created_on',
+                     'created_by', 'changed_on', 'changed_by'], 'expanded': False}),
+    ]
+
+    user_show_fieldsets = [
+        (_('User info'),
+         {'fields': ['username', 'active', 'roles', 'login_count', 'photo_img']}),
+        (_('Personal Info'),
+         {'fields': ['first_name', 'last_name', 'email'], 'expanded': True}),
+    ]
+
+    add_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles', 'photo', 'password', 'conf_password']
+    list_columns = ['first_name', 'last_name', 'username', 'email', 'active', 'roles', 'photo_img_thumbnail']
+    edit_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles', 'photo']
 
 class RegisterUserDBView(RegisterUserDBView):
     email_template = 'security/register_mail.html'
@@ -26,6 +42,7 @@ class RegisterUserDBView(RegisterUserDBView):
 
 
 class OrkaSecurityManager(SecurityManager):
-    userdbmodelview = OrkaUserDBView
+    user_model = OrkaUser
+    userdbmodelview = OrkaUserDBModelView
     registeruserdbview = RegisterUserDBView
 

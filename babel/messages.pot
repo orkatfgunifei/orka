@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-24 15:52-0200\n"
+"POT-Creation-Date: 2016-10-25 00:37-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,21 +77,38 @@ msgstr ""
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr ""
 
-#: app/security.py:20
+#: app/security.py:14 app/security.py:24
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
+msgid "User info"
+msgstr ""
+
+#: app/security.py:16 app/security.py:26
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
+msgid "Personal Info"
+msgstr ""
+
+#: app/security.py:18
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
+msgid "Audit Info"
+msgstr ""
+
+#: app/security.py:36
 msgid "Your Account activation"
 msgstr ""
 
-#: app/security.py:22
+#: app/security.py:38
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
 msgstr ""
 
-#: app/security.py:23
+#: app/security.py:39
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
 msgstr ""
 
-#: app/security.py:24
+#: app/security.py:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
 msgstr ""
@@ -247,6 +264,10 @@ msgstr ""
 msgid "Add Filter"
 msgstr ""
 
+#: app/templates/orka/baselayout.html:83
+msgid "Member since"
+msgstr ""
+
 #: app/templates/orka/baselayout.html:103 app/templates/orka/baselib.html:115
 #: app/templates/orka/sidebar_menu.html:48
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
@@ -268,7 +289,7 @@ msgid "Login"
 msgstr ""
 
 #: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
-#: app/views/__init__.py:51
+#: app/views/__init__.py:52
 msgid "Services"
 msgstr ""
 
@@ -277,8 +298,20 @@ msgstr ""
 msgid "Containers"
 msgstr ""
 
-#: app/templates/orka/dashboard.html:72 app/views/__init__.py:50
+#: app/templates/orka/dashboard.html:72 app/views/__init__.py:51
 msgid "Nodes"
+msgstr ""
+
+#: app/templates/orka/footer.html:3 app/views/image.py:29
+msgid "Version"
+msgstr ""
+
+#: app/templates/orka/footer.html:5
+msgid "Orka Develop Team"
+msgstr ""
+
+#: app/templates/orka/footer.html:5
+msgid "All rights reserved."
 msgstr ""
 
 #: app/templates/orka/sidebar.html:20
@@ -376,27 +409,27 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: app/views/__init__.py:39
+#: app/views/__init__.py:40
 msgid "Index"
 msgstr ""
 
-#: app/views/__init__.py:42
+#: app/views/__init__.py:43
 msgid "Dashboard"
 msgstr ""
 
-#: app/views/__init__.py:46
+#: app/views/__init__.py:47
 msgid "Management"
 msgstr ""
 
-#: app/views/__init__.py:53
+#: app/views/__init__.py:54
 msgid "Container"
 msgstr ""
 
-#: app/views/__init__.py:58 app/views/__init__.py:59
+#: app/views/__init__.py:59 app/views/__init__.py:60
 msgid "Compose"
 msgstr ""
 
-#: app/views/__init__.py:61
+#: app/views/__init__.py:62
 msgid "Images"
 msgstr ""
 
@@ -505,10 +538,6 @@ msgstr ""
 
 #: app/views/image.py:26
 msgid "Edit Image"
-msgstr ""
-
-#: app/views/image.py:29
-msgid "Version"
 msgstr ""
 
 #: app/views/image.py:30
@@ -1035,20 +1064,6 @@ msgstr ""
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:146
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:236
 msgid "Please rewrite the user's password to confirm"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
-msgid "User info"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
-msgid "Personal Info"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
-msgid "Audit Info"
 msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:171

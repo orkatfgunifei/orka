@@ -14,6 +14,7 @@ from image import ImageModelView
 from build import BuildModelView
 from node import NodeModelView
 from service import ServiceModelView
+
 # from dashboard import DashboardModelView
 
 # Início Log
@@ -60,6 +61,9 @@ appbuilder.add_view(BuildModelView, "Create", icon='fa-code',
 
 appbuilder.add_view(ImageModelView, "Images", label=_('Images'),
                     icon='fa-hdd-o', category="Compose")
+
+# appbuilder.add_view(OrkaUserModelView, "User", label=_('User'),
+#                     icon='fa-user')
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~ Permissões do Usuário ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

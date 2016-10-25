@@ -8,7 +8,7 @@ from flask.ext.appbuilder import SQLA, AppBuilder
 from index import IndexView
 from security import OrkaSecurityManager
 from docker import Client
-from helpers import get_current_url
+from helpers import get_current_url, get_app_version
 
 # -- WSGI Gunicorn Server ProxyFix ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from werkzeug.contrib.fixers import ProxyFix
@@ -31,7 +31,8 @@ db = SQLA(app)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~ Instância Appbuilder Blueprint ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-appbuilder = AppBuilder(app, db.session, indexview=IndexView, security_manager_class=OrkaSecurityManager)
+appbuilder = AppBuilder(app, db.session, indexview=IndexView,
+                        security_manager_class=OrkaSecurityManager)
 appbuilder.base_template='orka/baselayout.html'
 #appbuilder.security_cleanup()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,12 +42,12 @@ from sqlalchemy.engine import Engine
 from sqlalchemy import event
 
 # Apenas incluir esta função para SQLLite
-@event.listens_for(Engine, "connect")
-def set_sqlite_pragma(dbapi_connection, connection_record):
-    # Will force sqllite contraint foreign keys
-    cursor = dbapi_connection.cursor()
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
+# @event.listens_for(Engine, "connect")
+# def set_sqlite_pragma(dbapi_connection, connection_record):
+#     # Will force sqllite contraint foreign keys
+#     cursor = dbapi_connection.cursor()
+#     cursor.execute("PRAGMA foreign_keys=ON")
+#     cursor.close()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # # ~~ Ajudantes Jinja Globais ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,6 +56,7 @@ def utility_processor():
 
     helpers = {
         'url_agora': get_current_url,
+        'app_versao': get_app_version
     }
     return helpers
 # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
