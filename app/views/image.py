@@ -1,6 +1,6 @@
 #coding: utf-8
 import json
-
+from flask.ext.appbuilder.widgets import ListThumbnail
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from app.orka_docker import image_pull, image_remove
@@ -17,6 +17,8 @@ class ImageModelView(ModelView):
 
     related_views = [ContainerModelView, ServiceModelView]
 
+    list_widget = ListThumbnail
+
     list_title = _("List Image")
 
     show_title = _("Show Image")
@@ -27,16 +29,19 @@ class ImageModelView(ModelView):
 
     label_columns = {'name': _('Name'),
                      'version': _('Version'),
-                     'digest': _('Digest')
+                     'digest': _('Digest'),
+                     'photo': _('Logo'),
+                     'photo_img_thumbnail': _('Image')
                      }
 
-    list_columns = ['name', 'version']
+    list_columns = ['name', 'version', 'photo_img_thumbnail']
 
     show_fieldsets = [
         (_('Options'), {'fields': [
                         'name',
                         'version',
-                        'digest'
+                        'digest',
+                        'photo_img'
                                ]}),
     ]
 
@@ -44,13 +49,15 @@ class ImageModelView(ModelView):
         (_('Options'), {'fields': [
                         'name',
                         'version',
+                        'photo'
                                ]}),
     ]
 
     edit_fieldsets = [
         (_('Options'), {'fields': [
                         'name',
-                        'version'
+                        'version',
+                        'photo'
                                ]}),
     ]
 

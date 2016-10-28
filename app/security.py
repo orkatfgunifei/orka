@@ -31,7 +31,9 @@ class OrkaUserDBModelView(UserDBModelView):
     list_columns = ['first_name', 'last_name', 'username', 'email', 'active', 'roles', 'photo_img_thumbnail']
     edit_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles', 'photo']
 
+
 class RegisterUserDBView(RegisterUserDBView):
+
     email_template = 'security/register_mail.html'
     email_subject = _('Your Account activation')
     activation_template = 'activation.html'
