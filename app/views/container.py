@@ -8,7 +8,7 @@ from app.orka_docker import (
     inspect_container, rename_container
 )
 
-from app.models.container import Container
+from app.models.container import Container, ContainerType
 from flask.ext.babel import lazy_gettext as _
 
 
@@ -69,7 +69,8 @@ class ContainerModelView(ModelView):
                      'domain_name': _('Domain Name'),
                      'cpu_reserved': _('CPU Reserved'),
                      'storage_reserved': _('Storage Reserved'),
-                     'status': _('Status')
+                     'status': _('Status'),
+                     'type': _('Type')
                      }
 
     list_columns = ['name',
@@ -89,6 +90,7 @@ class ContainerModelView(ModelView):
         (
             _('Advanced Info'),
             {'fields': [
+                        'type',
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',
@@ -104,6 +106,7 @@ class ContainerModelView(ModelView):
         (
             _('Advanced Info'),
             {'fields': [
+                        'type',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': True}),
@@ -118,6 +121,7 @@ class ContainerModelView(ModelView):
         (
             _('Advanced Info'),
             {'fields': [
+                        'type',
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',
@@ -134,6 +138,7 @@ class ContainerModelView(ModelView):
         (
             _('Advanced Info'),
             {'fields': [
+                        'type',
                         'hash_id',
                         'domain_name',
                         'cpu_reserved',

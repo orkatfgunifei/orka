@@ -9,7 +9,7 @@ from flask import render_template, make_response
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder import BaseView, expose, has_access, ModelView, MultipleView
 from app import db, appbuilder
-from container import ContainerModelView
+from container import ContainerModelView, ContainerType
 from image import ImageModelView
 from build import BuildModelView
 from node import NodeModelView
@@ -89,6 +89,18 @@ roles = [str(x) for x in allroles]
 admin_role = allroles[0]
 
 if not "User" in roles:
+    """
+        Evento de primeira execução da aplicação
+    """
+    container_default_type = ContainerType()
+    container_default_type = "default"
+    db_type = ContainerType()
+    db_type.type = "db"
+
+    appbuilder.session.add(container_default_type)
+    appbuilder.session.add(db_type)
+    appbuilder.session.commit()
+
     user_role = security.add_role("User")
 
     for perm in admin_role.permissions:

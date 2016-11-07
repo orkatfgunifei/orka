@@ -18,6 +18,19 @@ class Container(AuditMixin, Model):
     image_id = Column(Integer, ForeignKey('image.id'))
     image = relationship("Image")
     status = Column(Boolean, default=False)
+    type_id = Column(Integer, ForeignKey('containertype.id'))
+    type = relationship("ContainerType")
 
     def __repr__(self):
         return self.name
+
+
+class ContainerType(Model):
+    """
+    Tipo de Container
+    :atributo type: db, default
+    """
+    __tablename__ = "containertype"
+    id = Column(Integer, primary_key=True)
+    type = Column(String(32))
+
