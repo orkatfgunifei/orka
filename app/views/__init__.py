@@ -93,7 +93,7 @@ if not "User" in roles:
         Evento de primeira execução da aplicação
     """
     container_default_type = ContainerType()
-    container_default_type = "default"
+    container_default_type.type = "default"
     db_type = ContainerType()
     db_type.type = "db"
 

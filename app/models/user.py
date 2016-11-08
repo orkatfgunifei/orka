@@ -18,6 +18,8 @@ class OrkaUser(User):
 
         if self.photo:
             return url_for('static', filename=im.get_url(self.photo)[8:])
+        else:
+            return im.get_url('avatar-default.png')
 
 
     def photo_img(self):
@@ -28,7 +30,8 @@ class OrkaUser(User):
               '" alt="Photo" class="img-rounded img-responsive"></a>')
         else:
             return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="//:0" alt="Photo" class="img-responsive"></a>')
+             '" class="thumbnail"><img src="' + im.get_url('avatar-default.png') +\
+              '" alt="Photo" class="img-rounded img-responsive"></a>')
 
     def photo_img_thumbnail(self):
         im = ImageManager()
@@ -38,4 +41,5 @@ class OrkaUser(User):
               '" alt="Photo" class="img-rounded img-responsive"></a>')
         else:
             return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="//:0" alt="Photo" class="img-responsive"></a>')
+             '" class="thumbnail"><img src="' + im.get_url_thumbnail('avatar-default.png') +\
+              '" alt="Photo" class="img-rounded img-responsive"></a>')
