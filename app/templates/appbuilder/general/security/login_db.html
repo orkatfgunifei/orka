@@ -3,6 +3,9 @@
 
 {% block body %}
 <body class="hold-transition login-page">
+    {% block messages %}
+        {% include 'orka/flash.html' %}
+    {% endblock %}
     <div class="login-box"">
         <div class="login-logo">
             <a href="{{appbuilder.get_url_for_index}}"><b>Orka</b></a>
