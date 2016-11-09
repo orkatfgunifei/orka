@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-09 03:37-0200\n"
+"POT-Creation-Date: 2016-11-09 19:55-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -108,23 +108,23 @@ msgstr ""
 msgid "Registration sent to your email"
 msgstr "Registrierung an Ihre E-Mail gesendet"
 
-#: app/api/orka.py:142
+#: app/api/orka.py:143
 msgid "Node already initializated, use join instead."
 msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
 
-#: app/api/orka.py:144
+#: app/api/orka.py:145
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
 
-#: app/api/orka.py:176
+#: app/api/orka.py:177
 msgid "Please select a node for this service..."
 msgstr "Bitte wählen Sie einen Knoten für diesen Dienst..."
 
-#: app/api/orka.py:202
+#: app/api/orka.py:203
 msgid "Please create the node first."
 msgstr "Bitte erstellen Sie den Knoten zuerst."
 
-#: app/api/orka.py:206
+#: app/api/orka.py:207
 msgid "Please select an image to create the service."
 msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
 
@@ -188,22 +188,22 @@ msgstr "Wenn Sie eine Verbindung herstellen möchten, klicken Sie hier"
 msgid "Enter"
 msgstr "Enter"
 
-#: app/templates/appbuilder/general/security/login_db.html:14
+#: app/templates/appbuilder/general/security/login_db.html:17
 #: app/templates/appbuilder/general/security/login_ldap.html:16
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:19
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:16
 msgid "Enter your login and password below"
 msgstr "Geben Sie Ihren Benutzernamen und das Passwort des Benutzers"
 
-#: app/templates/appbuilder/general/security/login_db.html:17
 #: app/templates/appbuilder/general/security/login_db.html:20
+#: app/templates/appbuilder/general/security/login_db.html:23
 #: app/templates/appbuilder/general/security/login_ldap.html:18
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:21
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_ldap.html:18
 msgid "Username"
 msgstr "Benutzername"
 
-#: app/templates/appbuilder/general/security/login_db.html:22
+#: app/templates/appbuilder/general/security/login_db.html:25
 #: app/templates/appbuilder/general/security/login_ldap.html:27
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:17
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/forms.py:28
@@ -215,7 +215,7 @@ msgstr "Benutzername"
 msgid "Password"
 msgstr "Passwort"
 
-#: app/templates/appbuilder/general/security/login_db.html:31
+#: app/templates/appbuilder/general/security/login_db.html:34
 #: app/templates/appbuilder/general/security/login_oauth.html:59
 #: app/templates/appbuilder/general/security/login_oid.html:121
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/login_db.html:49
@@ -224,11 +224,11 @@ msgstr "Passwort"
 msgid "If your not already a user, please register"
 msgstr "Wenn Ihr nicht bereits einem Benutzer, bitte registrieren"
 
-#: app/templates/appbuilder/general/security/login_db.html:32
+#: app/templates/appbuilder/general/security/login_db.html:35
 msgid "Sign Up"
 msgstr "Registrieren"
 
-#: app/templates/appbuilder/general/security/login_db.html:39
+#: app/templates/appbuilder/general/security/login_db.html:42
 msgid "Log In"
 msgstr "Anmelden"
 
@@ -329,12 +329,17 @@ msgstr "Login"
 msgid "Services"
 msgstr "Services"
 
+#: app/templates/orka/dashboard.html:20 app/templates/orka/dashboard.html:57
+#: app/templates/orka/dashboard.html:95
+msgid "Empty"
+msgstr ""
+
 #: app/templates/orka/container/base.html:7
-#: app/templates/orka/dashboard.html:39
+#: app/templates/orka/dashboard.html:43
 msgid "Containers"
 msgstr "Container"
 
-#: app/templates/orka/dashboard.html:72 app/views/__init__.py:51
+#: app/templates/orka/dashboard.html:80 app/views/__init__.py:51
 msgid "Nodes"
 msgstr "Nodes"
 
@@ -453,23 +458,19 @@ msgstr "Bearbeiten"
 msgid "Index"
 msgstr "Index"
 
-#: app/views/__init__.py:43
+#: app/views/__init__.py:43 app/views/__init__.py:54
 msgid "Dashboard"
 msgstr "Armaturenbrett"
 
-#: app/views/__init__.py:47
+#: app/views/__init__.py:47 app/views/__init__.py:59
 msgid "Management"
 msgstr "Verwaltung"
 
-#: app/views/__init__.py:54
-msgid "Container"
-msgstr "Container"
-
-#: app/views/__init__.py:59 app/views/__init__.py:60
+#: app/views/__init__.py:63 app/views/__init__.py:64
 msgid "Compose"
 msgstr "Komponieren"
 
-#: app/views/__init__.py:62
+#: app/views/__init__.py:66
 msgid "Images"
 msgstr "Bilder"
 
@@ -572,13 +573,13 @@ msgstr ""
 msgid "IP Adrress"
 msgstr ""
 
-#: app/views/container.py:89 app/views/container.py:109
-#: app/views/container.py:127
+#: app/views/container.py:88 app/views/container.py:108
+#: app/views/container.py:125
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/views/container.py:96 app/views/container.py:115
-#: app/views/container.py:133
+#: app/views/container.py:96 app/views/container.py:114
+#: app/views/container.py:131
 msgid "Advanced Info"
 msgstr "Erweiterte Info"
 
@@ -1496,4 +1497,7 @@ msgstr "Kein gültiges Datetime-Wert"
 
 #~ msgid "Docker File"
 #~ msgstr "Dockerfile"
+
+#~ msgid "Container"
+#~ msgstr "Container"
 

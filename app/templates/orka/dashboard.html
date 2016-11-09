@@ -12,9 +12,13 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            {% for item in services %}
-                {{ lib.render_list_service(item) }}
-            {% endfor %}
+            {% if services %}
+                {% for item in services %}
+                    {{ lib.render_list_service(item) }}
+                {% endfor %}
+            {% else %}
+                <p align="center">{{ _('Empty') }}</p>
+            {% endif %}
         </div>
         <!-- ./box-body -->
         <div class="box-footer" style="display: block;">
@@ -45,9 +49,13 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            {% for item in containers %}
-                {{ lib.render_list_container(item) }}
-            {% endfor %}
+            {% if containers %}
+                {% for item in containers %}
+                    {{ lib.render_list_container(item) }}
+                {% endfor %}
+            {% else %}
+                <p align="center">{{ _('Empty') }}</p>
+            {% endif %}
         </div>
         <!-- ./box-body -->
         <div class="box-footer" style="display: block;">
@@ -79,9 +87,13 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            {% for item in nodes %}
-                {{ lib.render_list_node(item) }}
-            {% endfor %}
+            {% if nodes %}
+                {% for item in nodes %}
+                    {{ lib.render_list_node(item) }}
+                {% endfor %}
+            {% else %}
+                <p align="center">{{ _('Empty') }}</p>
+            {% endif %}
         </div>
 {#        <div class="box-body">#}
 {#            <div class="info-box bg-green">#}
