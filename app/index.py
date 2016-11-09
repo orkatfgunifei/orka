@@ -6,6 +6,7 @@ from models.service import Service
 from models.container import Container
 from models.node import Node
 import psutil
+from app.api.orka import inspect_container, inspect_service
 
 class IndexView(IndexView):
     index_template = 'index.html'
@@ -14,7 +15,39 @@ class IndexView(IndexView):
     def index(self):
         if g.user.is_authenticated():
             containers = self.appbuilder.session.query(Container).filter_by(created_by=g.user).all()
+
+            for container in containers:
+
+                try:
+
+                    info_container = inspect_container(container.hash_id)
+
+                    status = info_container.get('State')
+
+                    if not status['Running'] and container.status:
+                        # containers.pop(index_container)
+                        container.status = False
+                    elif status['Running'] and not container.status:
+                        container.status = True
+
+                except:
+                    container.status = False
+
             services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
+
+            for service in services:
+
+                try:
+                    info_service = inspect_service(service.service_id)
+
+                    if info_service and not service.status:
+                        service.status = True
+                except:
+                    service.status = False
+
+            if self.appbuilder.session.dirty:
+                self.appbuilder.session.commit()
+
             nodes = self.appbuilder.session.query(Node).all()
             self.update_redirect()
 

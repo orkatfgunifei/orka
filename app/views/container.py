@@ -88,6 +88,7 @@ class ContainerModelView(ModelView):
         (_('Summary'), {'fields': [
                         'name',
                         'image',
+                        'ip_url',
                         'port',
                         'status'
                                ]}),
@@ -96,7 +97,6 @@ class ContainerModelView(ModelView):
             {'fields': [
                         'type',
                         'linked',
-                        'ip',
                         'hash_id',
                         'extra_fields',
                         'domain_name',
