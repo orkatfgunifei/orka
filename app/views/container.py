@@ -16,7 +16,7 @@ class ContainerModelView(ModelView):
 
     datamodel = SQLAInterface(Container)
     route_base = '/container'
-    default_view = 'container'
+    #default_view = 'container'
 
     @expose('/dashboard')
     @has_access
@@ -83,7 +83,6 @@ class ContainerModelView(ModelView):
                     'port',
                     'status',
                     ]
-
 
     show_fieldsets = [
         (_('Summary'), {'fields': [

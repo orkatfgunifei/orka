@@ -40,20 +40,24 @@ db.create_all()
 appbuilder.add_link("Index", label=_("Index"), href='/', icon='fa-home')
 
 
-appbuilder.add_link("Dashboard", label=_('Dashboard'),
+appbuilder.add_link("DashboardService", label=_('Dashboard'),
                      category="Services", icon="fa-tachometer",
                     category_icon='fa-server', href="/service/dashboard")
 
-appbuilder.add_view(ServiceModelView, "Management", label=_("Management"),
+appbuilder.add_view(ServiceModelView, "Service", label=_("Management"),
                     category="Services", icon="fa-cubes")
 
 appbuilder.add_view(NodeModelView, "Nodes", icon='fa-sitemap',
                     label=_('Nodes'), category="Services",
                     category_icon='fa-server', category_label=_('Services'))
 
-appbuilder.add_view(ContainerModelView, "Container", label=_('Container'),
-                    icon='fa-database')
+appbuilder.add_link("DashboardContainer", label=_('Dashboard'),
+                    category="Container", icon='fa-tachometer',
+                    category_icon='fa-database', href="/container/dashboard")
 
+
+appbuilder.add_view(ContainerModelView, "Container", label=_('Management'),
+                    category="Container", icon='fa-cubes')
 
 appbuilder.add_view(BuildModelView, "Create", icon='fa-code',
                     label=_('Compose'), category="Compose",
