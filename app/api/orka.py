@@ -48,6 +48,7 @@ def inspect_container(hash_id):
 def create_container(item):
 
     ports = []
+    container = {}
 
     if item.port:
         p = item.port.split(':')
