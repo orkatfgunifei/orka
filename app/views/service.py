@@ -1,13 +1,12 @@
 #coding: utf-8
 from app.models.service import Service
 from app.models.node import Node
-from app.orka_docker import create_node
 from app.views import expose, ModelView, has_access
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 #from sqlalchemy.orm.attributes import get_history
-from app.orka_docker import (
-    create_service, remove_service, inspect_service
+from app.api.orka import (
+    create_service, remove_service, inspect_service, create_node
 )
 from flask import redirect, url_for, flash
 import docker
@@ -79,17 +78,13 @@ class ServiceModelView(ModelView):
         ], 'expanded': False})
     ]
 
-    search_fieldsets = [
-        (_('Options'), {'fields': [
-            'name',
-            'image',
-            'status',
-        ]}),
-        (_('Advanced'), {'fields': [
-            'command',
-            'node',
-            'service_id'
-        ], 'expanded': False})
+    search_columns = [
+        'name',
+        'image',
+        'status',
+        'command',
+        'node',
+        'service_id'
     ]
 
     @expose('/dashboard')

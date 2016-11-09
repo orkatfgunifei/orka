@@ -18,13 +18,13 @@ def read(fname):
 from config import APP_VERSION
 
 setup(
-    name = "orka",
-    version = APP_VERSION,
-    author = "TFG Orka Equipe",
-    author_email = "rafael@orka.odoo.com, diogo@orka.odoo.com, felipe@orka.odoo.com",
-    description = ("Plataforma de Gerenciamento de Contêineres Docker"),
-    license = "MIT",
-    keywords = "docker python flask",
+    name="orka",
+    version=APP_VERSION,
+    author="TFG Orka Equipe",
+    author_email="rafael@orka.odoo.com, diogo@orka.odoo.com, felipe@orka.odoo.com",
+    description=("Plataforma de Gerenciamento de Contêineres Docker"),
+    license="MIT",
+    keywords="docker python flask",
     packages=find_packages(),
     include_package_data=True,
     long_description=read('README.md'),

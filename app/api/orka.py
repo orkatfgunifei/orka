@@ -2,7 +2,7 @@
 from docker import Client
 from io import BytesIO
 import docker
-
+from app.api.urubu import Urubu
 from app.models.node import Node
 from app.models.container import Container
 from app.models.image import Image
@@ -11,17 +11,20 @@ from flask.ext.babel import lazy_gettext as _
 
 # ~~ Instância do Cliente Docker ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cli = Client(base_url='unix://var/run/docker.sock')
+urubu = Urubu()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-def read_log(object_id, type, appbuilder):
+
+def read_log(object_id, log_type, appbuilder):
     """
-    Retorna o log de um Container ou
-    Imagem
-    :param hash_id: Hash de identificação
-    :return: String com log
+        Retorna o log de um Container ou Imagem
+    :param object_id: Hash de identificação
+    :param log_type: Tipo do objeto container ou imagem
+    :param appbuilder: objeto que contem session para uso do db
+    :return:
     """
     if object_id:
-        if type == "container":
+        if log_type == "container":
             container = appbuilder.session.query(Container).get(int(object_id))
             hash_id = container.hash_id
             logs = cli.logs(hash_id)
@@ -32,7 +35,6 @@ def read_log(object_id, type, appbuilder):
                 linhas[linhas.index(linha)] = linha.replace('\"-\"', "").replace('\"', '')
 
             return linhas
-
 
 
 def rename_container(old_name, new_name):
@@ -59,22 +61,51 @@ def create_container(item):
     else:
         image = False
 
-    return cli.create_container(
-        name=item.name or None,
-        ports=ports or None,
-        image=image or None
-    )
+    if not item.linked and not item.extra_fields:
+        container = cli.create_container(
+            name=item.name or None,
+            ports=ports or None,
+            image=image or None
+        )
+    else:
+        resp = urubu.run(item)
 
+        if resp[0]:
+            container = {'Id': resp[1].rstrip(), 'urubu': True}
+
+    inspect = cli.inspect_container(container.get('Id'))
+
+    if inspect['State']['Status'] == 'running':
+        container.update({
+            'running': True
+        })
+
+    if inspect.get('NetworkSettings'):
+        ip_address = inspect['NetworkSettings']['Networks']['bridge']['IPAddress']
+
+        container.update({
+            'ip_address': ip_address
+        })
+
+    return container
 
 def remove_container(hash_id):
-    return cli.remove_container(hash_id)
+    try:
+        return cli.remove_container(hash_id)
+    except:
+        return "removed db only"
 
 
 def status_container(status, hash_id):
-    if status:
-        cli.start(hash_id)
-    else:
-        cli.stop(hash_id)
+    try:
+        if status:
+            cli.start(
+                container=hash_id,
+            )
+        else:
+            cli.stop(hash_id)
+    except:
+        print "container not exists"
 
 
 def build(item):
@@ -127,7 +158,7 @@ def image_remove(name, version):
     return cli.remove_image("%s:%s" % (name, version))
 
 
-def create_service(item, appbuilder=False):
+def create_service(item):
 
     if item.image:
 

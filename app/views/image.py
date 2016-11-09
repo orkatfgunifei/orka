@@ -3,7 +3,7 @@ import json
 from flask.ext.appbuilder.widgets import ListThumbnail
 from flask.ext.appbuilder import ModelView
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from app.orka_docker import image_pull, image_remove
+from app.api.orka import image_pull, image_remove
 from app.models.image import Image
 from container import ContainerModelView, _
 from service import ServiceModelView
@@ -31,7 +31,8 @@ class ImageModelView(ModelView):
                      'version': _('Version'),
                      'digest': _('Digest'),
                      'photo': _('Logo'),
-                     'photo_img_thumbnail': _('Image')
+                     'photo_img_thumbnail': _('Logo'),
+                     'photo_img': _('Logo')
                      }
 
     list_columns = ['name', 'version', 'photo_img_thumbnail']
@@ -61,13 +62,7 @@ class ImageModelView(ModelView):
                                ]}),
     ]
 
-    search_fieldsets = [
-        (_('Options'), {'fields': [
-                        'name',
-                        'version',
-                        'digest'
-                               ]}),
-    ]
+    search_columns = ['name', 'version', 'digest']
 
     base_order = ('name', 'asc')
 

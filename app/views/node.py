@@ -5,7 +5,7 @@ from flask import flash
 from app.models.node import Node
 from app.views import _
 from service import ServiceModelView
-from app.orka_docker import create_node, remove_node
+from app.api.orka import create_node, remove_node
 
 class NodeModelView(ModelView):
 
@@ -82,20 +82,16 @@ class NodeModelView(ModelView):
         ], 'expanded': False})
     ]
 
-    search_fieldsets = [
-        (_('Options'), {'fields': [
-                        'name',
-                        'advertise_addr',
-                        'listen_addr',
-                        'listen_port'
-                               ]}),
-        (_('Advanced'), {'fields': [
-            'join_token',
-            'snapshot_interval',
-            'log_entries_for_slow_followers',
-            'remote_addr',
-            'remote_port',
-        ]})
+    search_columns = [
+        'name',
+        'advertise_addr',
+        'listen_addr',
+        'listen_port',
+        'join_token',
+        'snapshot_interval',
+        'log_entries_for_slow_followers',
+        'remote_addr',
+        'remote_port',
     ]
 
     def pre_add(self, item):

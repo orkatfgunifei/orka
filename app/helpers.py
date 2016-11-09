@@ -1,7 +1,7 @@
 #coding: utf-8
 import requests
 from flask.ext.babel import lazy_gettext as _
-from orka_docker import read_log
+from api.orka import read_log
 
 route_labels = {
     'list': _('list'),

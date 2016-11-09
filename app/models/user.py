@@ -11,7 +11,7 @@ from app.models import (
 
 class OrkaUser(User):
 
-    photo = Column(ImageColumn(size=(300, 300, True), thumbnail_size=(30, 30, True)))
+    photo = Column(ImageColumn(size=(300, 300, True), thumbnail_size=(150, 150, True)))
 
     def photo_url(self):
         im = ImageManager()
@@ -21,25 +21,28 @@ class OrkaUser(User):
         else:
             return im.get_url('avatar-default.png')
 
-
     def photo_img(self):
         im = ImageManager()
         if self.photo:
-            return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="' + im.get_url(self.photo) +\
-              '" alt="Photo" class="img-rounded img-responsive"></a>')
+            return Markup(
+                '<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
+                '" class="thumbnail"><img src="' + im.get_url(self.photo) +\
+                '" alt="Photo" class="profile-user-img img-responsive img-circle"></a>')
         else:
-            return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="' + im.get_url('avatar-default.png') +\
-              '" alt="Photo" class="img-rounded img-responsive"></a>')
+            return Markup(
+                '<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
+                '" class="thumbnail"><img src="' + im.get_url('avatar-default.png') +\
+                '" alt="Photo" class="profile-user-img img-responsive img-circle"></a>')
 
     def photo_img_thumbnail(self):
         im = ImageManager()
         if self.photo:
-            return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="' + im.get_url_thumbnail(self.photo) +\
-              '" alt="Photo" class="img-rounded img-responsive"></a>')
+            return Markup(
+                '<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
+                '" class="thumbnail"><img src="' + im.get_url_thumbnail(self.photo) +\
+                '" alt="Photo" class="profile-user-img img-responsive img-circle"></a>')
         else:
-            return Markup('<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
-             '" class="thumbnail"><img src="' + im.get_url_thumbnail('avatar-default.png') +\
-              '" alt="Photo" class="img-rounded img-responsive"></a>')
+            return Markup(
+                '<a href="' + url_for('OrkaUserDBModelView.show',pk=str(self.id)) +\
+                '" class="thumbnail"><img src="' + im.get_url_thumbnail('avatar-default.png') +\
+                '" alt="Photo" class="profile-user-img img-responsive img-circle"></a>')

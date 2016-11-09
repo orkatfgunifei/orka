@@ -5,7 +5,7 @@ from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from app.models.build import Build
 from flask.ext.babel import lazy_gettext as _
 from app.models.image import Image
-from app.orka_docker import build
+from app.api.orka import build
 
 class BuildModelView(ModelView):
     # TODO: Upload DockerFile
@@ -48,11 +48,7 @@ class BuildModelView(ModelView):
                         'docker_file']}),
     ]
 
-    search_fieldsets = [
-        (_('Options'), {'fields': [
-                        'name',
-                        'docker_file']}),
-    ]
+    search_columns = ['name', 'docker_file']
 
 
     def pre_add(self, item):

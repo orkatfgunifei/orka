@@ -1,15 +1,17 @@
 #coding: utf-8
 from flask.ext.appbuilder.models.mixins import AuditMixin
 from . import Model, Column, Integer,\
-    String, relationship, Text, ForeignKey, Boolean
-
+    String, relationship, Text, ForeignKey,\
+    Boolean
+from flask.ext.babel import lazy_gettext as _
+from flask import Markup
 
 class Container(AuditMixin, Model):
 
     __tablename__ = "container"
     id = Column(Integer, primary_key=True)
     name = Column(String(150))
-    hash_id = Column(String(64))
+    hash_id = Column(String(256))
     ip = Column(String(16))
     port = Column(String(64))
     domain_name = Column(String(64))
@@ -20,6 +22,17 @@ class Container(AuditMixin, Model):
     status = Column(Boolean, default=False)
     type_id = Column(Integer, ForeignKey('containertype.id'))
     type = relationship("ContainerType")
+    linked_id = Column(Integer, ForeignKey('container.id'), index=True)
+    linked = relationship(lambda: Container, remote_side=id, backref='db_container')
+    extra_fields = Column(String(256))
+
+    def ip_url(self):
+
+        if self.ip:
+            return Markup(
+                '<a target="_blank" href="http://' + self.ip + '">' + self.ip + '</a>')
+        else:
+            return Markup(_('No IP'))
 
     def __repr__(self):
         return self.name
@@ -34,3 +47,10 @@ class ContainerType(Model):
     id = Column(Integer, primary_key=True)
     type = Column(String(32))
 
+    types_i18n = {
+        'default': _('Default'),
+        'db': _('Database')
+    }
+
+    def __repr__(self):
+        return str(self.types_i18n.get(str(self.type)))

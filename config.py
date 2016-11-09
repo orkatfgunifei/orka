@@ -24,7 +24,7 @@ CSRF_ENABLED = True
 #------------------------------
 APP_NAME = "Orka"
 
-APP_VERSION = "0.3.7"
+APP_VERSION = "1.0.0"
 
 if RUN_MODE != "PROD":
     APP_NAME += " [%s]" % RUN_MODE

@@ -3,7 +3,7 @@ from flask import g, redirect, url_for, request
 from flask.ext.appbuilder import ModelView, expose, has_access
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
-from app.orka_docker import (
+from app.api.orka import (
     create_container, remove_container, status_container,
     inspect_container, rename_container
 )
@@ -70,11 +70,16 @@ class ContainerModelView(ModelView):
                      'cpu_reserved': _('CPU Reserved'),
                      'storage_reserved': _('Storage Reserved'),
                      'status': _('Status'),
-                     'type': _('Type')
+                     'type': _('Type'),
+                     'linked': _('Linked'),
+                     'extra_fields': _('Parameters'),
+                     'ip': _('IP'),
+                     'ip_url': _('IP Adrress')
                      }
 
     list_columns = ['name',
                     'image',
+                    'ip_url',
                     'port',
                     'status',
                     ]
@@ -91,7 +96,10 @@ class ContainerModelView(ModelView):
             _('Advanced Info'),
             {'fields': [
                         'type',
+                        'linked',
+                        'ip',
                         'hash_id',
+                        'extra_fields',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': False}),
@@ -107,6 +115,8 @@ class ContainerModelView(ModelView):
             _('Advanced Info'),
             {'fields': [
                         'type',
+                        'linked',
+                        'extra_fields',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': True}),
@@ -122,28 +132,29 @@ class ContainerModelView(ModelView):
             _('Advanced Info'),
             {'fields': [
                         'type',
+                        'linked',
+                        'ip',
                         'hash_id',
+                        #'extra_fields',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': False}),
     ]
 
-    search_fieldsets = [
-        (_('Summary'), {'fields': [
-                        'name',
-                        'image',
-                        'port',
-                        'status'
-                               ]}),
-        (
-            _('Advanced Info'),
-            {'fields': [
-                        'type',
-                        'hash_id',
-                        'domain_name',
-                        'cpu_reserved',
-                        'storage_reserved'], 'expanded': False}),
+    search_columns = [
+        'name',
+        'image',
+        'ip',
+        'port',
+        'status',
+        'type',
+        'hash_id',
+        'domain_name',
+        'cpu_reserved',
+        'storage_reserved',
+        'linked'
     ]
+
 
 
     def pre_add(self, item):
@@ -162,14 +173,16 @@ class ContainerModelView(ModelView):
 
             if not container.get('Id'):
                 raise RuntimeError("Não foi possível criar o container [%s]" % (item.name))
-            else:
-
+            elif container.get('urubu'):
                 item.hash_id = container.get('Id')
-
+                item.status = container.get('running')
+            else:
+                item.hash_id = container.get('Id')
                 status_container(True, item.hash_id)
                 item.status = True
 
-
+            if container.get('ip_address'):
+                item.ip = container.get('ip_address')
 
     def pre_delete(self, item):
         """

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-25 00:37-0200\n"
+"POT-Creation-Date: 2016-11-09 03:37-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -70,14 +70,6 @@ msgstr "informationen"
 msgid "home"
 msgstr "startseite"
 
-#: app/orka_docker.py:25
-msgid "Node already initializated, use join instead."
-msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
-
-#: app/orka_docker.py:27
-msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
-msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
-
 #: app/security.py:14 app/security.py:24
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
@@ -95,26 +87,58 @@ msgstr "Persönliche Info"
 msgid "Audit Info"
 msgstr "Audit Info"
 
-#: app/security.py:36
+#: app/security.py:38
 msgid "Your Account activation"
 msgstr "Ihr Konto Aktivierung"
 
-#: app/security.py:38
+#: app/security.py:40
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
 msgstr "Füllen Sie das Anmeldeformular aus"
 
-#: app/security.py:39
+#: app/security.py:41
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
 msgstr ""
 "Nicht möglich, dass Sie im Moment zu registrieren, versuchen Sie es "
 "später noch einmal"
 
-#: app/security.py:40
+#: app/security.py:42
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
 msgstr "Registrierung an Ihre E-Mail gesendet"
+
+#: app/api/orka.py:142
+msgid "Node already initializated, use join instead."
+msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
+
+#: app/api/orka.py:144
+msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
+msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
+
+#: app/api/orka.py:176
+msgid "Please select a node for this service..."
+msgstr "Bitte wählen Sie einen Knoten für diesen Dienst..."
+
+#: app/api/orka.py:202
+msgid "Please create the node first."
+msgstr "Bitte erstellen Sie den Knoten zuerst."
+
+#: app/api/orka.py:206
+msgid "Please select an image to create the service."
+msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
+
+#: app/models/container.py:35
+msgid "No IP"
+msgstr ""
+
+#: app/models/container.py:51
+msgid "Default"
+msgstr ""
+
+#: app/models/container.py:52
+msgid "Database"
+msgstr ""
 
 #: app/templates/404.html:4
 msgid "Page not found"
@@ -138,6 +162,11 @@ msgstr "Suchen"
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/charts/chart_time.html:17
 msgid "Group by fields"
 msgstr "Gruppe von Feldern"
+
+#: app/templates/appbuilder/general/model/edit.html:36
+#: app/templates/appbuilder/general/model/show.html:37
+msgid "Logs"
+msgstr ""
 
 #: app/templates/appbuilder/general/security/activation.html:5
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
@@ -285,6 +314,10 @@ msgstr "Profil"
 msgid "Logout"
 msgstr "Logout"
 
+#: app/templates/orka/baselayout.html:127
+msgid "Home"
+msgstr ""
+
 #: app/templates/orka/baselib.html:122 app/templates/orka/landing.html:36
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:43
@@ -305,7 +338,7 @@ msgstr "Container"
 msgid "Nodes"
 msgstr "Nodes"
 
-#: app/templates/orka/footer.html:3 app/views/image.py:29
+#: app/templates/orka/footer.html:3 app/views/image.py:31
 msgid "Version"
 msgstr "Version"
 
@@ -316,6 +349,10 @@ msgstr "Orka Entwicklerteam"
 #: app/templates/orka/footer.html:5
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
+
+#: app/templates/orka/landing.html:47
+msgid "Server Platform Management with Containers"
+msgstr ""
 
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
@@ -436,116 +473,138 @@ msgstr "Komponieren"
 msgid "Images"
 msgstr "Bilder"
 
-#: app/views/build.py:19
+#: app/views/build.py:18
 msgid "List Build"
 msgstr "Liste erstellen"
 
-#: app/views/build.py:21
+#: app/views/build.py:20
 msgid "Show Build"
 msgstr "Anzeigen Build"
 
-#: app/views/build.py:23
+#: app/views/build.py:22
 msgid "Add Build"
 msgstr "Erstellen Sie Build"
 
-#: app/views/build.py:25
+#: app/views/build.py:24
 msgid "Edit Build"
 msgstr "Bearbeiten Erstellen"
 
-#: app/views/build.py:27 app/views/container.py:62 app/views/image.py:28
-#: app/views/node.py:26 app/views/service.py:28
+#: app/views/build.py:26 app/views/container.py:65 app/views/image.py:30
+#: app/views/node.py:26 app/views/service.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:325
 msgid "Name"
 msgstr "Name"
 
-#: app/views/build.py:28
+#: app/views/build.py:27
 msgid "Dockerfile"
 msgstr "Dockerfile"
 
-#: app/views/build.py:34 app/views/build.py:40 app/views/build.py:47
-#: app/views/build.py:53 app/views/image.py:36 app/views/image.py:44
-#: app/views/image.py:51 app/views/image.py:58 app/views/node.py:40
-#: app/views/node.py:56 app/views/node.py:71 app/views/node.py:86
-#: app/views/service.py:44 app/views/service.py:57 app/views/service.py:68
-#: app/views/service.py:81
+#: app/views/build.py:33 app/views/build.py:39 app/views/build.py:46
+#: app/views/image.py:41 app/views/image.py:50 app/views/image.py:58
+#: app/views/node.py:40 app/views/node.py:56 app/views/node.py:71
+#: app/views/service.py:45 app/views/service.py:58 app/views/service.py:69
 msgid "Options"
 msgstr "Einstellungen"
 
-#: app/views/container.py:54
+#: app/views/container.py:57
 msgid "List Container"
 msgstr "Liste Container"
 
-#: app/views/container.py:56
+#: app/views/container.py:59
 msgid "Show Container"
 msgstr "Zeige Container"
 
-#: app/views/container.py:58
+#: app/views/container.py:61
 msgid "Add Container"
 msgstr "Hinzufügen Container"
 
-#: app/views/container.py:60
+#: app/views/container.py:63
 msgid "Edit Container"
 msgstr "Container bearbeiten"
 
-#: app/views/container.py:63 app/views/service.py:29
+#: app/views/container.py:66 app/views/service.py:30
 msgid "Image"
 msgstr "Bild"
 
-#: app/views/container.py:64
+#: app/views/container.py:67
 msgid "Port"
 msgstr "Port"
 
-#: app/views/container.py:65
+#: app/views/container.py:68
 msgid "ID Container"
 msgstr "ID Container"
 
-#: app/views/container.py:66
+#: app/views/container.py:69
 msgid "Domain Name"
 msgstr "Domain-Name"
 
-#: app/views/container.py:67
+#: app/views/container.py:70
 msgid "CPU Reserved"
 msgstr "CPU Reserviert"
 
-#: app/views/container.py:68
+#: app/views/container.py:71
 msgid "Storage Reserved"
 msgstr "Storage Reserviert"
 
-#: app/views/container.py:69 app/views/service.py:32
+#: app/views/container.py:72 app/views/service.py:33
 msgid "Status"
 msgstr "Status"
 
-#: app/views/container.py:80 app/views/container.py:96
-#: app/views/container.py:110 app/views/container.py:125
+#: app/views/container.py:73
+msgid "Type"
+msgstr ""
+
+#: app/views/container.py:74
+msgid "Linked"
+msgstr ""
+
+#: app/views/container.py:75
+msgid "Parameters"
+msgstr ""
+
+#: app/views/container.py:76
+msgid "IP"
+msgstr ""
+
+#: app/views/container.py:77
+msgid "IP Adrress"
+msgstr ""
+
+#: app/views/container.py:89 app/views/container.py:109
+#: app/views/container.py:127
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/views/container.py:87 app/views/container.py:102
-#: app/views/container.py:116 app/views/container.py:132
+#: app/views/container.py:96 app/views/container.py:115
+#: app/views/container.py:133
 msgid "Advanced Info"
 msgstr "Erweiterte Info"
 
-#: app/views/image.py:20
+#: app/views/image.py:22
 msgid "List Image"
 msgstr "Liste Bild"
 
-#: app/views/image.py:22
+#: app/views/image.py:24
 msgid "Show Image"
 msgstr "Bild anzeigen"
 
-#: app/views/image.py:24
+#: app/views/image.py:26
 msgid "Add Image"
 msgstr "Hinzufügen Bild"
 
-#: app/views/image.py:26
+#: app/views/image.py:28
 msgid "Edit Image"
 msgstr "Bild bearbeiten"
 
-#: app/views/image.py:30
+#: app/views/image.py:32
 msgid "Digest"
 msgstr "Digest"
+
+#: app/views/image.py:33 app/views/image.py:34 app/views/image.py:35
+msgid "Logo"
+msgstr ""
 
 #: app/views/node.py:16
 msgid "List Node"
@@ -596,50 +655,37 @@ msgid "Logs Slow Followers"
 msgstr "Langsame Verfolger protokollieren"
 
 #: app/views/node.py:46 app/views/node.py:62 app/views/node.py:77
-#: app/views/node.py:92 app/views/service.py:49 app/views/service.py:61
-#: app/views/service.py:73 app/views/service.py:86
+#: app/views/service.py:50 app/views/service.py:62 app/views/service.py:74
 msgid "Advanced"
 msgstr "Fortgeschritten"
 
-#: app/views/service.py:20
+#: app/views/service.py:21
 msgid "List Service"
 msgstr "Liste Service"
 
-#: app/views/service.py:22
+#: app/views/service.py:23
 msgid "Show Service"
 msgstr "Service anzeigen"
 
-#: app/views/service.py:24
+#: app/views/service.py:25
 msgid "Add Service"
 msgstr "Service hinzufügen"
 
-#: app/views/service.py:26
+#: app/views/service.py:27
 msgid "Edit Service"
 msgstr "Service bearbeiten"
 
-#: app/views/service.py:30
+#: app/views/service.py:31
 msgid "Node"
 msgstr "Node"
 
-#: app/views/service.py:31
+#: app/views/service.py:32
 msgid "Command"
 msgstr "Befehl"
 
-#: app/views/service.py:33
+#: app/views/service.py:34
 msgid "ID Service"
 msgstr "ID Service"
-
-#: app/views/service.py:144
-msgid "Please select a node for this service..."
-msgstr "Bitte wählen Sie einen Knoten für diesen Dienst..."
-
-#: app/views/service.py:170
-msgid "Please create the node first."
-msgstr "Bitte erstellen Sie den Knoten zuerst."
-
-#: app/views/service.py:174
-msgid "Please select an image to create the service."
-msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/const.py:109
 msgid "Access is Denied"
