@@ -386,8 +386,11 @@
 
 {% macro render_list_container(item) %}
     <div class="info-box bg-aqua">
-        <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
-
+        {% if not item.ip or not item.status %}
+            <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+        {% else %}
+            <span class="info-box-icon"><a target="_blank" href="http://{{ item.ip }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+        {% endif %}
         <div class="info-box-content">
             <span class="info-box-text">{{ item.name }}</span>
             <span class="info-box-number">{{ item.image.name }}</span>
