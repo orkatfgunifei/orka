@@ -45,7 +45,7 @@ class Urubu(object):
         resp = self.execute(command)
 
         if resp != "":
-            return  True, resp
+            return True, resp
         else:
             return False, resp
 
