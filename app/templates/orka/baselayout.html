@@ -83,21 +83,7 @@
                                             <small>{{ _('Member since') }} {{ g.user.created_on.strftime('%d/%m/%Y') }}</small>
                                         </p>
                                     </li>
-                                    <!-- Menu Body -->
-                                    {# TODO: Conteudo abaixo do perfil do usuário... #}
-                                    {# -- Caso queira inserir Links abaixo do poup-up do perfil (foto) -- #}
-                                    {#                    <li class="user-body">#}
-                                    {#                        <div class="row">#}
-                                    {#                            <div class="col-xs-6 text-center">#}
-                                    {#                                <a href="{{appbuilder.get_url_for_userinfo}}">{{_("Profile")}}</a>#}
-                                    {#                            </div>#}
-                                    {#                            <div class="col-xs-6 text-center">#}
-                                    {#                                <a href="{{appbuilder.get_url_for_logout}}">{{_("Logout")}}</a>#}
-                                    {#                            </div>#}
-                                    {#                        </div>#}
-                                    {#                        <!-- /.row -->#}
-                                    {#                    </li>#}
-                                    <!-- Menu Footer-->
+
                                     <li class="user-footer">
                                         <div class="pull-left">
                                             <a href="{{appbuilder.get_url_for_userinfo}}" class="btn btn-default btn-flat">{{_("Profile")}}</a>

@@ -37,8 +37,13 @@ class ContainerModelView(ModelView):
                 if not status['Running'] and container.status:
                     #containers.pop(index_container)
                     container.status = False
+                    container.ip = None
                 elif status['Running'] and not container.status:
                     container.status = True
+
+                    if info_container.get('NetworkSettings'):
+                        ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                        container.ip = ip_address
 
             except:
                 container.status = False
@@ -217,10 +222,20 @@ class ContainerModelView(ModelView):
         status = get_history(container, 'status')
 
         if not len(status.unchanged) > 0:
+            action = bool(status.added[0])
 
-            status_container(bool(status.added[0]), item.hash_id)
+            status_container(action, item.hash_id)
 
+            if not action:
+                container.ip = None
+            else:
+                info_container = inspect_container(container.hash_id)
 
+                if info_container.get('NetworkSettings'):
+                    ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                    container.ip = ip_address
 
+            if self.appbuilder.session.dirty:
+                self.appbuilder.session.commit()
 
 

@@ -83,8 +83,13 @@ class IndexView(IndexView):
                 if not status['Running'] and container.status:
                     # containers.pop(index_container)
                     container.status = False
+                    container.ip = False
                 elif status['Running'] and not container.status:
                     container.status = True
+
+                    if info_container.get('NetworkSettings'):
+                        ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                        container.ip = ip_address
 
             except:
                 container.status = False

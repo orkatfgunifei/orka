@@ -50,19 +50,20 @@ def create_container(item):
     ports = []
     container = {}
 
-    if item.port:
-        p = item.port.split(':')
-        ports = [int(porta) for porta in p]
-
-    if item.image.name:
-        if not item.image.version:
-            item.image.version = "latest"
-
-        image = "%s:%s" % (item.image.name, item.image.version)
-    else:
-        image = False
-
     if not item.linked and not item.extra_fields:
+
+        if item.port:
+            p = item.port.split(':')
+            ports = [int(porta) for porta in p]
+
+        if item.image.name:
+            if not item.image.version:
+                item.image.version = "latest"
+
+            image = "%s:%s" % (item.image.name, item.image.version)
+        else:
+            image = False
+
         container = cli.create_container(
             name=item.name or None,
             ports=ports or None,

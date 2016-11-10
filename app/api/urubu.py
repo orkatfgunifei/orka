@@ -26,7 +26,21 @@ class Urubu(object):
             command += "--name %s " % item.name
 
         if item.port:
-            command += "-p %s:%s " % (item.port, item.port)
+            """
+            Port Format:
+            host_port_1:container_port_1, ... , host_port_n:container_port_n
+
+            or in case of redirect port just: port_number
+            """
+            ports = item.port.split(',')
+
+            for port in ports:
+                p = port.split(":")
+
+                if len(p) > 1:
+                    command += "-p %s " % port
+                elif len(p) == 1:
+                    command += "-p %s:%s " % (port, port)
 
         if item.linked:
             self.start(item.linked.name)

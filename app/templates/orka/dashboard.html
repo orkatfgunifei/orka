@@ -3,18 +3,18 @@
 {% if not current_user.is_anonymous() %}
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">{{ _('Services') }}</h3>
+            <h3 class="box-title">{{ _('Containers') }}</h3>
 
             <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class=" ion-chevron-down"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="ion-chevron-down"></i>
                 </button>
             </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            {% if services %}
-                {% for item in services %}
-                    {{ lib.render_list_service(item) }}
+            {% if containers %}
+                {% for item in containers %}
+                    {{ lib.render_list_container(item) }}
                 {% endfor %}
             {% else %}
                 <p align="center">{{ _('Empty') }}</p>
@@ -40,18 +40,18 @@
     </div>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">{{ _('Containers') }}</h3>
+            <h3 class="box-title">{{ _('Services') }}</h3>
 
             <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="ion-chevron-down"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class=" ion-chevron-down"></i>
                 </button>
             </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            {% if containers %}
-                {% for item in containers %}
-                    {{ lib.render_list_container(item) }}
+            {% if services %}
+                {% for item in services %}
+                    {{ lib.render_list_service(item) }}
                 {% endfor %}
             {% else %}
                 <p align="center">{{ _('Empty') }}</p>
