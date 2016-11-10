@@ -70,7 +70,8 @@ class IndexView(IndexView):
         if not data:
             containers = self.appbuilder.session.query(Container).filter_by(created_by=g.user).all()
         else:
-            containers = self.appbuilder.session.query(Container).filter_by(name=data).all()
+
+            containers = self.appbuilder.session.query(Container).filter(Container.name.like("%" + data + "%")).all()
 
         for container in containers:
 
@@ -97,7 +98,7 @@ class IndexView(IndexView):
         if not data:
             services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
         else:
-            services = self.appbuilder.session.query(Service).filter_by(name=data).all()
+            services = self.appbuilder.session.query(Service).filter(Service.name.like("%" + data + "%")).all()
 
         for service in services:
 
@@ -115,7 +116,7 @@ class IndexView(IndexView):
         if not data:
             nodes = self.appbuilder.session.query(Node).all()
         else:
-            nodes = self.appbuilder.session.query(Node).filter_by(name=data).all()
+            nodes = self.appbuilder.session.query(Node).filter(Node.name.like("%" + data + "%")).all()
 
         self.update_redirect()
 
