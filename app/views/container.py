@@ -187,6 +187,20 @@ class ContainerModelView(ModelView):
 
             if container.get('ip_address'):
                 item.ip = container.get('ip_address')
+            else:
+                inspect = inspect_container(container.get('Id'))
+
+                try:
+                    if inspect['State']['Status'] == 'running':
+                        item.status = True
+
+                    if inspect.get('NetworkSettings'):
+                        ip_address = inspect['NetworkSettings']['Networks']['bridge']['IPAddress']
+
+                        item.ip = ip_address
+                except:
+                    item.ip = None
+                    item.status = False
 
     def pre_delete(self, item):
         """
@@ -227,8 +241,14 @@ class ContainerModelView(ModelView):
             status_container(action, item.hash_id)
 
             if not action:
+                """
+                Ação Desligar Container
+                """
                 container.ip = None
             else:
+                """
+                Ação Ligar Container
+                """
                 info_container = inspect_container(container.hash_id)
 
                 if info_container.get('NetworkSettings'):

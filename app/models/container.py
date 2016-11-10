@@ -29,8 +29,22 @@ class Container(AuditMixin, Model):
     def ip_url(self):
 
         if self.ip:
-            return Markup(
-                '<a target="_blank" href="http://' + self.ip + '">' + self.ip + '</a>')
+
+            if self.port:
+                port = ""
+                ports_list = self.port.split(',')
+                ports = ports_list[0].split(':')
+
+                if len (ports) == 2:
+                    port = ports[1]
+                elif len(ports) == 1:
+                    port = ports[0]
+
+                return Markup(
+                    '<a target="_blank" href="http://' + self.ip + ':' + port + '">' + self.ip + '</a>')
+            else:
+                return Markup(
+                    '<a target="_blank" href="http://' + self.ip + '">' + self.ip + '</a>')
         else:
             return Markup(_('No IP'))
 
