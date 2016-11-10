@@ -33,6 +33,9 @@ class IndexView(IndexView):
                 except:
                     container.status = False
 
+            if self.appbuilder.session.dirty:
+                self.appbuilder.session.commit()
+
             services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
 
             for service in services:

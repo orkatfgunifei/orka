@@ -26,7 +26,7 @@ class Container(AuditMixin, Model):
     linked = relationship(lambda: Container, remote_side=id, backref='db_container')
     extra_fields = Column(String(256))
 
-    def ip_url(self):
+    def port_match(self):
 
         if self.ip:
 
@@ -40,6 +40,23 @@ class Container(AuditMixin, Model):
                 elif len(ports) == 1:
                     port = ports[0]
 
+                return port
+
+    def ip_url_port(self):
+
+        if self.ip:
+            port = self.port_match()
+
+            if port:
+                return "%s:%s" % (self.ip, port)
+
+    def ip_url(self):
+
+        if self.ip:
+
+            port = self.port_match()
+
+            if port:
                 return Markup(
                     '<a target="_blank" href="http://' + self.ip + ':' + port + '">' + self.ip + '</a>')
             else:
