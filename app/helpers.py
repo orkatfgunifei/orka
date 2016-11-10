@@ -2,6 +2,7 @@
 import requests
 from flask.ext.babel import lazy_gettext as _
 from api.orka import read_log
+from datetime import datetime
 
 route_labels = {
     'list': _('list'),
@@ -77,3 +78,11 @@ def url_agora(current_request):
 def ler_logs(object_id, type, appbuilder):
 
     return read_log(object_id, type, appbuilder)
+
+
+def tempo_agora(tipo):
+    agora = datetime.now()
+
+    if tipo == "ano":
+
+        return agora.year

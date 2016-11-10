@@ -7,7 +7,7 @@ from flask import (
 from flask.ext.appbuilder import SQLA, AppBuilder
 from index import IndexView
 from security import OrkaSecurityManager
-from helpers import url_agora, ler_logs
+from helpers import url_agora, ler_logs, tempo_agora
 
 # -- WSGI Gunicorn Server ProxyFix ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from werkzeug.contrib.fixers import ProxyFix
@@ -51,7 +51,8 @@ def utility_processor():
 
     helpers = {
         'url_agora': url_agora,
-        'ler_logs': ler_logs
+        'ler_logs': ler_logs,
+        'tempo_agora': tempo_agora
     }
     return helpers
 # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
