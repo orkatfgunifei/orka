@@ -1,7 +1,24 @@
 {% extends "orka/base.html" %}
 
 {% block content %}
-<h2><center>{{_('Page not found')}}<center></h2>
+    <section class="content">
+        <div class="error-page">
+            <div class="error-content" >
+                {% if not current_user.is_anonymous() %}
+{#                    Erro 404 com usuário logado#}
+                    <h2><i class="fa fa-warning text-yellow"></i> Oops! {{_('Page not found.')}}</h2>
+                {% else %}
+{#                    Erro 404 usuário não logado#}
+                    <h2><i class="fa fa-warning text-yellow"></i> <span style="color:#d7e0e2">Oops! {{_('Page not found.')}}</span></h2>
+                    <p align="center">
+                        <form action="/">
+                            <input class="btn btn-block btn-info btn-flat" type="submit" value="{{ _('Back') }}" />
+                        </form>
+                    </p>
+                {%  endif %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 
