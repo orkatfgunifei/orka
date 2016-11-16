@@ -29,6 +29,12 @@ class ContainerModelView(ModelView):
 
         host_containers = list_containers(list_all=True)
 
+        for host_container in host_containers:
+            if host_container.get('CONTAINER ID') == 'CONTAINER ID':
+                host_containers.pop(host_containers.index(host_container))
+            if not host_container.get('NAMES'):
+                host_containers.pop(host_containers.index(host_container))
+
         in_host = False
 
 
@@ -36,10 +42,6 @@ class ContainerModelView(ModelView):
 
             try:
                 for host_container in host_containers:
-                    if host_container.get('CONTAINER ID') == 'CONTAINER ID':
-                        host_containers.pop(host_containers.index(host_container))
-                    if not host_container.get('NAMES'):
-                        host_containers.pop(host_containers.index(host_container))
                     if host_container.get('CONTAINER ID') in container.hash_id:
                         host_containers.pop(host_containers.index(host_container))
                         in_host = True
