@@ -37,7 +37,6 @@ class ContainerModelView(ModelView):
 
         in_host = False
 
-
         for container in containers:
 
             try:

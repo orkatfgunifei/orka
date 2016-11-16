@@ -6,7 +6,10 @@ from models.service import Service
 from models.container import Container
 from models.node import Node
 import psutil
-from app.api.orka import inspect_container, inspect_service
+from app.api.orka import (
+    inspect_container, inspect_service,
+    list_containers, create_object
+)
 
 class IndexView(IndexView):
     index_template = 'index.html'
@@ -14,24 +17,83 @@ class IndexView(IndexView):
     @expose('/')
     def index(self):
         if g.user.is_authenticated():
-            containers = self.appbuilder.session.query(Container).filter_by(created_by=g.user).all()
+
+            containers = self.appbuilder.session.query(Container).all()
+
+            host_containers = list_containers(list_all=True)
+
+            for host_container in host_containers:
+                if host_container.get('CONTAINER ID') == 'CONTAINER ID':
+                    host_containers.pop(host_containers.index(host_container))
+                if not host_container.get('NAMES'):
+                    host_containers.pop(host_containers.index(host_container))
+
+            in_host = False
 
             for container in containers:
 
                 try:
+                    for host_container in host_containers:
+                        if host_container.get('CONTAINER ID') in container.hash_id:
+                            host_containers.pop(host_containers.index(host_container))
+                            in_host = True
 
-                    info_container = inspect_container(container.hash_id)
+                    if in_host:
 
-                    status = info_container.get('State')
+                        info_container = inspect_container(container.hash_id)
 
-                    if not status['Running'] and container.status:
-                        # containers.pop(index_container)
-                        container.status = False
-                    elif status['Running'] and not container.status:
-                        container.status = True
+                        status = info_container.get('State')
+
+                        if not status['Running'] and container.status:
+                            #containers.pop(index_container)
+                            container.status = False
+                            container.ip = None
+                        elif status['Running'] and not container.status:
+                            container.status = True
+
+                            if info_container.get('NetworkSettings'):
+                                ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                                container.ip = ip_address
+                    else:
+
+                        self.appbuilder.session.delete(container)
+                        self.appbuilder.session.commit()
+
 
                 except:
                     container.status = False
+
+                in_host = False
+
+            for host_container in host_containers:
+
+                stat = False
+
+                if host_container.get('CONTAINER ID'):
+                    info_container = inspect_container(host_container.get('CONTAINER ID'))
+
+                    status = info_container.get('State')
+
+                    if not status['Running']:
+                        stat = False
+                        ip_addr = None
+                    else:
+                        stat = True
+
+                        if info_container.get('NetworkSettings'):
+                            ip_addr = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+
+                    objeto = {
+                        'name': host_container.get('NAMES'),
+                        'hash_id': host_container.get('CONTAINER ID'),
+                        'command': host_container.get('COMMAND'),
+                        'status': stat,
+                        'image': host_container.get('IMAGE'),
+                        'ip': ip_addr or None,
+                    }
+
+                    new_container = create_object("Container", objeto, self.appbuilder)
+                    containers.append(new_container)
 
             if self.appbuilder.session.dirty:
                 self.appbuilder.session.commit()
