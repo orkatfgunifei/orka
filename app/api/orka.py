@@ -118,8 +118,13 @@ def create_container(item):
         if item.image.name:
             if not item.image.version:
                 item.image.version = "latest"
+                image = "%s" % item.image.name
+            elif item.image.version == "latest":
+                image = "%s" % item.image.name
+            else:
+                image = "%s:%s" % (item.image.name, item.image.version)
 
-            image = "%s:%s" % (item.image.name, item.image.version)
+
         else:
             image = False
 
