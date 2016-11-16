@@ -1,4 +1,5 @@
 #coding: utf-8
+import re
 from docker import Client
 from io import BytesIO
 import docker
@@ -8,11 +9,67 @@ from app.models.container import Container
 from app.models.image import Image
 
 from flask.ext.babel import lazy_gettext as _
+from app.models.container import Container
+from app.models.image import Image
 
 # ~~ Instância do Cliente Docker ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cli = Client(base_url='unix://var/run/docker.sock')
 urubu = Urubu()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+def create_object(modelo, objeto_dict, appbuilder):
+
+    if modelo == "Container":
+
+        c = Container()
+
+        if objeto_dict.get('name'):
+            c.name = objeto_dict.get('name')
+
+        if objeto_dict.get('hash_id'):
+            c.hash_id = objeto_dict.get('hash_id')
+
+        if objeto_dict.get('command'):
+            c.command = objeto_dict.get('command')
+
+        if objeto_dict.get('status'):
+            c.status = objeto_dict.get('status')
+
+        if objeto_dict.get('ip'):
+            c.ip = objeto_dict.get('ip')
+
+        if objeto_dict.get('image'):
+
+            info = objeto_dict.get('image').split(':')
+
+            images = []
+
+            if len(info) == 2:
+                images = appbuilder.session.query(Image).\
+                    filter_by(name=info[0], version=info[1]).all()
+            elif len(info) == 1:
+                images = appbuilder.session.query(Image).\
+                    filter_by(name=info[0]).all()
+
+            if len(images) == 1:
+                c.image_id = images[0].id
+            else:
+                new_image = Image()
+                new_image.name = info[0]
+
+                if len(info) == 2:
+                    new_image.version = info[1]
+
+                appbuilder.session.add(new_image)
+                appbuilder.session.commit()
+                c.image_id = new_image.id
+
+        appbuilder.session.add(c)
+        appbuilder.session.commit()
+
+        return c
+
 
 
 def read_log(object_id, log_type, appbuilder):
@@ -50,7 +107,9 @@ def create_container(item):
     ports = []
     container = {}
 
-    if not item.linked and not item.extra_fields:
+    if not (item.linked or item.environment
+            or item.volumes or item.command
+            or item.extra_params):
 
         if item.port:
             p = item.port.split(':')
@@ -90,6 +149,31 @@ def create_container(item):
         })
 
     return container
+
+
+def list_containers(list_all=False):
+
+    host_containers = urubu.list_containers(list_all=list_all)
+
+    row_splitter = re.compile("  +")  # Encontra uma sequência de dois ou mais espaços
+    rows = host_containers.split('\n')  # Divide a tabela em uma lista de linhas
+
+    headings = ['CONTAINER ID', 'IMAGE', 'COMMAND', 'CREATED', 'STATUS', 'PORTS', 'NAMES']
+    headings_noport = ['CONTAINER ID', 'IMAGE', 'COMMAND', 'CREATED', 'STATUS', 'NAMES']
+
+    # Cria uma lista de dicionários mapeando os valores
+    template_dicts = []
+    for row in rows:
+        values = row_splitter.split(row)
+        if len(values) == 6:
+            head = headings_noport
+        else:
+            head = headings
+
+        template_dict = dict(zip(head, values))
+        template_dicts.append(template_dict)
+
+    return template_dicts
 
 def remove_container(hash_id):
     try:

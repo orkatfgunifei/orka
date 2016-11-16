@@ -6,6 +6,7 @@ from . import Model, Column, Integer,\
 from flask.ext.babel import lazy_gettext as _
 from flask import Markup
 
+
 class Container(AuditMixin, Model):
 
     __tablename__ = "container"
@@ -18,13 +19,16 @@ class Container(AuditMixin, Model):
     cpu_reserved = Column(Integer)
     storage_reserved = Column(Integer)
     image_id = Column(Integer, ForeignKey('image.id'))
-    image = relationship("Image")
+    image = relationship("Image", lazy='subquery')
     status = Column(Boolean, default=False)
     type_id = Column(Integer, ForeignKey('containertype.id'))
     type = relationship("ContainerType")
     linked_id = Column(Integer, ForeignKey('container.id'), index=True)
     linked = relationship(lambda: Container, remote_side=id, backref='db_container')
-    extra_fields = Column(String(256))
+    volumes = Column(String(256))
+    environment = Column(String(256))
+    command = Column(String(128))
+    extra_params = Column(String(64))
 
     def port_match(self):
 

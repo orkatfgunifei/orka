@@ -22,6 +22,9 @@ class Urubu(object):
         """
         command = 'docker run '
 
+        if item.extra_params:
+            command += "%s " % item.extra_params
+
         if item.name:
             command += "--name %s " % item.name
 
@@ -46,15 +49,25 @@ class Urubu(object):
             self.start(item.linked.name)
             command += "--link %s:%s " % (item.linked.name, item.linked.type.type)
 
-        if item.extra_fields:
-            for field in item.extra_fields.split(','):
+        if item.environment:
+            for field in item.environment.split(','):
                 command += "-e %s " % field
+
+        if item.volumes:
+            for field in item.volumes.split(','):
+                command += "-v %s " % field
 
         if item.image:
             if not item.image.version:
                 item.image.version = "latest"
+                command += "-d %s " % item.image.name
+            elif item.image.version == "latest":
+                command += "-d %s " % item.image.name
+            else:
+                command += "-d %s:%s" % (item.image.name, item.image.version)
 
-            command += "-d %s:%s" % (item.image.name, item.image.version)
+        if item.command:
+            command += " %s" % item.command
 
         resp = self.execute(command)
 

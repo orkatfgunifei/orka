@@ -5,7 +5,8 @@ from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
 from sqlalchemy.orm.attributes import get_history
 from app.api.orka import (
     create_container, remove_container, status_container,
-    inspect_container, rename_container
+    inspect_container, rename_container, list_containers,
+    create_object
 )
 
 from app.models.container import Container, ContainerType
@@ -26,27 +27,79 @@ class ContainerModelView(ModelView):
 
         containers = self.appbuilder.session.query(Container).all()
 
+        host_containers = list_containers(list_all=True)
+
+        in_host = False
+
+
         for container in containers:
 
             try:
+                for host_container in host_containers:
+                    if host_container.get('CONTAINER ID') == 'CONTAINER ID':
+                        host_containers.pop(host_containers.index(host_container))
+                    if not host_container.get('NAMES'):
+                        host_containers.pop(host_containers.index(host_container))
+                    if host_container.get('CONTAINER ID') in container.hash_id:
+                        host_containers.pop(host_containers.index(host_container))
+                        in_host = True
 
-                info_container = inspect_container(container.hash_id)
+                if in_host:
 
-                status = info_container.get('State')
+                    info_container = inspect_container(container.hash_id)
 
-                if not status['Running'] and container.status:
-                    #containers.pop(index_container)
-                    container.status = False
-                    container.ip = None
-                elif status['Running'] and not container.status:
-                    container.status = True
+                    status = info_container.get('State')
 
-                    if info_container.get('NetworkSettings'):
-                        ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
-                        container.ip = ip_address
+                    if not status['Running'] and container.status:
+                        #containers.pop(index_container)
+                        container.status = False
+                        container.ip = None
+                    elif status['Running'] and not container.status:
+                        container.status = True
+
+                        if info_container.get('NetworkSettings'):
+                            ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                            container.ip = ip_address
+                else:
+
+                    self.appbuilder.session.delete(container)
+                    self.appbuilder.session.commit()
+
 
             except:
                 container.status = False
+
+            in_host = False
+
+        for host_container in host_containers:
+
+            stat = False
+
+            if host_container.get('CONTAINER ID'):
+                info_container = inspect_container(host_container.get('CONTAINER ID'))
+
+                status = info_container.get('State')
+
+                if not status['Running']:
+                    stat = False
+                    ip_addr = None
+                else:
+                    stat = True
+
+                    if info_container.get('NetworkSettings'):
+                        ip_addr = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+
+                objeto = {
+                    'name': host_container.get('NAMES'),
+                    'hash_id': host_container.get('CONTAINER ID'),
+                    'command': host_container.get('COMMAND'),
+                    'status': stat,
+                    'image': host_container.get('IMAGE'),
+                    'ip': ip_addr or None,
+                }
+
+                new_container = create_object("Container", objeto, self.appbuilder)
+                containers.append(new_container)
 
         if self.appbuilder.session.dirty:
             self.appbuilder.session.commit()
@@ -77,7 +130,10 @@ class ContainerModelView(ModelView):
                      'status': _('Status'),
                      'type': _('Type'),
                      'linked': _('Linked'),
-                     'extra_fields': _('Parameters'),
+                     'volumes': _('Volumes Binding'),
+                     'environment': _('Environment Variables'),
+                     'command': _('Command'),
+                     'extra_params': _("Extra Parameters"),
                      'ip': _('IP'),
                      'ip_url': _('IP Adrress')
                      }
@@ -103,7 +159,10 @@ class ContainerModelView(ModelView):
                         'type',
                         'linked',
                         'hash_id',
-                        'extra_fields',
+                        'environment',
+                        'volumes',
+                        'command',
+                        'extra_params',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': False}),
@@ -120,7 +179,10 @@ class ContainerModelView(ModelView):
             {'fields': [
                         'type',
                         'linked',
-                        'extra_fields',
+                        'environment',
+                        'volumes',
+                        'command',
+                        'extra_params',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': True}),
@@ -139,7 +201,10 @@ class ContainerModelView(ModelView):
                         'linked',
                         'ip',
                         'hash_id',
-                        #'extra_fields',
+                        #'environment',
+                        #'volumes',
+                        #'command',
+                        #'extra_params',
                         'domain_name',
                         'cpu_reserved',
                         'storage_reserved'], 'expanded': False}),
@@ -185,10 +250,14 @@ class ContainerModelView(ModelView):
                 status_container(True, item.hash_id)
                 item.status = True
 
+            inspect = inspect_container(container.get('Id'))
+
+            if not item.name:
+                item.name = inspect.get('Name')
+
             if container.get('ip_address'):
                 item.ip = container.get('ip_address')
             else:
-                inspect = inspect_container(container.get('Id'))
 
                 try:
                     if inspect['State']['Status'] == 'running':
