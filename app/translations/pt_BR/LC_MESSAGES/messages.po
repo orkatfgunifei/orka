@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-09 19:55-0200\n"
+"POT-Creation-Date: 2016-11-16 20:18-0200\n"
 "PO-Revision-Date: 2016-04-06 19:17-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -19,55 +19,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: app/helpers.py:7
+#: app/helpers.py:8
 msgid "list"
 msgstr "lista"
 
-#: app/helpers.py:8
+#: app/helpers.py:9
 msgid "add"
 msgstr "adicionar"
 
-#: app/helpers.py:9
+#: app/helpers.py:10
 msgid "show"
 msgstr "exibir"
 
-#: app/helpers.py:10
+#: app/helpers.py:11
+msgid "edit"
+msgstr "editar"
+
+#: app/helpers.py:12
 msgid "service"
 msgstr "serviço"
 
-#: app/helpers.py:11
+#: app/helpers.py:13
 msgid "container"
 msgstr "contêiner"
 
-#: app/helpers.py:12
+#: app/helpers.py:14
 msgid "image"
 msgstr "imagem"
 
-#: app/helpers.py:13
+#: app/helpers.py:15
 msgid "node"
 msgstr "nó"
 
-#: app/helpers.py:14
+#: app/helpers.py:16
 msgid "dashboard"
 msgstr "painel"
 
-#: app/helpers.py:15
+#: app/helpers.py:17
 msgid "index"
 msgstr "principal"
 
-#: app/helpers.py:16
+#: app/helpers.py:18
 msgid "user"
 msgstr "usuário"
 
-#: app/helpers.py:17
+#: app/helpers.py:19
 msgid "users"
 msgstr "usuários"
 
-#: app/helpers.py:18
+#: app/helpers.py:20
 msgid "userinfo"
 msgstr "informações"
 
-#: app/helpers.py:19
+#: app/helpers.py:21
 msgid "home"
 msgstr "início"
 
@@ -107,41 +111,47 @@ msgstr "Não foi possível registrá-lo no momento, tente novamente"
 msgid "Registration sent to your email"
 msgstr "Um email de ativação da conta foi envia para você"
 
-#: app/api/orka.py:143
+#: app/api/orka.py:233
 msgid "Node already initializated, use join instead."
 msgstr "O nó já foi criado, acesse um existente."
 
-#: app/api/orka.py:145
+#: app/api/orka.py:235
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr "Favor inserir o IP e a Porta de acesso, por exemplo: 0.0.0.0:5000"
 
-#: app/api/orka.py:177
+#: app/api/orka.py:267
 msgid "Please select a node for this service..."
 msgstr "Favor selecionar um nó para este serviço..."
 
-#: app/api/orka.py:203
+#: app/api/orka.py:293
 msgid "Please create the node first."
 msgstr "Favor criar o nó de acesso primeiro."
 
-#: app/api/orka.py:207
+#: app/api/orka.py:297
 msgid "Please select an image to create the service."
 msgstr "Favor seleciionar uma imagem para criar o serviço."
 
-#: app/models/container.py:35
+#: app/models/container.py:72
 msgid "No IP"
 msgstr "Sem IP"
 
-#: app/models/container.py:51
+#: app/models/container.py:88
 msgid "Default"
 msgstr "Atividade"
 
-#: app/models/container.py:52
+#: app/models/container.py:89
 msgid "Database"
 msgstr "Banco de Dados"
 
-#: app/templates/404.html:4
-msgid "Page not found"
-msgstr "Página não encontrada"
+#: app/templates/404.html:9 app/templates/404.html:12
+msgid "Page not found."
+msgstr "Página não encontra."
+
+#: app/templates/404.html:15 app/templates/orka/general/lib.html:312
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
+msgid "Back"
+msgstr "Voltar"
 
 #: app/templates/appbuilder/general/charts/chart.html:8
 #: app/templates/appbuilder/general/charts/chart_time.html:10
@@ -299,21 +309,21 @@ msgstr "Adicionar Filtro"
 msgid "Member since"
 msgstr "Membro desde"
 
-#: app/templates/orka/baselayout.html:103 app/templates/orka/baselib.html:115
+#: app/templates/orka/baselayout.html:89 app/templates/orka/baselib.html:115
 #: app/templates/orka/sidebar_menu.html:48
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:37
 msgid "Profile"
 msgstr "Perfil"
 
-#: app/templates/orka/baselayout.html:106 app/templates/orka/baselib.html:116
+#: app/templates/orka/baselayout.html:92 app/templates/orka/baselib.html:116
 #: app/templates/orka/sidebar_menu.html:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
 msgid "Logout"
 msgstr "Sair"
 
-#: app/templates/orka/baselayout.html:127
+#: app/templates/orka/baselayout.html:113
 msgid "Home"
 msgstr "Início"
 
@@ -323,20 +333,19 @@ msgstr "Início"
 msgid "Login"
 msgstr "Entrar"
 
-#: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
-#: app/views/__init__.py:52
-msgid "Services"
-msgstr "Serviços"
+#: app/templates/orka/container/base.html:7 app/templates/orka/dashboard.html:6
+msgid "Containers"
+msgstr "Contêineres"
 
 #: app/templates/orka/dashboard.html:20 app/templates/orka/dashboard.html:57
 #: app/templates/orka/dashboard.html:95
 msgid "Empty"
 msgstr "Vazio"
 
-#: app/templates/orka/container/base.html:7
-#: app/templates/orka/dashboard.html:43
-msgid "Containers"
-msgstr "Contêineres"
+#: app/templates/orka/dashboard.html:43 app/templates/orka/service/base.html:7
+#: app/views/__init__.py:52
+msgid "Services"
+msgstr "Serviços"
 
 #: app/templates/orka/dashboard.html:80 app/views/__init__.py:51
 msgid "Nodes"
@@ -406,12 +415,6 @@ msgstr "Salvar"
 msgid "Record Count"
 msgstr "Qtd. de Registros"
 
-#: app/templates/orka/general/lib.html:312
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
-msgid "Back"
-msgstr "Voltar"
-
 #: app/templates/orka/general/lib.html:320
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:318
 msgid "Add a new record"
@@ -437,21 +440,25 @@ msgstr "Você realmente desejar deletar?"
 msgid "Delete record"
 msgstr "Remover registro"
 
-#: app/templates/orka/general/lib.html:375
-#: app/templates/orka/general/lib.html:400
+#: app/templates/orka/general/lib.html:374
+#: app/templates/orka/general/lib.html:403
 msgid "Online"
 msgstr "Online"
 
-#: app/templates/orka/general/lib.html:377
-#: app/templates/orka/general/lib.html:402
+#: app/templates/orka/general/lib.html:376
+#: app/templates/orka/general/lib.html:405
 msgid "Offline"
 msgstr "Offline"
 
-#: app/templates/orka/general/lib.html:379
-#: app/templates/orka/general/lib.html:404
-#: app/templates/orka/general/lib.html:424
+#: app/templates/orka/general/lib.html:378
+#: app/templates/orka/general/lib.html:408
+#: app/templates/orka/general/lib.html:426
 msgid "Edit"
 msgstr "Editar"
+
+#: app/templates/orka/general/lib.html:409
+msgid "Delete"
+msgstr "Remover"
 
 #: app/views/__init__.py:40
 msgid "Index"
@@ -489,7 +496,7 @@ msgstr "Adicionar Composição"
 msgid "Edit Build"
 msgstr "Editar Composição"
 
-#: app/views/build.py:26 app/views/container.py:65 app/views/image.py:30
+#: app/views/build.py:26 app/views/container.py:124 app/views/image.py:30
 #: app/views/node.py:26 app/views/service.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
@@ -508,77 +515,89 @@ msgstr "Dockerfile"
 msgid "Options"
 msgstr "Opção"
 
-#: app/views/container.py:57
+#: app/views/container.py:116
 msgid "List Container"
 msgstr "Listar Contêineres"
 
-#: app/views/container.py:59
+#: app/views/container.py:118
 msgid "Show Container"
 msgstr "Exibir Contêiner"
 
-#: app/views/container.py:61
+#: app/views/container.py:120
 msgid "Add Container"
 msgstr "Adicionar Contêiner"
 
-#: app/views/container.py:63
+#: app/views/container.py:122
 msgid "Edit Container"
 msgstr "Editar Contêiner"
 
-#: app/views/container.py:66 app/views/service.py:30
+#: app/views/container.py:125 app/views/service.py:30
 msgid "Image"
 msgstr "Imagem"
 
-#: app/views/container.py:67
+#: app/views/container.py:126
 msgid "Port"
 msgstr "Porta"
 
-#: app/views/container.py:68
+#: app/views/container.py:127
 msgid "ID Container"
 msgstr "ID Contêiner"
 
-#: app/views/container.py:69
+#: app/views/container.py:128
 msgid "Domain Name"
 msgstr "Domínio"
 
-#: app/views/container.py:70
+#: app/views/container.py:129
 msgid "CPU Reserved"
 msgstr "CPU Reservado"
 
-#: app/views/container.py:71
+#: app/views/container.py:130
 msgid "Storage Reserved"
 msgstr "Armazenamento Reservado"
 
-#: app/views/container.py:72 app/views/service.py:33
+#: app/views/container.py:131 app/views/service.py:33
 msgid "Status"
 msgstr "Estado"
 
-#: app/views/container.py:73
+#: app/views/container.py:132
 msgid "Type"
 msgstr "Tipo"
 
-#: app/views/container.py:74
+#: app/views/container.py:133
 msgid "Linked"
 msgstr "Vinculado"
 
-#: app/views/container.py:75
-msgid "Parameters"
-msgstr "Parâmetros"
+#: app/views/container.py:134
+msgid "Volumes Binding"
+msgstr "Mapeamento de Diretórios"
 
-#: app/views/container.py:76
+#: app/views/container.py:135
+msgid "Environment Variables"
+msgstr "Variáveis do Ambiente"
+
+#: app/views/container.py:136 app/views/service.py:32
+msgid "Command"
+msgstr "Comando"
+
+#: app/views/container.py:137
+msgid "Extra Parameters"
+msgstr "Parâmetros Extras"
+
+#: app/views/container.py:138
 msgid "IP"
 msgstr "IP"
 
-#: app/views/container.py:77
+#: app/views/container.py:139
 msgid "IP Adrress"
 msgstr "Endereço de IP"
 
-#: app/views/container.py:88 app/views/container.py:108
-#: app/views/container.py:125
+#: app/views/container.py:150 app/views/container.py:173
+#: app/views/container.py:193
 msgid "Summary"
 msgstr "Principal"
 
-#: app/views/container.py:96 app/views/container.py:114
-#: app/views/container.py:131
+#: app/views/container.py:158 app/views/container.py:179
+#: app/views/container.py:199
 msgid "Advanced Info"
 msgstr "Avançado"
 
@@ -678,10 +697,6 @@ msgstr "Editar Serviço"
 #: app/views/service.py:31
 msgid "Node"
 msgstr "Nó"
-
-#: app/views/service.py:32
-msgid "Command"
-msgstr "Comando"
 
 #: app/views/service.py:34
 msgid "ID Service"
@@ -1493,4 +1508,10 @@ msgstr "Não é um valor de tempo válido"
 
 #~ msgid "Container"
 #~ msgstr "Contêiner"
+
+#~ msgid "Page not found"
+#~ msgstr "Página não encontrada"
+
+#~ msgid "Parameters"
+#~ msgstr "Parâmetros"
 

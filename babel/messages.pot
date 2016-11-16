@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-09 19:55-0200\n"
+"POT-Creation-Date: 2016-11-16 20:18-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,55 +17,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: app/helpers.py:7
+#: app/helpers.py:8
 msgid "list"
 msgstr ""
 
-#: app/helpers.py:8
+#: app/helpers.py:9
 msgid "add"
 msgstr ""
 
-#: app/helpers.py:9
+#: app/helpers.py:10
 msgid "show"
 msgstr ""
 
-#: app/helpers.py:10
-msgid "service"
-msgstr ""
-
 #: app/helpers.py:11
-msgid "container"
+msgid "edit"
 msgstr ""
 
 #: app/helpers.py:12
-msgid "image"
+msgid "service"
 msgstr ""
 
 #: app/helpers.py:13
-msgid "node"
+msgid "container"
 msgstr ""
 
 #: app/helpers.py:14
-msgid "dashboard"
+msgid "image"
 msgstr ""
 
 #: app/helpers.py:15
-msgid "index"
+msgid "node"
 msgstr ""
 
 #: app/helpers.py:16
-msgid "user"
+msgid "dashboard"
 msgstr ""
 
 #: app/helpers.py:17
-msgid "users"
+msgid "index"
 msgstr ""
 
 #: app/helpers.py:18
-msgid "userinfo"
+msgid "user"
 msgstr ""
 
 #: app/helpers.py:19
+msgid "users"
+msgstr ""
+
+#: app/helpers.py:20
+msgid "userinfo"
+msgstr ""
+
+#: app/helpers.py:21
 msgid "home"
 msgstr ""
 
@@ -105,40 +109,46 @@ msgstr ""
 msgid "Registration sent to your email"
 msgstr ""
 
-#: app/api/orka.py:143
+#: app/api/orka.py:233
 msgid "Node already initializated, use join instead."
 msgstr ""
 
-#: app/api/orka.py:145
+#: app/api/orka.py:235
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr ""
 
-#: app/api/orka.py:177
+#: app/api/orka.py:267
 msgid "Please select a node for this service..."
 msgstr ""
 
-#: app/api/orka.py:203
+#: app/api/orka.py:293
 msgid "Please create the node first."
 msgstr ""
 
-#: app/api/orka.py:207
+#: app/api/orka.py:297
 msgid "Please select an image to create the service."
 msgstr ""
 
-#: app/models/container.py:35
+#: app/models/container.py:72
 msgid "No IP"
 msgstr ""
 
-#: app/models/container.py:51
+#: app/models/container.py:88
 msgid "Default"
 msgstr ""
 
-#: app/models/container.py:52
+#: app/models/container.py:89
 msgid "Database"
 msgstr ""
 
-#: app/templates/404.html:4
-msgid "Page not found"
+#: app/templates/404.html:9 app/templates/404.html:12
+msgid "Page not found."
+msgstr ""
+
+#: app/templates/404.html:15 app/templates/orka/general/lib.html:312
+#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
+#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
+msgid "Back"
 msgstr ""
 
 #: app/templates/appbuilder/general/charts/chart.html:8
@@ -297,21 +307,21 @@ msgstr ""
 msgid "Member since"
 msgstr ""
 
-#: app/templates/orka/baselayout.html:103 app/templates/orka/baselib.html:115
+#: app/templates/orka/baselayout.html:89 app/templates/orka/baselib.html:115
 #: app/templates/orka/sidebar_menu.html:48
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:115
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:37
 msgid "Profile"
 msgstr ""
 
-#: app/templates/orka/baselayout.html:106 app/templates/orka/baselib.html:116
+#: app/templates/orka/baselayout.html:92 app/templates/orka/baselib.html:116
 #: app/templates/orka/sidebar_menu.html:49
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:116
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/navbar_right.html:38
 msgid "Logout"
 msgstr ""
 
-#: app/templates/orka/baselayout.html:127
+#: app/templates/orka/baselayout.html:113
 msgid "Home"
 msgstr ""
 
@@ -321,9 +331,8 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: app/templates/orka/dashboard.html:6 app/templates/orka/service/base.html:7
-#: app/views/__init__.py:52
-msgid "Services"
+#: app/templates/orka/container/base.html:7 app/templates/orka/dashboard.html:6
+msgid "Containers"
 msgstr ""
 
 #: app/templates/orka/dashboard.html:20 app/templates/orka/dashboard.html:57
@@ -331,9 +340,9 @@ msgstr ""
 msgid "Empty"
 msgstr ""
 
-#: app/templates/orka/container/base.html:7
-#: app/templates/orka/dashboard.html:43
-msgid "Containers"
+#: app/templates/orka/dashboard.html:43 app/templates/orka/service/base.html:7
+#: app/views/__init__.py:52
+msgid "Services"
 msgstr ""
 
 #: app/templates/orka/dashboard.html:80 app/views/__init__.py:51
@@ -404,12 +413,6 @@ msgstr ""
 msgid "Record Count"
 msgstr ""
 
-#: app/templates/orka/general/lib.html:312
-#: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
-#: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:310
-msgid "Back"
-msgstr ""
-
 #: app/templates/orka/general/lib.html:320
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/lib.html:318
 msgid "Add a new record"
@@ -435,20 +438,24 @@ msgstr ""
 msgid "Delete record"
 msgstr ""
 
-#: app/templates/orka/general/lib.html:375
-#: app/templates/orka/general/lib.html:400
+#: app/templates/orka/general/lib.html:374
+#: app/templates/orka/general/lib.html:403
 msgid "Online"
 msgstr ""
 
-#: app/templates/orka/general/lib.html:377
-#: app/templates/orka/general/lib.html:402
+#: app/templates/orka/general/lib.html:376
+#: app/templates/orka/general/lib.html:405
 msgid "Offline"
 msgstr ""
 
-#: app/templates/orka/general/lib.html:379
-#: app/templates/orka/general/lib.html:404
-#: app/templates/orka/general/lib.html:424
+#: app/templates/orka/general/lib.html:378
+#: app/templates/orka/general/lib.html:408
+#: app/templates/orka/general/lib.html:426
 msgid "Edit"
+msgstr ""
+
+#: app/templates/orka/general/lib.html:409
+msgid "Delete"
 msgstr ""
 
 #: app/views/__init__.py:40
@@ -487,7 +494,7 @@ msgstr ""
 msgid "Edit Build"
 msgstr ""
 
-#: app/views/build.py:26 app/views/container.py:65 app/views/image.py:30
+#: app/views/build.py:26 app/views/container.py:124 app/views/image.py:30
 #: app/views/node.py:26 app/views/service.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
@@ -506,77 +513,89 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: app/views/container.py:57
+#: app/views/container.py:116
 msgid "List Container"
 msgstr ""
 
-#: app/views/container.py:59
+#: app/views/container.py:118
 msgid "Show Container"
 msgstr ""
 
-#: app/views/container.py:61
+#: app/views/container.py:120
 msgid "Add Container"
 msgstr ""
 
-#: app/views/container.py:63
+#: app/views/container.py:122
 msgid "Edit Container"
 msgstr ""
 
-#: app/views/container.py:66 app/views/service.py:30
+#: app/views/container.py:125 app/views/service.py:30
 msgid "Image"
 msgstr ""
 
-#: app/views/container.py:67
+#: app/views/container.py:126
 msgid "Port"
 msgstr ""
 
-#: app/views/container.py:68
+#: app/views/container.py:127
 msgid "ID Container"
 msgstr ""
 
-#: app/views/container.py:69
+#: app/views/container.py:128
 msgid "Domain Name"
 msgstr ""
 
-#: app/views/container.py:70
+#: app/views/container.py:129
 msgid "CPU Reserved"
 msgstr ""
 
-#: app/views/container.py:71
+#: app/views/container.py:130
 msgid "Storage Reserved"
 msgstr ""
 
-#: app/views/container.py:72 app/views/service.py:33
+#: app/views/container.py:131 app/views/service.py:33
 msgid "Status"
 msgstr ""
 
-#: app/views/container.py:73
+#: app/views/container.py:132
 msgid "Type"
 msgstr ""
 
-#: app/views/container.py:74
+#: app/views/container.py:133
 msgid "Linked"
 msgstr ""
 
-#: app/views/container.py:75
-msgid "Parameters"
+#: app/views/container.py:134
+msgid "Volumes Binding"
 msgstr ""
 
-#: app/views/container.py:76
+#: app/views/container.py:135
+msgid "Environment Variables"
+msgstr ""
+
+#: app/views/container.py:136 app/views/service.py:32
+msgid "Command"
+msgstr ""
+
+#: app/views/container.py:137
+msgid "Extra Parameters"
+msgstr ""
+
+#: app/views/container.py:138
 msgid "IP"
 msgstr ""
 
-#: app/views/container.py:77
+#: app/views/container.py:139
 msgid "IP Adrress"
 msgstr ""
 
-#: app/views/container.py:88 app/views/container.py:108
-#: app/views/container.py:125
+#: app/views/container.py:150 app/views/container.py:173
+#: app/views/container.py:193
 msgid "Summary"
 msgstr ""
 
-#: app/views/container.py:96 app/views/container.py:114
-#: app/views/container.py:131
+#: app/views/container.py:158 app/views/container.py:179
+#: app/views/container.py:199
 msgid "Advanced Info"
 msgstr ""
 
@@ -675,10 +694,6 @@ msgstr ""
 
 #: app/views/service.py:31
 msgid "Node"
-msgstr ""
-
-#: app/views/service.py:32
-msgid "Command"
 msgstr ""
 
 #: app/views/service.py:34

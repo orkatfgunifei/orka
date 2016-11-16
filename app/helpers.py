@@ -8,6 +8,7 @@ route_labels = {
     'list': _('list'),
     'add': _('add'),
     'show': _('show'),
+    'edit': _('edit'),
     'service': _('service'),
     'container': _('container'),
     'image': _('image'),
@@ -47,11 +48,16 @@ def url_agora(current_request):
 
                     if route:
 
-                        route_name = route_labels.get(route)
+                        if not route == '<pk>':
+                            route_name = route_labels.get(route)
 
                         if not route_name:
                             route_name = route.capitalize()
                         else:
+                            if route == '<pk>':
+                                rlist = current_request.base_url.split('/')
+                                route_name = rlist[len(rlist)-1]
+
                             route_name = route_name.capitalize()
 
                         if status in [404, 400]:
