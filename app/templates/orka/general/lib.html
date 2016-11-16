@@ -1,7 +1,7 @@
 {% macro render_additional_links(additional_links, pk) %}
     {% if additional_links %}
         {% for item in additional_links %}
-            <a href="{{item.href}}?pk={{pk}}" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon"></span>
+            <a href="{{item.href}}?pk={{pk}}" class="btn  btn-primary"><span class="glyphicon glyphicon"></span>
                 {{_(item.label)}}</a>
         {% endfor %}
     {% endif %}
@@ -13,7 +13,7 @@
         {%  set action = actions.get(key) %}
 
         {% set url = url_for(modelview_name + '.action', name = action.name, pk = pk) %}
-        <a href="javascript:void(0)" class="btn btn-sm btn-primary"
+        <a href="javascript:void(0)" class="btn  btn-primary"
            onclick="var a = new AdminActions(); return a.execute_single('{{url}}','{{action.confirmation}}');">
             <i class="fa {{action.icon}}"></i>
             {{_(action.text)}}
@@ -36,7 +36,7 @@
 {% macro render_actions(actions, modelview_name) %}
     {% if actions %}
         <div class="btn-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
                 {{_('Actions')}}<span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
@@ -61,7 +61,7 @@
     {% set pages = ((count / page_size)|round(0,'ceil')|int)%}
     {% if pages > 1 %}
         <div class="btn-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
                 {{_('Page size')}}<span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
@@ -79,7 +79,7 @@
 
 {% macro render_dropdown_orderby(order_columns, label_columns, modelview_name) %}
     <div class="btn-group">
-        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+        <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
             {{_('Order by')}}<span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
@@ -302,13 +302,13 @@
 {% endmacro %}
 
 {% macro btn_search() %}
-    <button type="submit" class="btn  btn-sm btn-primary">{{_("Search")}}
+    <button type="submit" class="btn btn-primary">{{_("Search")}}
         <i class="fa fa-search"></i>
     </button>
 {% endmacro %}
 
 {% macro lnk_back() %}
-    <a href="{{url_for('UtilView' + '.back')}}" class="btn btn-sm btn-primary" data-toggle="tooltip" rel="tooltip"
+    <a href="{{url_for('UtilView' + '.back')}}" class="btn btn-primary" data-toggle="tooltip" rel="tooltip"
        title="{{_('Back')}}">
         <i class="fa fa-arrow-left"></i>
     </a>
@@ -316,28 +316,28 @@
 
 
 {% macro lnk_add(my_href) %}
-    <a href="{{my_href}}" class="btn btn-sm btn-primary" data-toggle="tooltip" rel="tooltip"
+    <a href="{{my_href}}" class="btn  btn-primary" data-toggle="tooltip" rel="tooltip"
        title="{{_('Add a new record')}}">
         <i class="fa fa-plus"></i>
     </a>
 {% endmacro %}
 
 {% macro lnk_edit(my_href) %}
-    <a href="{{my_href}}" class="btn btn-sm btn-primary" data-toggle="tooltip" rel="tooltip"
+    <a href="{{my_href}}" class="btn  btn-primary" data-toggle="tooltip" rel="tooltip"
        title="{{_('Edit record')}}">
         <i class="fa fa-edit"></i>
     </a>
 {% endmacro %}
 
 {% macro lnk_show(my_href) %}
-    <a href="{{my_href}}" class="btn btn-sm btn-primary" data-toggle="tooltip" rel="tooltip"
+    <a href="{{my_href}}" class="btn  btn-primary" data-toggle="tooltip" rel="tooltip"
        title="{{_('Show record')}}">
         <i class="fa fa-search"></i>
     </a>
 {% endmacro %}
 
 {% macro lnk_delete(my_href) %}
-    <button data-text="{{ _('You sure you want to delete this item?') }}" data-href="{{my_href}}" class="btn btn-sm btn-primary confirm" rel="tooltip"
+    <button data-text="{{ _('You sure you want to delete this item?') }}" data-href="{{my_href}}" class="btn  btn-primary confirm" rel="tooltip"
             title="{{_('Delete record')}}" data-toggle="modal" data-target="#modal-confirm" href="">
         <i class="fa fa-eraser"></i>
     </button>
@@ -385,25 +385,29 @@
 
 {% macro render_list_container(item) %}
     <div class="info-box bg-aqua">
-        {% if not item.ip or not item.status %}
-            <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+        {% if item.status %}
+            {% if item.ip %}
+                <span class="info-box-icon"><a target="_blank" href="http://{{ item.ip_url_port() }}"><i class="ion ion-log-in" style="color: green;"></i></a></span>
+            {% else %}
+                <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+            {% endif %}
         {% else %}
-            <span class="info-box-icon"><a target="_blank" href="http://{{ item.ip_url_port() }}"><i class="ion ion-log-in" style="color: white;"></i></a></span>
+            <span class="info-box-icon"><a href="/container/show/{{ item.id }}"><i class="ion ion-log-in" style="color: red;"></i></a></span>
         {% endif %}
         <div class="info-box-content">
             <span class="info-box-text">{{ item.name }}</span>
             <span class="info-box-number">{{ item.image.name }}</span>
 
-            <div class="progress">
-                <div class="progress-bar" style="width: 70%"></div>
-            </div>
             <span class="progress-description">
                 {% if item.status %}
                     <span class="ion-checkmark-circled" style="color: green;"></span><span style="padding-left: 4px; color: green;">{{ _("Online") }}</span>
                 {% else %}
                     <span class="ion-close-circled" style="color:red;"></span><span style="padding-left: 4px; color: red;">{{ _("Offline") }}</span>
                 {% endif %}
-                <span><a class="pull-right" href="/container/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
+                <div class="btn-group pull-right">
+                    <a class="btn btn-outline " href="/container/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a>
+                    <button data-text="Você realmente desejar deletar?" class="btn btn-outline" data-href="/container/delete/{{ item.id }}" style="color: darkslategray;" data-toggle="modal" data-target="#modal-confirm">{{ _("Delete") }}</button>
+                </div>
             </span>
         </div>
         <!-- /.info-box-content -->
@@ -418,10 +422,6 @@
         <div class="info-box-content">
             <span class="info-box-text">{{ item.name }}</span>
             <span class="info-box-number">{{ item.advertise_addr }}</span>
-
-            <div class="progress">
-                <div class="progress-bar" style="width: 70%"></div>
-            </div>
             <span class="progress-description">
                 <span><a class="pull-right" href="/node/edit/{{ item.id }}" style="color: darkslategray;">{{ _("Edit") }}</a></span>
             </span>

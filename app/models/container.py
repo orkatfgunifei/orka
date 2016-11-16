@@ -50,6 +50,8 @@ class Container(AuditMixin, Model):
             if port:
                 return "%s:%s" % (self.ip, port)
 
+            return "%s" % self.ip
+
     def ip_url(self):
 
         if self.ip:
