@@ -32,16 +32,18 @@ class ImageModelView(ModelView):
                      'digest': _('Digest'),
                      'photo': _('Logo'),
                      'photo_img_thumbnail': _('Logo'),
-                     'photo_img': _('Logo')
+                     'photo_img': _('Logo'),
+                     'size': _('Size')
                      }
 
-    list_columns = ['name', 'version', 'photo_img_thumbnail']
+    list_columns = ['name', 'version', 'size', 'photo_img_thumbnail']
 
     show_fieldsets = [
         (_('Options'), {'fields': [
                         'name',
                         'version',
                         'digest',
+                        'size',
                         'photo_img'
                                ]}),
     ]

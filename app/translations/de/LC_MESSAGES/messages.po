@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-17 03:30-0200\n"
+"POT-Creation-Date: 2016-11-17 05:36-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -361,7 +361,7 @@ msgstr "Nodes"
 msgid "Version"
 msgstr "Version"
 
-#: app/templates/orka/footer.html:5
+#: app/templates/orka/footer.html:5 app/templates/orka/landing.html:179
 msgid "Orka Develop Team"
 msgstr "Orka Entwicklerteam"
 
@@ -381,7 +381,9 @@ msgstr "Eine einfache Möglichkeit, Container zu benutzen und zu verwalten"
 msgid ""
 "Utilizing the maximum potential of your resources, making it easy to "
 "develop, test and deploy."
-msgstr "Mit dem maximalen Potenzial Ihrer Ressourcen, so dass es leicht zu entwickeln, zu testen und zu implementieren."
+msgstr ""
+"Mit dem maximalen Potenzial Ihrer Ressourcen, so dass es leicht zu "
+"entwickeln, zu testen und zu implementieren."
 
 #: app/templates/orka/landing.html:68
 msgid "Reasons to use Orka"
@@ -396,7 +398,10 @@ msgid ""
 "With this platform each application can be configured at the level of "
 "resources and libraries and also counts on the use of Dockerfiles for "
 "creating unique images."
-msgstr "Mit dieser Plattform kann jede Anwendung auf der Ebene von Ressourcen und Bibliotheken konfiguriert werden und zählt auch die Verwendung von Dockerfiles für die Erstellung von einzigartigen Bildern."
+msgstr ""
+"Mit dieser Plattform kann jede Anwendung auf der Ebene von Ressourcen und"
+" Bibliotheken konfiguriert werden und zählt auch die Verwendung von "
+"Dockerfiles für die Erstellung von einzigartigen Bildern."
 
 #: app/templates/orka/landing.html:78
 msgid "Fat-free"
@@ -406,7 +411,10 @@ msgstr "Licht"
 msgid ""
 "With containerization, where the layers share the kernel of the host "
 "machine, they achieve good performance and resource savings"
-msgstr "Bei der Containerisierung, bei der die Schichten den Kernel des Hostcomputers gemeinsam nutzen, erzielen sie eine gute Leistung und Ressourceneinsparung"
+msgstr ""
+"Bei der Containerisierung, bei der die Schichten den Kernel des "
+"Hostcomputers gemeinsam nutzen, erzielen sie eine gute Leistung und "
+"Ressourceneinsparung"
 
 #: app/templates/orka/landing.html:84
 msgid "Compatibility"
@@ -416,7 +424,9 @@ msgstr "Kompatibilität"
 msgid ""
 "The images created on this platform are searched in DockerHub where it "
 "has a considerable amount of applications."
-msgstr "Die Bilder, die auf dieser Plattform erstellt wurden, werden im DockerHub gesucht, wo es eine beträchtliche Anzahl von Anwendungen hat."
+msgstr ""
+"Die Bilder, die auf dieser Plattform erstellt wurden, werden im DockerHub"
+" gesucht, wo es eine beträchtliche Anzahl von Anwendungen hat."
 
 #: app/templates/orka/landing.html:90
 msgid "Community"
@@ -427,7 +437,54 @@ msgid ""
 "As the platform is compatible with all elements of Docker, you will have "
 "at your disposal an active community with many open source applications "
 "with Dockerfile implemented."
-msgstr "Da die Plattform mit allen Elementen von Docker kompatibel ist, haben Sie zu Ihrer Verfügung eine aktive Gemeinschaft mit vielen Open-Source-Anwendungen mit Dockerfile implementiert."
+msgstr ""
+"Da die Plattform mit allen Elementen von Docker kompatibel ist, haben Sie"
+" zu Ihrer Verfügung eine aktive Gemeinschaft mit vielen Open-Source-"
+"Anwendungen mit Dockerfile implementiert."
+
+#: app/templates/orka/landing.html:126
+msgid "Contact"
+msgstr "Kontakt"
+
+#: app/templates/orka/landing.html:137
+msgid "Follow me"
+msgstr "Folge mir"
+
+#: app/templates/orka/landing.html:149
+msgid "Acknowledgements"
+msgstr "Danksagungen"
+
+#: app/templates/orka/landing.html:151
+msgid ""
+"The main thanks are directed to our parents, for the love, encouragement "
+"and unconditional support in the most difficult stages of our lives, and "
+"to all who directly or indirectly were part of our formation."
+msgstr ""
+"Der wichtigste Dank gilt unseren Eltern, für die Liebe, die Ermutigung "
+"und die bedingungslose Unterstützung in den schwierigsten Phasen unseres "
+"Lebens und für alle, die direkt oder indirekt zu unserer Bildung gehörten."
+
+#: app/templates/orka/landing.html:152
+msgid ""
+"Special thanks to all teachers for providing us with not only rational "
+"knowledge, but the manifestation of the character and affectivity of "
+"education in the process of professional formation, therefore they "
+"dedicated themselves to us, not only for having taught us, but for having"
+" made us learn. The word teacher will never do justice to the dedicated "
+"teachers whom without naming will have our eternal thanks. Finally, the "
+"Institution for the creative and friendly environment it provides."
+msgstr ""
+"Ein besonderer Dank gilt allen Lehrern, die uns nicht nur die rationale Erkenntnis, "
+"sondern auch die Manifestation des Charakters und der Affektivität der Erziehung im Prozeß "
+"der beruflichen Bildung zur Verfügung stellen, deshalb widmeten sie sich uns nicht nur, weil "
+ "sie uns gelehrt haben, lernen. Der Wortlehrer wird niemals den engagierten Lehrern gerecht "
+ "werden, die ohne Nennung unseren ewigen Dank haben. Schließlich ist die Institution für die "
+ "kreative und freundliche Umgebung bietet."
+
+#: app/templates/orka/landing.html:179
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
+msgid "Created by"
+msgstr "Erstellt von"
 
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
@@ -571,7 +628,7 @@ msgid "Dockerfile"
 msgstr "Dockerfile"
 
 #: app/views/build.py:33 app/views/build.py:39 app/views/build.py:46
-#: app/views/image.py:41 app/views/image.py:50 app/views/image.py:58
+#: app/views/image.py:42 app/views/image.py:52 app/views/image.py:60
 #: app/views/node.py:40 app/views/node.py:56 app/views/node.py:71
 #: app/views/service.py:45 app/views/service.py:58 app/views/service.py:69
 msgid "Options"
@@ -682,6 +739,10 @@ msgstr "Bild bearbeiten"
 #: app/views/image.py:32
 msgid "Digest"
 msgstr "Digest"
+
+#: app/views/image.py:36
+msgid "Size"
+msgstr ""
 
 #: app/views/node.py:16
 msgid "List Node"
@@ -1155,10 +1216,6 @@ msgstr "Fehler Login count"
 msgid "Created on"
 msgstr "Erstellt am"
 
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
-msgid "Created by"
-msgstr "Erstellt von"
-
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:133
 msgid "Changed on"
 msgstr "Wechsel auf"
@@ -1577,5 +1634,8 @@ msgstr "Kein gültiges Datetime-Wert"
 #~ msgstr "Seite nicht gefunden"
 
 #~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "Agradecimentos"
 #~ msgstr ""
 

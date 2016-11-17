@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-17 03:30-0200\n"
+"POT-Creation-Date: 2016-11-17 05:36-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: app/templates/orka/footer.html:5
+#: app/templates/orka/footer.html:5 app/templates/orka/landing.html:179
 msgid "Orka Develop Team"
 msgstr ""
 
@@ -424,6 +424,41 @@ msgid ""
 "As the platform is compatible with all elements of Docker, you will have "
 "at your disposal an active community with many open source applications "
 "with Dockerfile implemented."
+msgstr ""
+
+#: app/templates/orka/landing.html:126
+msgid "Contact"
+msgstr ""
+
+#: app/templates/orka/landing.html:137
+msgid "Follow me"
+msgstr ""
+
+#: app/templates/orka/landing.html:149
+msgid "Acknowledgements"
+msgstr ""
+
+#: app/templates/orka/landing.html:151
+msgid ""
+"The main thanks are directed to our parents, for the love, encouragement "
+"and unconditional support in the most difficult stages of our lives, and "
+"to all who directly or indirectly were part of our formation."
+msgstr ""
+
+#: app/templates/orka/landing.html:152
+msgid ""
+"Special thanks to all teachers for providing us with not only rational "
+"knowledge, but the manifestation of the character and affectivity of "
+"education in the process of professional formation, therefore they "
+"dedicated themselves to us, not only for having taught us, but for having"
+" made us learn. The word teacher will never do justice to the dedicated "
+"teachers whom without naming will have our eternal thanks. Finally, the "
+"Institution for the creative and friendly environment it provides."
+msgstr ""
+
+#: app/templates/orka/landing.html:179
+#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
+msgid "Created by"
 msgstr ""
 
 #: app/templates/orka/sidebar.html:20
@@ -568,7 +603,7 @@ msgid "Dockerfile"
 msgstr ""
 
 #: app/views/build.py:33 app/views/build.py:39 app/views/build.py:46
-#: app/views/image.py:41 app/views/image.py:50 app/views/image.py:58
+#: app/views/image.py:42 app/views/image.py:52 app/views/image.py:60
 #: app/views/node.py:40 app/views/node.py:56 app/views/node.py:71
 #: app/views/service.py:45 app/views/service.py:58 app/views/service.py:69
 msgid "Options"
@@ -678,6 +713,10 @@ msgstr ""
 
 #: app/views/image.py:32
 msgid "Digest"
+msgstr ""
+
+#: app/views/image.py:36
+msgid "Size"
 msgstr ""
 
 #: app/views/node.py:16
@@ -1148,10 +1187,6 @@ msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:131
 msgid "Created on"
-msgstr ""
-
-#: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:132
-msgid "Created by"
 msgstr ""
 
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:133
