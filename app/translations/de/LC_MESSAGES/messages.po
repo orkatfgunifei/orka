@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-16 20:18-0200\n"
+"POT-Creation-Date: 2016-11-17 03:30-0200\n"
 "PO-Revision-Date: 2016-10-11 00:49-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -32,7 +32,7 @@ msgstr "anzeigen"
 
 #: app/helpers.py:11
 msgid "edit"
-msgstr ""
+msgstr "bearbeiten"
 
 #: app/helpers.py:12
 msgid "service"
@@ -74,79 +74,84 @@ msgstr "informationen"
 msgid "home"
 msgstr "startseite"
 
-#: app/security.py:14 app/security.py:24
+#: app/security.py:17 app/security.py:18 app/security.py:19
+#: app/views/image.py:33 app/views/image.py:34 app/views/image.py:35
+msgid "Logo"
+msgstr "Logo"
+
+#: app/security.py:25 app/security.py:35
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:151
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:161
 msgid "User info"
 msgstr "Benutzerinfo"
 
-#: app/security.py:16 app/security.py:26
+#: app/security.py:27 app/security.py:37
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:153
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:163
 msgid "Personal Info"
 msgstr "Persönliche Info"
 
-#: app/security.py:18
+#: app/security.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:155
 msgid "Audit Info"
 msgstr "Audit Info"
 
-#: app/security.py:38
+#: app/security.py:49
 msgid "Your Account activation"
 msgstr "Ihr Konto Aktivierung"
 
-#: app/security.py:40
+#: app/security.py:51
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:65
 msgid "Fill out the registration form"
 msgstr "Füllen Sie das Anmeldeformular aus"
 
-#: app/security.py:41
+#: app/security.py:52
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:61
 msgid "Not possible to register you at the moment, try again later"
 msgstr ""
 "Nicht möglich, dass Sie im Moment zu registrieren, versuchen Sie es "
 "später noch einmal"
 
-#: app/security.py:42
+#: app/security.py:53
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/registerviews.py:59
 msgid "Registration sent to your email"
 msgstr "Registrierung an Ihre E-Mail gesendet"
 
-#: app/api/orka.py:233
+#: app/api/orka.py:265
 msgid "Node already initializated, use join instead."
 msgstr "Knoten bereits initialisiert, verwenden Sie stattdessen join."
 
-#: app/api/orka.py:235
+#: app/api/orka.py:267
 msgid "Please insert the listen IP address and Port, e.g  0.0.0.0:5000"
 msgstr "Bitte geben Sie die Hör-IP-Adresse und den Port ein, z. B. 0.0.0.0:5000"
 
-#: app/api/orka.py:267
+#: app/api/orka.py:336
 msgid "Please select a node for this service..."
 msgstr "Bitte wählen Sie einen Knoten für diesen Dienst..."
 
-#: app/api/orka.py:293
+#: app/api/orka.py:362
 msgid "Please create the node first."
 msgstr "Bitte erstellen Sie den Knoten zuerst."
 
-#: app/api/orka.py:297
+#: app/api/orka.py:366
 msgid "Please select an image to create the service."
 msgstr "Wählen Sie ein Bild aus, um den Dienst zu erstellen."
 
 #: app/models/container.py:72
 msgid "No IP"
-msgstr ""
+msgstr "Keine IP"
 
 #: app/models/container.py:88
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #: app/models/container.py:89
 msgid "Database"
-msgstr ""
+msgstr "Datenbank"
 
 #: app/templates/404.html:9 app/templates/404.html:12
 msgid "Page not found."
-msgstr ""
+msgstr "Seite nicht gefunden."
 
 #: app/templates/404.html:15 app/templates/orka/general/lib.html:312
 #: env/lib/python2.7/site-packages/flask_appbuilder/messages.py:10
@@ -176,7 +181,7 @@ msgstr "Gruppe von Feldern"
 #: app/templates/appbuilder/general/model/edit.html:36
 #: app/templates/appbuilder/general/model/show.html:37
 msgid "Logs"
-msgstr ""
+msgstr "Protokolle"
 
 #: app/templates/appbuilder/general/security/activation.html:5
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/general/security/activation.html:5
@@ -326,7 +331,7 @@ msgstr "Logout"
 
 #: app/templates/orka/baselayout.html:113
 msgid "Home"
-msgstr ""
+msgstr "Startseite"
 
 #: app/templates/orka/baselib.html:122 app/templates/orka/landing.html:36
 #: env/lib/python2.7/site-packages/flask_appbuilder/templates/appbuilder/baselib.html:122
@@ -341,7 +346,7 @@ msgstr "Container"
 #: app/templates/orka/dashboard.html:20 app/templates/orka/dashboard.html:57
 #: app/templates/orka/dashboard.html:95
 msgid "Empty"
-msgstr ""
+msgstr "Frei"
 
 #: app/templates/orka/dashboard.html:43 app/templates/orka/service/base.html:7
 #: app/views/__init__.py:52
@@ -366,7 +371,63 @@ msgstr "Alle Rechte vorbehalten."
 
 #: app/templates/orka/landing.html:47
 msgid "Server Platform Management with Containers"
-msgstr ""
+msgstr "Serverplattformverwaltung mit Containern"
+
+#: app/templates/orka/landing.html:57
+msgid "An easy way to use and manager containers"
+msgstr "Eine einfache Möglichkeit, Container zu benutzen und zu verwalten"
+
+#: app/templates/orka/landing.html:59
+msgid ""
+"Utilizing the maximum potential of your resources, making it easy to "
+"develop, test and deploy."
+msgstr "Mit dem maximalen Potenzial Ihrer Ressourcen, so dass es leicht zu entwickeln, zu testen und zu implementieren."
+
+#: app/templates/orka/landing.html:68
+msgid "Reasons to use Orka"
+msgstr "Gründe für die Verwendung von Orka"
+
+#: app/templates/orka/landing.html:72
+msgid "Customizing"
+msgstr "Anpassen"
+
+#: app/templates/orka/landing.html:74
+msgid ""
+"With this platform each application can be configured at the level of "
+"resources and libraries and also counts on the use of Dockerfiles for "
+"creating unique images."
+msgstr "Mit dieser Plattform kann jede Anwendung auf der Ebene von Ressourcen und Bibliotheken konfiguriert werden und zählt auch die Verwendung von Dockerfiles für die Erstellung von einzigartigen Bildern."
+
+#: app/templates/orka/landing.html:78
+msgid "Fat-free"
+msgstr "Licht"
+
+#: app/templates/orka/landing.html:80
+msgid ""
+"With containerization, where the layers share the kernel of the host "
+"machine, they achieve good performance and resource savings"
+msgstr "Bei der Containerisierung, bei der die Schichten den Kernel des Hostcomputers gemeinsam nutzen, erzielen sie eine gute Leistung und Ressourceneinsparung"
+
+#: app/templates/orka/landing.html:84
+msgid "Compatibility"
+msgstr "Kompatibilität"
+
+#: app/templates/orka/landing.html:86
+msgid ""
+"The images created on this platform are searched in DockerHub where it "
+"has a considerable amount of applications."
+msgstr "Die Bilder, die auf dieser Plattform erstellt wurden, werden im DockerHub gesucht, wo es eine beträchtliche Anzahl von Anwendungen hat."
+
+#: app/templates/orka/landing.html:90
+msgid "Community"
+msgstr "Gemeinschaft"
+
+#: app/templates/orka/landing.html:92
+msgid ""
+"As the platform is compatible with all elements of Docker, you will have "
+"at your disposal an active community with many open source applications "
+"with Dockerfile implemented."
+msgstr "Da die Plattform mit allen Elementen von Docker kompatibel ist, haben Sie zu Ihrer Verfügung eine aktive Gemeinschaft mit vielen Open-Source-Anwendungen mit Dockerfile implementiert."
 
 #: app/templates/orka/sidebar.html:20
 msgid "Search..."
@@ -459,7 +520,7 @@ msgstr "Bearbeiten"
 
 #: app/templates/orka/general/lib.html:409
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: app/views/__init__.py:40
 msgid "Index"
@@ -497,7 +558,7 @@ msgstr "Erstellen Sie Build"
 msgid "Edit Build"
 msgstr "Bearbeiten Erstellen"
 
-#: app/views/build.py:26 app/views/container.py:124 app/views/image.py:30
+#: app/views/build.py:26 app/views/container.py:122 app/views/image.py:30
 #: app/views/node.py:26 app/views/service.py:29
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:32
 #: env/lib/python2.7/site-packages/flask_appbuilder/security/views.py:44
@@ -516,89 +577,89 @@ msgstr "Dockerfile"
 msgid "Options"
 msgstr "Einstellungen"
 
-#: app/views/container.py:116
+#: app/views/container.py:114
 msgid "List Container"
 msgstr "Liste Container"
 
-#: app/views/container.py:118
+#: app/views/container.py:116
 msgid "Show Container"
 msgstr "Zeige Container"
 
-#: app/views/container.py:120
+#: app/views/container.py:118
 msgid "Add Container"
 msgstr "Hinzufügen Container"
 
-#: app/views/container.py:122
+#: app/views/container.py:120
 msgid "Edit Container"
 msgstr "Container bearbeiten"
 
-#: app/views/container.py:125 app/views/service.py:30
+#: app/views/container.py:123 app/views/service.py:30
 msgid "Image"
 msgstr "Bild"
 
-#: app/views/container.py:126
+#: app/views/container.py:124
 msgid "Port"
 msgstr "Port"
 
-#: app/views/container.py:127
+#: app/views/container.py:125
 msgid "ID Container"
 msgstr "ID Container"
 
-#: app/views/container.py:128
+#: app/views/container.py:126
 msgid "Domain Name"
 msgstr "Domain-Name"
 
-#: app/views/container.py:129
+#: app/views/container.py:127
 msgid "CPU Reserved"
 msgstr "CPU Reserviert"
 
-#: app/views/container.py:130
+#: app/views/container.py:128
 msgid "Storage Reserved"
 msgstr "Storage Reserviert"
 
-#: app/views/container.py:131 app/views/service.py:33
+#: app/views/container.py:129 app/views/service.py:33
 msgid "Status"
 msgstr "Status"
 
-#: app/views/container.py:132
+#: app/views/container.py:130
 msgid "Type"
-msgstr ""
+msgstr "Type"
+
+#: app/views/container.py:131
+msgid "Linked"
+msgstr "Verknüpft"
+
+#: app/views/container.py:132
+msgid "Volumes Binding"
+msgstr "Volumes Bindung"
 
 #: app/views/container.py:133
-msgid "Linked"
-msgstr ""
-
-#: app/views/container.py:134
-msgid "Volumes Binding"
-msgstr ""
-
-#: app/views/container.py:135
 msgid "Environment Variables"
-msgstr ""
+msgstr "Umgebungsvariablen"
 
-#: app/views/container.py:136 app/views/service.py:32
+#: app/views/container.py:134 app/views/service.py:32
 msgid "Command"
 msgstr "Befehl"
 
-#: app/views/container.py:137
+#: app/views/container.py:135
 msgid "Extra Parameters"
-msgstr ""
+msgstr "Zusätzliche Parameter"
 
-#: app/views/container.py:138
+#: app/views/container.py:136
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
-#: app/views/container.py:139
+#: app/views/container.py:137
 msgid "IP Adrress"
-msgstr ""
+msgstr "IP Adresse"
 
-#: app/views/container.py:150 app/views/container.py:173
-#: app/views/container.py:193
+#: app/views/container.py:148 app/views/container.py:171
+#: app/views/container.py:191
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/views/container.py:158 app/views/container.py:179
-#: app/views/container.py:199
+#: app/views/container.py:156 app/views/container.py:177
+#: app/views/container.py:197
 msgid "Advanced Info"
 msgstr "Erweiterte Info"
 
@@ -621,10 +682,6 @@ msgstr "Bild bearbeiten"
 #: app/views/image.py:32
 msgid "Digest"
 msgstr "Digest"
-
-#: app/views/image.py:33 app/views/image.py:34 app/views/image.py:35
-msgid "Logo"
-msgstr ""
 
 #: app/views/node.py:16
 msgid "List Node"

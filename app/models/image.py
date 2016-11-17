@@ -13,6 +13,7 @@ class Image(Model):
     name = Column(String(64), unique=True, nullable=False)
     version = Column(String(20), default='latest')
     photo = Column(ImageColumn(size=(300, 300, True), thumbnail_size=(120, 120, True)))
+    size = Column(String(128))
 
     def photo_url(self):
         im = ImageManager()

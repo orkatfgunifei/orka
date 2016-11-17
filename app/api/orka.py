@@ -66,9 +66,38 @@ def create_object(modelo, objeto_dict, appbuilder):
                 c.image_id = new_image.id
 
         appbuilder.session.add(c)
-        appbuilder.session.commit()
 
-        return c
+        try:
+            appbuilder.session.commit()
+            return c
+        except:
+            appbuilder.session.rollback()
+            return False
+
+    elif modelo == "Image":
+        i = Image()
+
+        if objeto_dict.get('name'):
+            i.name = objeto_dict.get('name')
+
+        if objeto_dict.get('digest'):
+            i.digest = objeto_dict.get('digest')
+
+        if objeto_dict.get('size'):
+            i.size = objeto_dict.get('size')
+
+        if objeto_dict.get('version'):
+            i.version = objeto_dict.get('version')
+
+        appbuilder.session.add(i)
+
+        try:
+            appbuilder.session.commit()
+            return i
+        except:
+            appbuilder.session.rollback()
+            return False
+
 
 
 
@@ -178,7 +207,10 @@ def list_containers(list_all=False):
         template_dict = dict(zip(head, values))
         template_dicts.append(template_dict)
 
+    template_dicts.pop(0)
+    template_dicts.pop(len(template_dicts)-1)
     return template_dicts
+
 
 def remove_container(hash_id):
     try:
@@ -241,12 +273,49 @@ def remove_node(force=False):
     cli.leave_swarm(force=force)
 
 
+def list_images():
+
+    host_images = urubu.list_images()
+
+    row_splitter = re.compile("  +")  # Encontra uma sequência de dois ou mais espaços
+    rows = host_images.split('\n')  # Divide a tabela em uma lista de linhas
+
+    headings = ['REPOSITORY', 'TAG', 'IMAGE ID', 'CREATED', 'SIZE']
+    headings_notag = ['REPOSITORY', 'IMAGE ID', 'CREATED', 'SIZE']
+
+    # Cria uma lista de dicionários mapeando os valores
+    template_dicts = []
+    for row in rows:
+        values = row_splitter.split(row)
+        if len(values) == 6:
+            head = headings_notag
+        else:
+            head = headings
+
+        template_dict = dict(zip(head, values))
+        template_dicts.append(template_dict)
+
+    template_dicts.pop(0)
+    template_dicts.pop(len(template_dicts)-1)
+    return template_dicts
+
+
 def image_pull(name, version):
     return cli.pull("%s:%s" % (name, version))
 
 
-def image_remove(name, version):
-    return cli.remove_image("%s:%s" % (name, version))
+def image_remove(name, version, digest):
+
+    if digest:
+        return urubu.rmi(digest)
+    else:
+        if version != "latest":
+            return cli.remove_image("%s:%s" % (name, version))
+        else:
+            try:
+                return cli.remove_image("%s" % name)
+            except:
+                return cli.remove_image("%s:<none>" % name)
 
 
 def create_service(item):

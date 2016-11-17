@@ -2,13 +2,24 @@ from flask.ext.appbuilder.widgets import ListThumbnail
 from flask_appbuilder.security.views import UserDBModelView
 from flask_appbuilder.security.sqla.manager import SecurityManager
 from flask.ext.appbuilder.security.registerviews import RegisterUserDBView
-from flask.ext.babel import lazy_gettext as _
+from flask.ext.babel import _ as _
 from app.models.user import OrkaUser
 
 
 class OrkaUserDBModelView(UserDBModelView):
 
     list_widget = ListThumbnail
+
+    def __init__(self, **kwargs):
+        super(OrkaUserDBModelView, self).__init__(**kwargs)
+
+        photo_labels = {
+            'photo_img': _('Logo'),
+            'photo': _('Logo'),
+            'photo_img_thumbnail': _('Logo'),
+        }
+
+        self.label_columns.update(photo_labels)
 
     show_fieldsets = [
         (_('User info'),

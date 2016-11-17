@@ -1,13 +1,13 @@
 #coding: utf-8
 import json
 from flask.ext.appbuilder.widgets import ListThumbnail
-from flask.ext.appbuilder import ModelView
+from flask.ext.appbuilder import ModelView, expose, has_access
 from flask.ext.appbuilder.models.sqla.interface import SQLAInterface
-from app.api.orka import image_pull, image_remove
+from app.api.orka import image_pull, image_remove, list_images, create_object
 from app.models.image import Image
 from container import ContainerModelView, _
 from service import ServiceModelView
-
+from flask import redirect, url_for
 
 class ImageModelView(ModelView):
 
@@ -66,6 +66,57 @@ class ImageModelView(ModelView):
 
     base_order = ('name', 'asc')
 
+
+    @expose('/list/')
+    @has_access
+    def list(self):
+        list_parent = super(ImageModelView, self).list()
+
+        db_images = self.appbuilder.session.query(Image).all()
+
+        host_images = list_images()
+
+        in_host = False
+
+        for db_image in db_images:
+
+            for image in host_images:
+                if image.get('IMAGE ID') and db_image.digest:
+                    if image.get('IMAGE ID') in db_image.digest:
+                        host_images.pop(host_images.index(image))
+                        in_host = True
+                        break
+
+            if not in_host:
+                self.appbuilder.session.delete(db_image)
+                self.appbuilder.session.commit()
+
+            in_host = False
+
+        for image in host_images:
+            if image.get('REPOSITORY'):
+                objeto = {
+                    'name': image.get('REPOSITORY'),
+                    'digest': image.get('IMAGE ID') or None,
+                    'size': image.get('SIZE') or None
+                }
+
+                if not ('<none>' in image.get('TAG')):
+                    objeto['version'] = image.get('TAG')
+
+                new_image = create_object("Image", objeto, self.appbuilder)
+
+                if new_image:
+                    db_images.append(new_image)
+
+        if self.appbuilder.session.dirty:
+            self.appbuilder.session.commit()
+
+        if not len(db_images) > 0:
+            return redirect(url_for('ImageModelView.add'))
+
+        return list_parent
+
     def pre_add(self, item):
         """
         Antes de criar o objeto no banco
@@ -93,8 +144,6 @@ class ImageModelView(ModelView):
                 except:
                     continue
 
-
-
     def pre_delete(self, item):
         """
         Antes de remover o imagem do banco
@@ -106,7 +155,7 @@ class ImageModelView(ModelView):
 
         if item.name:
             try:
-                resp = image_remove(item.name, item.version)
+                resp = image_remove(item.name, item.version, item.digest)
                 if resp:
                     print resp
             except Exception as inst:
