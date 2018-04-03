@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app:z
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_PASSWORD=orka
+      - POSTGRES_USER=orka
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - orka-db-data:/var/lib/postgresql/data/pgdata
+  
+volumes:
+  orka-db-data:
+
