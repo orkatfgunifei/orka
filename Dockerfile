@@ -3,14 +3,14 @@ MAINTAINER 10Adev "admin@10adev.com.br"
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential postgresql python-psycopg2 gunicorn supervisor
 RUN apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
-RUN apt-get install -y libpq-dev
+RUN apt-get install -y libpq-dev docker.io
 RUN pip install -U pip
 RUN pip install pillow
 
-COPY ./entrypoint.sh /
+ADD ./entrypoint.sh /
 RUN chmod 777 /entrypoint.sh
 
-COPY . /app
+ADD . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 
@@ -24,8 +24,6 @@ COPY ./gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 RUN chmod 777 /etc/supervisor/conf.d/supervisord.conf
 RUN chmod 777 /etc/supervisord.con
 RUN chmod 777 /etc/supervisor/conf.d/gunicorn.conf
-
-RUN ls /etc/supervisor/conf.d -lah
 
 ENTRYPOINT ["/entrypoint.sh"]
 # Start processes

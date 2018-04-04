@@ -55,7 +55,7 @@ class ContainerModelView(ModelView):
                         container.status = True
 
                         if info_container.get('NetworkSettings'):
-                            ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                            ip_address = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
                             container.ip = ip_address
                 else:
 
@@ -64,6 +64,7 @@ class ContainerModelView(ModelView):
 
 
             except:
+                self.appbuilder.session.rollback()
                 container.status = False
 
             in_host = False
@@ -84,7 +85,7 @@ class ContainerModelView(ModelView):
                     stat = True
 
                     if info_container.get('NetworkSettings'):
-                        ip_addr = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                        ip_addr = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
 
                 objeto = {
                     'name': host_container.get('NAMES'),
@@ -95,7 +96,12 @@ class ContainerModelView(ModelView):
                     'ip': ip_addr or None,
                 }
 
-                new_container = create_object("Container", objeto, self.appbuilder)
+                try:
+                    new_container = create_object("Container", objeto, self.appbuilder)
+                except Exception as e:
+                    self.appbuilder.session.rollback()
+                    new_container = False
+                    print("[WARNING] Nao foi possivel criar container (container)")
 
                 if new_container:
                     containers.append(new_container)
@@ -263,7 +269,7 @@ class ContainerModelView(ModelView):
                         item.status = True
 
                     if inspect.get('NetworkSettings'):
-                        ip_address = inspect['NetworkSettings']['Networks']['bridge']['IPAddress']
+                        ip_address = inspect['NetworkSettings']['Networks']['orka_default']['IPAddress']
 
                         item.ip = ip_address
                 except:
@@ -320,7 +326,7 @@ class ContainerModelView(ModelView):
                 info_container = inspect_container(container.hash_id)
 
                 if info_container.get('NetworkSettings'):
-                    ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                    ip_address = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
                     container.ip = ip_address
 
             if self.appbuilder.session.dirty:

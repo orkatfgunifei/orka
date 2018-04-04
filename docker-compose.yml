@@ -7,7 +7,8 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - .:/app:z
+      - .:/app:Z
+      - /var/run/docker.sock:/var/run/docker.sock
   dborka:
     image: postgres:9.5
     environment:

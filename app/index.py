@@ -20,7 +20,12 @@ class IndexView(IndexView):
 
             containers = self.appbuilder.session.query(Container).all()
 
-            host_containers = list_containers(list_all=True)
+            try:
+                host_containers = list_containers(list_all=True)
+            except Exception as e:
+                self.appbuilder.session.rollback()
+                print("[WARNING] Docker API com problemas (list_containers)")
+                host_containers = []
 
             for host_container in host_containers:
                 if host_container.get('CONTAINER ID') == 'CONTAINER ID':
@@ -52,7 +57,7 @@ class IndexView(IndexView):
                             container.status = True
 
                             if info_container.get('NetworkSettings'):
-                                ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                                ip_address = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
                                 container.ip = ip_address
                     else:
 
@@ -61,6 +66,7 @@ class IndexView(IndexView):
 
 
                 except:
+                    self.appbuilder.session.rollback()
                     container.status = False
 
                 in_host = False
@@ -81,7 +87,7 @@ class IndexView(IndexView):
                         stat = True
 
                         if info_container.get('NetworkSettings'):
-                            ip_addr = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                            ip_addr = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
 
                     objeto = {
                         'name': host_container.get('NAMES'),
@@ -92,13 +98,22 @@ class IndexView(IndexView):
                         'ip': ip_addr or None,
                     }
 
-                    new_container = create_object("Container", objeto, self.appbuilder)
-                    containers.append(new_container)
+                    try:
+                        new_container = create_object("Container", objeto, self.appbuilder)
+                        containers.append(new_container)
+                    except Exception as e:
+                        self.appbuilder.session.rollback()
+                        print("[WARNING] Nao foi possivel criar container (index)")
 
             if self.appbuilder.session.dirty:
                 self.appbuilder.session.commit()
 
-            services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
+            try:
+                services = self.appbuilder.session.query(Service).filter_by(created_by=g.user).all()
+            except Exception as e:
+                self.appbuilder.session.rollback()
+                print("[WARNING] Nao buscar containeres (index)")
+                services = []
 
             for service in services:
 
@@ -113,7 +128,13 @@ class IndexView(IndexView):
             if self.appbuilder.session.dirty:
                 self.appbuilder.session.commit()
 
-            nodes = self.appbuilder.session.query(Node).all()
+            try:
+                nodes = self.appbuilder.session.query(Node).all()
+            except Exception as e:
+                self.appbuilder.session.rollback()
+                print("[WARNING] Nao foi possivel ler nodes (index)")
+                nodes = {}
+
             self.update_redirect()
 
             return self.render_template(self.index_template,
@@ -154,7 +175,7 @@ class IndexView(IndexView):
                     container.status = True
 
                     if info_container.get('NetworkSettings'):
-                        ip_address = info_container['NetworkSettings']['Networks']['bridge']['IPAddress']
+                        ip_address = info_container['NetworkSettings']['Networks']['orka_default']['IPAddress']
                         container.ip = ip_address
 
             except:

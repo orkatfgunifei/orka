@@ -115,10 +115,15 @@ def read_log(object_id, log_type, appbuilder):
             hash_id = container.hash_id
             logs = cli.logs(hash_id)
             linhas = logs.split("- -")
+            linhas_log = []
 
             for linha in linhas:
                 # Limpando ao máximo, uow
-                linhas[linhas.index(linha)] = linha.replace('\"-\"', "").replace('\"', '')
+                if len(linhas_log) < 200:
+                    linhas_log.append(linha.replace('\"-\"', "").replace('\"', ''))
+                else:
+                    break
+
 
             return linhas
 
@@ -176,7 +181,7 @@ def create_container(item):
         })
 
     if inspect.get('NetworkSettings'):
-        ip_address = inspect['NetworkSettings']['Networks']['bridge']['IPAddress']
+        ip_address = inspect['NetworkSettings']['Networks']['orka_default']['IPAddress']
 
         container.update({
             'ip_address': ip_address
