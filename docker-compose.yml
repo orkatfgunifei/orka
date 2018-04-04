@@ -1,22 +1,22 @@
 version: '3'
 services:
-  web:
+  weborka:
     build: .
     depends_on:
-      - db
+      - dborka
     ports:
-      - "8080:8080"
+      - "8081:8081"
     volumes:
       - .:/app:z
-  db:
+  dborka:
     image: postgres:9.5
     environment:
       - POSTGRES_PASSWORD=orka
       - POSTGRES_USER=orka
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - orka-db-data:/var/lib/postgresql/data/pgdata
+      - orka-dborka-data:/var/lib/postgresql/data/pgdata
   
 volumes:
-  orka-db-data:
+  orka-dborka-data:
 

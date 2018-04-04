@@ -14,7 +14,13 @@ SECRET_KEY = '\2\tfgunifeirules\1\2\e\y\y\h'
 # The SQLAlchemy connection string.
 #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
-SQLALCHEMY_DATABASE_URI = 'postgresql://orka:orka@db/orka'
+
+# user = os.getenv('USER', 'orka')
+# passwd = os.getenv('PASSWORD', 'orka')
+#
+# SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@dborka/orka'.format(user, passwd)
+
+SQLALCHEMY_DATABASE_URI = 'postgresql://orka:orka@dborka/orka'
 
 # Flask-WTF flag for CSRF
 CSRF_ENABLED = True
